@@ -41,7 +41,7 @@ Plataforma web que funciona como observatorio público de vivienda. Permite visu
 - INE (Censo de vivienda, indicadores demográficos)
 - Catastro (datos abiertos de uso y superficie)
 
-No se hace scraping de portales inmobiliarios.
+Se contempla scraping puntual de portales inmobiliarios (Idealista, Fotocasa, etc.) como sondeo complementario, siempre dentro del marco legal (datos públicos, sin evadir rate limiters ni medidas anti-scraping).
 
 ### Commits
 
