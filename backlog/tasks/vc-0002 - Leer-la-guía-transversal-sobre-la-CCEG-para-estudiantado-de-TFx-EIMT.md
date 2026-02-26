@@ -1,9 +1,10 @@
 ---
 id: VC-0002
 title: Leer la guía transversal sobre la CCEG para estudiantado de TFx-EIMT
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-02-26 21:24'
+updated_date: '2026-02-26 21:26'
 labels: []
 milestone: m-0
 dependencies: []
@@ -24,3 +25,9 @@ Leer y analizar la guía transversal sobre la CCEG ubicada en classroom/content/
 <!-- DOD:BEGIN -->
 - [ ] #1 All test suite is passing
 <!-- DOD:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Guía CCEG leída. Define 3 dimensiones a trabajar en la memoria: sostenibilidad, comportamiento ético/RS, y diversidad/género/DDHH. Debe reflejarse en diseño (sección 1.3), desarrollo y conclusiones. Incluye perspectiva de género, lenguaje inclusivo, y alineación con ODS relevantes (ODS 11, 8, 10, 16).
+<!-- SECTION:FINAL_SUMMARY:END -->
