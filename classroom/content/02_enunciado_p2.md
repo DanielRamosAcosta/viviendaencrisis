@@ -1,0 +1,82 @@
+# Enunciado P2
+
+* **Inicio**: 02/03/2026
+* **Entrega**: 29/03/2026
+* **Dedicación**: 70h
+
+**Presentación**
+
+En esta segunda PEC arranca el proceso de trabajo del proyecto conforme a la planificación. Durante esta fase de trabajo, junto con el comienzo del desarrollo, se aprovecha para revisar requisitos, métodos de trabajo y herramientas, y consolidar los fundamentos del proyecto, estableciendo varios temas que, dependiendo del proyecto, pueden ser desde fundamentación teórica modelo de base de datos o _wireframes_ de interfaces.
+
+**Competencias**
+
+Todas aquellas referidas en el plan docente de la asignatura, tanto las transversales como las específicas.
+
+**Objetivos**
+
+- Poner en práctica los conocimientos adquiridos a lo largo de toda la titulación.
+- Realizar un proyecto en todas sus fases, seleccionando los procedimientos más adecuados para llevarlo a cabo
+- Adquirir experiencia para afrontar los retos que supone llevar adelante un proyecto completo.
+- Documentar y justificar el desarrollo y el resultado del trabajo.
+- Presentar el trabajo realizado.
+
+**Descripción de la PEC**
+
+Tareas a realizar
+
+- Arrancar el desarrollo del proyecto y conseguir los primeros hitos de su planificación.
+- Comenzar su documentación.
+- Revisar sus objetivos y planificación para descubrir errores y aplicar cambios o mejoras que sean necesarios o convenientes.
+- Revisar el documento de checklist, asegurando que se verifiquen todas las condiciones. Si no se verifican, será necesario justificarlo con antelación suficiente y el tutor del trabajo deberá dar su autorización.
+
+Documentos a entregar
+
+- La parte del proyecto que se haya realizado, incluyendo códigos fuente e instrucciones de uso y / o instalación.
+- Una nueva versión de la memoria de proyecto que desarrolle los siguientes puntos (conforme a la plantilla de la memoria disponible en la PEC1):
+  - Continuación y mejoras de los capítulos entregados en la PEC1
+  - Capítulos referentes a la definición de diagramas y detalle de casos de uso
+  - Estudio de la usabilidad
+  - Estudio de la arquitectura de la aplicación
+  - Análisis de mercado.
+  - Viabilidad.
+  - Resto de recursos audiovisuales, código, librerías, bases de datos, etc., que sean de autoría propia, así como de terceros que hayan sido utilizados.
+- Documento de checklist validado previamente por el tutor del trabajo.
+
+**Recursos**
+
+El estudiante tiene a su disposición a través del aula de la asignatura los siguientes recursos:
+
+**Básicos**
+
+- Pauta de memoria
+- Guía de realización de la memoria
+
+**Complementarios**
+
+- Materiales del resto de asignaturas ya cursadas.
+- Lista de recursos online
+
+**Criterios de valoración**
+
+Para poderse evaluar el trabajo, se ha de asegurar el cumplimiento de todos los puntos de la checklist que apliquen a esta entrega.
+
+La evaluación de esta PEC se regirá por los siguientes criterios, ponderados según su influencia respecto al global de la nota:
+
+- **Seguimiento y trabajo en equipo** (20%). Comunicación y consenso con el consultor durante todo el proceso y especialmente en la definición y objetivos del proyecto, herramientas, prioridades, resolución de incidencias y problemáticas y revisión del librado.
+- **Realización y cumplimiento de la planificación** (20%). Debe adaptarse a la evolución y cambios durante la realización del proyecto.
+- **Calidad del producto en sus diferentes fases de realización** (30%). Superación de sus objetivos, requisitos, alcance, viabilidad, diseño y usabilidad, programación, arquitectura, narrativa y guion, uso de recursos de terceros, así como todas aquellas características que puedan afectar a su calidad.
+- **Calidad de la memoria** (30%). La documentación debe ser completa, ordenada, clara, con una presentación correcta y profesional, buena redacción tanto en contenido (capacidad de argumentación, defensa, síntesis, etc.) como en léxico, gramática y ortografía, uso adecuado de tablas, imágenes y otros elementos, con un nivel global académico y conforme a las pautas que se dan al alumno respecto a su redacción.
+
+**Formato de entrega**
+
+- Para la memoria, un documento en formato DOC, ODT, PDF, RTF o HTML con la nomenclatura PEC2_mem_Apellidos_Nombre.
+- Para el proyecto, un archivo ZIP que contenga todos sus archivos, incluidos códigos fuente, con la nomenclatura PEC2_pry_Apellidos_Nombre.
+- La entrega puede realizarse recopilada en un único archivo ZIP con los contenidos organizados en dos directorios: uno para la documentación y otro para el proyecto. Su nomenclatura será PEC2_Apellidos_Nombre.
+
+**Propiedad intelectual**
+
+A menudo es inevitable, al producir una obra multimedia, hacer uso de recursos creados por terceras personas. Es por tanto comprensible hacerlo en el marco de una práctica de estos estudios, siempre y esto se documente claramente y no suponga plagio en la práctica.
+
+Por lo tanto, al presentar una práctica que haga uso de recursos ajenos, se presentará junto con ella un documento en el que se detallen todos ellos, especificando el nombre de cada recurso, su autor, el lugar donde se obtuvo y el su estatus legal: si la obra está protegida por copyright o se acoge a alguna otra licencia de uso (Creative Commons, GNU, GPL ...). El estudiante deberá asegurarse de que la licencia que sea no impide específicamente su uso en el marco de la práctica. En caso de no encontrar la información correspondiente deberá asumir que la obra está protegida por copyright.
+
+Deberán, además, adjuntarse los archivos originales cuando las obras utilizadas sean digitales, y su código fuente si corresponde.
