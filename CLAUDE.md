@@ -61,6 +61,22 @@ Se contempla scraping puntual de portales inmobiliarios (Idealista, Fotocasa, et
 * Siempre que te encuentres con un binario o fichero que podría llenar de tokens el contexto (*.doc, *.docx, *.png), si necesitas leerlo, antes de leerlo, solicita siempre permiso al usuario
 * Siempre que necesites leer un fichero de texto en formato propietario o PDF, intenta buscar su alernativa en Markdown (debería tener el mismo nombre, pero en `.md`). Si no tiene, probablemente no sea un fichero relevante.
 
+## Vocabulario UOC
+
+* **UOC**: Universitat Oberta de Catalunya
+* **PEC**: Prueba de Evaluación Continua
+* **P<XX>**: Una práctica concreta (P1 = Práctica 1)
+
+## Aula virtual y enunciados completos
+
+Para facilitar la lectura del aula virtual al Agente IA, se han transcrito a Markdown todos los encunciados de todos los materiales del aula. Dichos materiales, pueden encontrarse en el directorio `./classroom`. Aquí puedes encontrar:
+
+* Enunciados completos de las PEC
+* Material de Apoyo
+* Anuncios del profesor
+* Otra información relevante que se encontraba en el aula
+* Guía docente
+
 ## BACKLOG WORKFLOW INSTRUCTIONS
 
 This project uses Backlog.md MCP for all task and project management activities.
