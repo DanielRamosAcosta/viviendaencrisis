@@ -4,6 +4,7 @@ title: 'Redactar sección 1.3: Impacto en sostenibilidad, ético-social y de div
 status: To Do
 assignee: []
 created_date: '2026-02-26 21:26'
+updated_date: '2026-02-27 18:45'
 labels: []
 milestone: m-0
 dependencies: []
@@ -24,3 +25,10 @@ Analizar el impacto del TFM en las 3 dimensiones de la CCEG siguiendo la guía t
 <!-- DOD:BEGIN -->
 - [ ] #1 All test suite is passing
 <!-- DOD:END -->
+
+
+
+## Acceptance Criteria
+<!-- AC:BEGIN -->
+- [ ] #1 Incluye el compromiso de garantizar la accesibilidad web del proyecto (requisito obligatorio, evaluado en últimas entregas)
+<!-- AC:END -->
