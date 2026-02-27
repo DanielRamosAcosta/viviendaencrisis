@@ -1,9 +1,10 @@
 ---
 id: VC-0004
 title: 'Redactar sección 0 de la memoria: portada, índice completo y páginas previas'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
+updated_date: '2026-02-27 18:35'
 labels: []
 milestone: m-0
 dependencies: []
