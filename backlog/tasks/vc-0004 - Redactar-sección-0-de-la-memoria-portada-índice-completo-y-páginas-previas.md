@@ -9,8 +9,8 @@ labels: []
 milestone: m-0
 dependencies: []
 references:
-  - classroom/content/01_P1/Enunciado P1.md
-  - classroom/content/01_P1/recursos_de_aprendizaje/Guia_TF_ES_2022.md
+  - docs/classroom/content/01_P1/Enunciado P1.md
+  - docs/classroom/content/01_P1/recursos_de_aprendizaje/Guia_TF_ES_2022.md
 priority: high
 ---
 

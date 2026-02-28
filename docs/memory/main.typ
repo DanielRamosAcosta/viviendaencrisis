@@ -1,4 +1,4 @@
-#import "/cross/packages/packages/preview/tidbit-uoc/0.2.0/template.typ": template
+#import "template/template.typ": template
 
 #show: template.with(
     subject: "Trabajo Final de Máster",

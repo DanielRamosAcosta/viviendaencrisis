@@ -8,7 +8,7 @@ labels: []
 milestone: m-0
 dependencies: []
 references:
-  - classroom/content/01_P1/recursos_de_aprendizaje/checklist_es.md
+  - docs/classroom/content/01_P1/recursos_de_aprendizaje/checklist_es.md
 priority: high
 ---
 

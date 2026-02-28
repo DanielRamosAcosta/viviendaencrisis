@@ -25,7 +25,7 @@ Plataforma web que funciona como observatorio público de vivienda. Permite visu
 
 - `docs/` — Memoria del proyecto, escrita en Typst
 - `backlog/` — Tareas, milestones y planificación, gestionadas con backlog.md
-- `classroom/` — Enunciados y tareas del aula virtual (contexto académico)
+- `docs/classroom/` — Enunciados y tareas del aula virtual (contexto académico)
 
 ### Stack técnico
 
@@ -69,7 +69,7 @@ Se contempla scraping puntual de portales inmobiliarios (Idealista, Fotocasa, et
 
 ## Aula virtual y enunciados completos
 
-Para facilitar la lectura del aula virtual al Agente IA, se han transcrito a Markdown todos los encunciados de todos los materiales del aula. Dichos materiales, pueden encontrarse en el directorio `./classroom`. Aquí puedes encontrar:
+Para facilitar la lectura del aula virtual al Agente IA, se han transcrito a Markdown todos los encunciados de todos los materiales del aula. Dichos materiales, pueden encontrarse en el directorio `./docs/classroom`. Aquí puedes encontrar:
 
 * Enunciados completos de las PEC
 * Material de Apoyo

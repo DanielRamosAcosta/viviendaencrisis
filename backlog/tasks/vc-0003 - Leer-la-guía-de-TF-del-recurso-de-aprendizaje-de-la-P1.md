@@ -9,14 +9,14 @@ labels: []
 milestone: m-0
 dependencies: []
 references:
-  - classroom/content/01_P1/recursos_de_aprendizaje/Guia_TF_ES_2022.md
+  - docs/classroom/content/01_P1/recursos_de_aprendizaje/Guia_TF_ES_2022.md
 priority: high
 ---
 
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Leer y analizar la guía de TF ubicada en classroom/content/01_P1/recursos_de_aprendizaje/Guia_TF_ES_2022.md
+Leer y analizar la guía de TF ubicada en docs/classroom/content/01_P1/recursos_de_aprendizaje/Guia_TF_ES_2022.md
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Definition of Done

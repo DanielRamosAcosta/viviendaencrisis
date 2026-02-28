@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build:docs": "typst compile --root /Users/danielramos/Documents/university docs/main.typ"
+    "build:docs": "typst compile docs/main.typ"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0"
