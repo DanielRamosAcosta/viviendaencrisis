@@ -4,7 +4,7 @@ title: 'Redactar sección 1.1: Contexto y justificación del Trabajo'
 status: To Do
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-02-28 19:30'
+updated_date: '2026-02-28 19:33'
 labels: []
 milestone: m-0
 dependencies: []
@@ -48,6 +48,7 @@ Redactar la sección 1.1 "Contexto y justificación del Trabajo" de la memoria d
 - Análisis detallado de competidores y herramientas existentes --> Cap. 2.3 (Plataformas y herramientas existentes)
 - Análisis profundo de la evolución del mercado con datos y cifras --> Cap. 2.1 (Contexto del mercado)
 - Objetivos específicos del proyecto --> Sección 1.2 (Objetivos del Trabajo)
+- Impacto en sostenibilidad, ético-social y diversidad --> Sección 1.3 (VC-0007)
 - Decisiones técnicas o de arquitectura --> Cap. 3 (Diseño)
 
 **Fuentes disponibles**: 4 informes de Deep Search en `docs/research/Contexto socioeconómico de la crisis habitacional en España/` ([Qwen], [Claude], [ChatGPT], [Perplexity]). El informe [Qwen] es el más completo en redacción y citación de fuentes. El informe [Claude] es el más rico en datos y cifras concretas.
@@ -79,6 +80,7 @@ Redactar la sección 1.1 "Contexto y justificación del Trabajo" de la memoria d
 - [ ] #9 La extensión es adecuada para una sección introductoria de TFM (entre 1500 y 3000 palabras orientativamente)
 - [ ] #10 El texto está escrito en español formal académico sin lenguaje coloquial ni activista
 - [ ] #11 El fichero Typst compila correctamente con `typst compile docs/memory/main.typ` sin errores ni warnings relevantes
+- [ ] #12 No incluye análisis de impacto en sostenibilidad, ético-social ni diversidad (eso se aborda en la sección 1.3, tarea VC-0007)
 <!-- AC:END -->
 
 ## Implementation Plan
