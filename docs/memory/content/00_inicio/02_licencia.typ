@@ -1,6 +1,6 @@
 #align(left + bottom)[
   #block(width: 60%)[
-    #image("images/cc_by-nc-sa.svg", width: 30%)
+    #image("../../images/cc_by-nc-sa.svg", width: 30%)
 
     #v(0.5em)
 

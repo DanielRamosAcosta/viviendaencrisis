@@ -14,11 +14,7 @@
 
 #pagebreak()
 
-#include "00_licencia.typ"
-
-#pagebreak()
-
-#include "00_ficha.typ"
+#include "content/00_inicio/index.typ"
 
 #pagebreak()
 
@@ -26,36 +22,36 @@
 
 #pagebreak()
 
-#include "01_introduccion.typ"
+#include "content/01_introduccion/index.typ"
 
 #pagebreak()
 
-#include "02_estado_del_arte.typ"
+#include "content/02_estado_del_arte/index.typ"
 
 #pagebreak()
 
-#include "03_diseno.typ"
+#include "content/03_diseno/index.typ"
 
 #pagebreak()
 
-#include "04_implementacion.typ"
+#include "content/04_implementacion/index.typ"
 
 #pagebreak()
 
-#include "05_pruebas.typ"
+#include "content/05_pruebas/index.typ"
 
 #pagebreak()
 
-#include "06_conclusiones.typ"
+#include "content/06_conclusiones/index.typ"
 
 #pagebreak()
 
-#include "07_glosario.typ"
+#include "content/07_glosario/index.typ"
 
 #pagebreak()
 
-#include "08_bibliografia.typ"
+#include "content/08_bibliografia/index.typ"
 
 #pagebreak()
 
-#include "09_anexos.typ"
+#include "content/09_anexos/index.typ"
