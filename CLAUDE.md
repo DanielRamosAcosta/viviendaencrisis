@@ -23,9 +23,10 @@ Plataforma web que funciona como observatorio público de vivienda. Permite visu
 
 ### Estructura del monorepo
 
-- `docs/` — Memoria del proyecto, escrita en Typst
 - `backlog/` — Tareas, milestones y planificación, gestionadas con backlog.md
+- `docs/memory` — Memoria del proyecto, escrita en Typst
 - `docs/classroom/` — Enunciados y tareas del aula virtual (contexto académico)
+- `docs/reserach/` — Investigaciones profundas (Deep Search) realizadas con IA relevantes para el contexto del proyecto
 
 ### Stack técnico
 
