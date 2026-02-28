@@ -1,6 +1,6 @@
-# Referencias para la memoria del TFM "Habitable": crisis de vivienda en España
+# Referencias para la memoria del TFM "Vivienda en Crisis": crisis de vivienda en España
 
-**La vivienda ha pasado de preocupación latente a emergencia social documentada.** En enero de 2026, el **42,6%** de la población española situaba la vivienda como el principal problema del país (CIS), cifra récord absoluta que triplica los niveles de 2023. Este informe recopila y organiza más de 100 referencias citables, verificadas y clasificadas por bloques temáticos, para fundamentar académicamente el observatorio ciudadano "Habitable". Se distingue de forma rigurosa entre fuentes primarias verificadas (✅) y aquellas que requieren comprobación adicional (⚠️), y se priorizan fuentes institucionales, académicas y de periodismo independiente e investigación.
+**La vivienda ha pasado de preocupación latente a emergencia social documentada.** En enero de 2026, el **42,6%** de la población española situaba la vivienda como el principal problema del país (CIS), cifra récord absoluta que triplica los niveles de 2023. Este informe recopila y organiza más de 100 referencias citables, verificadas y clasificadas por bloques temáticos, para fundamentar académicamente el observatorio ciudadano "Vivienda en Crisis". Se distingue de forma rigurosa entre fuentes primarias verificadas (✅) y aquellas que requieren comprobación adicional (⚠️), y se priorizan fuentes institucionales, académicas y de periodismo independiente e investigación.
 
 ---
 
@@ -266,12 +266,12 @@ El patrón es sistemático y transversal a PP y PSOE: altos cargos del Ministeri
 
 ---
 
-## Bloque 4: Observatorios y herramientas existentes — el ecosistema de "Habitable"
+## Bloque 4: Observatorios y herramientas existentes — el ecosistema de "Vivienda en Crisis"
 
 ### 4.1 — Precedentes directos en España
 
 **Observatori DESCA (Barcelona)**
-Centro de derechos humanos fundado en 1998, con la vivienda como área prioritaria. Combina investigación, litigación estratégica, campañas cívicas y colaboración con la PAH. Su sección web #BcnHabitat es un precedente directo para "Habitable". URL: https://observatoridesc.org/es
+Centro de derechos humanos fundado en 1998, con la vivienda como área prioritaria. Combina investigación, litigación estratégica, campañas cívicas y colaboración con la PAH. Su sección web #BcnHabitat es un precedente directo para "Vivienda en Crisis". URL: https://observatoridesc.org/es
 
 Publicaciones clave:
 - Delgado, L. (Coord.). (2022). *Estat de l'exclusió residencial: impactes de la Llei 24/2015*. Observatori DESC, ESF, PAH Barcelona, ASPB. ✅
@@ -283,14 +283,14 @@ Medio de periodismo de datos independiente fundado por Ana Tudela y Antonio Delg
 
 - DATADISTA. (2025). *MAPA: La presión de los pisos turísticos en tu barrio, calle a calle* [Mapa interactivo]. https://www.datadista.com/mapas/conoce-la-presion-de-los-pisos-turisticos-en-tu-calle/ ✅
 
-**Relevancia para "Habitable"**: Datadista es el precedente más cercano en visualización de datos de vivienda en España. Diferencia clave: es periodístico, sin capacidad de reportes ciudadanos ni contraste salarial.
+**Relevancia para "Vivienda en Crisis"**: Datadista es el precedente más cercano en visualización de datos de vivienda en España. Diferencia clave: es periodístico, sin capacidad de reportes ciudadanos ni contraste salarial.
 
 **Observatorio de Vivienda y Suelo — MIVAU**
 Observatorio oficial del Ministerio de Vivienda y Agenda Urbana. Publica boletines trimestrales y anuales con más de **600 indicadores**. Integra el sistema de referencia de precios SERPAVI. URL: https://www.mivau.gob.es/urbanismo-y-suelo/suelo/observatorio-de-vivienda-y-suelo
 
 - Ministerio de Vivienda y Agenda Urbana. (2025). *Observatorio de Vivienda y Suelo. Boletín Anual 2024*. — Solo **14.371** calificaciones definitivas de VPO en 2024; vivienda social ≈ 2,5% del parque frente al ~8% de media UE. ✅
 
-**Relevancia para "Habitable"**: Fuente primaria de datos oficiales. "Habitable" debería usar estos datos como columna vertebral estadística.
+**Relevancia para "Vivienda en Crisis"**: Fuente primaria de datos oficiales. "Vivienda en Crisis" debería usar estos datos como columna vertebral estadística.
 
 **Provivienda — Observatorio de la Vivienda Asequible**
 ONG con dashboard interactivo basado en datos CGPJ de desahucios. URL: https://provivienda.org/observatorio/ — Dato clave: el **60%** de los hogares españoles tiene algún problema con la vivienda; el **47,5%** de inquilinos en sobreesfuerzo. ✅
@@ -308,22 +308,22 @@ Colectivo de contra-cartografía fundado en 2013 en San Francisco. Combina visua
 
 - Maharawal, M. M., y McElroy, E. (2018). The Anti-Eviction Mapping Project: Counter Mapping and Oral History toward Bay Area Housing Justice. *Annals of the American Association of Geographers*, 108(2), 380–389. DOI: 10.1080/24694452.2017.1365583 ✅
 
-**Relevancia para "Habitable"**: Precedente internacional más directo. Combina visualización de datos con reportes ciudadanos. Diferencia: marco más activista que instrumental.
+**Relevancia para "Vivienda en Crisis"**: Precedente internacional más directo. Combina visualización de datos con reportes ciudadanos. Diferencia: marco más activista que instrumental.
 
 **Decidim Barcelona**
 Plataforma digital open-source de participación ciudadana, creada por el Ayuntamiento de Barcelona (2016). Más de **150.000 usuarios** y **30.000 propuestas**. Deployada en 450+ organizaciones en 30+ países. URL: https://www.decidim.barcelona
 
-**Relevancia para "Habitable"**: Modelo de referencia en civic tech española. Su arquitectura open-source y sus mecanismos de propuestas e iniciativas ciudadanas son directamente trasladables.
+**Relevancia para "Vivienda en Crisis"**: Modelo de referencia en civic tech española. Su arquitectura open-source y sus mecanismos de propuestas e iniciativas ciudadanas son directamente trasladables.
 
 **FixMyStreet (mySociety, UK)**
 Plataforma de reportes ciudadanos map-based creada en 2007. Interfaz de pin-on-map sin necesidad de conocer la autoridad responsable. Open source (Perl), deployada en 20+ países. URL: https://www.fixmystreet.com/
 
-**Relevancia para "Habitable"**: Modelo arquetípico de citizen reporting. Adaptación: "Habitable" se centra en vivienda (alquileres abusivos, malas condiciones, pisos turísticos ilegales) frente a infraestructura urbana.
+**Relevancia para "Vivienda en Crisis"**: Modelo arquetípico de citizen reporting. Adaptación: "Vivienda en Crisis" se centra en vivienda (alquileres abusivos, malas condiciones, pisos turísticos ilegales) frente a infraestructura urbana.
 
 **Unlock NYC**
 Herramienta tecnológica para identificar, registrar y reportar discriminación en vivienda en Nueva York. Los usuarios envían reportes a agencias de fair housing. URL referenciada en https://antievictionmap.com/allied-projects
 
-**Relevancia para "Habitable"**: Modelo directo de citizen reporting de violaciones del derecho a la vivienda.
+**Relevancia para "Vivienda en Crisis"**: Modelo directo de citizen reporting de violaciones del derecho a la vivienda.
 
 ### 4.3 — Portales de datos inmobiliarios privados (usar críticamente)
 
@@ -340,9 +340,9 @@ Herramienta tecnológica para identificar, registrar y reportar discriminación 
 
 ---
 
-## Lo que hace único a "Habitable": un análisis de diferenciación
+## Lo que hace único a "Vivienda en Crisis": un análisis de diferenciación
 
-Tras examinar el ecosistema completo de observatorios y herramientas existentes, emergen con claridad las tres aportaciones diferenciales de "Habitable":
+Tras examinar el ecosistema completo de observatorios y herramientas existentes, emergen con claridad las tres aportaciones diferenciales de "Vivienda en Crisis":
 
 **Ninguna plataforma española existente combina las tres dimensiones.** Datadista ofrece visualización de datos excelente pero sin participación ciudadana ni contraste salarial. El Observatorio del MIVAU proporciona datos oficiales extensos pero en formatos estáticos (PDF/boletines) sin interactividad ni relato ciudadano. Provivienda ofrece indicadores contextualizados pero sin granularidad geográfica sub-municipal. El Observatori DESCA hace investigación rigurosa desde los derechos humanos pero sin herramienta de datos abiertos. El **contraste sistemático precios-salarios** no existe en ninguna plataforma española. La **capacidad de reportes ciudadanos** sobre vivienda solo tiene precedentes internacionales (FixMyStreet, Unlock NYC, AEMP) pero ningún equivalente español centrado en vivienda. La **granularidad a nivel de sección censal** con datos integrados de múltiples fuentes oficiales (INE, MIVAU/SERPAVI, Catastro) es técnicamente viable y tiene precedente en Datadista.
 
@@ -352,6 +352,6 @@ Tras examinar el ecosistema completo de observatorios y herramientas existentes,
 
 Este informe recopila **más de 100 referencias citables** organizadas en cuatro bloques, de las cuales aproximadamente el **75%** están plenamente verificadas. Las fuentes cubren todo el espectro necesario para una memoria de TFM rigurosa: datos institucionales de primer nivel (CIS, CGPJ, Banco de España, Eurostat, OHCHR, Consejo de Europa), literatura académica indexada (en revistas como *Housing Studies*, *Urban Studies*, *IJURR*, *Journal of Urban Economics*, *Real Estate Economics*), periodismo de investigación independiente (Civio, Datadista, El Salto, elDiario.es, La Marea, Maldita.es) y documentación de movimientos sociales (PAH, Sindicatos de Inquilinos, Observatori DESC).
 
-Tres hallazgos transversales merecen atención especial. Primero, la **asimetría informativa** es tanto el problema que "Habitable" busca resolver como un campo académico con literatura consolidada que legitima teóricamente el proyecto. Segundo, el **patrón de puertas giratorias** entre política y sector inmobiliario está documentado con suficiente rigor investigativo para constituir un argumento estructural sólido. Tercero, la **desconexión entre datos oficiales y percepción mediática** (especialmente en el tema de la okupación) es en sí misma un caso de estudio que justifica la necesidad de herramientas de democratización informativa como "Habitable".
+Tres hallazgos transversales merecen atención especial. Primero, la **asimetría informativa** es tanto el problema que "Vivienda en Crisis" busca resolver como un campo académico con literatura consolidada que legitima teóricamente el proyecto. Segundo, el **patrón de puertas giratorias** entre política y sector inmobiliario está documentado con suficiente rigor investigativo para constituir un argumento estructural sólido. Tercero, la **desconexión entre datos oficiales y percepción mediática** (especialmente en el tema de la okupación) es en sí misma un caso de estudio que justifica la necesidad de herramientas de democratización informativa como "Vivienda en Crisis".
 
 Para las referencias marcadas con ⚠️, se recomienda verificación adicional accediendo directamente a las bases de datos académicas (Dialnet, Scopus, Web of Science) o a las páginas web institucionales de los editores antes de incluirlas en la versión definitiva de la memoria.
