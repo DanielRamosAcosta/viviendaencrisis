@@ -1,10 +1,10 @@
 ---
 id: VC-0004
 title: 'Redactar sección 0 de la memoria: portada, índice completo y páginas previas'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-02-27 18:35'
+updated_date: '2026-02-28 18:24'
 labels: []
 milestone: m-0
 dependencies: []
@@ -24,3 +24,9 @@ Elaborar todas las páginas y secciones previas al capítulo 1 de la memoria, in
 <!-- DOD:BEGIN -->
 - [ ] #1 All test suite is passing
 <!-- DOD:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Completadas portada, ficha del TF (sin resumen) e índice de contenidos. El trabajo restante se ha dividido en subtareas: VC-0004.01 (resumen ficha), VC-0004.02 (abstract) y VC-0004.03 (índice de tablas y figuras).
+<!-- SECTION:FINAL_SUMMARY:END -->
