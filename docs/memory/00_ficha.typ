@@ -23,8 +23,8 @@
   [*Idioma del trabajo:*], table.cell(fill: value-fill)[Castellano],
   [*Palabras clave*], table.cell(fill: value-fill)[_vivienda, datos abiertos, transparencia_],
   table.cell(colspan: 2, align: left)[*Resumen del Trabajo*],
-  table.cell(colspan: 2, align: left, fill: value-fill)[Máximo 250 palabras, con la finalidad, contexto de aplicación, metodología, resultados y conclusiones del trabajo],
+  table.cell(colspan: 2, align: left, fill: value-fill)[_Máximo 250 palabras, con la finalidad, contexto de aplicación, metodología, resultados y conclusiones del trabajo. Pendiente de la tarea VC-0013._],
   table.cell(colspan: 2, align: left)[*Abstract*],
-  table.cell(colspan: 2, align: left, fill: value-fill)[A maximum of 250 words, detailing the purpose, context of application, methodology, results and conclusions of the work],
+  table.cell(colspan: 2, align: left, fill: value-fill)[_A maximum of 250 words, detailing the purpose, context of application, methodology, results and conclusions of the work. Pending task VC-0013._],
   table.hline(stroke: 1.5pt),
 )
