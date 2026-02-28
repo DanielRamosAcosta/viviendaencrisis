@@ -4,7 +4,7 @@ title: 'Redactar sección 1.3: Impacto en sostenibilidad, ético-social y de div
 status: To Do
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-02-28 19:33'
+updated_date: '2026-02-28 19:35'
 labels: []
 milestone: m-0
 dependencies:
@@ -63,12 +63,11 @@ Esta sección analiza el impacto del proyecto en las 3 dimensiones de la Compete
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-- [ ] #2 El fichero `docs/memory/content/01_introduccion/03_impacto_en_sostenibilidad.typ` contiene la redacción completa (no placeholder)
-- [ ] #3 La memoria compila correctamente con `typst compile docs/memory/main.typ`
-- [ ] #4 Todas las citas bibliográficas están registradas en el fichero de bibliografía
-- [ ] #5 Las fuentes citadas han sido verificadas
-- [ ] #6 La sección es coherente con la sección 1.1 (Contexto y justificación) y no duplica contenido
+- [ ] #1 El fichero `docs/memory/content/01_introduccion/03_impacto_en_sostenibilidad.typ` contiene la redacción completa (no placeholder)
+- [ ] #2 La memoria compila correctamente con `typst compile docs/memory/main.typ`
+- [ ] #3 Todas las citas bibliográficas están registradas en el fichero de bibliografía
+- [ ] #4 Las fuentes citadas han sido verificadas
+- [ ] #5 La sección es coherente con la sección 1.1 (Contexto y justificación) y no duplica contenido
 <!-- DOD:END -->
 
 ## Acceptance Criteria
