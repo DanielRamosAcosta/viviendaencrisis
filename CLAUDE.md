@@ -67,6 +67,7 @@ Se contempla scraping puntual de portales inmobiliarios (Idealista, Fotocasa, et
 * **UOC**: Universitat Oberta de Catalunya
 * **PEC**: Prueba de Evaluación Continua
 * **P<XX>**: Una práctica concreta (P1 = Práctica 1)
+* **EIMT**: Estudios de Informática, Multimedia y Telecomunicación
 
 ## Aula virtual y enunciados completos
 
