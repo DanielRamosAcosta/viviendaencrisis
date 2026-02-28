@@ -4,7 +4,7 @@ title: 'Redactar sección 1.1: Contexto y justificación del Trabajo'
 status: In Progress
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-02-28 19:42'
+updated_date: '2026-02-28 20:05'
 labels: []
 milestone: m-0
 dependencies: []
@@ -60,27 +60,27 @@ Redactar la sección 1.1 "Contexto y justificación del Trabajo" de la memoria d
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
-- [ ] #1 El fichero `docs/memory/content/01_introduccion/01_contexto_y_justificacion_del_trabajo.typ` contiene la redacción completa (no placeholder)
-- [ ] #2 La memoria compila correctamente con `typst compile docs/memory/main.typ`
-- [ ] #3 Todas las citas bibliográficas utilizadas están registradas en el fichero de bibliografía del proyecto
+- [x] #1 El fichero `docs/memory/content/01_introduccion/01_contexto_y_justificacion_del_trabajo.typ` contiene la redacción completa (no placeholder)
+- [x] #2 La memoria compila correctamente con `typst compile docs/memory/main.typ`
+- [x] #3 Todas las citas bibliográficas utilizadas están registradas en el fichero de bibliografía del proyecto
 - [ ] #4 Las fuentes citadas han sido verificadas (URLs accesibles o referencias bibliográficas correctas)
 - [ ] #5 La sección ha sido revisada para coherencia con el resto del capítulo 1 (no contradice ni duplica contenido de secciones 1.2-1.7)
 <!-- DOD:END -->
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 La sección contextualiza el problema habitacional en España con al menos 3 dimensiones (precios, acceso, brecha salarial, demografía, etc.) respaldadas por datos con cita
-- [ ] #2 Se describe la asimetría informativa del mercado inmobiliario: fragmentación de datos, control por actores privados, falta de herramientas públicas para la ciudadanía
-- [ ] #3 Se justifica la necesidad de un observatorio público de vivienda basado en datos abiertos, conectando transparencia con empoderamiento ciudadano
-- [ ] #4 Se presenta la motivación del TFM (relevancia social y académica del problema)
-- [ ] #5 Se menciona brevemente el enfoque del proyecto (plataforma web, datos abiertos, reportes ciudadanos) sin entrar en detalle técnico
-- [ ] #6 No se solapa con el contenido de las secciones 2.1 (Contexto del mercado) ni 2.3 (Plataformas existentes): la sección introduce y justifica, no analiza en profundidad
-- [ ] #7 Todas las afirmaciones factuales tienen cita a fuente verificable (paper, informe oficial, medio de comunicación de referencia)
-- [ ] #8 Mínimo 5 citas bibliográficas distintas, priorizando: papers > informes de organismos públicos > periodismo de investigación
-- [ ] #9 La extensión es adecuada para una sección introductoria de TFM (entre 1500 y 3000 palabras orientativamente)
-- [ ] #10 El texto está escrito en español formal académico sin lenguaje coloquial ni activista
-- [ ] #11 El fichero Typst compila correctamente con `typst compile docs/memory/main.typ` sin errores ni warnings relevantes
-- [ ] #12 No incluye análisis de impacto en sostenibilidad, ético-social ni diversidad (eso se aborda en la sección 1.3, tarea VC-0007)
+- [x] #1 La sección contextualiza el problema habitacional en España con al menos 3 dimensiones (precios, acceso, brecha salarial, demografía, etc.) respaldadas por datos con cita
+- [x] #2 Se describe la asimetría informativa del mercado inmobiliario: fragmentación de datos, control por actores privados, falta de herramientas públicas para la ciudadanía
+- [x] #3 Se justifica la necesidad de un observatorio público de vivienda basado en datos abiertos, conectando transparencia con empoderamiento ciudadano
+- [x] #4 Se presenta la motivación del TFM (relevancia social y académica del problema)
+- [x] #5 Se menciona brevemente el enfoque del proyecto (plataforma web, datos abiertos, reportes ciudadanos) sin entrar en detalle técnico
+- [x] #6 No se solapa con el contenido de las secciones 2.1 (Contexto del mercado) ni 2.3 (Plataformas existentes): la sección introduce y justifica, no analiza en profundidad
+- [x] #7 Todas las afirmaciones factuales tienen cita a fuente verificable (paper, informe oficial, medio de comunicación de referencia)
+- [x] #8 Mínimo 5 citas bibliográficas distintas, priorizando: papers > informes de organismos públicos > periodismo de investigación
+- [x] #9 La extensión es adecuada para una sección introductoria de TFM (entre 1500 y 3000 palabras orientativamente)
+- [x] #10 El texto está escrito en español formal académico sin lenguaje coloquial ni activista
+- [x] #11 El fichero Typst compila correctamente con `typst compile docs/memory/main.typ` sin errores ni warnings relevantes
+- [x] #12 No incluye análisis de impacto en sostenibilidad, ético-social ni diversidad (eso se aborda en la sección 1.3, tarea VC-0007)
 <!-- AC:END -->
 
 ## Implementation Plan
@@ -125,3 +125,24 @@ El agente `source-verifier` revisa todas las citas incluidas:
 - Revisar coherencia con las secciones adyacentes (1.2 Objetivos, cap. 2)
 - Verificar extensión y formato
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+## Ejecución completada (2026-02-28)
+
+### Fuentes verificadas
+- @cis_barometro_2026: URL accesible, contenido confirmado (42,6%, enero 2026)
+- @civio_megatenedores_2024: URL accesible, cifras confirmadas (737 megatenedores, 178.000+ viviendas)
+- @navalkha_2021: URL accesible, autoría corregida (Chenab Navalkha, no Puig de la Bellacasa)
+- PDFs de BdE, Fotocasa/InfoJobs, IDRA: accesibles pero no parseables vía web; documentos oficiales referenciados en 4 informes de investigación
+
+### Corrección aplicada
+- La tesis del MIT citada como Puig de la Bellacasa (2022) es en realidad de Chenab Navalkha (2021). Corregido en el fichero .typ y en references.bib.
+
+### Estadísticas del resultado
+- 21 citas únicas de ~15 fuentes distintas
+- ~1929 palabras
+- 2 comentarios TODO para refuerzos visuales
+- Compila sin errores
+<!-- SECTION:NOTES:END -->
