@@ -2,9 +2,11 @@
 
 == Contexto y justificación del Trabajo
 
-// Describir el problema de la vivienda en España: opacidad del mercado,
+// TODO: Describir el problema de la vivienda en España: opacidad del mercado,
 // dificultad de acceso a datos comparativos, falta de herramientas públicas
 // para la ciudadanía. Motivación personal y académica.
+
+La financiarización de la vivienda se ha convertido en un fenómeno estructural que transforma los mercados residenciales a escala global @aalbers2017variegated. Este proceso, en el que los hogares y las viviendas se integran en circuitos financieros cada vez más complejos, ha sido analizado en profundidad en la intersección entre globalización y variedades de capitalismo @fernandez2016financialization.
 
 == Objetivos del Trabajo
 

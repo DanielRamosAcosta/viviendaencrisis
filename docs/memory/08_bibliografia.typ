@@ -1,4 +1,3 @@
 = Bibliografía
 
-// Referencias bibliográficas en formato consistente.
-// Solo incluir referencias citadas en el texto.
+#bibliography("refs/references.bib", title: none, style: "apa")
