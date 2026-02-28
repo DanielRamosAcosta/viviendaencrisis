@@ -1,7 +1,7 @@
 ---
 id: VC-0005
 title: 'Redactar sección 1.1: Contexto y justificación del Trabajo'
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
 updated_date: '2026-02-28 20:05'
@@ -63,8 +63,8 @@ Redactar la sección 1.1 "Contexto y justificación del Trabajo" de la memoria d
 - [x] #1 El fichero `docs/memory/content/01_introduccion/01_contexto_y_justificacion_del_trabajo.typ` contiene la redacción completa (no placeholder)
 - [x] #2 La memoria compila correctamente con `typst compile docs/memory/main.typ`
 - [x] #3 Todas las citas bibliográficas utilizadas están registradas en el fichero de bibliografía del proyecto
-- [ ] #4 Las fuentes citadas han sido verificadas (URLs accesibles o referencias bibliográficas correctas)
-- [ ] #5 La sección ha sido revisada para coherencia con el resto del capítulo 1 (no contradice ni duplica contenido de secciones 1.2-1.7)
+- [x] #4 Las fuentes citadas han sido verificadas (URLs accesibles o referencias bibliográficas correctas)
+- [x] #5 La sección ha sido revisada para coherencia con el resto del capítulo 1 (no contradice ni duplica contenido de secciones 1.2-1.7)
 <!-- DOD:END -->
 
 ## Acceptance Criteria
@@ -146,3 +146,9 @@ El agente `source-verifier` revisa todas las citas incluidas:
 - 2 comentarios TODO para refuerzos visuales
 - Compila sin errores
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+## Sección 1.1: Contexto y justificación del Trabajo — Completada\n\n### Ficheros modificados\n- `docs/memory/content/01_introduccion/01_contexto_y_justificacion_del_trabajo.typ` — Redacción completa (~1929 palabras)\n- `docs/memory/refs/references.bib` — 23 entradas BibTeX nuevas (fichero estaba vacío)\n\n### Estructura final\n1. La vivienda como problema social prioritario (CIS 42,6%, Eurobarómetro 35% vs 13% UE)\n2. Dimensiones de la crisis: precios, acceso y brecha salarial (compra +42%, alquiler +58%, brecha alquiler/salarios 4:1, emancipación 15,2%, desahucios 27.564, vivienda social 2,5% vs 10% UE)\n3. Datos fragmentados, poder concentrado (asimetría informativa, IDRA, Civio megatenedores, Ambrose et al., Wachsmuth et al.)\n4. El vacío de herramientas públicas y la necesidad de un observatorio ciudadano (civic tech, Navalkha 2021, Maharawal & McElroy 2018)\n5. Motivación y enfoque del proyecto (Art. 47 CE, Ley 12/2023, Consejo de Europa, plataforma web + datos abiertos + reportes ciudadanos)\n\n### Citas: 21 únicas de ~15 fuentes\n- Académicas: Ambrose et al. (2021), Wachsmuth et al. (2023), Aalbers (2016), Maharawal & McElroy (2018), Navalkha (2021)\n- Institucionales: CIS, Banco de España, CGPJ, Defensor del Pueblo, CJE, Housing Europe, Consejo de Europa, ONU\n- Organizaciones/periodismo: IDRA, Civio, Fotocasa/InfoJobs\n\n### Refuerzos visuales (TODO)\n- Gráfico de líneas: evolución precio alquiler vs. salarios (2015-2024)\n- Diagrama/infografía: fragmentación de fuentes de datos de vivienda en España\n\n### Corrección aplicada\n- Tesis MIT: autor corregido de \"Puig de la Bellacasa (2022)\" a \"Navalkha (2021)\" tras verificación URL\n\n### Verificación\n- Compila sin errores con `typst compile docs/memory/main.typ`\n- 3 URLs verificadas directamente (CIS, Civio, MIT DSpace)\n- Sin solapamiento con secciones 1.2-1.7 ni capítulos 2.1/2.3 (todos en placeholder)"]
+<!-- SECTION:FINAL_SUMMARY:END -->
