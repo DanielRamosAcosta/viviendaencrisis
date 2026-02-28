@@ -1,10 +1,10 @@
 ---
 id: VC-0005
 title: 'Redactar sección 1.1: Contexto y justificación del Trabajo'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-02-28 19:33'
+updated_date: '2026-02-28 19:42'
 labels: []
 milestone: m-0
 dependencies: []
