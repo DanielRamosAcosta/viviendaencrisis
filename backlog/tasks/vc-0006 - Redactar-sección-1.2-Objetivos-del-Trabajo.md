@@ -1,10 +1,10 @@
 ---
 id: VC-0006
 title: 'Redactar sección 1.2: Objetivos del Trabajo'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-02-27 18:45'
+updated_date: '2026-03-01 12:24'
 labels: []
 milestone: m-0
 dependencies: []
@@ -19,12 +19,16 @@ Definir objetivos generales y específicos del TFM. OBLIGATORIO incluir el compr
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
+- [x] #1 All test suite is passing
 <!-- DOD:END -->
-
-
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Incluye el compromiso de desplegar la aplicación web en un servidor público (requisito obligatorio para evaluación)
+- [x] #1 Incluye el compromiso de desplegar la aplicación web en un servidor público (requisito obligatorio para evaluación)
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Sección 1.2 "Objetivos del Trabajo" redactada con 1 objetivo general y 8 objetivos específicos evaluables. Incluye los compromisos obligatorios de despliegue en servidor público y accesibilidad WCAG 2.1 AA. Añadido también un objetivo de diseño UX centrado en el usuario. Fichero: docs/memory/content/01_introduccion/02_objetivos_del_trabajo.typ
+<!-- SECTION:FINAL_SUMMARY:END -->
