@@ -38,32 +38,24 @@
 
 #pagebreak()
 
-#include "content/02_estado_del_arte/index.typ"
+#include "content/02_materiales_y_metodos/index.typ"
 
 #pagebreak()
 
-#include "content/03_diseno/index.typ"
+#include "content/03_resultados/index.typ"
 
 #pagebreak()
 
-#include "content/04_implementacion/index.typ"
+#include "content/04_conclusiones/index.typ"
 
 #pagebreak()
 
-#include "content/05_pruebas/index.typ"
+#include "content/05_glosario/index.typ"
 
 #pagebreak()
 
-#include "content/06_conclusiones/index.typ"
+#include "content/06_bibliografia/index.typ"
 
 #pagebreak()
 
-#include "content/07_glosario/index.typ"
-
-#pagebreak()
-
-#include "content/08_bibliografia/index.typ"
-
-#pagebreak()
-
-#include "content/09_anexos/index.typ"
+#include "content/07_anexos/index.typ"

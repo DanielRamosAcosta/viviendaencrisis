@@ -1,4 +1,4 @@
-= Conclusiones
+= Conclusiones y trabajos futuros
 
 #include "01_conclusiones.typ"
 

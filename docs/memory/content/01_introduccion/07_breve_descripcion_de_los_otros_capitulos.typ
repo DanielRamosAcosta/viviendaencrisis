@@ -1,8 +1,6 @@
 == Breve descripción de los otros capítulos de la memoria
 
-// Sección recomendada por la plantilla EIMT-UOC.
-// Objetivo: servir como guía de lectura para el tribunal/lector.
-// En 1-2 párrafos, describir qué cubre cada capítulo restante
-// (estado del arte, diseño, implementación, conclusiones...).
-// Facilita la navegación del documento.
-// Breve explicación de los contenidos de cada capítulo y su relación con el proyecto global.
+// TODO: Breve explicación de los contenidos de cada capítulo y su relación
+// con el proyecto global.
+// Capítulos: Materiales y métodos, Resultados, Conclusiones y trabajos
+// futuros, Glosario, Bibliografía, Anexos.
