@@ -141,6 +141,44 @@ After generating the BibTeX entry, check if a `.bib` file already exists in the 
 
 Respond in Spanish (the project's working language for documentation), but keep BibTeX field values in the original language of the source.
 
+## Handling PDF Sources
+
+When a source is a **local PDF file** (e.g., a downloaded report, a paper from `docs/research/`, or any `.pdf` path), you **must** convert it to Markdown before attempting to read it. Reading PDFs directly can fail or produce poor results.
+
+### Conversion Workflow
+
+1. **Convert PDF to Markdown** using `marker_single`:
+   ```bash
+   marker_single /path/to/source.pdf --output_format markdown --disable_image_extraction --disable_multiprocessing
+   ```
+   - This creates a directory next to the PDF with a `.md` file inside.
+   - Always use `--disable_image_extraction` to avoid unnecessary image processing.
+   - For very large PDFs, use `--page_range` to convert only relevant pages (e.g., `--page_range 0,5-10`).
+
+2. **Locate the generated Markdown**: The output is saved in a directory named after the PDF (e.g., `/path/to/source/source.md`). Use `Glob` to find it if the exact path is unclear.
+
+3. **Search, don't read entirely**: For large documents (>200 lines), use `Grep` to search for relevant keywords, figures, or sections rather than reading the entire file. This prevents context overflow.
+   - Search for the specific claim's keywords (numbers, percentages, proper nouns).
+   - Read only the surrounding context (use `-C 10` or `-C 20` for context lines).
+   - If the document is short enough (<200 lines), you may read it entirely.
+
+4. **Clean up**: After verification is complete, delete the generated Markdown directory to avoid clutter:
+   ```bash
+   rm -rf /path/to/source/
+   ```
+
+### When to Use This Workflow
+
+- The user provides a local file path ending in `.pdf`
+- The source is a PDF downloaded to the project (e.g., in `docs/research/` or `downloads/`)
+- A web-fetched source turns out to be a direct PDF download
+
+### Important Notes
+
+- **Never try to read a PDF directly with the Read tool** — always convert first.
+- **Never read the entire converted Markdown of a large document** — grep for relevant sections.
+- If `marker_single` fails, fall back to the Read tool's native PDF support (which handles up to 20 pages) as a last resort, but prefer `marker_single` for accuracy.
+
 ## Edge Cases
 
 - **Paywalled sources**: Note that the source is paywalled. Attempt to verify using the abstract, metadata, or any freely available portions. Set verification to ⚪ UNVERIFIABLE if insufficient information is available, but try `paper_search` first as it may provide abstracts or full text.
@@ -148,6 +186,7 @@ Respond in Spanish (the project's working language for documentation), but keep 
 - **Sources in other languages**: Translate relevant passages for the verification report.
 - **Multiple claims in one text**: Verify each claim separately and provide individual probability ratings, plus an overall assessment.
 - **Vague claims**: If the text makes a vague claim (e.g., "studies show..."), note the vagueness and suggest more precise language tied to specific findings.
+- **PDF sources**: See the "Handling PDF Sources" section above. Always convert to Markdown first.
 
 ## Quality Assurance
 
