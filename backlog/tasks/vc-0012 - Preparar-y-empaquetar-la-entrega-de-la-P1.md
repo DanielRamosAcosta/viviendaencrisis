@@ -4,7 +4,7 @@ title: Preparar y empaquetar la entrega de la P1
 status: To Do
 assignee: []
 created_date: '2026-02-27 18:45'
-updated_date: '2026-03-01 19:39'
+updated_date: '2026-03-01 19:45'
 labels: []
 milestone: m-0
 dependencies:
@@ -23,19 +23,37 @@ ordinal: 2000
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Compilar la memoria a PDF, preparar todos los documentos de entrega con la nomenclatura correcta y empaquetar en ZIP si procede.
+Compilar los documentos a PDF, renombrarlos según la nomenclatura del enunciado y empaquetarlos en un ZIP para la entrega.
 
-Nomenclatura requerida:
-- Memoria: PEC1_mem_Apellidos_Nombre (PDF)
-- Otros documentos: PAC1_rec_Apellidos_Nombre
-- ZIP opcional: PEC1_Apellidos_Nombre con dos directorios (documentación y proyecto)
+**Pasos:**
+
+1. Compilar la memoria (`docs/main.typ`) a PDF
+2. Compilar el documento de funcionalidades a PDF
+3. Renombrar los ficheros según nomenclatura del enunciado:
+   - Memoria → `PEC1_mem_Apellidos_Nombre.pdf`
+   - Documento de funcionalidades → `PAC1_rec_Apellidos_Nombre.pdf`
+   - Checklist → `PAC1_rec_Apellidos_Nombre` (el de la checklist, con nombre distinto o sufijo)
+   - Apuntes para evaluar → `PAC1_rec_Apellidos_Nombre` (idem)
+4. Comprimir todo en un ZIP: `PEC1_Apellidos_Nombre.zip` con dos directorios (documentación y proyecto)
+
+**Ficheros a incluir en el ZIP:**
+- `PEC1_mem_Apellidos_Nombre.pdf` — Memoria compilada
+- `PAC1_rec_Apellidos_Nombre_funcionalidades.pdf` — Documento de funcionalidades
+- `PAC1_rec_Apellidos_Nombre_checklist.md` — Checklist con todo marcado (`docs/checklist_es.md`)
+- `PAC1_rec_Apellidos_Nombre_apuntes.md` — Notas para evaluar (`docs/APUNTES_PARA_EVALUAR.md`)
+
+**Nomenclatura (del enunciado P1):**
+- Memoria: `PEC1_mem_Apellidos_Nombre` (PDF)
+- Otros documentos/materiales: `PAC1_rec_Apellidos_Nombre`
+- ZIP: `PEC1_Apellidos_Nombre` con contenidos en dos directorios: documentación y proyecto
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
 - [ ] #1 Memoria compilada a PDF sin errores
-- [ ] #2 Ficheros nombrados según nomenclatura del enunciado
-- [ ] #3 ZIP con estructura de dos directorios (documentación y proyecto) si se opta por entrega unificada
+- [ ] #2 Documento de funcionalidades compilado a PDF sin errores
+- [ ] #3 Todos los ficheros renombrados según nomenclatura del enunciado P1
+- [ ] #4 ZIP generado con los 4 ficheros: memoria PDF, funcionalidades PDF, checklist MD, apuntes MD
 <!-- AC:END -->
 
 ## Definition of Done
