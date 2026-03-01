@@ -5,3 +5,4 @@
 // En 1-2 párrafos, describir qué cubre cada capítulo restante
 // (estado del arte, diseño, implementación, conclusiones...).
 // Facilita la navegación del documento.
+// Breve explicación de los contenidos de cada capítulo y su relación con el proyecto global.

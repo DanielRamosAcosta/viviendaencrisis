@@ -1,5 +1,3 @@
 == Enfoque y método seguido
 
-// Metodología de desarrollo (ágil, iterativa...).
-// Herramientas y tecnologías seleccionadas.
-// Fuentes de datos utilizadas.
+// Indicar cuáles son las posibles estrategias para llevar a cabo el trabajo e indicar cuál es la estrategia elegida (desarrollar un producto nuevo, adaptar un producto existente…). Valorar por qué esta es la estrategia más apropiada para conseguir los objetivos.
