@@ -1,0 +1,47 @@
+start: 2026-02-02
+end: 2026-06-19
+tasks:
+  - name: "P1 — Plan de Trabajo"
+    id: p1
+    start: 2026-02-02
+    end: 2026-03-01
+  - name: "P2 — Foundations & First Dev"
+    id: p2
+    start: 2026-03-07
+    end: 2026-03-29
+    dependencies:
+      - id: p1
+  - name: "P3 — Beta Pública"
+    id: p3
+    start: 2026-04-04
+    end: 2026-04-26
+    dependencies:
+      - id: p2
+  - name: "P4 — Versión Final"
+    id: p4
+    start: 2026-05-02
+    end: 2026-05-31
+    dependencies:
+      - id: p3
+  - name: "P5 — Defensa Virtual"
+    id: p5
+    start: 2026-06-06
+    end: 2026-06-14
+    dependencies:
+      - id: p4
+milestones:
+  - name: "Entrega P1"
+    date: 2026-03-01
+    show-date: true
+  - name: "Entrega P2"
+    date: 2026-03-29
+    show-date: true
+  - name: "Entrega P3"
+    date: 2026-04-26
+    show-date: true
+  - name: "Entrega P4"
+    date: 2026-05-31
+    show-date: true
+  - name: "Defensa"
+    date: 2026-06-14
+    show-date: true

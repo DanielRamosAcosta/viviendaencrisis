@@ -1,0 +1,206 @@
+start: 2026-02-02
+end: 2026-06-19
+tasks:
+  - name: "P1 — Plan de Trabajo"
+    subtasks:
+      - name: "Memoria: introducción y planificación"
+        id: p1-memoria
+        start: 2026-02-02
+        end: 2026-03-01
+      - name: "Documento de funcionalidades"
+        id: p1-funcionalidades
+        start: 2026-02-20
+        end: 2026-03-01
+      - name: "Checklist y entrega P1"
+        id: p1-entrega
+        start: 2026-02-25
+        end: 2026-03-01
+  - name: "P2 — Foundations"
+    subtasks:
+      - name: "Scaffolding monorepo"
+        id: p2-scaffold
+        start: 2026-03-07
+        end: 2026-03-09
+      - name: "Diseño BD (schemas MongoDB)"
+        id: p2-schemas
+        start: 2026-03-08
+        end: 2026-03-09
+      - name: "CI/CD básico (GitHub Actions)"
+        id: p2-cicd
+        start: 2026-03-09
+        end: 2026-03-10
+        dependencies:
+          - id: p2-scaffold
+      - name: "Autenticación (JWT + roles)"
+        id: p2-auth
+        start: 2026-03-10
+        end: 2026-03-15
+        dependencies:
+          - id: p2-scaffold
+          - id: p2-schemas
+      - name: "Pipeline ETL (datos abiertos)"
+        id: p2-etl
+        start: 2026-03-10
+        end: 2026-03-16
+        dependencies:
+          - id: p2-scaffold
+      - name: "Landing page"
+        id: p2-landing
+        start: 2026-03-15
+        end: 2026-03-17
+        dependencies:
+          - id: p2-scaffold
+      - name: "Dashboard: estructura + evolución precios"
+        id: p2-dashboard
+        start: 2026-03-16
+        end: 2026-03-22
+        dependencies:
+          - id: p2-scaffold
+          - id: p2-etl
+      - name: "Memoria P2"
+        id: p2-memoria
+        start: 2026-03-15
+        end: 2026-03-29
+  - name: "P3 — Beta Pública"
+    subtasks:
+      - name: "Dashboard: comparativas entre zonas"
+        id: p3-comparativas
+        start: 2026-04-04
+        end: 2026-04-07
+        dependencies:
+          - id: p2-dashboard
+      - name: "Dashboard: mapas coropléticos"
+        id: p3-mapas
+        start: 2026-04-05
+        end: 2026-04-13
+        dependencies:
+          - id: p2-dashboard
+      - name: "Dashboard: indicadores socioeconómicos"
+        id: p3-indicadores
+        start: 2026-04-08
+        end: 2026-04-11
+        dependencies:
+          - id: p2-dashboard
+      - name: "Reportes Airbnb: formulario"
+        id: p3-reportes-form
+        start: 2026-04-07
+        end: 2026-04-13
+        dependencies:
+          - id: p2-auth
+      - name: "Reportes Airbnb: listado público + mapa"
+        id: p3-reportes-list
+        start: 2026-04-13
+        end: 2026-04-17
+        dependencies:
+          - id: p3-reportes-form
+      - name: "Despliegue público (Docker/Vercel)"
+        id: p3-deploy
+        start: 2026-04-17
+        end: 2026-04-20
+        dependencies:
+          - id: p2-dashboard
+      - name: "Testing y QA de la beta"
+        id: p3-qa
+        start: 2026-04-20
+        end: 2026-04-22
+        dependencies:
+          - id: p3-deploy
+      - name: "Video demo (5 min)"
+        id: p3-video
+        start: 2026-04-23
+        end: 2026-04-25
+        dependencies:
+          - id: p3-deploy
+      - name: "Memoria P3"
+        id: p3-memoria
+        start: 2026-04-20
+        end: 2026-04-26
+  - name: "P4 — Versión Final"
+    subtasks:
+      - name: "Reportes Airbnb: moderación admin"
+        id: p4-moderacion
+        start: 2026-05-02
+        end: 2026-05-06
+        dependencies:
+          - id: p3-reportes-list
+      - name: "Reviews inmobiliarias: CRUD reseñas"
+        id: p4-reviews
+        start: 2026-05-04
+        end: 2026-05-11
+        dependencies:
+          - id: p2-auth
+          - id: p3-deploy
+      - name: "Reviews inmobiliarias: ranking público"
+        id: p4-ranking
+        start: 2026-05-11
+        end: 2026-05-14
+        dependencies:
+          - id: p4-reviews
+      - name: "Panel admin general"
+        id: p4-admin
+        start: 2026-05-07
+        end: 2026-05-11
+        dependencies:
+          - id: p2-auth
+      - name: "Accesibilidad WCAG 2.1 AA"
+        id: p4-a11y
+        start: 2026-05-14
+        end: 2026-05-17
+      - name: "Seguridad (OWASP top 10)"
+        id: p4-security
+        start: 2026-05-15
+        end: 2026-05-18
+      - name: "Polish UI/UX"
+        id: p4-polish
+        start: 2026-05-18
+        end: 2026-05-21
+      - name: "Memoria final"
+        id: p4-memoria
+        start: 2026-05-10
+        end: 2026-05-25
+      - name: "Presentación escrito-visual"
+        id: p4-presentacion
+        start: 2026-05-22
+        end: 2026-05-27
+      - name: "Video presentación (20 min)"
+        id: p4-video
+        start: 2026-05-26
+        end: 2026-05-31
+  - name: "P5 — Defensa Virtual"
+    subtasks:
+      - name: "Preparar defensa oral"
+        id: p5-defensa
+        start: 2026-06-06
+        end: 2026-06-12
+      - name: "Bugfixes pre-defensa"
+        id: p5-bugfixes
+        start: 2026-06-06
+        end: 2026-06-10
+      - name: "Revisión app desplegada"
+        id: p5-revision
+        start: 2026-06-10
+        end: 2026-06-12
+      - name: "Informe autoevaluación"
+        id: p5-autoeval
+        start: 2026-06-08
+        end: 2026-06-11
+      - name: "Actualizar video (si necesario)"
+        id: p5-video
+        start: 2026-06-12
+        end: 2026-06-14
+milestones:
+  - name: "Entrega P1"
+    date: 2026-03-01
+    show-date: true
+  - name: "Entrega P2"
+    date: 2026-03-29
+    show-date: true
+  - name: "Entrega P3"
+    date: 2026-04-26
+    show-date: true
+  - name: "Entrega P4"
+    date: 2026-05-31
+    show-date: true
+  - name: "Defensa"
+    date: 2026-06-14
+    show-date: true
