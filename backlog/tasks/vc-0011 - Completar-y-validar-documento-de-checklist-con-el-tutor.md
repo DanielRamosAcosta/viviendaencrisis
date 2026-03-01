@@ -1,10 +1,10 @@
 ---
 id: VC-0011
 title: Completar y validar documento de checklist con el tutor
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-03-01 19:39'
+updated_date: '2026-03-01 19:40'
 labels: []
 milestone: m-0
 dependencies: []
