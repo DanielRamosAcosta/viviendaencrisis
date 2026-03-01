@@ -1,10 +1,10 @@
 ---
 id: VC-0012
 title: Preparar y empaquetar la entrega de la P1
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-02-27 18:45'
-updated_date: '2026-03-01 19:45'
+updated_date: '2026-03-01 19:46'
 labels: []
 milestone: m-0
 dependencies:
