@@ -1,10 +1,10 @@
 ---
 id: VC-0007
 title: 'Redactar sección 1.3: Impacto en sostenibilidad, ético-social y de diversidad'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-03-01 12:29'
+updated_date: '2026-03-01 12:35'
 labels: []
 milestone: m-0
 dependencies:
