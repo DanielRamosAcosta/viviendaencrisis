@@ -4,10 +4,12 @@ title: 'CI/CD básico (GitHub Actions: lint, test, build)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
+updated_date: '2026-03-01 17:56'
 labels:
   - infra
 milestone: m-1
-dependencies: []
+dependencies:
+  - VC-0014
 priority: medium
 ---
 
