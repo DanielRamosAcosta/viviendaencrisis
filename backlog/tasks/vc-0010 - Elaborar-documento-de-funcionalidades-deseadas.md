@@ -1,13 +1,15 @@
 ---
 id: VC-0010
 title: Elaborar documento de funcionalidades deseadas
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
+updated_date: '2026-03-01 19:37'
 labels: []
 milestone: m-0
 dependencies: []
 priority: high
+ordinal: 500
 ---
 
 ## Description
