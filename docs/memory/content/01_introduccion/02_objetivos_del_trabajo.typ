@@ -1,4 +1,4 @@
-== Objetivos del Trabajo
+== Objetivos del Trabajo <sec:objetivos>
 
 El propósito central de este trabajo consiste en diseñar y desarrollar una plataforma web de datos abiertos que facilite la transparencia del mercado de la vivienda en España, poniendo a disposición de la ciudadanía herramientas de visualización y participación que reduzcan la asimetría informativa documentada en las secciones precedentes. Este objetivo general se articula a su vez en un conjunto de objetivos específicos que delimitan el alcance funcional, técnico y de despliegue del proyecto, y que servirán como criterio de evaluación en las conclusiones finales del trabajo.
 
