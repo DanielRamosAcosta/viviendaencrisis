@@ -4,10 +4,13 @@ title: 'Panel admin general (gestión usuarios, dashboard moderación)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
+updated_date: '2026-03-01 17:56'
 labels:
   - admin
 milestone: m-3
-dependencies: []
+dependencies:
+  - VC-0017
+  - VC-0027
 priority: medium
 ---
 
