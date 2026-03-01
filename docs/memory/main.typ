@@ -22,6 +22,18 @@
 
 #pagebreak()
 
+#outline(
+  title: [Índice de figuras],
+  target: figure.where(kind: image),
+)
+
+#outline(
+  title: [Índice de tablas],
+  target: figure.where(kind: table),
+)
+
+#pagebreak()
+
 #include "content/01_introduccion/index.typ"
 
 #pagebreak()
