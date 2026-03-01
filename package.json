@@ -3,7 +3,8 @@
     "build:docs": "typst compile docs/memory/main.typ"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "jsdom": "^28.1.0"
   },
   "config": {
     "commitizen": {
