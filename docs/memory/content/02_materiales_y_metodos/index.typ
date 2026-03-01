@@ -1,4 +1,4 @@
-= Materiales y métodos
+= Materiales y métodos <cap:materiales>
 
 #include "01_analisis_de_mercado.typ"
 

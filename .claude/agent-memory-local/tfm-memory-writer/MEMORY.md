@@ -52,3 +52,17 @@ Preferred: replace with real citation or restructure the sentence.
 - Covers: ODS alignment table + impact synthesis table
 - Does NOT repeat price/salary data from 1.1 — cross-references explicitly
 - Pattern: 2 intro paragraphs → 3 subsections (===) → 2 synthesis tables (===)
+- Has NO `<sec:>` label on its `==` heading — reference as prose ("sección 1.3") not as `@sec:`
+
+### 04_enfoque_y_metodo_seguido — DONE (P1 delivery)
+- Covers: alternatives analysis table (5 OSS projects), chosen strategy, DCU/iterative/XP/validation methodology, data strategy, tech stack
+- Label: `<sec:enfoque>` on the `==` heading
+- 5 sub-sections (`===`): Estrategias descartadas, Estrategia elegida, Metodología, Datos, Stack
+- Only external citation: `@akour_serverless_2025` (serverless energy efficiency, in Hono justification)
+- Cross-refs: `@sec:objetivos` (valid); section 1.3 referenced in prose only (no label exists)
+
+## Label Map (confirmed as of P1)
+- `<sec:contexto>` → 01_contexto_y_justificacion_del_trabajo.typ
+- `<sec:objetivos>` → 02_objetivos_del_trabajo.typ
+- `<sec:enfoque>` → 04_enfoque_y_metodo_seguido.typ
+- Section 1.3 (impacto sostenibilidad): NO label — always use prose ("sección 1.3")

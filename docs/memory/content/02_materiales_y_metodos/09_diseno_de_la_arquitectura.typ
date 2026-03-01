@@ -1,4 +1,4 @@
-== Diseño de la arquitectura
+== Diseño de la arquitectura <sec:arquitectura>
 
 // TODO: Arquitectura del sistema (monorepo, frontend/backend/BD), diagrama
 // de componentes, justificación del stack tecnológico (Next.js, Hono,
