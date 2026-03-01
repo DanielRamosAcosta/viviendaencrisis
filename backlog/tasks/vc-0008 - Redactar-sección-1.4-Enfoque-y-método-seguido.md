@@ -1,9 +1,10 @@
 ---
 id: VC-0008
 title: 'Redactar sección 1.4: Enfoque y método seguido'
-status: To Do
+status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
+updated_date: '2026-03-01 17:34'
 labels: []
 milestone: m-0
 dependencies: []
