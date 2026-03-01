@@ -6,10 +6,12 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
+updated_date: '2026-03-01 17:56'
 labels:
   - reportes-airbnb
 milestone: m-2
-dependencies: []
+dependencies:
+  - VC-0025
 priority: high
 ---
 
