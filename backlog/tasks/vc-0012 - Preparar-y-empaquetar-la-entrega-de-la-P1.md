@@ -1,10 +1,10 @@
 ---
 id: VC-0012
 title: Preparar y empaquetar la entrega de la P1
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-02-27 18:45'
-updated_date: '2026-03-01 19:46'
+updated_date: '2026-03-01 19:47'
 labels: []
 milestone: m-0
 dependencies:
@@ -50,11 +50,17 @@ Compilar los documentos a PDF, renombrarlos según la nomenclatura del enunciado
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Memoria compilada a PDF sin errores
-- [ ] #2 Documento de funcionalidades compilado a PDF sin errores
-- [ ] #3 Todos los ficheros renombrados según nomenclatura del enunciado P1
-- [ ] #4 ZIP generado con los 4 ficheros: memoria PDF, funcionalidades PDF, checklist MD, apuntes MD
+- [x] #1 Memoria compilada a PDF sin errores
+- [x] #2 Documento de funcionalidades compilado a PDF sin errores
+- [x] #3 Todos los ficheros renombrados según nomenclatura del enunciado P1
+- [x] #4 ZIP generado con los 4 ficheros: memoria PDF, funcionalidades PDF, checklist MD, apuntes MD
 <!-- AC:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Entrega P1 empaquetada correctamente.\n\n**Ficheros generados:**\n- `PEC1_mem_Ramos_Acosta_Daniel.pdf` — Memoria (700 KB)\n- `PAC1_rec_Ramos_Acosta_Daniel_funcionalidades.pdf` — Funcionalidades (170 KB)\n- `PAC1_rec_Ramos_Acosta_Daniel_checklist.md` — Checklist\n- `PAC1_rec_Ramos_Acosta_Daniel_apuntes.md` — Apuntes para evaluar\n\n**ZIP**: `PEC1_Ramos_Acosta_Daniel.zip` (465 KB) copiado a ~/Downloads/
+<!-- SECTION:FINAL_SUMMARY:END -->
 
 ## Definition of Done
 <!-- DOD:BEGIN -->
