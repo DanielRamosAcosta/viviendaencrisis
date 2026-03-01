@@ -4,11 +4,13 @@ title: 'Preparar defensa oral (guión, ensayo, preguntas frecuentes)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
+updated_date: '2026-03-01 19:39'
 labels:
   - docs
 milestone: m-4
 dependencies: []
 priority: high
+ordinal: 31000
 ---
 
 ## Description

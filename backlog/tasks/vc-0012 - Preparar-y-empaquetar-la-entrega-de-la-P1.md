@@ -4,7 +4,7 @@ title: Preparar y empaquetar la entrega de la P1
 status: To Do
 assignee: []
 created_date: '2026-02-27 18:45'
-updated_date: '2026-03-01 17:59'
+updated_date: '2026-03-01 19:39'
 labels: []
 milestone: m-0
 dependencies:
@@ -17,6 +17,7 @@ dependencies:
   - VC-0010
   - VC-0011
 priority: high
+ordinal: 2000
 ---
 
 ## Description

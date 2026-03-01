@@ -4,11 +4,13 @@ title: 'Landing page (hero, propuesta de valor, navegación)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
+updated_date: '2026-03-01 19:39'
 labels:
   - landing
 milestone: m-1
 dependencies: []
 priority: medium
+ordinal: 9000
 ---
 
 ## Description

@@ -4,7 +4,7 @@ title: 'Despliegue público (Docker + VPS/Vercel, dominio, HTTPS)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-01 17:56'
+updated_date: '2026-03-01 19:39'
 labels:
   - infra
 milestone: m-2
@@ -12,6 +12,7 @@ dependencies:
   - VC-0014
   - VC-0020
 priority: high
+ordinal: 17000
 ---
 
 ## Description

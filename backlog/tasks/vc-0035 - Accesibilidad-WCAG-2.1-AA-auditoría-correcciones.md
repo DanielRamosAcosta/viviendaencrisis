@@ -4,11 +4,13 @@ title: Accesibilidad WCAG 2.1 AA (auditoría + correcciones)
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
+updated_date: '2026-03-01 19:39'
 labels:
   - qa
 milestone: m-3
 dependencies: []
 priority: high
+ordinal: 25000
 ---
 
 ## Description

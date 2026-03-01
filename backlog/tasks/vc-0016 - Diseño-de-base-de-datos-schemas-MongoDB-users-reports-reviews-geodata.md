@@ -4,11 +4,13 @@ title: 'Diseño de base de datos (schemas MongoDB: users, reports, reviews, geod
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
+updated_date: '2026-03-01 19:39'
 labels:
   - data
 milestone: m-1
 dependencies: []
 priority: high
+ordinal: 6000
 ---
 
 ## Description

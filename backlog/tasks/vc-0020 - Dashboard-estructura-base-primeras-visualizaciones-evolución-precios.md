@@ -4,7 +4,7 @@ title: 'Dashboard: estructura base + primeras visualizaciones (evolución precio
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-01 17:56'
+updated_date: '2026-03-01 19:39'
 labels:
   - dashboard
 milestone: m-1
@@ -12,6 +12,7 @@ dependencies:
   - VC-0014
   - VC-0018
 priority: high
+ordinal: 10000
 ---
 
 ## Description

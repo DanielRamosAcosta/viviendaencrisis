@@ -4,7 +4,7 @@ title: 'Reviews inmobiliarias: sistema de reseñas (puntuación, texto, CRUD)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-01 17:56'
+updated_date: '2026-03-01 19:39'
 labels:
   - reviews-inmobiliarias
 milestone: m-3
@@ -13,6 +13,7 @@ dependencies:
   - VC-0016
   - VC-0027
 priority: high
+ordinal: 22000
 ---
 
 ## Description

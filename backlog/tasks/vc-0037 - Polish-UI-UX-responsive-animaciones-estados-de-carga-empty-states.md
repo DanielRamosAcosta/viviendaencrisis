@@ -4,11 +4,13 @@ title: 'Polish UI/UX (responsive, animaciones, estados de carga, empty states)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
+updated_date: '2026-03-01 19:39'
 labels:
   - qa
 milestone: m-3
 dependencies: []
 priority: medium
+ordinal: 27000
 ---
 
 ## Description
