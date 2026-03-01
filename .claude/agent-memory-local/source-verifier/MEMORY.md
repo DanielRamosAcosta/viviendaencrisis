@@ -54,6 +54,51 @@
 - **Kothari 2006 Mission to Spain** (VERIFIED): Earlier Special Rapporteur documented structural deficiencies in Spanish housing market (high prices, speculation, low rental stock)
 - **Rajagopal Spain Mission**: No country-specific mission report to Spain found yet (as of Feb 28, 2026). Rajagopal has missions to Netherlands, Uzbekistan, New Zealand documented.
 
+## Provivienda "Se alquila? (2)" 2025 (VERIFIED VIA SECONDARY SOURCES)
+
+- **Title**: ¿Se alquila? (2) Racismo y segregación en el alquiler de vivienda
+- **Author**: Provivienda (institutional)
+- **Year**: 2025
+- **Publication date**: March 25, 2025
+- **Institution**: Provivienda
+- **Funded by**: Dirección General de Gestión Migratoria, Ministerio de Inclusión, Seguridad Social y Migraciones
+- **Key finding VERIFIED**: 99% of real estate agencies accepted discriminatory instructions when landlord caller requested exclusion of migrants (100 calls to agencies in Madrid and Barcelona)
+- **Methodology detail**: Testing II = landlord calls agency expressing intent to exclude foreigners; 100 calls. Testing I = 600 calls by Spanish/foreign profiles to same listings.
+- **Previous edition (2020)**: 72.5% acceptance rate; increase of ~30 percentage points
+- **URL status**: BOTH known PDF URLs are broken (404):
+  - https://provivienda.org/wp-content/uploads/2025/02/InformeSeAlquila2_Provivienda.pdf (original in .bib)
+  - https://www.provivienda.org/wp-content/uploads/Informe_SeAlquila_II_2025.pdf (found in blog post)
+- **Best working URL**: https://provivienda.org/download/se-alquila-2/ (download page, requires form/redirect)
+- **Claim verification**: VERIFIED (99% figure confirmed by Provivienda's own blog, multiple news outlets, and Ministerio OBERAXE page)
+- **Note on claim wording**: The .bib note says "orígenes étnicos o nacionales" but Provivienda consistently uses "perfil racial" and "personas migrantes/extranjeras". The 99% refers specifically to Testing II methodology (landlord-to-agency calls), NOT general discrimination testing.
+
+## ReHousin Project - Spain National Report (VERIFIED)
+
+### Matheney et al. 2025 (VC-MEMORY-002)
+
+- **Document page URL**: https://rehousin.eu/documents/national-report-housing-inequalities-spain
+- **PDF direct URL**: https://rehousin.eu/sites/default/files/media/National%20report%20on%20housing%20inequalities%20Spain_ReHousIn%20project.pdf
+- **WRONG domain in .bib entry**: `https://rehousins.eu/` (typo: trailing 's') — correct domain is `https://rehousin.eu/`
+- **Publication date**: March 2025
+- **Lead author confirmed**: Dr. Austin Matheney (ICTA-UAB)
+- **Co-author Sonia Vives-Miro**: Real researcher (Univ. Santiago de Compostela) but her involvement in THIS report is UNCONFIRMED in public sources
+- **Claim VERIFIED**: "up to 28% of households" affected by energy poverty — confirmed verbatim in ReHousIn news article (Aug 11, 2025) and press coverage
+- **Other verified stats**: 37% income for free-market tenants; 40% of tenants spend >30% on housing
+- **Type**: Extract from Deliverable 2.1 of EU Horizon Europe project ReHousIn
+
+## Provivienda "El derecho a la vivienda de las mujeres" 2023 (VC-MEMORY-004)
+
+- **Title**: El derecho a la vivienda de las mujeres: Diagnóstico y propuestas desde la perspectiva de género
+- **Author**: Provivienda (institutional)
+- **Year**: 2023
+- **Original PDF URL**: https://provivienda.org/wp-content/uploads/2023/03/Informe-vivienda-y-genero-Provivienda-2023.pdf — **ROTA (404)**
+- **Not archived** in Wayback Machine; not listed in current Provivienda publications index
+- **Related news article (verified live)**: https://provivienda.org/1-de-cada-3-hogares-con-mujeres-al-frente-en-pobreza-relativa-tras-pagar-la-vivienda/ (published 7 March 2023)
+- **Afirmacion 1 - 33% hogares con mujer sustentadora en pobreza relativa tras alquiler**: VERIFICADA via pagina de noticias de Provivienda (7-Mar-2023), dato procedente de ECV-INE 2021
+- **Afirmacion 2 - 83% familias monoparentales encabezadas por mujeres**: PARCIALMENTE SOPORTADA - figura usada en fuentes Provivienda es 80,7% (Observatorio) o "8 de cada 10" (pagina 8M). INE-ECH 2020 da 81,1% oficial. No se encuentra 83% en ninguna fuente primaria verificable.
+- **BibTeX correction needed**: URL rota; cifra 83% no verificable (sustituir por 80,7% del Observatorio o 81,1% del INE-ECH 2020)
+- **Alternative source for 83%**: Podria provenir del informe PDF ahora inaccesible; cifra mas proxima en INE 2022 no confirmada aun
+
 ## Search Strategy Notes
 
 - Wiley paywall blocks direct access
