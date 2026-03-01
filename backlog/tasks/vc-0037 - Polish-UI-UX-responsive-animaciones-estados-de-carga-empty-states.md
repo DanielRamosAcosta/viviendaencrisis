@@ -1,0 +1,25 @@
+---
+id: VC-0037
+title: 'Polish UI/UX (responsive, animaciones, estados de carga, empty states)'
+status: To Do
+assignee: []
+created_date: '2026-03-01 17:56'
+labels:
+  - qa
+milestone: m-3
+dependencies: []
+priority: medium
+---
+
+## Description
+
+<!-- SECTION:DESCRIPTION:BEGIN -->
+Pulir la interfaz de usuario: verificar y corregir responsive en todos los breakpoints, añadir animaciones y transiciones suaves, implementar estados de carga (skeletons/spinners), empty states informativos, y mejorar la experiencia general.
+
+Horas estimadas: 8h
+<!-- SECTION:DESCRIPTION:END -->
+
+## Definition of Done
+<!-- DOD:BEGIN -->
+- [ ] #1 All test suite is passing
+<!-- DOD:END -->
