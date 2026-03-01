@@ -10,7 +10,7 @@ La dimensión europea confirma la excepcionalidad del caso español. Según el E
 
 La intensidad de la preocupación ciudadana responde a una realidad material documentada con precisión. Entre 2015 y 2023, según datos de Eurostat recogidos en el Informe Anual 2024 del Defensor del Pueblo, el precio de compra de vivienda en España se incrementó un 42% ---casi el doble que los salarios--- y el de los alquileres un 58% @defensor_pueblo_2024. En términos comparativos, el precio medio de venta alcanzó en enero de 2026 los 2.650 €/m², un máximo histórico que acumula un incremento interanual del 18,4% @idealista_enero_2026. Para el acceso mediante compra, se necesitan 7,25 años de salario bruto íntegro, cifra que supera el umbral de referencia del 30% de esfuerzo anual sobre la renta del hogar @banco_espana_indicadores_2025.
 
-La situación es especialmente grave en el mercado del alquiler. El estudio conjunto de Fotocasa e InfoJobs publicado en 2025 documentó que entre 2021 y 2024 el precio medio del alquiler en España creció un 29,4%, mientras los salarios aumentaron apenas un 7,4% en el mismo período @fotocasa_infojobs_2025. Esta brecha, que en términos relativos supone que los precios del alquiler crecieron casi cuatro veces más deprisa que las retribuciones salariales, define el núcleo estructural del problema de acceso. La consecuencia directa es un sobreesfuerzo económico generalizado: para el quintil de ingresos más bajo, el esfuerzo mediano de alquiler alcanza aproximadamente el 45% de la renta bruta, según el Documento Ocasional 2432 del Banco de España @banco_espana_doc_2432.
+La situación es especialmente grave en el mercado del alquiler. El estudio conjunto de Fotocasa e InfoJobs publicado en 2025 documentó que entre 2021 y 2024 el precio medio del alquiler en España creció un 29,4%, mientras los salarios aumentaron apenas un 7,4% en el mismo período @fotocasa_infojobs_2025. Esta brecha, que en términos relativos supone que los precios del alquiler crecieron casi cuatro veces más deprisa que las retribuciones salariales, define el núcleo estructural del problema de acceso. La consecuencia directa es un sobreesfuerzo económico generalizado: para el quintil de ingresos más bajo, el esfuerzo mediano de alquiler alcanzaba en 2022 el 43,1% de la renta bruta, según el Documento Ocasional 2432 del Banco de España @banco_espana_doc_2432.
 
 #include "../99_charts/alquiler_vs_salarios.typ"
 
@@ -24,9 +24,29 @@ La respuesta del sector público ha sido insuficiente en términos comparativos.
 
 Ante esta situación, la información disponible sobre el mercado de la vivienda en España no carece de volumen, sino de accesibilidad, integración y sistematicidad. Los datos existen, pero se encuentran dispersos entre fuentes heterogéneas con periodicidades, metodologías y granularidades incompatibles: el Ministerio de Vivienda y Agenda Urbana (MIVAU/SERPAVI) publica índices trimestrales de precios; el Instituto Nacional de Estadística (INE) proporciona datos censales y de transacciones; el Catastro ofrece información de uso y superficie; y portales privados como Idealista o Fotocasa publican índices de precios de oferta con granularidad a nivel de sección censal.
 
-// TODO: diagrama o infografía — fragmentación de fuentes de datos de vivienda en España (MIVAU, INE, Catastro, portales privados: cobertura, periodicidad, granularidad y accesibilidad comparadas)
+#figure(
+  block(
+    width: 100%,
+    inset: 1em,
+    table(
+      columns: (1.2fr, 1fr, 1fr, 1fr, 1fr),
+      align: (left, center, center, center, center),
+      stroke: 0.5pt + luma(180),
+      fill: (x, y) => if y == 0 { rgb("#2c3e50").lighten(80%) } else if calc.odd(y) { luma(245) } else { white },
+      table.header(
+        [*Fuente*], [*Cobertura*], [*Periodicidad*], [*Granularidad*], [*Acceso*],
+      ),
+      [MIVAU/SERPAVI], [Nacional], [Trimestral], [Provincial / municipal], [Público abierto],
+      [INE (censo, transacciones)], [Nacional], [Anual / trimestral], [Municipal / sección censal], [Público abierto],
+      [Catastro], [Nacional], [Continua], [Parcela], [Público parcial#super[1]],
+      [Idealista], [Zonas urbanas], [Mensual], [Sección censal], [API de pago],
+      [Fotocasa], [Zonas urbanas], [Mensual], [Distrito / barrio], [Restringido],
+    ),
+  ),
+  caption: [Comparativa de las principales fuentes de datos de vivienda en España: cobertura geográfica, periodicidad de actualización, granularidad espacial y nivel de accesibilidad. #super[1]El Catastro permite consultas individuales pero limita la descarga masiva.],
+) <fig:fragmentacion-fuentes>
 
-Esta fragmentación no afecta a todos los actores por igual. Los agentes con mayor capacidad de procesamiento y mayor acceso a datos —fondos de inversión, SOCIMIs, plataformas inmobiliarias— disponen de una ventaja estructural sobre la ciudadanía y las administraciones locales. El informe del Institut de Drets i Recerca per a l'Acció (IDRA) de 2024 señalaba que "es vital superar la enorme opacidad y asimetría de información en el mercado de la intermediación" @idra_2024. La investigación de Civio identificó en 2024 a 737 megatenedores que controlan más de 178.000 viviendas alquiladas, aproximadamente el 10% de los alquileres formalizados en España, con una concentración que la ciudadanía y los municipios no pueden rastrear fácilmente mediante fuentes públicas @civio_megatenedores_2024.
+Esta fragmentación no afecta a todos los actores por igual. Los agentes con mayor capacidad de procesamiento y mayor acceso a datos —fondos de inversión, SOCIMIs, plataformas inmobiliarias— disponen de una ventaja estructural sobre la ciudadanía y las administraciones locales. El informe del Institut de Drets i Recerca per a l'Acció (IDRA) de 2024 señalaba que "Es vital superar la enorme opacidad y asimetría de información que caracteriza al mercado del alquiler" @idra_2024. La investigación de Civio identificó en 2024 a 737 megatenedores que controlan más de 178.000 viviendas alquiladas, aproximadamente el 10% de los alquileres formalizados en España, con una concentración que la ciudadanía y los municipios no pueden rastrear fácilmente mediante fuentes públicas @civio_megatenedores_2024.
 
 La asimetría de información en los mercados de vivienda es un fenómeno documentado académicamente. Ambrose y Diop (2021) demostraron que los propietarios invierten en mecanismos de selección de inquilinos y trasladan los costes regulatorios al precio, procesos que refuerzan la asimetría en detrimento de quienes alquilan @ambrose_diop_2021. St-Hilaire, Brunila y Wachsmuth (2023) pusieron de manifiesto que mientras los propietarios realizan comprobaciones crediticias y de historial sobre los inquilinos, estos últimos no tienen acceso a información equivalente sobre las condiciones de la propiedad ni sobre el comportamiento del arrendador @st_hilaire_2023. Esta asimetría bidireccional no es un fallo de mercado residual, sino un elemento constitutivo de la relación entre propietario e inquilino en mercados no regulados.
 
