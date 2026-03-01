@@ -1,9 +1,10 @@
 ---
 id: VC-0009
 title: 'Redactar sección 1.5: Planificación del Trabajo'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-02-26 21:26'
+updated_date: '2026-03-01 17:38'
 labels: []
 milestone: m-0
 dependencies: []
