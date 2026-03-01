@@ -1,0 +1,9 @@
+- [x] La aplicación tiene un front-end desarrollado con un framework JavaScript y demuestra lo aprendido en las asignaturas de desarrollo front-end.
+- [x] La aplicación tiene un back-end que hace un uso (no trivial) de una base de datos, desarrollado con las tecnologías vistas en la asignatura de back-end (u otro conjunto de tecnologías cuya elección se justifica adecuadamente desde la primera entrega).
+- [x] La edición de contenido / administración de la aplicación / usuarios / permisos se hace desde la propia aplicación.
+- [x] Salvo justificación adecuada, la aplicación contendrá varias tablas de base de datos y gestión de diferentes roles de usuarios.
+- [x] El proyecto demuestra un proceso de diseño visual, de interfaz, interacción y arquitectura de la información en la línea de lo visto en la asignatura de interfaces, dando como resultado una aplicación usable en todo tipo de dispositivos (mínimo móvil - tablet - escritorio).
+- [x] El proyecto tiene como resultado una aplicación accesible.
+- [x] El proyecto tiene en cuenta la seguridad de la aplicación (delegando en mecanismos ofrecidos por los frameworks usados y otras tecnologías seguras).
+- [x] El HTML y el CSS de la aplicación se han trabajado de acuerdo con las mejores prácticas vistas en las asignaturas de HTML y CSS.
+- [x] La aplicación se ha desplegado a un servidor accesible públicamente, y el tribunal tiene acceso a una cuenta de administración para poder verificar que todo funciona correctamente.
