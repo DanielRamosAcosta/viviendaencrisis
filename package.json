@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build:docs": "typst compile docs/memory/main.typ"
+    "build:docs": "typst compile docs/memory/main.typ",
+    "build:features": "typst compile docs/features/main.typ"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
