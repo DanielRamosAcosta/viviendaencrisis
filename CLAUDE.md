@@ -68,6 +68,7 @@ Se contempla scraping puntual de portales inmobiliarios (Idealista, Fotocasa, et
 * **PEC**: Prueba de Evaluación Continua
 * **P<XX>**: Una práctica concreta (P1 = Práctica 1)
 * **EIMT**: Estudios de Informática, Multimedia y Telecomunicación
+* **CCEG**: Competencia de compromiso ético y global
 
 ## Aula virtual y enunciados completos
 
