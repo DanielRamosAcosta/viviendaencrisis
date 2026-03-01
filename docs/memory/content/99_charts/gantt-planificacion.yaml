@@ -166,26 +166,26 @@ tasks:
         id: p4-video
         start: 2026-05-26
         end: 2026-05-31
-  - name: "P5 — Defensa Virtual"
+  - name: "DV — Defensa Virtual"
     subtasks:
       - name: "Preparar defensa oral"
-        id: p5-defensa
+        id: dv-defensa
         start: 2026-06-06
         end: 2026-06-12
       - name: "Bugfixes pre-defensa"
-        id: p5-bugfixes
+        id: dv-bugfixes
         start: 2026-06-06
         end: 2026-06-10
       - name: "Revisión app desplegada"
-        id: p5-revision
+        id: dv-revision
         start: 2026-06-10
         end: 2026-06-12
       - name: "Informe autoevaluación"
-        id: p5-autoeval
+        id: dv-autoeval
         start: 2026-06-08
         end: 2026-06-11
       - name: "Actualizar video (si necesario)"
-        id: p5-video
+        id: dv-video
         start: 2026-06-12
         end: 2026-06-14
 milestones:

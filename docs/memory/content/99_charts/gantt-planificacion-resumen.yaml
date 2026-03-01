@@ -23,12 +23,13 @@ tasks:
     end: 2026-05-31
     dependencies:
       - id: p3
-  - name: "P5 — Defensa Virtual"
-    id: p5
+  - name: "DV — Defensa Virtual"
+    id: dv
     start: 2026-06-06
     end: 2026-06-14
     dependencies:
       - id: p4
+
 milestones:
   - name: "Entrega P1"
     date: 2026-03-01
