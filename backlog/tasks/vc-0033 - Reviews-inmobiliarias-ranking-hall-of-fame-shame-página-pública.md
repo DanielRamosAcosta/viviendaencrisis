@@ -4,10 +4,12 @@ title: 'Reviews inmobiliarias: ranking, hall of fame/shame, página pública'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
+updated_date: '2026-03-01 17:56'
 labels:
   - reviews-inmobiliarias
 milestone: m-3
-dependencies: []
+dependencies:
+  - VC-0032
 priority: high
 ---
 
