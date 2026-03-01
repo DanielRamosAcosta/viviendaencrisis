@@ -4,10 +4,13 @@ title: 'Dashboard: indicadores socioeconómicos (relación salario/precio, esfue
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
+updated_date: '2026-03-01 17:56'
 labels:
   - dashboard
 milestone: m-2
-dependencies: []
+dependencies:
+  - VC-0020
+  - VC-0018
 priority: medium
 ---
 
