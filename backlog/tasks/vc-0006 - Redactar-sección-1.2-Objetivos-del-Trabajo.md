@@ -4,11 +4,12 @@ title: 'Redactar sección 1.2: Objetivos del Trabajo'
 status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-03-01 12:24'
+updated_date: '2026-03-01 19:18'
 labels: []
 milestone: m-0
 dependencies: []
 priority: high
+ordinal: 4000
 ---
 
 ## Description

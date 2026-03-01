@@ -1,14 +1,15 @@
 ---
 id: VC-0009
 title: 'Redactar sección 1.5: Planificación del Trabajo'
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-03-01 18:54'
+updated_date: '2026-03-01 19:18'
 labels: []
 milestone: m-0
 dependencies: []
 priority: high
+ordinal: 1000
 ---
 
 ## Description
@@ -24,7 +25,7 @@ Elaborar la planificación detallada del TFM incluyendo:\n- Desglose de tareas p
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Párrafos introductorios describen las 5 fases (P1-P5) con fechas y propósito
+- [ ] #1 Párrafos introductorios describen las 5 fases (P1-P4 y DV) con fechas y propósito
 - [ ] #2 Hitos y entregables de cada PEC identificados explícitamente
 - [ ] #3 Diagrama de Gantt resumen incluido (ya existente)
 - [ ] #4 Subsección === Recursos necesarios con tabla categorizada (frontend, backend, infra, datos, dev tools)
@@ -53,7 +54,7 @@ Elaborar la planificación detallada del TFM incluyendo:\n- Desglose de tareas p
 [Tabla ~14 filas: frontend, backend, infra, datos, dev tools]
 
 === Estimación del esfuerzo
-[Tabla: P1=28h, P2=70h, P3=70h, P4+P5=40h → ~208h]
+[Tabla: P1=28h, P2=70h, P3=70h, P4=30h, DV=10h → ~208h]
 
 === Priorización y dependencias
 [~3 frases: MVP-first, dependencias bloqueantes, jerarquía de descarte]

@@ -4,7 +4,7 @@ title: 'Redactar sección 0 de la memoria: portada, índice completo y páginas 
 status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-02-28 18:24'
+updated_date: '2026-03-01 19:18'
 labels: []
 milestone: m-0
 dependencies: []
@@ -12,6 +12,7 @@ references:
   - docs/classroom/content/01_P1/Enunciado P1.md
   - docs/classroom/content/01_P1/recursos_de_aprendizaje/Guia_TF_ES_2022.md
 priority: high
+ordinal: 6000
 ---
 
 ## Description
