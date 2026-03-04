@@ -4,13 +4,13 @@ title: Arquitectura de la Información (Card Sorting)
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-04 19:27'
+updated_date: '2026-03-04 19:29'
 labels:
   - ux/ui
 milestone: m-1
 dependencies: []
 priority: high
-ordinal: 38000
+ordinal: 2812.5
 ---
 
 ## Description
