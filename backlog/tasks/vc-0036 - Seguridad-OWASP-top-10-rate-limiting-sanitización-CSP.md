@@ -4,12 +4,12 @@ title: 'Seguridad (OWASP top 10, rate limiting, sanitización, CSP)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-01 19:39'
+updated_date: '2026-03-04 19:19'
 labels:
   - qa
 milestone: m-3
 dependencies: []
-priority: high
+priority: low
 ordinal: 26000
 ---
 
