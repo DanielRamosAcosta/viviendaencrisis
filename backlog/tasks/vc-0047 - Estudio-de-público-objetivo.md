@@ -4,13 +4,13 @@ title: Estudio de público objetivo
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:21'
-updated_date: '2026-03-04 19:27'
+updated_date: '2026-03-04 19:28'
 labels:
   - ux/ui
 milestone: m-1
 dependencies: []
 priority: high
-ordinal: 36000
+ordinal: 2250
 ---
 
 ## Description
