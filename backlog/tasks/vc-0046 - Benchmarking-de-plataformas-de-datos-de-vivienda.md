@@ -1,16 +1,16 @@
 ---
 id: VC-0046
 title: Benchmarking de plataformas de datos de vivienda
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-04 19:21'
-updated_date: '2026-03-04 19:27'
+updated_date: '2026-03-04 19:29'
 labels:
   - ux/ui
 milestone: m-1
 dependencies: []
 priority: high
-ordinal: 1500
+ordinal: 1000
 ---
 
 ## Description
