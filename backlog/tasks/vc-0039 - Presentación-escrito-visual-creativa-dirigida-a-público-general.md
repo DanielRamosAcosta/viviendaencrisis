@@ -4,12 +4,12 @@ title: 'Presentación escrito-visual (creativa, dirigida a público general)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-01 19:39'
+updated_date: '2026-03-04 19:19'
 labels:
   - docs
 milestone: m-3
 dependencies: []
-priority: high
+priority: low
 ordinal: 29000
 ---
 
