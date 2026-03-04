@@ -4,12 +4,12 @@ title: 'Redactar sección 1.4: Enfoque y método seguido'
 status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-03-01 19:18'
+updated_date: '2026-03-04 20:25'
 labels: []
 milestone: m-0
 dependencies: []
 priority: high
-ordinal: 2000
+ordinal: 4000
 ---
 
 ## Description

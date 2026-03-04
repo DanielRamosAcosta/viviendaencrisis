@@ -4,7 +4,7 @@ title: 'Redactar sección 1.1: Contexto y justificación del Trabajo'
 status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-03-01 19:18'
+updated_date: '2026-03-04 20:25'
 labels: []
 milestone: m-0
 dependencies: []
@@ -30,7 +30,7 @@ references:
   - >-
     docs/memory/content/02_estado_del_arte/03_plataformas_y_herramientas_existentes.typ
 priority: high
-ordinal: 5000
+ordinal: 7000
 ---
 
 ## Description

@@ -4,14 +4,14 @@ title: Leer la guía de TF del recurso de aprendizaje de la P1
 status: Done
 assignee: []
 created_date: '2026-02-26 21:24'
-updated_date: '2026-03-01 19:18'
+updated_date: '2026-03-04 20:25'
 labels: []
 milestone: m-0
 dependencies: []
 references:
   - docs/classroom/content/01_P1/recursos_de_aprendizaje/Guia_TF_ES_2022.md
 priority: high
-ordinal: 8000
+ordinal: 10000
 ---
 
 ## Description

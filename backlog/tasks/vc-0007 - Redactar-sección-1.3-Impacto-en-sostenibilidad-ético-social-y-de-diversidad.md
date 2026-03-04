@@ -4,7 +4,7 @@ title: 'Redactar sección 1.3: Impacto en sostenibilidad, ético-social y de div
 status: Done
 assignee: []
 created_date: '2026-02-26 21:26'
-updated_date: '2026-03-01 19:18'
+updated_date: '2026-03-04 20:25'
 labels: []
 milestone: m-0
 dependencies:
@@ -32,7 +32,7 @@ references:
   - >-
     docs/memory/content/01_introduccion/01_contexto_y_justificacion_del_trabajo.typ
 priority: high
-ordinal: 3000
+ordinal: 5000
 ---
 
 ## Description

@@ -4,7 +4,7 @@ title: Leer la guía transversal sobre la CCEG para estudiantado de TFx-EIMT
 status: Done
 assignee: []
 created_date: '2026-02-26 21:24'
-updated_date: '2026-03-01 19:18'
+updated_date: '2026-03-04 20:25'
 labels: []
 milestone: m-0
 dependencies: []
@@ -13,7 +13,7 @@ references:
     docs/classroom/content/01_P1/recursos_de_aprendizaje/Guia transversal sobre
     la CCEG para estudiantado de TFx-EIMT.md
 priority: high
-ordinal: 9000
+ordinal: 11000
 ---
 
 ## Description

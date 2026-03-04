@@ -4,14 +4,14 @@ title: Leer la checklist del recurso de aprendizaje de la P1
 status: Done
 assignee: []
 created_date: '2026-02-26 21:24'
-updated_date: '2026-03-01 19:18'
+updated_date: '2026-03-04 20:25'
 labels: []
 milestone: m-0
 dependencies: []
 references:
   - docs/classroom/content/01_P1/recursos_de_aprendizaje/checklist_es.md
 priority: high
-ordinal: 10000
+ordinal: 12000
 ---
 
 ## Description
