@@ -157,6 +157,10 @@ Soy Daniel Ramos, estudiante de la asignatura “Trabajo Final de Máster” del
   - Más del 50%
   - No aplica (vivo con familia, etc.)
 
+### ¿Hay algo que te gustaría entender mejor sobre la crisis de vivienda?
+
+- **tipo**: texto libre
+
 ## Pisos turísticos — Impacto en la vivienda
 
 ### ¿Hay pisos turísticos (Airbnb, Booking…) en tu edificio o calle?
@@ -201,6 +205,10 @@ Soy Daniel Ramos, estudiante de la asignatura “Trabajo Final de Máster” del
   - Evolución en el tiempo
   - Si tienen licencia
   - Impacto en precios
+
+### ¿Quieres contarnos alguna experiencia con pisos turísticos en tu zona?
+
+- **tipo**: texto libre
 
 ## Inmobiliarias — Experiencia y problemas
 
@@ -255,3 +263,13 @@ Soy Daniel Ramos, estudiante de la asignatura “Trabajo Final de Máster” del
   - Moderación de contenido
   - Verificación del contrato
   - Que otros usuarios confirmen la experiencia
+
+### ¿Quieres contarnos alguna experiencia con una inmobiliaria o propietario?
+
+- **tipo**: texto libre
+
+## Cierre
+
+### ¿Qué funcionalidad te gustaría ver en una plataforma como esta?
+
+- **tipo**: texto libre
