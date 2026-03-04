@@ -4,12 +4,13 @@ title: Prototipo Hi-Fi (Diseño de Alta Calidad)
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-04 19:22'
+updated_date: '2026-03-04 19:27'
 labels:
   - ux/ui
 milestone: m-1
 dependencies: []
 priority: high
+ordinal: 42000
 ---
 
 ## Description
