@@ -4,9 +4,10 @@ title: Benchmarking de plataformas de datos de vivienda
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:21'
+updated_date: '2026-03-04 19:22'
 labels:
   - ux/ui
-milestone: m-0
+milestone: m-1
 dependencies: []
 priority: high
 ---
