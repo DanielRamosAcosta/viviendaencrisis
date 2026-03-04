@@ -4,14 +4,14 @@ title: 'Reportes Airbnb: formulario con geolocalización y subida de fotos'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-01 19:39'
+updated_date: '2026-03-04 19:19'
 labels:
   - reportes-airbnb
 milestone: m-2
 dependencies:
   - VC-0017
   - VC-0016
-priority: high
+priority: low
 ordinal: 15000
 ---
 
