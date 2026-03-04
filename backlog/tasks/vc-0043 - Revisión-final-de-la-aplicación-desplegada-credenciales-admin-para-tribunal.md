@@ -4,12 +4,12 @@ title: Revisión final de la aplicación desplegada (credenciales admin para tri
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-01 19:39'
+updated_date: '2026-03-04 19:19'
 labels:
   - infra
 milestone: m-4
 dependencies: []
-priority: high
+priority: low
 ordinal: 33000
 ---
 
