@@ -4,7 +4,7 @@ title: 'Reportes Airbnb: panel admin moderación + notificaciones + gestión est
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-01 19:39'
+updated_date: '2026-03-04 19:19'
 labels:
   - reportes-airbnb
   - admin
@@ -13,7 +13,7 @@ dependencies:
   - VC-0025
   - VC-0026
   - VC-0017
-priority: high
+priority: low
 ordinal: 21000
 ---
 
