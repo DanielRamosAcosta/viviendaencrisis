@@ -1,13 +1,14 @@
 ---
 id: VC-0055
 title: Verificar claim sobre VUT en Banco de España Informe Anual 2023
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-03-14 18:24'
-updated_date: '2026-03-14 18:28'
+updated_date: '2026-03-14 18:40'
 labels: []
 dependencies: []
 priority: high
+ordinal: 187.5
 ---
 
 ## Description
