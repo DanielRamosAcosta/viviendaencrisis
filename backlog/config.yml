@@ -1,6 +1,6 @@
 project_name: "Vivienda en Crisis"
 default_status: "To Do"
-statuses: ["To Do", "In Progress", "In Review",  "Done"]
+statuses: ["To Do", "Refinement", "In Progress", "In Review",  "Done"]
 labels: []
 definition_of_done: ["All test suite is passing"]
 date_format: yyyy-mm-dd
