@@ -62,6 +62,16 @@ Se contempla scraping puntual de portales inmobiliarios (Idealista, Fotocasa, et
 * Siempre que te encuentres con un binario o fichero que podría llenar de tokens el contexto (*.doc, *.docx, *.png), si necesitas leerlo, antes de leerlo, solicita siempre permiso al usuario
 * Siempre que necesites leer un fichero de texto en formato propietario o PDF, intenta buscar su alernativa en Markdown (debería tener el mismo nombre, pero en `.md`). Si no tiene, probablemente no sea un fichero relevante.
 
+### Gestión de tareas obligatoria
+
+Todo trabajo (sesión principal y subagentes) **debe** estar vinculado a una tarea del backlog. Además, se debe reflejar el estado real en todo momento:
+
+1. **Al empezar** a trabajar en una tarea → moverla a **In Progress**
+2. **Al terminar** el trabajo → moverla a **In Review**
+3. **Cuando el usuario dé el OK** → moverla a **Done**
+
+Nunca se debe trabajar sin una tarea asociada. Si no existe, créala antes de empezar.
+
 ## Vocabulario UOC
 
 * **UOC**: Universitat Oberta de Catalunya
