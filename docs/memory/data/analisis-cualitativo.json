@@ -1,0 +1,289 @@
+{
+  "metadata": {
+    "description": "Categorización cualitativa de las preguntas abiertas de la encuesta (P15, P21, P28, P29)",
+    "n_total": 40,
+    "method": "Categorización temática por palabras clave con revisión manual"
+  },
+  "P15_que_entender_mejor": {
+    "question": "¿Hay algo que te gustaría entender mejor sobre la crisis de vivienda?",
+    "n_valid_responses": 25,
+    "n_no_response": 15,
+    "categories": {
+      "Acción política e institucional": {
+        "count": 7,
+        "pct": 28.0,
+        "responses": [
+          "Si realmente las propuestas del estado se llevan a cabo y si realmente resuelven el problema",
+          "A los \"socialistas\"",
+          "La razón por qué no se aplican modelos vigentes y efectivos que se están llevando a cabo en otros países, como Países Bajos o Viena, que ayudarían a controlar la crisis de la vivienda",
+          "Por qué no se permite construcción vertical en España",
+          "Por que nadie hace nada",
+          "¿Por qué decimos que el PSOE es de izquierdas cuando considera la vivienda un bien de mercado?",
+          "Por qué el gobierno no interviene"
+        ]
+      },
+      "Legislación y regulación": {
+        "count": 5,
+        "pct": 20.0,
+        "responses": [
+          "Los problemas legislativos",
+          "Las leyes que hay sobre regulaciones",
+          "Cómo poder meter presión desde los movimientos sociales / ciudadanía para que haya una regularización mayor y se erradique la especulación",
+          "Porqué no se legisla para proteger la vivienda como un derecho",
+          "Regulacion en materia de vivienda y okupas"
+        ]
+      },
+      "Causas estructurales": {
+        "count": 3,
+        "pct": 12.0,
+        "responses": [
+          "Las causas",
+          "La demanda y oferta real",
+          "Como repercuten al precio las diferentes causas según la zona"
+        ]
+      },
+      "Especulación e inversión": {
+        "count": 3,
+        "pct": 12.0,
+        "responses": [
+          "Cómo incentivar a los propietarios para que pongan en el mercado viviendas que permanecen cerradas.",
+          "La especulación",
+          "La desidia de nuestros políticos y el atraco a impuestos que se hacen sobre la primera vivienda. No veo mal impuestos sobre la segunda, tercera o cuantas sean pero en mi opinión la primera vivienda debería tener una excepción fiscal pues es el primer gran paso en el progreso de la persona para ser autosuficiente."
+        ]
+      },
+      "Otros": {
+        "count": 3,
+        "pct": 12.0,
+        "responses": [
+          "¿No tiene solución?",
+          "La gestion de la vivienda con los extranjeros",
+          "Sí, por qué resulta tan difícil construir"
+        ]
+      },
+      "Vivienda pública y construcción": {
+        "count": 2,
+        "pct": 8.0,
+        "responses": [
+          "Porque no hay promociones de obra pública",
+          "Me gustaría entender la burocracia que hay detrás de la construcción de vivienda pública y su adjudicación a las personas."
+        ]
+      },
+      "Impacto del turismo": {
+        "count": 1,
+        "pct": 4.0,
+        "responses": [
+          "Cómo de grande es el impacto del turismo y de las viviendas vacaiconales"
+        ]
+      },
+      "Datos objetivos y transparencia": {
+        "count": 1,
+        "pct": 4.0,
+        "responses": [
+          "Porque no hay investigadores no partidista estudiando números para sacar información objetiva"
+        ]
+      }
+    }
+  },
+  "P21_experiencia_pisos_turisticos": {
+    "question": "¿Quieres contarnos alguna experiencia con pisos turísticos en tu zona?",
+    "n_valid_responses": 15,
+    "n_no_response": 25,
+    "categories": {
+      "Proliferación y volumen": {
+        "count": 6,
+        "pct": 40.0,
+        "responses": [
+          "Zona de casas antiguas que han sido reformadss solo para vv",
+          "Canarias está repleto",
+          "Han incrementado enormemente, incluso en barrios residenciales, fuera de la zonas turísticas.",
+          "Una inmueble enfrente a mi casa, ha construido en 120 metros cuadrados 5 viviendas vacacionales dentro del casco histórico de Tegueste. Y han recibido autorización",
+          "En mi calle hay un portal entero de pisos turísiticos",
+          "Por mi zona creo que no hay, por lo menos legales, pero aunque no haya, la existencia de estos hace que cualquiera quiera hacerse rico con un piso, y eso ha incrementado los precios"
+        ]
+      },
+      "Molestias y convivencia": {
+        "count": 3,
+        "pct": 20.0,
+        "responses": [
+          "Me molesta ver pisos turísticos en cualquier edificio y cualquier lugar, me refiero a zonas residenciales o alejadas de interés turístico. La gente ya piensa en tener un segundo piso y lo alquilo para el turismo, deprimente",
+          "Ruidos de fiestas, borracheras, destrozos en la vivienda  y en los coches de la calle",
+          "Vecinos muy ruidosos y de constante cambio"
+        ]
+      },
+      "Impacto en mercado alquiler": {
+        "count": 2,
+        "pct": 13.3,
+        "responses": [
+          "A una pareja que ocupaba una vivienda en alquiler no le renovaron en contrato para poner la vivienda en alquiler vacacional.",
+          "A la hora de buscar piso, la mayoría tenían contratos temporales debido a que hay muchos \"nómadas digitales\" que se quedan un tiempo en Canarias y después vuelven."
+        ]
+      },
+      "Ilegalidad / sin licencia": {
+        "count": 1,
+        "pct": 6.7,
+        "responses": [
+          "Son sin licencia"
+        ]
+      },
+      "Gentrificación": {
+        "count": 1,
+        "pct": 6.7,
+        "responses": [
+          "No, gracias. Más allá de la gentrificación y criminalización hacia las vecinas."
+        ]
+      },
+      "Experiencia negativa como huésped": {
+        "count": 1,
+        "pct": 6.7,
+        "responses": [
+          "La experiencia que tuve en Madrid, PESIMA. Un local de 14 m2 transformado en vivienda 70 euros/dia, hace 2 años. Las fotos en AIRNB son engañosas, sabemos que en foto todo parece mucho mas grande y amplio. En fin."
+        ]
+      },
+      "Otros": {
+        "count": 1,
+        "pct": 6.7,
+        "responses": [
+          "No es que existan actualmente muchos pisos turísticos en mi barrio, pero si catalogamos por zona un area más grande, entonces si podemos ver que somos el resultado de un desplazamiento de unos barrios a otros porque el piso turístico se convierte en principal movimiento de ese primer barrio y el segundo es la \"mejor\" opción disponible para la gente local pues o bien no hay oferta o el precio se ha elevado demasiado en este primero. Y en el segundo, evidentemente, hay una subida de precio por la nueva demanda surgida aunque con menor escalada del precio en comparación.."
+        ]
+      }
+    }
+  },
+  "P28_experiencia_inmobiliaria": {
+    "question": "¿Quieres contarnos alguna experiencia con una inmobiliaria o propietario?",
+    "n_valid_responses": 12,
+    "n_no_response": 28,
+    "categories": {
+      "Abuso económico": {
+        "count": 3,
+        "pct": 25.0,
+        "responses": [
+          "Pedir 6 -9 meses de entrada para alquilar un piso...",
+          "Subida abusiva del alquiler y abandono del propietario",
+          "Son unos caras, te presuonana para que les pagues los impuestos"
+        ]
+      },
+      "Falta de mantenimiento": {
+        "count": 3,
+        "pct": 25.0,
+        "responses": [
+          "Las goteras que sigo teniendo actualmente xD",
+          "Un propietatio, problemas de himedades con moho y filtraciones, se negó a repararlas. Lo hice yo y no me lo pagó, el resultado: dejé la vivienda",
+          "Meses con lavadora rota y otros problemas de mantenimiento y a la hora de abandonar el piso, exigirnos pintar la casa cuando no nos la dieron en buenas condiciones"
+        ]
+      },
+      "Contratos abusivos / precariedad": {
+        "count": 3,
+        "pct": 25.0,
+        "responses": [
+          "Mis padres mayores de 65 años. Perdieron su casa en la crisis del 2008. La dueña del ultimo piso, los denuncio porque al cumplirse el contrato maximo , no habian encontrado ningun sitio al que irse, mi padre encamado casi. De hecho la situacion acelero el deterioro de mi padre y fallecio 5 meses despues de denunciarlos. Total para tener la casa vacia.",
+          "Ya hace bastante tiempo de esto pero básicamente te casi indican que \"esto es lo que hay\" y no hay capacidad de negociación porque saben que tienen una cola de 20 personas detrás absolutamente desesperadas por ese piso y que perfectamente lo van a colocar a alguien por lo que si te pones a intentar un minimo de negociación van a pasar.",
+          "Ahora estoy en un contrato de alquiler temporal de 2 años porque el propietario tiene la intención de vender el piso después de ese tiempo."
+        ]
+      },
+      "Fraude / engaño": {
+        "count": 2,
+        "pct": 16.7,
+        "responses": [
+          "El propietario tenía la vivienda en proceso de embargo y nunca lo dijo, la alquiló con total impunidad",
+          "Le alquilaron mi piso a un okupa"
+        ]
+      },
+      "Discriminación": {
+        "count": 1,
+        "pct": 8.3,
+        "responses": [
+          "Antes de entrar a ver un piso me preguntaron que si iba a montar un piso patera, unicamente por querer mudarme solo, despues de confirmarme que me daban el piso y empezar los tramites, al dia siguiente me dijeron que no me lo alquilaban y que se lo daban a una familia porque los veian mas adecuados para el piso (el piso era de la inmobiliaria)"
+        ]
+      }
+    }
+  },
+  "P29_funcionalidades_esperadas": {
+    "question": "¿Qué funcionalidad te gustaría ver en una plataforma como esta?",
+    "n_valid_responses": 34,
+    "n_no_response": 6,
+    "categories": {
+      "Datos fiables y verificados": {
+        "count": 8,
+        "pct": 23.5,
+        "responses": [
+          "Me gustaría que fuese un lugar confiable donde ir a ver datos fiables y reales. Donde pueda encontrar todo lo relacionado con la vivienda. Para mi es muy importante también la ayuda legal. El tema de las ayudas, las fechas para solicitarlas, donde hacerlo y como sería un punto importante a parte de datos gráficos y comunidad que denuncia y reseña",
+          "Ver la realidad de la carencia de viviendas y la desproporcionada subida de los precios",
+          "Estadísticas y datos reales que ayuden a plataformas y movimientos sociales que estén implicados en la lucha por una vivienda digna para todos.",
+          "Información veraz",
+          "Un estudio de mercado real",
+          "Datos serios trabajados por estadísticos de carrera",
+          "Informacion clara, precisa y contrastada con organismos de referencia",
+          "Datos verificados y que sirva como fuente oficial"
+        ]
+      },
+      "Histórico y evolución de precios": {
+        "count": 8,
+        "pct": 23.5,
+        "responses": [
+          "Cuanto valia el piso hace 5 años",
+          "Disponibilidad en mi zona y evolución en el tiempo",
+          "Historico de precios, estado actual de la vivienda que se alquila o vende en cuestión, cuantos impuestos se paga tanto en su compra como su IBI correspondiente anual, si hay pisos turísticos cerca o no y una evolución poblacional del barrio es decir; si ha crecido o disminuido demograficamente, si se han abierto más o menos comercios en la zona, todo este tipo de cosas que indican un poco la evolución social de ese barrio que sirve para hacerte una idea de como podría ir a futuros.",
+          "Acceso a datos históricos de precios",
+          "Evolución precio de vivienda por zona",
+          "comparacion de precios historico y por barrios",
+          "mapa de calor de aumento del precio de vivienda alquilada y comprada, que mida el aumento respecto al tiempo, para poder identificar mejor las zonas tensionadas",
+          "Comparaciones y gráficos históricos interactivos"
+        ]
+      },
+      "Transparencia y accesibilidad": {
+        "count": 6,
+        "pct": 17.6,
+        "responses": [
+          "Ofertas y claridad en los términos",
+          "Un sistema abierto y transparente",
+          "Transparencia",
+          "Sencillez y claridad",
+          "Capacidad de compartir fácilmente con otras personas los datos.",
+          "Datos abiertos y accesibles para la consulta de todo el mundo"
+        ]
+      },
+      "Comparativas y mapas": {
+        "count": 5,
+        "pct": 14.7,
+        "responses": [
+          "Precios razonables para un sueldo normal de 1000 euros y propietarios que sean humanos",
+          "Totes les opcions proposades i els barris amb el preu per metre quadrat",
+          "Buscadores con filtros detallados y poder hacer comparativas entre varias opciones",
+          "Un ranking de mejores inmobiliarias y mejores zonas donde el alquiler esté en unos precios buenos",
+          "Viviendas de alquiler o turísticos frente a viviendas habituales para poder observar la cantidad que hay de cada tipo por zonas."
+        ]
+      },
+      "Reseñas y valoraciones": {
+        "count": 3,
+        "pct": 8.8,
+        "responses": [
+          "Ver reseñas de los pisos y del trato por parte del propietario",
+          "Valoraciones de propietarios",
+          "Valoraciones y opiniones de la gente."
+        ]
+      },
+      "Otros": {
+        "count": 2,
+        "pct": 5.9,
+        "responses": [
+          "Un espacio de alquiler seguro",
+          "Que las preguntas sean consistentes. Hay respuestas sin sentido (1,2,3...) y preguntas sin sentido si has respondido que NO a alguna anterior."
+        ]
+      },
+      "Información legal y de ayudas": {
+        "count": 1,
+        "pct": 2.9,
+        "responses": [
+          "Ofrecer información util de como actuar e información sobre legislación"
+        ]
+      },
+      "Buscador y filtros": {
+        "count": 1,
+        "pct": 2.9,
+        "responses": [
+          "Encontrar pisos dentro de un ratio de precios asequibles"
+        ]
+      }
+    }
+  }
+}

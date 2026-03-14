@@ -1,0 +1,822 @@
+{
+  "metadata": {
+    "n_total": 40,
+    "description": "Análisis cuantitativo de la encuesta Vivienda en Crisis (N=40)"
+  },
+  "descriptivos": {
+    "Edad": {
+      "n": 40,
+      "values": {
+        "24-30 años": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "31-35 años": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "46-55 años": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "Más de 55 años": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "36-45 años": {
+          "count": 5,
+          "pct": 12.5
+        },
+        "18-23 años": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Género": {
+      "n": 40,
+      "values": {
+        "Masculino": {
+          "count": 21,
+          "pct": 52.5
+        },
+        "Femenino": {
+          "count": 17,
+          "pct": 42.5
+        },
+        "Sexo masculino, sin género": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "No Binario": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Estimación subida alquiler": {
+      "n": 40,
+      "values": {
+        "Sí, aproximadamente": {
+          "count": 28,
+          "pct": 70.0
+        },
+        "Tengo una idea vaga": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "No tengo ni idea": {
+          "count": 4,
+          "pct": 10.0
+        }
+      }
+    },
+    "Conocimiento causas": {
+      "n": 40,
+      "values": {
+        "Sí, las tengo claras": {
+          "count": 21,
+          "pct": 52.5
+        },
+        "Conozco algunas": {
+          "count": 18,
+          "pct": 45.0
+        },
+        "No sabría explicarlas": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Utilidad gráficos interactivos": {
+      "n": 40,
+      "values": {
+        "Muy útil": {
+          "count": 30,
+          "pct": 75.0
+        },
+        "Algo útil": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "Poco útil": {
+          "count": 2,
+          "pct": 5.0
+        },
+        "Nada útil": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Situación vivienda": {
+      "n": 40,
+      "values": {
+        "Alquiler": {
+          "count": 14,
+          "pct": 35.0
+        },
+        "Propiedad con hipoteca": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "Propiedad sin hipoteca": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "Vivo con familia": {
+          "count": 5,
+          "pct": 12.5
+        },
+        "Vivo en cada heredada de abuelos pero sin estar a mi nombre. Problemas con escrituras a mi": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Propiedad con hipoteca (no se activa)": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Comunidad autónoma": {
+      "n": 40,
+      "values": {
+        "Canarias": {
+          "count": 34,
+          "pct": 85.0
+        },
+        "Andalucía": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Castilla-La Mancha": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Comunidad de Madrid": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Catalunya": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "País Vasco": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Illes Balears": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "% ingresos en vivienda": {
+      "n": 40,
+      "values": {
+        "30-40%": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "20-30%": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "No aplica (vivo con familia, etc.)": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "Menos del 20%": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "40-50%": {
+          "count": 2,
+          "pct": 5.0
+        },
+        "Más del 50%": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Pisos turísticos en edificio": {
+      "n": 40,
+      "values": {
+        "No que yo sepa": {
+          "count": 14,
+          "pct": 35.0
+        },
+        "Sí, alguno": {
+          "count": 14,
+          "pct": 35.0
+        },
+        "Sí, varios": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "No estoy seguro": {
+          "count": 2,
+          "pct": 5.0
+        }
+      }
+    },
+    "Contribución pisos turísticos (escala 1-5)": {
+      "n": 40,
+      "values": {
+        "5": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "3": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "1": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "4": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "2": {
+          "count": 2,
+          "pct": 5.0
+        }
+      },
+      "mean": 3.15,
+      "median": 3
+    },
+    "Disposición a reportar pisos turísticos ilegales": {
+      "n": 40,
+      "values": {
+        "Sí": {
+          "count": 25,
+          "pct": 62.5
+        },
+        "Depende de las garantías": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "No": {
+          "count": 7,
+          "pct": 17.5
+        }
+      }
+    },
+    "Ha tenido problemas con inmobiliaria": {
+      "n": 40,
+      "values": {
+        "No": {
+          "count": 25,
+          "pct": 62.5
+        },
+        "Sí": {
+          "count": 15,
+          "pct": 37.5
+        }
+      }
+    },
+    "Acciones emprendidas ante problemas": {
+      "n": 40,
+      "values": {
+        "No sabía cómo": {
+          "count": 17,
+          "pct": 42.5
+        },
+        "Lo intenté pero desistí": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "No, por miedo a represalias": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "Sí, denuncia formal": {
+          "count": 4,
+          "pct": 10.0
+        }
+      }
+    },
+    "Valoración sistema reseñas": {
+      "n": 40,
+      "values": {
+        "Muy útil": {
+          "count": 28,
+          "pct": 70.0
+        },
+        "Algo útil": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "Poco útil": {
+          "count": 2,
+          "pct": 5.0
+        },
+        "Nada útil": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Disposición a dejar reseñas": {
+      "n": 40,
+      "values": {
+        "Sí, de forma anónima": {
+          "count": 21,
+          "pct": 52.5
+        },
+        "Sí, con mi nombre": {
+          "count": 16,
+          "pct": 40.0
+        },
+        "No": {
+          "count": 3,
+          "pct": 7.5
+        }
+      }
+    },
+    "Fuentes de información": {
+      "n_respondents": 40,
+      "values": {
+        "Prensa digital": {
+          "count": 30,
+          "pct": 75.0
+        },
+        "Redes Sociales (Instagram, X, TikTok…)": {
+          "count": 22,
+          "pct": 55.0
+        },
+        "Entorno cercano (familia, amigos, compañeros)": {
+          "count": 19,
+          "pct": 47.5
+        },
+        "Televisión": {
+          "count": 18,
+          "pct": 45.0
+        },
+        "YouTube / Podcasts": {
+          "count": 16,
+          "pct": 40.0
+        },
+        "Experiencia propia": {
+          "count": 14,
+          "pct": 35.0
+        },
+        "Radio": {
+          "count": 9,
+          "pct": 22.5
+        },
+        "Foros y comunidades online (Reddit, Telegram…)": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "Organismos públicos": {
+          "count": 5,
+          "pct": 12.5
+        },
+        "Asociaciones / sindicatos de inquilinos": {
+          "count": 4,
+          "pct": 10.0
+        },
+        "Prensa en papel": {
+          "count": 2,
+          "pct": 5.0
+        },
+        "Entorno laboral": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Principales causas percibidas": {
+      "n_respondents": 40,
+      "values": {
+        "Falta de vivienda pública": {
+          "count": 31,
+          "pct": 77.5
+        },
+        "Pisos turísticos": {
+          "count": 30,
+          "pct": 75.0
+        },
+        "Especulación": {
+          "count": 27,
+          "pct": 67.5
+        },
+        "Legislación insuficiente": {
+          "count": 19,
+          "pct": 47.5
+        },
+        "Fondos de inversión": {
+          "count": 16,
+          "pct": 40.0
+        },
+        "Salarios bajos": {
+          "count": 15,
+          "pct": 37.5
+        },
+        "Hay mucha demanda y poca oferta (se soluciona construyendo más)": {
+          "count": 15,
+          "pct": 37.5
+        },
+        "Exceso de regulación del mercado inmobiliario": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "Inmigración": {
+          "count": 6,
+          "pct": 15.0
+        },
+        "Okupación": {
+          "count": 6,
+          "pct": 15.0
+        },
+        "Legislación en contra de los arrendadores": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Incremento poblacional en las islas": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "La desproteccion de lis propietarios frente a los inquilinos abusadores": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Hay mucha demanda y poca oferta": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Que alguien serio lo investigue por favor": {
+          "count": 1,
+          "pct": 2.5
+        },
+        "Mala gestión de los recursos urbanos.": {
+          "count": 1,
+          "pct": 2.5
+        }
+      }
+    },
+    "Afirmaciones de acuerdo": {
+      "n_respondents": 40,
+      "values": {
+        "Hacen falta más viviendas públicas de alquiler": {
+          "count": 34,
+          "pct": 85.0
+        },
+        "La vivienda es un derecho, no un producto de mercado": {
+          "count": 29,
+          "pct": 72.5
+        },
+        "Hay que limitar la compra de vivienda por fondos de inversión": {
+          "count": 27,
+          "pct": 67.5
+        },
+        "El problema es que hay demasiada burocracia para construir": {
+          "count": 13,
+          "pct": 32.5
+        },
+        "Las ayudas al alquiler terminan subiendo los precios": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "La vivienda es un bien de inversión legítimo": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "Regular los alquileres es contraproducente, reduce la oferta": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "El mercado se regula solo, no hay que intervenirlo": {
+          "count": 6,
+          "pct": 15.0
+        }
+      }
+    },
+    "Comparativas de interés": {
+      "n_respondents": 40,
+      "values": {
+        "Evolución temporal": {
+          "count": 27,
+          "pct": 67.5
+        },
+        "Precio por m² entre barrios": {
+          "count": 24,
+          "pct": 60.0
+        },
+        "Relación precio-salario": {
+          "count": 20,
+          "pct": 50.0
+        },
+        "Mi municipio vs media nacional": {
+          "count": 19,
+          "pct": 47.5
+        },
+        "Alquiler vs compra": {
+          "count": 18,
+          "pct": 45.0
+        }
+      }
+    },
+    "Efectos percibidos pisos turísticos": {
+      "n_respondents": 40,
+      "values": {
+        "Subida de alquiler": {
+          "count": 22,
+          "pct": 55.0
+        },
+        "Menos oferta de vivienda": {
+          "count": 19,
+          "pct": 47.5
+        },
+        "Ninguno": {
+          "count": 11,
+          "pct": 27.5
+        },
+        "Gentrificación del barrio": {
+          "count": 10,
+          "pct": 25.0
+        },
+        "Encarecimiento del comercio local": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "Ruido y molestias": {
+          "count": 7,
+          "pct": 17.5
+        }
+      }
+    },
+    "Información deseada pisos turísticos": {
+      "n_respondents": 40,
+      "values": {
+        "Proporción respecto a vivienda habitual": {
+          "count": 28,
+          "pct": 70.0
+        },
+        "Si tienen licencia": {
+          "count": 25,
+          "pct": 62.5
+        },
+        "Número de pisos turísticos": {
+          "count": 24,
+          "pct": 60.0
+        },
+        "Impacto en precios": {
+          "count": 24,
+          "pct": 60.0
+        },
+        "Evolución en el tiempo": {
+          "count": 19,
+          "pct": 47.5
+        }
+      }
+    },
+    "Tipo de problemas con inmobiliaria": {
+      "n_respondents": 40,
+      "values": {
+        "Ninguno": {
+          "count": 25,
+          "pct": 62.5
+        },
+        "Falta de mantenimiento": {
+          "count": 8,
+          "pct": 20.0
+        },
+        "Comisiones abusivas": {
+          "count": 7,
+          "pct": 17.5
+        },
+        "No devolver fianza": {
+          "count": 5,
+          "pct": 12.5
+        },
+        "Subida de alquiler injustificada": {
+          "count": 4,
+          "pct": 10.0
+        },
+        "Presión para abandonar el piso": {
+          "count": 4,
+          "pct": 10.0
+        },
+        "Cláusulas ilegales": {
+          "count": 3,
+          "pct": 7.5
+        },
+        "Discriminación": {
+          "count": 3,
+          "pct": 7.5
+        }
+      }
+    },
+    "Factores confianza en sistema reseñas": {
+      "n_respondents": 40,
+      "values": {
+        "Que otros usuarios confirmen la experiencia": {
+          "count": 27,
+          "pct": 67.5
+        },
+        "Verificación del contrato": {
+          "count": 23,
+          "pct": 57.5
+        },
+        "Anonimato": {
+          "count": 12,
+          "pct": 30.0
+        },
+        "Moderación de contenido": {
+          "count": 9,
+          "pct": 22.5
+        }
+      }
+    }
+  },
+  "cruces": {
+    "situacion_vivienda_x_utilidad_graficos": {
+      "description": "Situación de vivienda × Utilidad percibida de gráficos interactivos",
+      "field_a": "P12 - Situación vivienda",
+      "field_b": "P10 - Utilidad gráficos interactivos",
+      "data": {
+        "Alquiler": {
+          "Muy útil": 11,
+          "Algo útil": 2,
+          "Poco útil": 1
+        },
+        "Propiedad con hipoteca": {
+          "Muy útil": 7,
+          "Algo útil": 3,
+          "Poco útil": 1
+        },
+        "Propiedad con hipoteca (no se activa)": {
+          "Muy útil": 1
+        },
+        "Propiedad sin hipoteca": {
+          "Muy útil": 5,
+          "Algo útil": 2,
+          "Nada útil": 1
+        },
+        "Vivo con familia": {
+          "Muy útil": 5
+        },
+        "Vivo en cada heredada de abuelos pero sin estar a mi nombre. Problemas con escrituras a mi": {
+          "Muy útil": 1
+        }
+      }
+    },
+    "edad_x_disposicion_reportar": {
+      "description": "Edad × Disposición a reportar pisos turísticos ilegales",
+      "field_a": "P2 - Edad",
+      "field_b": "P19 - Disposición reportar ilegales",
+      "data": {
+        "18-23 años": {
+          "Sí": 1
+        },
+        "24-30 años": {
+          "Sí": 6,
+          "No": 4,
+          "Depende de las garantías": 1
+        },
+        "31-35 años": {
+          "Depende de las garantías": 4,
+          "Sí": 3,
+          "No": 1
+        },
+        "36-45 años": {
+          "Sí": 4,
+          "Depende de las garantías": 1
+        },
+        "46-55 años": {
+          "Sí": 5,
+          "No": 2,
+          "Depende de las garantías": 1
+        },
+        "Más de 55 años": {
+          "Sí": 6,
+          "Depende de las garantías": 1
+        }
+      }
+    },
+    "ingresos_x_contribucion_turisticos": {
+      "description": "% ingresos en vivienda × Percepción contribución pisos turísticos a crisis (1-5)",
+      "field_a": "P14 - % ingresos vivienda",
+      "field_b": "P18 - Contribución pisos turísticos (1-5)",
+      "data": {
+        "20-30%": {
+          "3": 3,
+          "1": 3,
+          "4": 3,
+          "5": 1,
+          "2": 1
+        },
+        "30-40%": {
+          "5": 4,
+          "3": 4,
+          "4": 2,
+          "1": 1
+        },
+        "40-50%": {
+          "1": 2
+        },
+        "Menos del 20%": {
+          "1": 3,
+          "5": 2,
+          "3": 1,
+          "2": 1
+        },
+        "Más del 50%": {
+          "5": 1
+        },
+        "No aplica (vivo con familia, etc.)": {
+          "4": 3,
+          "3": 2,
+          "5": 2,
+          "1": 1
+        }
+      }
+    },
+    "edad_x_conocimiento_causas": {
+      "description": "Edad × Conocimiento de las causas de la crisis",
+      "field_a": "P2 - Edad",
+      "field_b": "P7 - Conocimiento causas",
+      "data": {
+        "18-23 años": {
+          "Conozco algunas": 1
+        },
+        "24-30 años": {
+          "Sí, las tengo claras": 6,
+          "Conozco algunas": 4,
+          "No sabría explicarlas": 1
+        },
+        "31-35 años": {
+          "Conozco algunas": 5,
+          "Sí, las tengo claras": 3
+        },
+        "36-45 años": {
+          "Sí, las tengo claras": 5
+        },
+        "46-55 años": {
+          "Conozco algunas": 5,
+          "Sí, las tengo claras": 3
+        },
+        "Más de 55 años": {
+          "Sí, las tengo claras": 4,
+          "Conozco algunas": 3
+        }
+      }
+    },
+    "situacion_vivienda_x_problemas": {
+      "description": "Situación de vivienda × Ha tenido problemas con inmobiliaria",
+      "field_a": "P12 - Situación vivienda",
+      "field_b": "P22 - Problemas con inmobiliaria",
+      "data": {
+        "Alquiler": {
+          "Sí": 7,
+          "No": 7
+        },
+        "Propiedad con hipoteca": {
+          "No": 6,
+          "Sí": 5
+        },
+        "Propiedad con hipoteca (no se activa)": {
+          "Sí": 1
+        },
+        "Propiedad sin hipoteca": {
+          "No": 8
+        },
+        "Vivo con familia": {
+          "No": 4,
+          "Sí": 1
+        },
+        "Vivo en cada heredada de abuelos pero sin estar a mi nombre. Problemas con escrituras a mi": {
+          "Sí": 1
+        }
+      }
+    },
+    "genero_x_disposicion_resenas": {
+      "description": "Género × Disposición a dejar reseñas",
+      "field_a": "P4 - Género",
+      "field_b": "P26 - Disposición dejar reseñas",
+      "data": {
+        "Femenino": {
+          "Sí, de forma anónima": 8,
+          "Sí, con mi nombre": 7,
+          "No": 2
+        },
+        "Masculino": {
+          "Sí, de forma anónima": 12,
+          "Sí, con mi nombre": 8,
+          "No": 1
+        },
+        "No Binario": {
+          "Sí, de forma anónima": 1
+        },
+        "Sexo masculino, sin género": {
+          "Sí, con mi nombre": 1
+        }
+      }
+    }
+  }
+}
