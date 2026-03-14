@@ -1,3 +1,6 @@
+#import "@preview/cetz:0.3.4"
+#import "@preview/cetz-plot:0.1.1": chart
+
 == Estudio del público objetivo <sec:publico-objetivo>
 
 === Definición del público objetivo
@@ -45,7 +48,11 @@ Se definen seis objetivos de investigación para la encuesta:
 
 === Elaboración y distribución de la encuesta
 
-// TODO
+El cuestionario se diseñó y distribuyó mediante Google Forms, una herramienta de encuestación en línea que permite recoger respuestas de forma asíncrona y exportar los datos en formato CSV para su análisis posterior. El instrumento final consta de 29 preguntas organizadas en bloques temáticos, cada uno de los cuales corresponde a uno o varios de los seis objetivos de investigación definidos en la sección anterior. Los tipos de pregunta empleados combinan ítems de opción única, ítems de selección múltiple, escalas de Likert de cinco puntos —donde 1 indica total desacuerdo y 5 total acuerdo— y preguntas abiertas de texto libre. Esta variedad de formatos permite capturar tanto valoraciones cuantificables como percepciones cualitativas que enriquecen la interpretación de los datos.
+
+La distribución del cuestionario se realizó entre el 4 y el 6 de marzo de 2026, según se desprende de las marcas temporales registradas en las respuestas. Se siguió un procedimiento de muestreo por conveniencia con efecto bola de nieve: el enlace se difundió a través de redes personales —grupos familiares y de amistad—, contactos profesionales del ámbito tecnológico, foros y comunidades de periodismo de datos, y grupos en línea relacionados con la vivienda y los derechos de la ciudadanía. En total se recibieron 43 respuestas. Tras aplicar el criterio de exclusión definido en la pregunta de consentimiento (P1), se descartaron 3 respuestas cuyos participantes no otorgaron su conformidad al tratamiento de datos, por lo que la muestra válida queda compuesta por 40 respuestas.
+
+Conviene señalar explícitamente las limitaciones de esta muestra antes de interpretar cualquier resultado. En primer lugar, el 85 % de los encuestados reside en Canarias, una comunidad autónoma con una problemática habitacional especialmente aguda derivada de la presión turística, lo que introduce un sesgo geográfico que limita la generalización de los hallazgos al conjunto del territorio español. En segundo lugar, el procedimiento de muestreo por redes personales tiende a sobrerrepresentar perfiles con mayor conciencia política y proximidad a posiciones críticas con el mercado inmobiliario, por lo que los resultados pueden no reflejar la distribución real de opiniones en la población general. En tercer lugar, un tamaño muestral de N = 40 no permite extraer inferencias estadísticas con márgenes de error controlados. Estas limitaciones no invalidan el estudio: el propósito de la encuesta no es el de un análisis sociológico representativo, sino el de una fase de validación exploratoria en el marco del proceso de Design Thinking que orienta el desarrollo de la plataforma. Los resultados se emplean para contrastar hipótesis de diseño y priorizar funcionalidades, y deben leerse en ese contexto.
 
 La @tbl:objetivos-preguntas recoge la correspondencia entre cada bloque de preguntas del cuestionario y los objetivos a los que contribuye. Las preguntas de consentimiento (P1) no se asignan a ningún objetivo de investigación, dado que su función es exclusivamente legal.
 
@@ -90,8 +97,197 @@ La @tbl:objetivos-preguntas recoge la correspondencia entre cada bloque de pregu
 
 === Análisis de los resultados
 
-// TODO
+Los resultados se presentan agrupados por objetivos de investigación. Para cada objetivo se exponen los hallazgos cuantitativos más relevantes, apoyados en visualizaciones generadas directamente a partir del CSV limpio, y se complementan con la interpretación de las respuestas abiertas cuando estas aportan matices que los datos cerrados no recogen.
+
+==== O1 — Conocimiento y percepción ciudadana de la crisis
+
+El nivel de información declarado por los encuestados es elevado: el 70 % afirma poder estimar aproximadamente la subida del alquiler en su zona, el 20 % tiene una idea vaga y solo el 10 % reconoce no saber nada. En cuanto al conocimiento de las causas, el 52,5 % dice tenerlas claras y el 45 % conoce algunas, con apenas un encuestado (2,5 %) que admite no poder explicarlas. Este perfil sugiere una muestra con un nivel de conciencia sobre la crisis habitacional superior a la media ciudadana, resultado coherente con el sesgo de selección por redes de afinidad descrito en la sección anterior.
+
+#{
+  let data_fuentes = (
+    ("Prensa digital", 75.0),
+    ("Redes sociales", 55.0),
+    ("Entorno cercano", 47.5),
+    ("Televisión", 45.0),
+    ("YouTube/Podcasts", 40.0),
+    ("Experiencia propia", 35.0),
+    ("Radio", 22.5),
+    ("Foros online", 17.5),
+    ("Organismos públicos", 12.5),
+    ("Sindicatos inquilinos", 10.0),
+  )
+
+  [
+    #figure(
+      {
+        cetz.canvas({
+          chart.barchart(
+            size: (10, auto),
+            label-key: 0,
+            value-key: 1,
+            x-label: [% de encuestados],
+            y-label: [Fuente de información],
+            data_fuentes,
+          )
+        })
+      },
+      caption: [Fuentes de información sobre la crisis de vivienda (P5). Pregunta de selección múltiple; los porcentajes suman más del 100\%. N = 40.],
+    ) <fig:fuentes-informacion>
+  ]
+}
+
+En cuanto a las fuentes, la prensa digital lidera con el 75 % de los encuestados, seguida de las redes sociales (55 %) y el entorno cercano (47,5 %). Los organismos públicos y las asociaciones de inquilinos apenas alcanzan el 12,5 % y el 10 % respectivamente, lo que apunta a que la ciudadanía no recurre habitualmente a fuentes institucionales para informarse sobre vivienda. Las respuestas abiertas de P15 refuerzan esta interpretación: la demanda más frecuente no es entender las causas de la crisis —que la mayoría conoce— sino comprender por qué no se actúa políticamente, con referencias explícitas a modelos internacionales como el de Viena o los Países Bajos. Una plataforma que centralice datos oficiales y verificables cubriría, por tanto, una laguna informativa real respecto a los canales que los encuestados utilizan habitualmente.
+
+#{
+  let causas = (
+    ("Falta vivienda pública", 77.5),
+    ("Pisos turísticos", 75.0),
+    ("Especulación", 67.5),
+    ("Leg. insuficiente", 47.5),
+    ("Fondos de inversión", 40.0),
+    ("Salarios bajos", 37.5),
+    ("Demanda > oferta", 37.5),
+    ("Exceso regulación", 25.0),
+    ("Inmigración", 15.0),
+    ("Okupación", 15.0),
+  )
+
+  [
+    #figure(
+      {
+        cetz.canvas({
+          chart.barchart(
+            size: (10, auto),
+            label-key: 0,
+            value-key: 1,
+            x-label: [% de encuestados],
+            y-label: [Causa percibida],
+            causas,
+          )
+        })
+      },
+      caption: [Causas percibidas de la crisis de vivienda (P8). Pregunta de selección múltiple. N = 40.],
+    ) <fig:causas-crisis>
+  ]
+}
+
+Las causas más señaladas son la falta de vivienda pública (77,5 %) y los pisos turísticos (75 %), seguidas de la especulación (67,5 %). Estas tres opciones remiten a un diagnóstico en el que la responsabilidad recae en la estructura del mercado y en la insuficiencia de la oferta pública. Por el contrario, las causas de carácter liberal —exceso de regulación (25 %), inmigración (15 %) u ocupación (15 %)— obtienen respaldo minoritario, lo que, dado el sesgo de la muestra, no puede interpretarse como representativo de la opinión general. Entre las afirmaciones de acuerdo (P9), el 85 % de los encuestados respalda la necesidad de más vivienda pública de alquiler y el 72,5 % considera la vivienda un derecho, no un producto de mercado.
+
+==== O2 — Demanda de herramientas de visualización de datos
+
+La utilidad percibida de los gráficos interactivos de precios es muy elevada: el 75 % de los encuestados la califica de "muy útil" y el 17,5 % de "algo útil", lo que suma una aceptación del 92,5 %. Solo 3 encuestados (7,5 %) la consideran poco o nada útil. Este resultado valida la premisa central del proyecto: existe una demanda real de herramientas de visualización accesibles para el público general.
+
+#{
+  let comparativas = (
+    ("Evolución temporal", 67.5),
+    ("Precio/m² barrios", 60.0),
+    ("Relación precio-salario", 50.0),
+    ("Mi municipio vs nacional", 47.5),
+    ("Alquiler vs compra", 45.0),
+  )
+
+  [
+    #figure(
+      {
+        cetz.canvas({
+          chart.columnchart(
+            size: (auto, 6),
+            label-key: 0,
+            value-key: 1,
+            x-label: [Tipo de comparativa],
+            y-label: [% de encuestados],
+            comparativas,
+          )
+        })
+      },
+      caption: [Tipos de comparativas de mayor interés para los encuestados (P11). Pregunta de selección múltiple. N = 40.],
+    ) <fig:comparativas-interes>
+  ]
+}
+
+En cuanto al tipo de comparativas preferidas, la evolución temporal lidera con el 67,5 %, seguida del precio por m² entre barrios (60 %) y la relación precio-salario (50 %). Estos tres tipos de visualización corresponden exactamente a las funcionalidades core previstas para la plataforma, lo que refuerza las decisiones de diseño adoptadas en la fase de empatía. El análisis de las respuestas abiertas de P29 confirma este patrón: los datos históricos de precios y las comparativas geográficas son las funcionalidades más frecuentemente mencionadas (33,3 % de las respuestas válidas), acompañadas de una demanda explícita de fiabilidad y transparencia en los datos (24,2 %).
+
+==== O3 — Situación habitacional y esfuerzo económico
+
+El 35 % de los encuestados vive en régimen de alquiler y el 27,5 % en propiedad con hipoteca. Estos dos grupos, que concentran a más del 60 % de la muestra, son precisamente los perfiles con mayor exposición a las tensiones del mercado residencial. En cuanto al esfuerzo económico destinado a vivienda, el 27,5 % destina entre el 20 y el 30 % de sus ingresos y otro 27,5 % entre el 30 y el 40 %; un 7,5 % supera el umbral del 40 %, porcentaje considerado por organismos internacionales como indicador de sobrecarga de costes habitacionales @eurostat_housing_expenditure. El 20 % de la muestra no aplica este indicador por residir con familiares.
+
+El cruce entre situación de vivienda y utilidad percibida de los gráficos muestra que la valoración positiva es consistente en todos los segmentos: tanto los encuestados en alquiler como los propietarios con hipoteca y quienes viven con familiares coinciden en valorarla como "muy útil" de forma mayoritaria. La plataforma resulta relevante independientemente del régimen de tenencia, lo que amplía su potencial público objetivo.
+
+==== O4 — Impacto percibido de los pisos turísticos y disposición a reportar
+
+El 60 % de los encuestados declara tener al menos un piso turístico en su edificio o calle (35 % "alguno", 25 % "varios"), un porcentaje que refleja la elevada concentración de la muestra en Canarias. Los efectos más señalados son la subida del alquiler (55 %) y la reducción de la oferta de vivienda (47,5 %), seguidos de gentrificación del barrio (25 %) y encarecimiento del comercio local (20 %). La escala de percepción de contribución a la crisis (P18) presenta una distribución polarizada, con el 25 % en el nivel máximo (5) y el 25 % en el mínimo (1), lo que resulta en una media de 3,15 sobre 5 y una mediana de 3.
+
+#{
+  let reportar = (
+    ("Sí", 62.5),
+    ("Depende de las garantías", 20.0),
+    ("No", 17.5),
+  )
+
+  [
+    #figure(
+      {
+        cetz.canvas({
+          chart.piechart(
+            radius: 3,
+            slice-style: (
+              rgb("#27ae60"),
+              rgb("#f39c12"),
+              rgb("#e74c3c"),
+            ),
+            label-key: 0,
+            value-key: 1,
+            reportar,
+          )
+        })
+      },
+      caption: [Disposición a reportar pisos turísticos ilegales de forma anónima (P19). N = 40.],
+    ) <fig:disposicion-reportar>
+  ]
+}
+
+La disposición a reportar pisos turísticos ilegales es positiva en el 82,5 % de los casos: el 62,5 % respondería que sí de forma directa y el 20 % condicionaría su participación a garantías suficientes. Solo el 17,5 % descarta participar. Este resultado valida la funcionalidad de reportes ciudadanos como componente viable de la plataforma, con la condición de que el sistema ofrezca garantías claras de anonimato y protección al informante. Las respuestas abiertas de P21 documentan una experiencia predominantemente negativa con los pisos turísticos: proliferación en zonas residenciales, efecto de desplazamiento geográfico y ausencia de control de licencias, con Canarias como escenario central de los testimonios más detallados.
+
+==== O5 — Experiencia con agentes inmobiliarios y demanda de reseñas verificadas
+
+El 37,5 % de los encuestados declara haber tenido problemas con una inmobiliaria o propietario. Los tipos de problema más frecuentes son la falta de mantenimiento (20 %), las comisiones abusivas (17,5 %) y la no devolución de la fianza (12,5 %). Ante estos problemas, la mayoría no emprendió acciones: el 42,5 % declara que no sabía cómo actuar, el 25 % lo intentó pero desistió y el 22,5 % no actuó por miedo a represalias. Solo el 10 % llegó a interponer una denuncia formal. Esta pauta de inacción, coherente con los hallazgos del IDRA sobre las barreras a la reclamación en el mercado del alquiler @idra_2024, subraya la necesidad de mecanismos de denuncia accesibles y con garantías de anonimato.
+
+La demanda de un sistema de reseñas de inmobiliarias es alta: el 70 % lo considera "muy útil" y el 22,5 % "algo útil", suma que alcanza el 92,5 %. El 92,5 % de los encuestados estaría dispuesto a dejar reseñas (52,5 % de forma anónima, 40 % con su nombre). Entre los factores de confianza en dicho sistema, el más valorado es que otros usuarios confirmen la experiencia (67,5 %), seguido de la verificación mediante contrato (57,5 %) y el anonimato (30 %). Los testimonios de P28 ilustran la dimensión humana de estos datos: las experiencias relatadas son universalmente negativas e incluyen casos de discriminación en el proceso de selección de inquilinos, presión para abandonar el piso y situaciones de extrema vulnerabilidad.
+
+==== O6 — Necesidades funcionales desde la perspectiva del usuario
+
+El análisis de las respuestas abiertas de P29 (33/40 respuestas válidas, 82,5 %) revela cinco categorías de demanda funcional. La más frecuente es el acceso a datos históricos de precios y su evolución temporal (33,3 % de las respuestas), que valida directamente la funcionalidad de visualización de series históricas. La segunda es la fiabilidad y verificabilidad de los datos (24,2 %), con menciones explícitas a fuentes oficiales y estadísticos de carrera, lo que subraya que el rigor metodológico en las fuentes de datos es un factor diferenciador. El sistema de reseñas de propietarios e inmobiliarias ocupa el tercer lugar (15,2 %), y la información legal y sobre ayudas al alquiler (9,1 %) emerge como una funcionalidad no prevista inicialmente en el alcance del proyecto que podría considerarse en versiones futuras. Los mapas de calor y la visualización de la proporción de pisos turísticos por zona (6,1 %) refuerzan la inclusión de los mapas coropléticos como componente central de la interfaz.
+
+#figure(
+  table(
+    columns: (auto, 1fr, auto, auto),
+    align: (center, left, center, center),
+    table.header(
+      [*Objetivo*],
+      [*Hallazgo principal*],
+      [*Dato clave*],
+      [*Validación*],
+    ),
+    [O1], [Conocimiento medio-alto; demanda de datos independientes], [70 % estima subida de alquiler], [Sí],
+    [O2], [Alta utilidad percibida; prioridad: evolución temporal y precio/m²], [92,5 % valora los gráficos útiles], [Sí],
+    [O3], [60 % en alquiler o hipoteca; 35 % destina >30 % de ingresos], [27,5 % en rango 30-40 %], [Contextual],
+    [O4], [60 % convive con pisos turísticos; 82,5 % dispuesto a reportar], [62,5 % reportaría directamente], [Sí],
+    [O5], [37,5 % ha tenido problemas; 90 % no denunció; 92,5 % quiere reseñas], [42,5 % no sabía cómo actuar], [Sí],
+    [O6], [Prioridades: datos históricos > fiabilidad > reseñas > información legal], [33,3 % pide datos históricos], [Sí],
+  ),
+  caption: [Síntesis de hallazgos por objetivo de investigación y validación de hipótesis de diseño.],
+) <tbl:sintesis-hallazgos>
 
 === Conclusiones del estudio
 
-// TODO
+El estudio del público objetivo, articulado en tres fases —mapas de empatía, definición de objetivos y encuesta de validación—, permite extraer un conjunto de conclusiones que orientan directamente las decisiones de diseño y desarrollo de la plataforma.
+
+En relación con el conocimiento ciudadano de la crisis habitacional (O1), la muestra presenta un nivel de información elevado: la mayoría de los encuestados conoce las causas estructurales del problema y puede estimar la evolución de los precios en su entorno. La demanda más articulada en las respuestas abiertas no es informativa sino política: los encuestados quieren entender por qué no se actúa y disponer de datos independientes que respalden la presión ciudadana. Este hallazgo posiciona la plataforma no solo como herramienta de consulta sino como instrumento de empoderamiento colectivo.
+
+La demanda de herramientas de visualización (O2) está ampliamente validada: el 92,5 % de los encuestados considera útiles los gráficos interactivos de precios. Las comparativas de evolución temporal, precio por m² y relación precio-salario son las funcionalidades más demandadas, en plena coherencia con las funcionalidades core definidas en la fase de empatía y con el stack de visualización previsto para la plataforma (@sec:enfoque). La fiabilidad y la transparencia en las fuentes de datos emergen como el segundo factor diferenciador más mencionado en las respuestas abiertas, lo que refuerza la decisión de utilizar exclusivamente datos oficiales del Ministerio de Vivienda, el INE y el Catastro.
+
+El módulo de reportes ciudadanos y el sistema de reseñas de agentes inmobiliarios quedan validados por los objetivos O4 y O5. El 82,5 % de los encuestados estaría dispuesto a reportar pisos turísticos ilegales, y el 92,5 % valoraría positivamente un sistema de reseñas verificadas. Los factores de confianza más valorados —confirmación por pares y verificación mediante contrato— orientan los requisitos funcionales del módulo de moderación. Las respuestas abiertas de P21 y P28 documentan una experiencia directa con los problemas que estas funcionalidades pretenden abordar, lo que refuerza su pertinencia desde la perspectiva del diseño centrado en el usuario.
+
+El análisis de las necesidades funcionales (O6) aporta además una demanda no prevista inicialmente: la información legal y sobre ayudas al alquiler. Aunque esta funcionalidad queda fuera del alcance de la versión actual del proyecto, su presencia reiterada en las respuestas abiertas sugiere una oportunidad de extensión para versiones futuras.
+
+En conjunto, los resultados de la encuesta confirman que las hipótesis de diseño formuladas durante la fase de empatía están fundamentadas en necesidades reales de los usuarios potenciales. Las limitaciones de la muestra —tamaño reducido, sesgo geográfico hacia Canarias y sobrerrepresentación de perfiles políticamente activos— no invalidan estas conclusiones para los fines del proyecto, que son de validación exploratoria en el marco de un proceso de Design Thinking, y no de inferencia estadística sobre la población general.

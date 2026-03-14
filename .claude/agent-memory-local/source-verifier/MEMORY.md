@@ -99,6 +99,40 @@
 - **BibTeX correction needed**: URL rota; cifra 83% no verificable (sustituir por 80,7% del Observatorio o 81,1% del INE-ECH 2020)
 - **Alternative source for 83%**: Podria provenir del informe PDF ahora inaccesible; cifra mas proxima en INE 2022 no confirmada aun
 
+## VUT / Short-Term Rentals - Verified Sources (VC-MEMORY-005)
+
+### Academic Papers (all verified March 2026)
+
+| Key | Authors | Corrections made |
+|-----|---------|-----------------|
+| `garcia_lopez_airbnb_barcelona_2020` | García-López, Jofre-Monseny, Martínez-Mazza, Segú | Added URL; DOI confirmed |
+| `barron_airbnb_prices_2021` | Barron, Kung, Proserpio | DOI confirmed valid; added URL; removed "needs verification" note |
+| `franco_santos_airbnb_portugal_2021` | Franco, Santos | DOI confirmed; added URL |
+| `cocola_gant_financialisation_barcelona_2025` | Cocola-Gant, Hodkinson, Janoschka | KEY RENAMED from `pah_sage_financialisation_barcelona_2025` (PAH was wrong author). Title corrected. Journal = Urban Studies (not EURS). Published online 6 Oct 2025. |
+| `vives_miro_desposesion_palma_2017` | Vives-Miró, Rullan | Added DOI 10.4067/S0718-34022017000200004; changed URL to SciELO (ResearchGate blocked) |
+| `cocola_gant_displacement_2018` | Cócola-Gant | Added chapter=17, pages=281-293 |
+| `mazorra_lavapies_2023` | Mazorra Rodríguez, **Álvaro** | CRITICAL: Author first name was «Javier» — WRONG, correct is **Álvaro**. Title corrected (was "Turistificación y desplazamiento..."; actual: "Tendencias de gentrificación y turistificación..."). Added pages 199-231, DOI 10.19053/20275137.n26.2023.13672 |
+
+### Institutional Sources (all verified March 2026)
+
+| Key | Status | URL corrected |
+|-----|--------|--------------|
+| `banco_espana_informe_anual_2023` | Verified with caveats | URL updated to specific annual report page (not generic listing) |
+| `fedea_vut_2026` | Verified | Title corrected; authors: Hidalgo, Alberto and Velázquez, Francisco J.; document dt2026-02 |
+| `mivau_vut_ilegales_2026` | Verified | Added URL (press release 2 Feb 2026); author corrected to full ministry name |
+| `ine_vut_experimental` | Verified | URL active; page is a portal, figures in linked tables/press releases |
+| `reglamento_ue_2024_1028` | Verified | URL active; Recital (1) is the source for "lack of reliable information" language |
+| `ajuntament_barcelona_vut_2024` | Verified | Added URL (21 Jun 2024 press release); 10,500 sanciones + 9,700 órdenes de cese confirmed |
+| `ley_6_2025_canarias` | Verified | Title corrected: "Ordenación Sostenible del Uso Turístico de Viviendas" (not "regulación del alquiler turístico"); BOE URL added |
+| `plan_reside_madrid` | Verified | Added URL; data (1,131-1,200 licensed / 17,360 total) confirmed from official sources |
+
+### Claims requiring caution in the Typst text
+
+1. **Banco de España 10% / 340,000 VUT**: The 340,000 figure comes from INE experimental stats (not directly stated in Informe Anual 2023 chapter). The Informe Anual 2023 discusses VUT as a factor limiting rental supply and confirms concentration in tourist areas, but the specific 10% and 340,000 figures should be cross-cited with INE and do2432.
+2. **FEDEA "información detallada y mecanismos de supervisión efectivos"**: This phrase is NOT verified as a direct quote from dt2026-02 (PDF unreadable). The note now flags this. The claim about the housing deficit (515,000-765,000 homes) could not be verified in the FEDEA document specifically.
+3. **Mazorra "10,000 residentes en cinco años"**: A January 2026 news article confirms this figure for Lavapiés but as a finding from a neighborhood association report, not necessarily from Mazorra's 2023 article specifically. The 12% and 25% VUT figures ARE from Mazorra.
+4. **Cocola-Gant/Barcelona 56% / 8.8%**: Article exists and is about VUT financialisation in Barcelona, but specific figures (56%, 8.8%) could not be confirmed from accessible sources (SAGE paywall).
+
 ## Search Strategy Notes
 
 - Wiley paywall blocks direct access
@@ -108,3 +142,6 @@
 - Spanish institutional reports: Defensor del Pueblo PDFs often have extraction issues; verify via news coverage instead
 - Servimedia and HOGAR SÍ provide reliable secondary coverage of Defensor del Pueblo reports
 - UN document A/HRC/47/43 is thematic (general global analysis), not country-specific; always verify the scope before citing
+- BDE annual report chapter PDFs render as binary in WebFetch — verify via secondary news coverage or FEDEA/BDE press notes
+- FEDEA document PDFs at documentos.fedea.net also render as binary — use search snippets for content verification
+- SAGE journals (Urban Studies, European Urban Studies) block WebFetch with 403; use Google Scholar or semantic scholar for metadata
