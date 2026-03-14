@@ -1,10 +1,10 @@
 ---
 id: VC-0047
 title: Estudio de público objetivo
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-03-04 19:21'
-updated_date: '2026-03-14 13:30'
+updated_date: '2026-03-14 20:25'
 labels:
   - ux/ui
 milestone: m-1
