@@ -3,15 +3,16 @@ id: VC-0057
 title: >-
   Extraer gráficos de encuesta a ficheros individuales con lectura dinámica de
   CSV
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-03-14 19:40'
-updated_date: '2026-03-14 19:53'
+updated_date: '2026-03-14 20:07'
 labels:
   - docs
   - refactor
 dependencies: []
 priority: high
+ordinal: 218.75
 ---
 
 ## Description
