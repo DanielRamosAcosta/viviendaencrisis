@@ -27,11 +27,66 @@ La diversidad de estos seis perfiles no es accidental: refleja la multiplicidad 
 
 === Definición de los objetivos
 
-// TODO
+El diseño de la encuesta responde a un conjunto de objetivos específicos, derivados tanto de los seis perfiles de empatía descritos en la sección anterior como de las funcionalidades previstas para la plataforma. Cada objetivo delimita un área de conocimiento que los mapas de empatía han identificado como relevante pero que no puede validarse sin datos empíricos procedentes de usuarios reales o potenciales. La articulación explícita de estos objetivos antes de la distribución del cuestionario permite verificar, una vez obtenidas las respuestas, en qué medida las hipótesis de diseño están fundamentadas.
+
+Se definen seis objetivos de investigación para la encuesta:
+
+*O1 — Conocimiento y percepción ciudadana de la crisis.* Se pretende medir el nivel de información que tienen los encuestados sobre la crisis de vivienda: sus fuentes habituales de información, su capacidad para estimar la evolución reciente de los precios y su percepción sobre las causas del problema. Este objetivo permite contrastar si la brecha informativa identificada en los perfiles —especialmente en el de la inquilina que busca informarse y en el del joven que quiere emanciparse— tiene correlato empírico en la muestra, y en qué medida una plataforma de datos abiertos podría cubrir esa necesidad.
+
+*O2 — Demanda de herramientas de visualización de datos.* Se busca evaluar si los encuestados perciben como útil una plataforma de visualización interactiva de precios de vivienda y qué tipos de comparativas priorizarían. La utilidad percibida constituye un indicador previo a la adopción de cualquier herramienta digital @navalkha_2021[p.~23], y su medición orienta las decisiones sobre qué funcionalidades de visualización deben estar disponibles en la versión inicial de la plataforma —evolución temporal, comparativas por zona, mapas coropléticos— frente a las que pueden diferirse a iteraciones posteriores.
+
+*O3 — Situación habitacional y esfuerzo económico.* Se recoge información sobre el régimen de tenencia, la comunidad autónoma de residencia y la proporción de ingresos que los encuestados destinan a vivienda. Este objetivo no persigue un fin descriptivo en sí mismo, sino contextualizar las respuestas al resto del cuestionario: se espera que la percepción de utilidad de la plataforma, la exposición a pisos turísticos y la disposición a participar en un sistema de reportes varíen significativamente en función de la situación habitacional del encuestado.
+
+*O4 — Impacto percibido de los pisos turísticos y disposición a reportar.* Se explora la percepción de los encuestados sobre los efectos de los alojamientos turísticos de corta duración en su entorno inmediato y su predisposición a utilizar un sistema de reportes ciudadanos para denunciar establecimientos ilegales o sin licencia. La literatura sobre cartografía colaborativa y activismo de datos sugiere que la participación ciudadana en la producción de datos es más alta cuando los usuarios perciben una relación directa entre su experiencia personal y el problema que se denuncia @maharawal_mcelroy_2018[p.~384].
+
+*O5 — Experiencia con agentes inmobiliarios y demanda de reseñas verificadas.* Se investigan los problemas que los encuestados han experimentado con inmobiliarias o propietarios, las acciones emprendidas al respecto y la disposición a consultar y dejar reseñas verificadas de agentes inmobiliarios. El informe del IDRA sobre el impacto de las inmobiliarias en el mercado del alquiler @idra_2024 documenta prácticas de discriminación y abuso que los mecanismos de mercado actuales no corrigen; la encuesta permite valorar si existe demanda suficiente para que un sistema de reseñas ciudadanas sea una funcionalidad viable en la plataforma.
+
+*O6 — Necesidades funcionales desde la perspectiva del usuario.* Mediante preguntas abiertas y de selección múltiple, se recogen las funcionalidades que los encuestados esperarían de una plataforma como Vivienda en Crisis. Este objetivo actúa como contrapunto cualitativo al resto del cuestionario: permite detectar demandas no anticipadas en la fase de empatía y priorizar el desarrollo en función de las expectativas reales de los usuarios, en coherencia con los principios del diseño centrado en el usuario que orientan la metodología del proyecto (@sec:enfoque).
 
 === Elaboración y distribución de la encuesta
 
 // TODO
+
+La @tbl:objetivos-preguntas recoge la correspondencia entre cada bloque de preguntas del cuestionario y los objetivos a los que contribuye. Las preguntas de consentimiento (P1) no se asignan a ningún objetivo de investigación, dado que su función es exclusivamente legal.
+
+#figure(
+  table(
+    columns: (auto, 1fr, auto),
+    align: (center, left, center),
+    table.header(
+      [*Pregunta(s)*],
+      [*Enunciado resumido*],
+      [*Objetivo(s)*],
+    ),
+    [P1], [Consentimiento al tratamiento de datos], [—],
+    [P2–P4], [Edad, ocupación y género], [O3],
+    [P5], [Fuentes de información sobre la crisis de vivienda], [O1],
+    [P6], [Estimación de la subida del alquiler en su zona], [O1],
+    [P7–P8], [Conocimiento y percepción de las causas de la crisis], [O1],
+    [P9], [Grado de acuerdo con afirmaciones sobre la crisis], [O1],
+    [P10], [Utilidad percibida de gráficos interactivos de precios], [O2],
+    [P11], [Tipos de comparativas de interés], [O2],
+    [P12], [Situación de vivienda actual (régimen de tenencia)], [O3],
+    [P13], [Comunidad autónoma de residencia], [O3],
+    [P14], [Porcentaje de ingresos destinado a vivienda], [O3],
+    [P15], [Qué le gustaría entender mejor sobre la crisis], [O1, O6],
+    [P16], [Presencia de pisos turísticos en el edificio o calle], [O4],
+    [P17], [Efectos observados de los pisos turísticos en su zona], [O4],
+    [P18], [Percepción sobre la contribución de pisos turísticos a la crisis], [O4],
+    [P19], [Disposición a reportar pisos turísticos ilegales de forma anónima], [O4],
+    [P20], [Información deseada sobre pisos turísticos], [O4],
+    [P21], [Experiencia personal con pisos turísticos (abierta)], [O4],
+    [P22], [Problemas con inmobiliaria o propietario], [O5],
+    [P23], [Tipo de problemas experimentados], [O5],
+    [P24], [Acciones emprendidas ante los problemas], [O5],
+    [P25], [Valoración de un sistema de reseñas de inmobiliarias], [O5],
+    [P26], [Disposición a dejar reseñas sobre inmobiliarias], [O5],
+    [P27], [Factores de confianza en un sistema de reseñas], [O5],
+    [P28], [Experiencia con inmobiliaria o propietario (abierta)], [O5],
+    [P29], [Funcionalidades esperadas en la plataforma], [O6],
+  ),
+  caption: [Correspondencia entre las preguntas del cuestionario y los objetivos de la encuesta. Las preguntas de consentimiento (P1) quedan fuera de la asignación a objetivos de investigación.],
+) <tbl:objetivos-preguntas>
 
 === Análisis de los resultados
 
