@@ -1,15 +1,16 @@
 ---
 id: VC-0056
 title: Fix broken bar charts in Typst survey result files
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-03-14 18:44'
-updated_date: '2026-03-14 18:46'
+updated_date: '2026-03-14 20:07'
 labels:
   - bug
   - docs
 dependencies: []
 priority: high
+ordinal: 156.25
 ---
 
 ## Description
