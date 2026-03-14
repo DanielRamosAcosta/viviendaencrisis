@@ -67,11 +67,12 @@ Se contempla scraping puntual de portales inmobiliarios (Idealista, Fotocasa, et
 
 Todo trabajo (sesión principal y subagentes) **debe** estar vinculado a una tarea del backlog. Además, se debe reflejar el estado real en todo momento:
 
-1. **Al refinar** una tarea con el usuario (product-owner) → moverla a **Refinement**
-2. **Al empezar** a trabajar en una tarea → moverla a **In Progress**
-3. **Al terminar** el prompt, poner la tarea en "In Review" automáticamente y sin preguntar
-4. **Cuando el usuario dé el OK** → moverla a **Done**
-5. **Si el usuario no da el OK** moverla de nuevo a **In Progress** en lo que se realizan los ajustes (es decir, volver al paso 2.)
+1. **Al crear** una tarea → añadir el label **unrefined**
+2. **Al terminar de refinar** con el usuario (product-owner) → cambiar label a **refined**
+3. **Al empezar** a trabajar en una tarea → moverla a **In Progress**
+4. **Al terminar** el prompt, poner la tarea en "In Review" automáticamente y sin preguntar
+5. **Cuando el usuario dé el OK** → moverla a **Done**
+6. **Si el usuario no da el OK** moverla de nuevo a **In Progress** en lo que se realizan los ajustes (es decir, volver al paso 3.)
 
 Nunca se debe trabajar sin una tarea asociada. Si no existe, créala antes de empezar.
 
