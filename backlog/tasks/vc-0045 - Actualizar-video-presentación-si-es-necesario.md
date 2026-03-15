@@ -4,7 +4,7 @@ title: Actualizar video presentaci√≥n si es necesario
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-01 19:39'
+updated_date: '2026-03-15 15:13'
 labels:
   - docs
 milestone: m-4
@@ -20,8 +20,3 @@ Si ha habido cambios significativos desde P4, actualizar el video de presentaci√
 
 Horas estimadas: 4h
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
