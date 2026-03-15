@@ -4,7 +4,7 @@ title: Prototipo Lo-Fi (Wireframes)
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-04 19:29'
+updated_date: '2026-03-15 15:13'
 labels:
   - ux/ui
 milestone: m-1
@@ -22,8 +22,3 @@ Diseñar wireframes de baja fidelidad en Figma:
 - Wireframes Desktop: adaptación responsiva con mayor aprovechamiento para visualizaciones de datos
 - Documentar patrones de diseño usados (filtros de datos, dropdowns de selección geográfica, tooltips en gráficas, cards de reportes, mapas interactivos)
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
