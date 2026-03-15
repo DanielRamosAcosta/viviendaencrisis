@@ -4,7 +4,7 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:26'
+updated_date: '2026-03-15 11:28'
 labels:
   - ux/ui
   - refined
@@ -124,17 +124,13 @@ Cada persona debe incluir los siguientes campos:
 Fichero `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas. El usuario trasladará manualmente el contenido a FigJam.
 <!-- SECTION:DESCRIPTION:END -->
 
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
-
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
 - [ ] #1 El fichero USER_PERSONAS.md contiene 5 personas completas (3 principales + 2 secundarias) con todos los campos de la plantilla: nombre+arquetipo, quote, placeholder foto, datos demográficos, educación, ocupación, motivaciones, frustraciones, capacidades técnicas y actividades habituales
 - [ ] #2 Las 2 personas secundarias (Periodista/Investigador, Jubilado/Propietario) están marcadas explícitamente como perfiles secundarios poco representativos de la encuesta
 - [ ] #3 Cada persona ha sido verificada individualmente contra los datos de la encuesta (VC-0047.04) por un agente independiente con contexto limpio
 - [ ] #4 Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
+- [ ] #5 Los 5 User Personas quedan documentados en la memoria del TFM (docs/memory/) mediante el agente tfm-memory-writer junto con la captura de pantalla del FigJam
 <!-- AC:END -->
 
 ## Implementation Notes
@@ -155,6 +151,12 @@ Se lanzan 5 agentes en paralelo (uno por persona), cada uno con contexto limpio.
 ### Paso 3 — Corrección (si aplica)
 El agente principal corrige las discrepancias reportadas por los agentes verificadores en el `USER_PERSONAS.md`.
 
-### Paso 4 — Volcado manual
-El usuario traslada el contenido del Markdown a FigJam."
+### Paso 4 — Volcado manual a FigJam
+El usuario traslada el contenido del Markdown a FigJam.
+
+### Paso 5 — Captura de pantalla
+El usuario saca una captura de pantalla del FigJam y la deja en el directorio de imágenes de la memoria (`docs/memory/images/` o similar).
+
+### Paso 6 — Documentación en la memoria del TFM
+El usuario avisa y se invoca al agente `tfm-memory-writer` para documentar los 5 User Personas (3 principales + 2 secundarios) en la memoria del TFM, incluyendo la captura de pantalla del FigJam.
 <!-- SECTION:NOTES:END -->
