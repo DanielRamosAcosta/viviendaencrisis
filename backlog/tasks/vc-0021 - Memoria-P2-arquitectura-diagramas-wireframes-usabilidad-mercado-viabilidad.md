@@ -6,7 +6,7 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:12'
 labels:
   - docs
 milestone: m-1
@@ -24,8 +24,3 @@ Horas estimadas: 16h
 
 Nota: esta tarea es pesada porque P2 pide muchos entregables documentales.
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
