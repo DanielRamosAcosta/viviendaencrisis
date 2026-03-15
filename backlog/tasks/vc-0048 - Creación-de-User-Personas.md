@@ -4,7 +4,7 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:36'
+updated_date: '2026-03-15 11:40'
 labels:
   - ux/ui
   - refined
@@ -124,7 +124,7 @@ El agente principal genera el fichero `USER_PERSONAS.md` con las 5 personas comp
 ### Paso 2 — Verificación
 Se lanzan 5 agentes en paralelo (uno por persona), cada uno con contexto limpio. Cada agente:
 - Lee el `USER_PERSONAS.md` (solo la sección de su persona asignada)
-- Lee los datos de la encuesta (`docs/memory/data/formulario-limpio.csv`, `docs/memory/data/analisis-cuantitativo.json`, `docs/memory/data/analisis-cualitativo.md`)
+- Lee los datos de la encuesta (`docs/memory/data/formulario-resultados.csv`)
 - Verifica que los datos demográficos, motivaciones, frustraciones y comportamientos de la persona son coherentes con los datos reales de la encuesta
 - Reporta discrepancias o invenciones no respaldadas por los datos
 
@@ -139,14 +139,6 @@ El usuario saca una captura de pantalla del FigJam y la deja en el directorio de
 
 ### Paso 6 — Documentación en la memoria del TFM
 El usuario avisa y se invoca al agente `tfm-memory-writer` para documentar los 5 User Personas (3 principales + 2 secundarios) en la memoria del TFM, incluyendo la captura de pantalla del FigJam.
-
-## ✅ Criterios de aceptación
-
-1. El fichero `USER_PERSONAS.md` contiene 5 personas completas (3 principales + 2 secundarias) con todos los campos de la plantilla
-2. Las 2 personas secundarias están marcadas explícitamente como perfiles secundarios poco representativos de la encuesta
-3. Cada persona ha sido verificada individualmente contra los datos de la encuesta (VC-0047.04) por un agente independiente con contexto limpio
-4. Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
-5. Los 5 User Personas quedan documentados en la memoria del TFM (docs/memory/) mediante el agente tfm-memory-writer junto con la captura de pantalla del FigJam
 
 ## 📦 Entregables
 
@@ -163,6 +155,8 @@ El usuario avisa y se invoca al agente `tfm-memory-writer` para documentar los 5
 - [ ] #4 Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
 - [ ] #5 Los 5 User Personas quedan documentados en la memoria del TFM (docs/memory/) mediante el agente tfm-memory-writer junto con la captura de pantalla del FigJam
 <!-- AC:END -->
+
+
 
 ## Implementation Notes
 
