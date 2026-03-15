@@ -4,7 +4,7 @@ title: Arquitectura de la Información (Card Sorting)
 status: In Progress
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 14:34'
+updated_date: '2026-03-15 14:35'
 labels:
   - ux/ui
   - refined
@@ -122,3 +122,9 @@ En FigJam, las categorías irán como sticky notes en azul y las tarjetas en ama
 7. **Redactar sección de la memoria** — Pasar los resultados, capturas y análisis al agente `tfm-memory-writer` para redactar la sección "Card Sorting" en `docs/memory/content/02_materiales_y_metodos/06_arquitectura_de_la_informacion.typ`
 8. **Derivar sitemap v1** — A partir de los patrones de agrupación, proponer la estructura de navegación de la plataforma
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+El fichero `docs/memory/content/02_materiales_y_metodos/06_arquitectura_de_la_informacion.typ` actualmente tiene un placeholder `// TODO` en la subsección "Card sorting". Al redactar la sección con el agente `tfm-memory-writer`, se debe reemplazar ese TODO por el contenido real (metodología, capturas, hallazgos y conclusiones).
+<!-- SECTION:NOTES:END -->
