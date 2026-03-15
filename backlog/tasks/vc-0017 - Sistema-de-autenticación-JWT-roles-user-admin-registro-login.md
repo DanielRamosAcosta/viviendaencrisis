@@ -4,7 +4,7 @@ title: 'Sistema de autenticación (JWT + roles user/admin, registro, login)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:12'
 labels:
   - auth
 milestone: m-1
@@ -24,8 +24,3 @@ Horas estimadas: 10h
 
 Dependencia clave: bloquea Reportes Airbnb (P3) y Moderación admin (P4).
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
