@@ -4,7 +4,7 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:19'
+updated_date: '2026-03-15 11:21'
 labels:
   - ux/ui
 milestone: m-1
@@ -23,7 +23,7 @@ Crear perfiles de usuario (personas) basados en los datos del estudio de públic
 
 ## TLDR
 
-Diseñar 3 User Personas principales y 2 secundarias en FigJam, basadas en los arquetipos identificados en la encuesta del estudio de público objetivo.
+Diseñar 3 User Personas principales y 2 secundarias en un fichero Markdown, basadas en los arquetipos identificados en la encuesta del estudio de público objetivo.
 
 ## Arquetipos identificados
 
@@ -67,13 +67,13 @@ Cada persona debe incluir los siguientes campos:
 |-------|-------------|
 | **Nombre + Arquetipo** | Nombre ficticio y etiqueta que resume el perfil (ej. "Laura Vincent — La Chef Práctica") |
 | **Quote representativa** | Frase en cursiva que captura la actitud o necesidad principal del usuario |
-| **Foto** | Imagen representativa del perfil |
+| **Foto** | Placeholder con descripción del perfil visual (el usuario añadirá la foto en FigJam) |
 | **Datos demográficos** | Estado civil, edad, hijos, lugar de residencia |
 | **Educación** | Nivel de estudios o formación |
 | **Ocupación/Trabajo** | Puesto y tipo de jornada |
 | **Motivaciones y deseos** | Lista de lo que busca y espera conseguir |
 | **Frustraciones y obstáculos** | Lista de problemas y barreras actuales |
-| **Capacidades técnicas** | Barras de nivel para: Aplicaciones de móvil, Uso del ordenador como usuario, Redes sociales, Compra de productos online |
+| **Capacidades técnicas** | Nivel (bajo/medio/alto/muy alto) para: Aplicaciones de móvil, Uso del ordenador como usuario, Redes sociales, Compra de productos online |
 | **Actividades habituales** | Lista de comportamientos y hábitos cotidianos relacionados con el dominio |
 
 ## Ejemplo de referencia (trabajo anterior)
@@ -105,10 +105,10 @@ Cada persona debe incluir los siguientes campos:
 > - No siempre encuentra la receta cuando la necesita, porque muchas veces las guarda en redes sociales y luego le cuesta localizarlas
 >
 > **Capacidades técnicas**
-> - Aplicaciones de móvil: ████████░░ (alto)
-> - Uso del ordenador como usuaria: ██████████ (muy alto)
-> - Redes sociales: ██████████ (muy alto)
-> - Compra de productos online: ████████░░ (alto)
+> - Aplicaciones de móvil: Alto
+> - Uso del ordenador como usuaria: Muy alto
+> - Redes sociales: Muy alto
+> - Compra de productos online: Alto
 >
 > **Actividades habituales**
 > - Cocina casi todos los días para ella y su pareja
@@ -117,9 +117,9 @@ Cada persona debe incluir los siguientes campos:
 > - Utiliza el temporizador del móvil y prefiere recetas rápidas que no duren más de 30 minutos
 > - Busca que la comida sea sabrosa y saludable, combinando recetas tradicionales e internacionales
 
-## Herramienta y entregable
+## Entregable
 
-Realizar en FigJam siguiendo la plantilla descrita. Las personas secundarias pueden tener un formato más reducido si se considera oportuno.
+Fichero `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas. El usuario trasladará manualmente el contenido a FigJam.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Definition of Done
