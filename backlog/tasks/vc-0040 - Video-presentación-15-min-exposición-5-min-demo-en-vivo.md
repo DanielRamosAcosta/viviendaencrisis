@@ -4,7 +4,7 @@ title: Video presentación (15 min exposición + 5 min demo en vivo)
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:13'
 labels:
   - docs
 milestone: m-3
@@ -20,8 +20,3 @@ Grabar video de presentación de 20 minutos: 15 minutos de exposición del proye
 
 Horas estimadas: 8h
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
