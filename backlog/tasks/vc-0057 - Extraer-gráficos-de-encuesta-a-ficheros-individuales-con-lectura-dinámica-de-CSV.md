@@ -6,13 +6,13 @@ title: >-
 status: Done
 assignee: []
 created_date: '2026-03-14 19:40'
-updated_date: '2026-03-14 20:07'
+updated_date: '2026-03-15 15:13'
 labels:
   - docs
   - refactor
+milestone: m-1
 dependencies: []
 priority: high
-milestone: m-1
 ordinal: 218.75
 ---
 
@@ -31,8 +31,3 @@ Refactorizar los 24 gráficos de encuesta (actualmente hardcoded en 03_encuesta_
 - [x] #5 typst compile sin errores
 - [ ] #6 Datos visualmente consistentes con la versión anterior
 <!-- AC:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
