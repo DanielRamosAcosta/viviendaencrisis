@@ -4,7 +4,7 @@ title: Arquitectura de la Información (Card Sorting)
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 13:14'
+updated_date: '2026-03-15 14:33'
 labels:
   - ux/ui
   - refined
@@ -24,9 +24,9 @@ ordinal: 2812.5
 
 Realizar un ejercicio de card sorting híbrido para descubrir cómo los usuarios potenciales de Vivienda en Crisis agrupan mentalmente las funcionalidades y contenidos de la plataforma. Los resultados alimentarán directamente la sección de Arquitectura de la Información de la memoria del TFM (actualmente vacía) y la propuesta de sitemap v1.
 
-Se utilizarán 20 tarjetas que representan acciones/contenidos concretos del usuario, y 6 categorías sugeridas que los participantes pueden usar, modificar o complementar con categorías propias. El ejercicio se realizará en FigJam, con un tablero independiente por participante.
+Se utilizarán 30 tarjetas que representan acciones/contenidos concretos del usuario, y 6 categorías sugeridas que los participantes pueden usar, modificar o complementar con categorías propias. El ejercicio se realizará en FigJam, con un tablero independiente por participante.
 
-## Tarjetas (20)
+## Tarjetas (30)
 
 1. Ver evolución de precios de alquiler en el tiempo
 2. Ver evolución de precios de compraventa en el tiempo
@@ -42,12 +42,24 @@ Se utilizarán 20 tarjetas que representan acciones/contenidos concretos del usu
 12. Ver mapa de reportes ciudadanos en mi zona
 13. Escribir una reseña sobre un agente inmobiliario
 14. Consultar reseñas de agentes inmobiliarios
-15. Registrarse / Iniciar sesión
-16. Ver mi perfil y mis reportes
-17. Guardar zonas favoritas para seguimiento
-18. Qué es Vivienda en Crisis (información del proyecto)
-19. Preguntas frecuentes / Ayuda
-20. Noticias o alertas sobre cambios significativos en precios
+15. Crear una cuenta
+16. Iniciar sesión
+17. Ver mi perfil y mis reportes
+18. Guardar zonas favoritas para seguimiento
+19. Qué es Vivienda en Crisis (información del proyecto)
+20. Preguntas frecuentes / Ayuda
+21. Noticias o alertas sobre cambios significativos en precios
+22. Ver ranking de zonas más caras y más baratas
+23. Filtrar datos por tipo de vivienda (piso, casa, estudio)
+24. Ver el estado de un reporte que envié
+25. Consultar información legal sobre derechos del inquilino
+26. Ver la fecha de última actualización de los datos
+27. Comparar datos oficiales con precios de portales inmobiliarios
+28. Ver un glosario de términos (IPC, índice de referencia, VUT...)
+29. Recibir alertas cuando cambien los precios en mi zona
+30. Cambiar el idioma de la plataforma
+
+Las tarjetas 25, 27, 29 y 30 son deliberadamente ambiguas en su categorización: el objetivo es observar dónde las colocan los participantes para descubrir tensiones en el modelo mental.
 
 ## Categorías sugeridas (6)
 
@@ -68,7 +80,7 @@ En FigJam, las categorías irán como sticky notes en azul y las tarjetas en ama
 
 ## Criterios funcionales
 
-1. Crear un template de FigJam con las 20 tarjetas (stickies amarillos) y las 6 categorías sugeridas (stickies azules), con instrucciones claras para el participante
+1. Crear un template de FigJam con las 30 tarjetas (stickies amarillos) y las 6 categorías sugeridas (stickies azules), con instrucciones claras para el participante
 2. Duplicar el template en 3 tableros independientes (uno por participante)
 3. Reclutar 3 participantes que se alineen con los perfiles descritos
 4. Compartir cada tablero con su participante y dejar que agrupe las tarjetas de forma autónoma
@@ -85,7 +97,7 @@ En FigJam, las categorías irán como sticky notes en azul y las tarjetas en ama
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Template de FigJam creado con las 20 tarjetas (amarillo) y 6 categorías sugeridas (azul), con instrucciones claras para el participante
+- [ ] #1 Template de FigJam creado con las 30 tarjetas (amarillo) y 6 categorías sugeridas (azul), con instrucciones claras para el participante
 - [ ] #2 Las tarjetas usan lenguaje no técnico comprensible para todos los perfiles, incluido Antonio (baja competencia digital)
 - [ ] #3 3 tableros independientes creados (uno por participante)
 - [ ] #4 3 participantes reclutados, cubriendo los 3 perfiles objetivo (ciudadana afectada, técnico, jubilado)
