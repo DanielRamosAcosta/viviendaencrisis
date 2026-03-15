@@ -4,7 +4,7 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:28'
+updated_date: '2026-03-15 11:34'
 labels:
   - ux/ui
   - refined
@@ -21,15 +21,15 @@ ordinal: 1406.25
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Crear perfiles de usuario (personas) basados en los datos del estudio de público objetivo (VC-0047) y el análisis de la encuesta (N=40).
-
-## TLDR
+## 📌 TLDR
 
 Diseñar 3 User Personas principales y 2 secundarias en un fichero Markdown, basadas en los arquetipos identificados en la encuesta del estudio de público objetivo.
 
-## Arquetipos identificados
+## 📝 Descripción
 
-### Principales
+Crear perfiles de usuario (personas) basados en los datos del estudio de público objetivo (VC-0047) y el análisis de la encuesta (N=40). Se han identificado 3 arquetipos principales y 2 secundarios a partir de los patrones demográficos, motivacionales y de comportamiento de los encuestados.
+
+### Arquetipos principales
 
 **Persona 1 — La Ciudadana Afectada** (~35% de la muestra)
 - 24-35 años, inquilina, destina 30-40% de ingresos a vivienda
@@ -49,7 +49,7 @@ Diseñar 3 User Personas principales y 2 secundarias en un fichero Markdown, bas
 - Frustración: Portales públicos poco intuitivos, datos no accesibles en formatos abiertos
 - Busca: API abierta, gráficos interactivos con drill-down, filtros avanzados, documentación técnica
 
-### Secundarias
+### Arquetipos secundarios
 
 **Persona 4 — El/La Periodista/Investigador/a** (~18% de la muestra)
 - 31-45 años, formación en periodismo/investigación
@@ -61,7 +61,9 @@ Diseñar 3 User Personas principales y 2 secundarias en un fichero Markdown, bas
 - Motivación: Comprender el cambio en su barrio, justificar preocupaciones sobre pisos turísticos
 - Busca: Evolución del barrio, número de pisos turísticos, impacto en convivencia
 
-## Plantilla de User Persona
+## 🧩 Contexto funcional
+
+### Plantilla de User Persona
 
 Cada persona debe incluir los siguientes campos:
 
@@ -78,17 +80,14 @@ Cada persona debe incluir los siguientes campos:
 | **Capacidades técnicas** | Nivel (bajo/medio/alto/muy alto) para: Aplicaciones de móvil, Uso del ordenador como usuario, Redes sociales, Compra de productos online |
 | **Actividades habituales** | Lista de comportamientos y hábitos cotidianos relacionados con el dominio |
 
-## Ejemplo de referencia (trabajo anterior)
+### Ejemplo de referencia (trabajo anterior)
 
 > **Laura Vincent** — *La Chef Práctica*
 >
 > *"Cocinar es mi escape, pero no tengo tiempo para recetas complicadas"*
 >
 > **Datos demográficos**
-> - Casada
-> - 34 años
-> - Sin hijos
-> - Vive en un piso en Valencia, España
+> - Casada, 34 años, sin hijos, vive en un piso en Valencia, España
 >
 > **Educación**: Grado en Administración de Empresas
 >
@@ -104,7 +103,7 @@ Cada persona debe incluir los siguientes campos:
 > - Falta de tiempo para recetas largas o complicadas
 > - Las recetas que requieren ingredientes difíciles de encontrar
 > - Vídeos largos o explicaciones confusas que no van al grano
-> - No siempre encuentra la receta cuando la necesita, porque muchas veces las guarda en redes sociales y luego le cuesta localizarlas
+> - No siempre encuentra la receta cuando la necesita
 >
 > **Capacidades técnicas**
 > - Aplicaciones de móvil: Alto
@@ -114,14 +113,46 @@ Cada persona debe incluir los siguientes campos:
 >
 > **Actividades habituales**
 > - Cocina casi todos los días para ella y su pareja
-> - Explora recetas en Instagram y TikTok cuando le salen de forma casual, y sigue algunos canales en YouTube como "Cocina con Diego"
-> - Suele improvisar las comidas del día a día, aunque revisa la receta y anota ingredientes en el móvil antes de hacer la compra
-> - Utiliza el temporizador del móvil y prefiere recetas rápidas que no duren más de 30 minutos
-> - Busca que la comida sea sabrosa y saludable, combinando recetas tradicionales e internacionales
+> - Explora recetas en Instagram y TikTok
+> - Prefiere recetas rápidas que no duren más de 30 minutos
 
-## Entregable
+## 🔄 Flujo de trabajo
 
-Fichero `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas. El usuario trasladará manualmente el contenido a FigJam.
+### Paso 1 — Generación
+El agente principal genera el fichero `USER_PERSONAS.md` con las 5 personas completas, siguiendo la plantilla y los arquetipos definidos en la descripción.
+
+### Paso 2 — Verificación
+Se lanzan 5 agentes en paralelo (uno por persona), cada uno con contexto limpio. Cada agente:
+- Lee el `USER_PERSONAS.md` (solo la sección de su persona asignada)
+- Lee los datos de la encuesta (`docs/memory/data/formulario-limpio.csv`, `docs/memory/data/analisis-cuantitativo.json`, `docs/memory/data/analisis-cualitativo.md`)
+- Verifica que los datos demográficos, motivaciones, frustraciones y comportamientos de la persona son coherentes con los datos reales de la encuesta
+- Reporta discrepancias o invenciones no respaldadas por los datos
+
+### Paso 3 — Corrección (si aplica)
+El agente principal corrige las discrepancias reportadas por los agentes verificadores en el `USER_PERSONAS.md`.
+
+### Paso 4 — Volcado manual a FigJam
+El usuario traslada el contenido del Markdown a FigJam.
+
+### Paso 5 — Captura de pantalla
+El usuario saca una captura de pantalla del FigJam y la deja en el directorio de imágenes de la memoria (`docs/memory/images/` o similar).
+
+### Paso 6 — Documentación en la memoria del TFM
+El usuario avisa y se invoca al agente `tfm-memory-writer` para documentar los 5 User Personas (3 principales + 2 secundarios) en la memoria del TFM, incluyendo la captura de pantalla del FigJam.
+
+## ✅ Criterios de aceptación
+
+1. El fichero `USER_PERSONAS.md` contiene 5 personas completas (3 principales + 2 secundarias) con todos los campos de la plantilla
+2. Las 2 personas secundarias están marcadas explícitamente como perfiles secundarios poco representativos de la encuesta
+3. Cada persona ha sido verificada individualmente contra los datos de la encuesta (VC-0047.04) por un agente independiente con contexto limpio
+4. Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
+5. Los 5 User Personas quedan documentados en la memoria del TFM (docs/memory/) mediante el agente tfm-memory-writer junto con la captura de pantalla del FigJam
+
+## 📦 Entregables
+
+- `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas
+- Captura de pantalla del FigJam en `docs/memory/images/`
+- Sección de User Personas documentada en la memoria del TFM (docs/memory/)
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Acceptance Criteria
@@ -132,6 +163,8 @@ Fichero `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas
 - [ ] #4 Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
 - [ ] #5 Los 5 User Personas quedan documentados en la memoria del TFM (docs/memory/) mediante el agente tfm-memory-writer junto con la captura de pantalla del FigJam
 <!-- AC:END -->
+
+
 
 ## Implementation Notes
 
