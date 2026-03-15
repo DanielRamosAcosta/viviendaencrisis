@@ -4,7 +4,7 @@ title: 'Pipeline de datos abiertos (ETL: Ministerio Vivienda, INE, Catastro)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:12'
 labels:
   - data
 milestone: m-1
@@ -22,8 +22,3 @@ Horas estimadas: 10h
 
 Dependencia clave: bloquea Dashboard base (P2) y Mapas + Comparativas (P3).
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
