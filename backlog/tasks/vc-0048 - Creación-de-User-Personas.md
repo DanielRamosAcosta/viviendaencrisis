@@ -4,7 +4,7 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:14'
+updated_date: '2026-03-15 11:19'
 labels:
   - ux/ui
 milestone: m-1
@@ -19,13 +19,45 @@ ordinal: 1406.25
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Crear perfiles de usuario (personas) basados en los datos del estudio de público objetivo (VC-0047).
+Crear perfiles de usuario (personas) basados en los datos del estudio de público objetivo (VC-0047) y el análisis de la encuesta (N=40).
 
-## Perfiles propuestos
+## TLDR
 
-- **Persona 1**: Inquilino joven que busca entender si le están cobrando de más
-- **Persona 2**: Periodista/investigador que necesita datos abiertos para artículos o informes
-- **Persona 3**: Activista o miembro de asociación vecinal que quiere denunciar abusos y ver tendencias
+Diseñar 3 User Personas principales y 2 secundarias en FigJam, basadas en los arquetipos identificados en la encuesta del estudio de público objetivo.
+
+## Arquetipos identificados
+
+### Principales
+
+**Persona 1 — La Ciudadana Afectada** (~35% de la muestra)
+- 24-35 años, inquilina, destina 30-40% de ingresos a vivienda
+- Motivación: Saber si le cobran de más, comparar precios, conocer sus derechos
+- Frustración: Asimetría de información, miedo a represalias, desconocimiento legal
+- Busca: Evolución de precios en su zona, comparativa precio/m², info legal, reportes anónimos
+
+**Persona 2 — El Activista de Datos** (~25% de la muestra)
+- 31-46 años, profesional cualificado, propietario o inquilino
+- Motivación: Documentar abusos con datos para forzar cambio sistémico
+- Frustración: Inacción política, datos parciales/sesgados, falta de investigación independiente
+- Busca: Datos descargables (CSV/API), series históricas, relación pisos turísticos ↔ precios, herramientas de exportación
+
+**Persona 3 — El Usuario Técnico** (~22% de la muestra)
+- 24-45 años, perfil tech (devs, ingenieros), predominantemente masculino
+- Motivación: Análisis técnico del mercado, evaluar decisiones personales (comprar vs alquilar)
+- Frustración: Portales públicos poco intuitivos, datos no accesibles en formatos abiertos
+- Busca: API abierta, gráficos interactivos con drill-down, filtros avanzados, documentación técnica
+
+### Secundarias
+
+**Persona 4 — El/La Periodista/Investigador/a** (~18% de la muestra)
+- 31-45 años, formación en periodismo/investigación
+- Motivación: Generar reportajes, verificar claims con datos
+- Busca: Datos contextualizados, comparativas internacionales, citas verificables
+
+**Persona 5 — El/La Jubilado/a Propietario/a** (~10% de la muestra)
+- 55+ años, propiedad sin hipoteca
+- Motivación: Comprender el cambio en su barrio, justificar preocupaciones sobre pisos turísticos
+- Busca: Evolución del barrio, número de pisos turísticos, impacto en convivencia
 
 ## Plantilla de User Persona
 
@@ -85,7 +117,9 @@ Cada persona debe incluir los siguientes campos:
 > - Utiliza el temporizador del móvil y prefiere recetas rápidas que no duren más de 30 minutos
 > - Busca que la comida sea sabrosa y saludable, combinando recetas tradicionales e internacionales
 
-Realizar en FigJam siguiendo esta plantilla.
+## Herramienta y entregable
+
+Realizar en FigJam siguiendo la plantilla descrita. Las personas secundarias pueden tener un formato más reducido si se considera oportuno.
 <!-- SECTION:DESCRIPTION:END -->
 
 ## Definition of Done
