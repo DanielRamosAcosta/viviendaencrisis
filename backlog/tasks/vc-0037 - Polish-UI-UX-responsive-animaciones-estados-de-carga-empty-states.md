@@ -4,7 +4,7 @@ title: 'Polish UI/UX (responsive, animaciones, estados de carga, empty states)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:13'
 labels:
   - qa
 milestone: m-3
@@ -20,8 +20,3 @@ Pulir la interfaz de usuario: verificar y corregir responsive en todos los break
 
 Horas estimadas: 8h
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
