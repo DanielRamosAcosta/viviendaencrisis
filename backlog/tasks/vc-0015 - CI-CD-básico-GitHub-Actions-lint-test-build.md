@@ -4,7 +4,7 @@ title: 'CI/CD básico (GitHub Actions: lint, test, build)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:12'
 labels:
   - infra
 milestone: m-1
@@ -21,8 +21,3 @@ Configurar pipeline de CI/CD con GitHub Actions. Incluye: linting automático, e
 
 Horas estimadas: 4h
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
