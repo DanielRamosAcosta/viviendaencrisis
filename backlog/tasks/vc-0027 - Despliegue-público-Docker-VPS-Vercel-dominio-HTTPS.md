@@ -4,7 +4,7 @@ title: 'Despliegue público (Docker + VPS/Vercel, dominio, HTTPS)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:13'
 labels:
   - infra
 milestone: m-2
@@ -24,8 +24,3 @@ Horas estimadas: 6h
 
 Depende de: Scaffolding (VC-0014), Dashboard y Reportes completados.
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
