@@ -4,13 +4,13 @@ title: Diagrama de Flujo de usuario
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 10:55'
+updated_date: '2026-03-15 12:54'
 labels:
   - ux/ui
 milestone: m-1
 dependencies: []
 priority: high
-ordinal: 3109.375
+ordinal: 2906.25
 ---
 
 ## Description
