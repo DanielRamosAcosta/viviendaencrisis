@@ -4,9 +4,10 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:24'
+updated_date: '2026-03-15 11:26'
 labels:
   - ux/ui
+  - refined
 milestone: m-1
 dependencies:
   - VC-0047.04
@@ -139,5 +140,21 @@ Fichero `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas
 ## Implementation Notes
 
 <!-- SECTION:NOTES:BEGIN -->
-## Flujo de trabajo\n\n### Paso 1 — Generación\nEl agente principal genera el fichero `USER_PERSONAS.md` con las 5 personas completas, siguiendo la plantilla y los arquetipos definidos en la descripción.\n\n### Paso 2 — Verificación\nSe lanzan 5 agentes en paralelo (uno por persona), cada uno con contexto limpio. Cada agente:\n- Lee el `USER_PERSONAS.md` (solo la sección de su persona asignada)\n- Lee los datos de la encuesta (`docs/memory/data/formulario-limpio.csv`, `docs/memory/data/analisis-cuantitativo.json`, `docs/memory/data/analisis-cualitativo.md`)\n- Verifica que los datos demográficos, motivaciones, frustraciones y comportamientos de la persona son coherentes con los datos reales de la encuesta\n- Reporta discrepancias o invenciones no respaldadas por los datos"
+## Flujo de trabajo
+
+### Paso 1 — Generación
+El agente principal genera el fichero `USER_PERSONAS.md` con las 5 personas completas, siguiendo la plantilla y los arquetipos definidos en la descripción.
+
+### Paso 2 — Verificación
+Se lanzan 5 agentes en paralelo (uno por persona), cada uno con contexto limpio. Cada agente:
+- Lee el `USER_PERSONAS.md` (solo la sección de su persona asignada)
+- Lee los datos de la encuesta (`docs/memory/data/formulario-limpio.csv`, `docs/memory/data/analisis-cuantitativo.json`, `docs/memory/data/analisis-cualitativo.md`)
+- Verifica que los datos demográficos, motivaciones, frustraciones y comportamientos de la persona son coherentes con los datos reales de la encuesta
+- Reporta discrepancias o invenciones no respaldadas por los datos
+
+### Paso 3 — Corrección (si aplica)
+El agente principal corrige las discrepancias reportadas por los agentes verificadores en el `USER_PERSONAS.md`.
+
+### Paso 4 — Volcado manual
+El usuario traslada el contenido del Markdown a FigJam."
 <!-- SECTION:NOTES:END -->
