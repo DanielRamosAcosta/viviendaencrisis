@@ -4,7 +4,7 @@ title: Video demo (5 min)
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:13'
 labels:
   - docs
 milestone: m-2
@@ -20,8 +20,3 @@ Grabar video demo de 5 minutos mostrando las funcionalidades de la beta pública
 
 Horas estimadas: 4h
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
