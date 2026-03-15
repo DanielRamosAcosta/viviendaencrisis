@@ -4,7 +4,7 @@ title: Prueba de Usabilidad
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-04 19:29'
+updated_date: '2026-03-15 15:13'
 labels:
   - ux/ui
 milestone: m-1
@@ -23,8 +23,3 @@ Realizar pruebas de usabilidad con usuarios reales:
 - Observaciones y resultados por usuario
 - Propuestas de mejora basadas en los hallazgos
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
