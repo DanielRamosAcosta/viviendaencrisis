@@ -159,31 +159,3 @@ El usuario saca una captura de pantalla del FigJam y la deja en el directorio de
 ### Paso 6 — Documentación en la memoria del TFM
 El usuario avisa y se invoca al agente `tfm-memory-writer` para documentar los 5 User Personas (3 principales + 2 secundarios) en la memoria del TFM, incluyendo la captura de pantalla del FigJam.
 <!-- SECTION:PLAN:END -->
-
-## Implementation Notes
-
-<!-- SECTION:NOTES:BEGIN -->
-## Flujo de trabajo
-
-### Paso 1 — Generación
-El agente principal genera el fichero `USER_PERSONAS.md` con las 5 personas completas, siguiendo la plantilla y los arquetipos definidos en la descripción.
-
-### Paso 2 — Verificación
-Se lanzan 5 agentes en paralelo (uno por persona), cada uno con contexto limpio. Cada agente:
-- Lee el `USER_PERSONAS.md` (solo la sección de su persona asignada)
-- Lee los datos de la encuesta (`docs/memory/data/formulario-limpio.csv`, `docs/memory/data/analisis-cuantitativo.json`, `docs/memory/data/analisis-cualitativo.md`)
-- Verifica que los datos demográficos, motivaciones, frustraciones y comportamientos de la persona son coherentes con los datos reales de la encuesta
-- Reporta discrepancias o invenciones no respaldadas por los datos
-
-### Paso 3 — Corrección (si aplica)
-El agente principal corrige las discrepancias reportadas por los agentes verificadores en el `USER_PERSONAS.md`.
-
-### Paso 4 — Volcado manual a FigJam
-El usuario traslada el contenido del Markdown a FigJam.
-
-### Paso 5 — Captura de pantalla
-El usuario saca una captura de pantalla del FigJam y la deja en el directorio de imágenes de la memoria (`docs/memory/images/` o similar).
-
-### Paso 6 — Documentación en la memoria del TFM
-El usuario avisa y se invoca al agente `tfm-memory-writer` para documentar los 5 User Personas (3 principales + 2 secundarios) en la memoria del TFM, incluyendo la captura de pantalla del FigJam.
-<!-- SECTION:NOTES:END -->
