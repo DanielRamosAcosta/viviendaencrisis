@@ -5,5 +5,5 @@
 - [Refinement style preferences](feedback_refinement_style.md) — User prefers detailed tasks with TLDR, Teams orchestration, and technical notes
 
 ## Project
-- [Backlog.md MCP capabilities](project_backlog_tools.md) — v1.40.0 tools, known limitations (no reordering)
+- [Backlog.md MCP capabilities](project_backlog_tools.md) — MCP tools with native ordinal ordering support
 - [Milestones and PEC mapping](project_milestones.md) — m-0 delivered, m-1 active (deadline 2026-03-29)

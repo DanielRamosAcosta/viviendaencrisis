@@ -161,31 +161,14 @@ Examples of what to record:
 - Dependencies between features that have been identified
 - Decisions made about scope (what's in/out for the project)
 
-## Backlog Ordering Scripts
+## Backlog Ordering
 
-You have access to shell scripts for viewing and reordering backlog tasks by their visual order (`ordinal`). Use these via Bash when you need to consult or change task ordering.
+Backlog.md MCP supports native task ordering via the `ordinal` field:
 
-### `scripts/backlog-list.sh`
-Lists tasks ordered by `ordinal`. Use this to see the current order of tasks in a milestone or status.
-
-```bash
-# List all tasks in milestone m-1
-scripts/backlog-list.sh --milestone m-1
-
-# List only "To Do" tasks in milestone m-1
-scripts/backlog-list.sh --milestone m-1 --status "To Do"
-```
-
-### `scripts/backlog-reorder.sh`
-Moves a task before or after another task within a milestone+status group.
-
-```bash
-# Place VC-0048 before VC-0049 in milestone m-1
-scripts/backlog-reorder.sh --task VC-0048 --before VC-0049 --milestone m-1
-
-# Place VC-0048 after VC-0050, explicitly setting status
-scripts/backlog-reorder.sh --task VC-0048 --after VC-0050 --milestone m-1 --status "To Do"
-```
+- **`task_create`**: Set `ordinal` when creating a task
+- **`task_edit`**: Change `ordinal` to reposition a task
+- **`task_list`**: Returns tasks sorted by `ordinal`
+- **Convention**: Use spaced integers (1000, 2000, 3000...) to leave room for future inserts
 
 ### When to use
 - When the user asks to prioritize or reorder tasks in the backlog
