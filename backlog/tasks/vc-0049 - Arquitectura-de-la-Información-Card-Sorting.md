@@ -4,7 +4,7 @@ title: Arquitectura de la Información (Card Sorting)
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 13:12'
+updated_date: '2026-03-15 13:13'
 labels:
   - ux/ui
   - refined
@@ -82,12 +82,6 @@ En FigJam, las categorías irán como sticky notes en azul y las tarjetas en ama
 - La redacción de la sección de la memoria se delegará al agente `tfm-memory-writer`. El fichero destino es `docs/memory/content/02_materiales_y_metodos/06_arquitectura_de_la_informacion.typ`.
 - Las capturas de los tableros se guardarán en `docs/memory/images/`.
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
-
 
 
 ## Acceptance Criteria
