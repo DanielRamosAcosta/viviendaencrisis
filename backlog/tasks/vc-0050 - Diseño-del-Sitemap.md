@@ -4,13 +4,13 @@ title: Diseño del Sitemap
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-04 19:29'
+updated_date: '2026-03-15 12:54'
 labels:
   - ux/ui
 milestone: m-1
 dependencies: []
 priority: high
-ordinal: 3406.25
+ordinal: 2953.125
 ---
 
 ## Description
