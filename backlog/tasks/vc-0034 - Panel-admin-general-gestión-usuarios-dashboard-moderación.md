@@ -4,7 +4,7 @@ title: 'Panel admin general (gestión usuarios, dashboard moderación)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:13'
 labels:
   - admin
 milestone: m-3
@@ -24,8 +24,3 @@ Horas estimadas: 8h
 
 Depende de: Auth con rol admin (VC-0017), Deploy (VC-0027).
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
