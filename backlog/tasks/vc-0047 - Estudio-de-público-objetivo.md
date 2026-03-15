@@ -4,7 +4,7 @@ title: Estudio de público objetivo
 status: Done
 assignee: []
 created_date: '2026-03-04 19:21'
-updated_date: '2026-03-14 20:25'
+updated_date: '2026-03-15 15:13'
 labels:
   - ux/ui
 milestone: m-1
@@ -26,8 +26,3 @@ Investigación completa del público objetivo de la plataforma:
 - Análisis cuantitativo y cualitativo de resultados
 - Conclusiones del estudio
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
