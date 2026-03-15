@@ -2,7 +2,7 @@ project_name: "Vivienda en Crisis"
 default_status: "To Do"
 statuses: ["To Do", "In Progress", "In Review", "Done"]
 labels: ["unrefined", "refined"]
-definition_of_done: ["All test suite is passing"]
+definition_of_done: []
 date_format: yyyy-mm-dd
 max_column_width: 20
 default_editor: "zed --wait"
