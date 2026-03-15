@@ -1,10 +1,10 @@
 ---
 id: VC-0049
 title: Arquitectura de la Información (Card Sorting)
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 14:33'
+updated_date: '2026-03-15 14:34'
 labels:
   - ux/ui
   - refined
