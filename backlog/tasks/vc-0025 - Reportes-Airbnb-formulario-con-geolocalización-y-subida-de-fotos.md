@@ -4,7 +4,7 @@ title: 'Reportes Airbnb: formulario con geolocalización y subida de fotos'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:13'
 labels:
   - reportes-airbnb
 milestone: m-2
@@ -24,8 +24,3 @@ Horas estimadas: 12h
 
 Depende de: Auth (VC-0017), Schemas BD (VC-0016).
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
