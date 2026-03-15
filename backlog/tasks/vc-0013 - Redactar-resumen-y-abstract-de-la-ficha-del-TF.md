@@ -4,13 +4,13 @@ title: Redactar resumen y abstract de la ficha del TF
 status: To Do
 assignee: []
 created_date: '2026-02-28 18:29'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 12:54'
 labels:
   - memoria
 milestone: m-3
 dependencies: []
 priority: low
-ordinal: 3000
+ordinal: 19500
 ---
 
 ## Description
