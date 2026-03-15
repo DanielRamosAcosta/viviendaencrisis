@@ -4,7 +4,7 @@ title: Prototipo Hi-Fi (Diseño de Alta Calidad)
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-04 19:29'
+updated_date: '2026-03-15 15:13'
 labels:
   - ux/ui
 milestone: m-1
@@ -25,8 +25,3 @@ Diseñar el prototipo de alta fidelidad en Figma:
 - Pantallas en alta definición (dashboard, mapa, gráficas, comparador, reportes, panel admin)
 - Flujo interactivo prototipado en Figma
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
