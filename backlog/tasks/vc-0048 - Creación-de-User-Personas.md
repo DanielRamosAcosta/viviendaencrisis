@@ -4,11 +4,12 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:23'
+updated_date: '2026-03-15 11:24'
 labels:
   - ux/ui
 milestone: m-1
-dependencies: []
+dependencies:
+  - VC-0047.04
 references:
   - >-
     https://www.figma.com/board/BUhYGpA1sI4Vpju7EKBSpF/Mapa-de-Empat%C3%ADa--Copia-?node-id=2001-534
@@ -127,8 +128,6 @@ Fichero `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas
 - [ ] #1 All test suite is passing
 <!-- DOD:END -->
 
-
-
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
 - [ ] #1 El fichero USER_PERSONAS.md contiene 5 personas completas (3 principales + 2 secundarias) con todos los campos de la plantilla: nombre+arquetipo, quote, placeholder foto, datos demográficos, educación, ocupación, motivaciones, frustraciones, capacidades técnicas y actividades habituales
@@ -136,3 +135,9 @@ Fichero `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas
 - [ ] #3 Cada persona ha sido verificada individualmente contra los datos de la encuesta (VC-0047.04) por un agente independiente con contexto limpio
 - [ ] #4 Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
 <!-- AC:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+## Flujo de trabajo\n\n### Paso 1 — Generación\nEl agente principal genera el fichero `USER_PERSONAS.md` con las 5 personas completas, siguiendo la plantilla y los arquetipos definidos en la descripción.\n\n### Paso 2 — Verificación\nSe lanzan 5 agentes en paralelo (uno por persona), cada uno con contexto limpio. Cada agente:\n- Lee el `USER_PERSONAS.md` (solo la sección de su persona asignada)\n- Lee los datos de la encuesta (`docs/memory/data/formulario-limpio.csv`, `docs/memory/data/analisis-cuantitativo.json`, `docs/memory/data/analisis-cualitativo.md`)\n- Verifica que los datos demográficos, motivaciones, frustraciones y comportamientos de la persona son coherentes con los datos reales de la encuesta\n- Reporta discrepancias o invenciones no respaldadas por los datos"
+<!-- SECTION:NOTES:END -->
