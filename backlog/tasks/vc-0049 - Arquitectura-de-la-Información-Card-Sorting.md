@@ -4,7 +4,7 @@ title: Arquitectura de la Información (Card Sorting)
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 13:13'
+updated_date: '2026-03-15 13:14'
 labels:
   - ux/ui
   - refined
@@ -83,7 +83,6 @@ En FigJam, las categorías irán como sticky notes en azul y las tarjetas en ama
 - Las capturas de los tableros se guardarán en `docs/memory/images/`.
 <!-- SECTION:DESCRIPTION:END -->
 
-
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
 - [ ] #1 Template de FigJam creado con las 20 tarjetas (amarillo) y 6 categorías sugeridas (azul), con instrucciones claras para el participante
@@ -96,3 +95,18 @@ En FigJam, las categorías irán como sticky notes en azul y las tarjetas en ama
 - [ ] #8 Sección Card Sorting de la Arquitectura de la Información redactada en la memoria del TFM (vía agente tfm-memory-writer)
 - [ ] #9 Propuesta de sitemap v1 derivada de los resultados del card sorting
 <!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
+## Flujo de trabajo
+
+1. **Diseñar el template en FigJam** — Crear un tablero con las 20 tarjetas (stickies amarillos), las 6 categorías sugeridas (stickies azules) y las instrucciones visibles para el participante
+2. **Pilotar con 1 persona** — Validar que las tarjetas se entienden, que las instrucciones son claras y que la dinámica funciona antes del estudio real. Ajustar nomenclatura si es necesario
+3. **Duplicar en 3 tableros** — Crear un fichero FigJam independiente por participante a partir del template validado
+4. **Reclutar 3 participantes** — Buscar personas que se alineen con los perfiles objetivo (ciudadana afectada, técnico, jubilado). Priorizar diversidad de competencia digital
+5. **Compartir tableros y esperar resultados** — Enviar a cada participante su tablero con las instrucciones. Dejar que agrupen las tarjetas de forma autónoma, sin intervención
+6. **Revisar, capturar y analizar** — Revisar los 3 tableros completados. Capturar pantallazos y guardarlos en `docs/memory/images/`. Documentar: patrones de agrupación dominantes, tarjetas huérfanas, categorías nuevas creadas, diferencias entre perfiles
+7. **Redactar sección de la memoria** — Pasar los resultados, capturas y análisis al agente `tfm-memory-writer` para redactar la sección "Card Sorting" en `docs/memory/content/02_materiales_y_metodos/06_arquitectura_de_la_informacion.typ`
+8. **Derivar sitemap v1** — A partir de los patrones de agrupación, proponer la estructura de navegación de la plataforma
+<!-- SECTION:PLAN:END -->
