@@ -4,7 +4,7 @@ title: 'Reportes Airbnb: panel admin moderación + notificaciones + gestión est
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:56'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:13'
 labels:
   - reportes-airbnb
   - admin
@@ -26,8 +26,3 @@ Horas estimadas: 10h
 
 Depende de: Reportes Airbnb frontend (VC-0025, VC-0026), Auth con rol admin (VC-0017).
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
