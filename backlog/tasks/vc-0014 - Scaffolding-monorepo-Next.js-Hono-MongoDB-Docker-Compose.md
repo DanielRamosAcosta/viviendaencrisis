@@ -4,7 +4,7 @@ title: Scaffolding monorepo (Next.js + Hono + MongoDB + Docker Compose)
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:12'
 labels:
   - infra
 milestone: m-1
@@ -20,8 +20,3 @@ Configurar el monorepo completo del proyecto con la estructura base: Next.js par
 
 Horas estimadas: 8h
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
