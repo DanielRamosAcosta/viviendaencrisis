@@ -4,7 +4,7 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:21'
+updated_date: '2026-03-15 11:23'
 labels:
   - ux/ui
 milestone: m-1
@@ -126,3 +126,13 @@ Fichero `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas
 <!-- DOD:BEGIN -->
 - [ ] #1 All test suite is passing
 <!-- DOD:END -->
+
+
+
+## Acceptance Criteria
+<!-- AC:BEGIN -->
+- [ ] #1 El fichero USER_PERSONAS.md contiene 5 personas completas (3 principales + 2 secundarias) con todos los campos de la plantilla: nombre+arquetipo, quote, placeholder foto, datos demográficos, educación, ocupación, motivaciones, frustraciones, capacidades técnicas y actividades habituales
+- [ ] #2 Las 2 personas secundarias (Periodista/Investigador, Jubilado/Propietario) están marcadas explícitamente como perfiles secundarios poco representativos de la encuesta
+- [ ] #3 Cada persona ha sido verificada individualmente contra los datos de la encuesta (VC-0047.04) por un agente independiente con contexto limpio
+- [ ] #4 Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
+<!-- AC:END -->
