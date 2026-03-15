@@ -4,7 +4,7 @@ title: 'Diseño de base de datos (schemas MongoDB: users, reports, reviews, geod
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-04 19:19'
+updated_date: '2026-03-15 15:12'
 labels:
   - data
 milestone: m-1
@@ -20,8 +20,3 @@ Diseñar e implementar los schemas de MongoDB para todas las colecciones del pro
 
 Horas estimadas: 4h
 <!-- SECTION:DESCRIPTION:END -->
-
-## Definition of Done
-<!-- DOD:BEGIN -->
-- [ ] #1 All test suite is passing
-<!-- DOD:END -->
