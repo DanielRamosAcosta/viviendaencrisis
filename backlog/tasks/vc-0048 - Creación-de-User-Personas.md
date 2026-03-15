@@ -4,7 +4,7 @@ title: Creación de User Personas
 status: To Do
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:40'
+updated_date: '2026-03-15 11:46'
 labels:
   - ux/ui
   - refined
@@ -116,6 +116,25 @@ Cada persona debe incluir los siguientes campos:
 > - Explora recetas en Instagram y TikTok
 > - Prefiere recetas rápidas que no duren más de 30 minutos
 
+## 📦 Entregables
+
+- `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas
+- Captura de pantalla del FigJam en `docs/memory/images/`
+- Sección de User Personas documentada en la memoria del TFM (docs/memory/)
+<!-- SECTION:DESCRIPTION:END -->
+
+## Acceptance Criteria
+<!-- AC:BEGIN -->
+- [ ] #1 El fichero USER_PERSONAS.md contiene 5 personas completas (3 principales + 2 secundarias) con todos los campos de la plantilla: nombre+arquetipo, quote, placeholder foto, datos demográficos, educación, ocupación, motivaciones, frustraciones, capacidades técnicas y actividades habituales
+- [ ] #2 Las 2 personas secundarias (Periodista/Investigador, Jubilado/Propietario) están marcadas explícitamente como perfiles secundarios poco representativos de la encuesta
+- [ ] #3 Cada persona ha sido verificada individualmente contra los datos de la encuesta (docs/memory/data/formulario-resultados.csv) por un agente independiente con contexto limpio
+- [ ] #4 Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
+- [ ] #5 Los 5 User Personas quedan documentados en la memoria del TFM (docs/memory/) mediante el agente tfm-memory-writer junto con la captura de pantalla del FigJam
+<!-- AC:END -->
+
+## Implementation Plan
+
+<!-- SECTION:PLAN:BEGIN -->
 ## 🔄 Flujo de trabajo
 
 ### Paso 1 — Generación
@@ -139,24 +158,7 @@ El usuario saca una captura de pantalla del FigJam y la deja en el directorio de
 
 ### Paso 6 — Documentación en la memoria del TFM
 El usuario avisa y se invoca al agente `tfm-memory-writer` para documentar los 5 User Personas (3 principales + 2 secundarios) en la memoria del TFM, incluyendo la captura de pantalla del FigJam.
-
-## 📦 Entregables
-
-- `USER_PERSONAS.md` en la raíz del proyecto con las 5 personas completas
-- Captura de pantalla del FigJam en `docs/memory/images/`
-- Sección de User Personas documentada en la memoria del TFM (docs/memory/)
-<!-- SECTION:DESCRIPTION:END -->
-
-## Acceptance Criteria
-<!-- AC:BEGIN -->
-- [ ] #1 El fichero USER_PERSONAS.md contiene 5 personas completas (3 principales + 2 secundarias) con todos los campos de la plantilla: nombre+arquetipo, quote, placeholder foto, datos demográficos, educación, ocupación, motivaciones, frustraciones, capacidades técnicas y actividades habituales
-- [ ] #2 Las 2 personas secundarias (Periodista/Investigador, Jubilado/Propietario) están marcadas explícitamente como perfiles secundarios poco representativos de la encuesta
-- [ ] #3 Cada persona ha sido verificada individualmente contra los datos de la encuesta (docs/memory/data/formulario-resultados.csv) por un agente independiente con contexto limpio
-- [ ] #4 Cada persona incluye un placeholder descriptivo para la foto (ej. "Mujer joven, 28 años, aspecto urbano")
-- [ ] #5 Los 5 User Personas quedan documentados en la memoria del TFM (docs/memory/) mediante el agente tfm-memory-writer junto con la captura de pantalla del FigJam
-<!-- AC:END -->
-
-
+<!-- SECTION:PLAN:END -->
 
 ## Implementation Notes
 
