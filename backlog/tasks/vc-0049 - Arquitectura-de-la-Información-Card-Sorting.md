@@ -113,7 +113,7 @@ En FigJam, las categorías irán como sticky notes en azul y las tarjetas en ama
 <!-- SECTION:PLAN:BEGIN -->
 ## Flujo de trabajo
 
-1. **Diseñar el template en FigJam** — Crear un tablero con las 20 tarjetas (stickies amarillos), las 6 categorías sugeridas (stickies azules) y las instrucciones visibles para el participante
+1. **Diseñar el template en FigJam** — Crear un tablero con las 30 tarjetas (stickies amarillos), las 6 categorías sugeridas (stickies azules) y las instrucciones visibles para el participante
 2. **Pilotar con 1 persona** — Validar que las tarjetas se entienden, que las instrucciones son claras y que la dinámica funciona antes del estudio real. Ajustar nomenclatura si es necesario
 3. **Duplicar en 3 tableros** — Crear un fichero FigJam independiente por participante a partir del template validado
 4. **Reclutar 3 participantes** — Buscar personas que se alineen con los perfiles objetivo (ciudadana afectada, técnico, jubilado). Priorizar diversidad de competencia digital
