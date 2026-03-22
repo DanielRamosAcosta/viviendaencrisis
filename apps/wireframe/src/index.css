@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #213547;
+  background-color: #fafafa;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
