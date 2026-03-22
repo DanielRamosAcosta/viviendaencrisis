@@ -1,10 +1,10 @@
 ---
 id: VC-0051
 title: Diagramas de flujo de usuario (sitemap v1.2)
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-22 14:40'
+updated_date: '2026-03-22 19:18'
 labels:
   - ux/ui
   - refined
@@ -21,7 +21,7 @@ references:
 documentation:
   - docs/diagrams/user-flows/flow-01-exploracion-precios.mmd
 priority: high
-ordinal: 1000
+ordinal: 9.765625
 ---
 
 ## Description
