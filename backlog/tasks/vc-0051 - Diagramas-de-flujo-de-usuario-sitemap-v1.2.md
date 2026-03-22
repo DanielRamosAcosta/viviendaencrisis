@@ -14,6 +14,8 @@ references:
   - >-
     docs/memory/content/02_materiales_y_metodos/06_arquitectura_de_la_informacion.typ
   - docs/memory/content/02_materiales_y_metodos/05_personas_usuarias.typ
+documentation:
+  - docs/diagrams/user-flows/flow-01-exploracion-precios.mmd
 priority: high
 ordinal: 1000
 ---
@@ -123,3 +125,29 @@ Este diagrama os ayudará a aseguraros de que el usuario puede realizar las acci
 
 Flujo 4 (Reseña de agente inmobiliario) generado en docs/diagrams/user-flows/flow-04-resena-agente.mmd
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+**Flujo 1 — Exploración de precios**
+
+Generado el diagrama de flujo en `docs/diagrams/user-flows/flow-01-exploracion-precios.mmd`.
+
+**Decisiones de diseño aplicadas (con trazabilidad):**
+- Home como punto de entrada con buscador por zona, coherente con sitemap v1.2 (panel de resumen)
+- Vista mapa de precios integrada como toggle, no como sección (decisión IA v1.2 basada en card sorting: Mapas recibió pocas tarjetas, se percibe como modo de visualización)
+- T26 (fecha de última actualización) expuesta como componente persistente en todas las vistas
+- T27 (Comparar oficial vs portales) modelada como variante accesible desde la vista principal y desde Indicadores de asequibilidad
+- T23 (filtros) modelado como panel transversal con estado de error propio
+- Aviso metodológico en la variante oficial vs portales (trazabilidad para Elena Marín)
+- Textos explicativos señalados en nodos de Indicadores y visualización (progresividad para Antonio García)
+- Enlace a fuente original en estado 'zona sin datos' y en metadato persistente (verificabilidad para Elena Marín)
+
+**Unhappy paths implementados:**
+1. Zona no reconocida → sugerencias + retry al buscador
+2. Zona sin datos → aviso + enlace a fuente original + retorno a Home
+3. Datos parciales → aviso inline no bloqueante, visualización continúa
+4. Filtros sin resultados → mensaje orientativo + retry al panel de filtros
+
+**Personas cubiertas:** Marina (sin registro), Pablo (filtros, precio/m²), Antonio (textos explicativos, progresividad), Elena (fuentes verificables, enlace a origen).
+<!-- SECTION:FINAL_SUMMARY:END -->
