@@ -1,4 +1,5 @@
 import "wired-elements";
+import "wired-elements/lib/wired-calendar.js";
 
 export { WiredButton } from "./WiredButton";
 export { WiredCalendar } from "./WiredCalendar";

@@ -5,6 +5,7 @@ export { RoughLine } from "./RoughLine";
 export { RoughPie } from "./RoughPie";
 export { RoughScatter } from "./RoughScatter";
 export { RoughStackedBar } from "./RoughStackedBar";
+export { RoughMap } from "./RoughMap";
 
 export type {
   BaseChartProps,

@@ -17,3 +17,9 @@ body {
   margin: 0;
   padding: 0;
 }
+
+wired-divider {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
