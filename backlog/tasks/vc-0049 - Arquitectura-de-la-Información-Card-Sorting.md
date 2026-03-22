@@ -4,7 +4,7 @@ title: Arquitectura de la Información (Card Sorting)
 status: In Review
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-22 11:10'
+updated_date: '2026-03-22 13:04'
 labels:
   - ux/ui
   - refined
@@ -102,10 +102,10 @@ En FigJam, las categorías irán como sticky notes en azul y las tarjetas en ama
 - [ ] #3 3 tableros independientes creados (uno por participante)
 - [ ] #4 3 participantes reclutados, cubriendo los 3 perfiles objetivo (ciudadana afectada, técnico, jubilado)
 - [ ] #5 Los 3 participantes completan el ejercicio de forma autónoma
-- [ ] #6 Capturas de pantalla de los 3 tableros completados guardadas en docs/memory/images/
-- [ ] #7 Análisis documentado con: patrones de agrupación dominantes, tarjetas huérfanas o conflictivas, categorías nuevas creadas, y diferencias entre perfiles
-- [ ] #8 Sección Card Sorting de la Arquitectura de la Información redactada en la memoria del TFM (vía agente tfm-memory-writer)
-- [ ] #9 Propuesta de sitemap v1 derivada de los resultados del card sorting
+- [x] #6 Capturas de pantalla de los 3 tableros completados guardadas en docs/memory/images/
+- [x] #7 Análisis documentado con: patrones de agrupación dominantes, tarjetas huérfanas o conflictivas, categorías nuevas creadas, y diferencias entre perfiles
+- [x] #8 Sección Card Sorting de la Arquitectura de la Información redactada en la memoria del TFM (vía agente tfm-memory-writer)
+- [x] #9 Propuesta de sitemap v1 derivada de los resultados del card sorting
 <!-- AC:END -->
 
 ## Implementation Plan
