@@ -17,6 +17,7 @@ references:
   - docs/diagrams/user-flows/flow-03-reporte-irregularidad.mmd
   - docs/diagrams/user-flows/flow-02-comparativa-zonas.mmd
   - docs/diagrams/user-flows/flow-07-descarga-datos.mmd
+  - docs/diagrams/user-flows/flow-08-autenticacion.mmd
 documentation:
   - docs/diagrams/user-flows/flow-01-exploracion-precios.mmd
 priority: high
@@ -133,6 +134,8 @@ Flujo 5 (Consultar reportes y mapa de reportes) generado en docs/diagrams/user-f
 Flujo 3 (Reporte de irregularidad) completado. Diagrama Mermaid generado en docs/diagrams/user-flows/flow-03-reporte-irregularidad.mmd. Cubre: punto de entrada desde Reportes y reseñas, decisión de autenticación con referencia al Flujo 8, aviso de anonimato prominente antes del formulario (requerimiento de Marina Delgado), formulario progresivo en 3 pasos (Antonio García), detección de reporte duplicado, validación inline (campos vacíos y descripción corta), cola de moderación con estados pendiente/aprobado/rechazado/más información, notificaciones al usuario, visibilidad del estado en Mi cuenta > Mi perfil > Estado de reporte, y opción de apelación tras rechazo.
 
 Flujo 2 (Comparativa entre zonas) generado en docs/diagrams/user-flows/flow-02-comparativa-zonas.mmd. Flowchart TD en Mermaid con entrada dual (Home/buscador y sección directa), selección secuencial A→B, vistas precio/m²·evolución temporal·ranking, soporte hasta 4 zonas simultáneas, descarga de datos sin registro y 3 unhappy paths completos: búsqueda sin resultados, zona sin datos para el periodo, datos parciales (A tiene datos, B no).
+
+Flujo 8 — Autenticación generado en docs/diagrams/user-flows/flow-08-autenticacion.mmd. Cubre: login, registro con verificación por email, recuperación de contraseña completa, sesión expirada a mitad de flujo, credenciales incorrectas con bloqueo por intentos, email no verificado con reenvío, email ya en uso con bifurcación, cancelación controlada del modal. Redirección al flujo original que invocó la autenticación en todos los happy paths.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
