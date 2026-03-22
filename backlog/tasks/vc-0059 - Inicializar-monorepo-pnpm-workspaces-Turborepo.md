@@ -1,14 +1,15 @@
 ---
 id: VC-0059
 title: Inicializar monorepo pnpm workspaces + Turborepo
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-03-22 19:25'
-updated_date: '2026-03-22 19:29'
+updated_date: '2026-03-22 21:09'
 labels:
   - refined
 dependencies: []
 priority: high
+ordinal: 4.8828125
 ---
 
 ## Description
