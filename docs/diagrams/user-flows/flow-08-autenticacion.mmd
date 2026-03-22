@@ -1,0 +1,141 @@
+---
+title: "Flujo 8 — Autenticación (Vivienda en Crisis)"
+---
+flowchart TD
+
+    %% ─────────────────────────────────────────────
+    %% PUNTO DE ENTRADA (SUBFLUJO TRANSVERSAL)
+    %% Invocado desde: Flujo 3 (reporte), Flujo 4 (reseña), Flujo 9 (gestión de cuenta)
+    %% ─────────────────────────────────────────────
+    START([Inicio: acción que requiere autenticación\n— crear reporte / escribir reseña / gestionar cuenta])
+    START --> SESION_ACTIVA{¿El usuario tiene\nsesión activa?}
+
+    %% Happy path inmediato: ya autenticado
+    SESION_ACTIVA -- Sí --> REDIRECT_EXITO([Redirección al flujo original\nque invocó la autenticación])
+
+    %% ─────────────────────────────────────────────
+    %% SESIÓN EXPIRADA A MITAD DE UN FLUJO
+    %% (Unhappy path: usuario estaba autenticado pero la sesión caducó)
+    %% ─────────────────────────────────────────────
+    SESION_ACTIVA -- Sesión expirada --> AVISO_EXPIRACION["Estado: sesión expirada\n— Aviso no intrusivo: 'Tu sesión ha caducado.\nTus datos no se han perdido. Inicia sesión\npara continuar donde lo dejaste.'\n[Necesidad: Marina — la auth no debe ser barrera;\nNecesidad: Antonio — mensaje claro y tranquilizador]"]
+    AVISO_EXPIRACION --> MODAL_AUTH
+
+    %% ─────────────────────────────────────────────
+    %% MODAL / PÁGINA DE AUTENTICACIÓN
+    %% (T15, T16 — flujo, no páginas del sitemap v1.2)
+    %% ─────────────────────────────────────────────
+    SESION_ACTIVA -- No --> MODAL_AUTH
+
+    MODAL_AUTH["Pantalla de autenticación\n(modal superpuesto o página dedicada)\n— Título contextual: 'Para continuar, identifícate'\n— Dos opciones visibles: Iniciar sesión / Crear cuenta\n[Necesidad: Antonio — instrucciones paso a paso,\nopción de registro siempre visible]"]
+
+    MODAL_AUTH --> DECISION_AUTH{¿El usuario tiene\ncuenta?}
+
+    %% ─────────────────────────────────────────────
+    %% RAMA A — LOGIN
+    %% ─────────────────────────────────────────────
+    DECISION_AUTH -- Sí, quiero iniciar sesión --> FORMULARIO_LOGIN
+
+    FORMULARIO_LOGIN["Formulario de inicio de sesión\n— Campo: correo electrónico\n— Campo: contraseña (con opción 'mostrar')\n— Enlace: '¿Olvidaste tu contraseña?'\n— Botón: 'Iniciar sesión'\n[Necesidad: Antonio — formulario simple,\netiquetas explícitas, sin jerga técnica]"]
+
+    FORMULARIO_LOGIN --> VALIDAR_LOGIN{¿Credenciales\ncorrectas?}
+
+    %% UNHAPPY PATH A1: credenciales incorrectas
+    VALIDAR_LOGIN -- No, credenciales incorrectas --> ERROR_CREDENCIALES["Estado: credenciales incorrectas\n— Mensaje inline bajo el formulario:\n'El correo o la contraseña no son correctos.\nVerifica tus datos e inténtalo de nuevo.'\n— Sin indicar cuál de los dos campos falla\n(seguridad: no revelar si el email existe)\n— Contador de intentos: 3 intentos máx.\n[Heurística Nielsen #9: ayuda a reconocer errores]"]
+    ERROR_CREDENCIALES --> INTENTOS_MAXIMOS{¿Máximo de\nintentos alcanzado?}
+    INTENTOS_MAXIMOS -- No --> FORMULARIO_LOGIN
+    INTENTOS_MAXIMOS -- Sí --> BLOQUEO_TEMPORAL["Estado: acceso bloqueado temporalmente\n— Mensaje: 'Demasiados intentos fallidos.\nPor seguridad, espera 15 minutos\no recupera tu contraseña.'\n— Botón destacado: 'Recuperar contraseña'\n[Necesidad: Antonio — alternativa clara ante bloqueo]"]
+    BLOQUEO_TEMPORAL --> INICIO_RECUPERACION
+
+    %% UNHAPPY PATH A2: email no verificado
+    VALIDAR_LOGIN -- No, email sin verificar --> ERROR_NO_VERIFICADO["Estado: cuenta no verificada\n— Mensaje: 'Aún no has verificado tu correo.\nRevisa tu bandeja de entrada (y la carpeta\nde spam) o solicita un nuevo enlace.'\n[Necesidad: Marina — mensaje de acción clara\npara no bloquear el flujo]"]
+    ERROR_NO_VERIFICADO --> REENVIAR_VERIFICACION{¿El usuario solicita\nreenviar verificación?}
+    REENVIAR_VERIFICACION -- Sí --> ENVIAR_EMAIL_REENV["Sistema envía nuevo email\nde verificación\n— Mensaje de confirmación: 'Te hemos enviado\nun nuevo enlace a tu correo.'\n[Necesidad: Antonio — confirmación explícita\nde que la acción se completó]"]
+    ENVIAR_EMAIL_REENV --> ESPERAR_VERIFICACION_REENV["Usuario debe verificar email\n(retoma desde el mismo punto\nuna vez verificado)"]
+    ESPERAR_VERIFICACION_REENV --> VALIDAR_LOGIN
+    REENVIAR_VERIFICACION -- No, vuelve al formulario --> FORMULARIO_LOGIN
+
+    %% Happy path: login correcto
+    VALIDAR_LOGIN -- Sí --> LOGIN_EXITOSO["Inicio de sesión completado\n— Token de sesión generado\n— Estado de usuario: autenticado"]
+    LOGIN_EXITOSO --> REDIRECT_EXITO
+
+    %% ─────────────────────────────────────────────
+    %% SUBFLUJO — RECUPERACIÓN DE CONTRASEÑA
+    %% ─────────────────────────────────────────────
+    FORMULARIO_LOGIN -- Clic en '¿Olvidaste tu contraseña?' --> INICIO_RECUPERACION
+
+    INICIO_RECUPERACION["Pantalla: Recuperar contraseña\n— Campo: correo electrónico registrado\n— Botón: 'Enviar enlace de recuperación'\n— Enlace: 'Volver al inicio de sesión'\n[Necesidad: Antonio — pantalla simple,\nun solo campo, instrucción clara]"]
+
+    INICIO_RECUPERACION --> EMAIL_REGISTRADO{¿El correo está\nregistrado?}
+
+    %% Respuesta neutra (seguridad): no revelar si el email existe o no
+    EMAIL_REGISTRADO -- Sí o No --> MENSAJE_RECUPERACION["Mensaje neutro (siempre el mismo):\n'Si ese correo está registrado,\nrecibirás un enlace en breve.\nRevisa también la carpeta de spam.'\n[Diseño deliberado: no revelar si el email existe;\nheurística de seguridad frente a enumeración]"]
+
+    MENSAJE_RECUPERACION --> RECIBE_EMAIL_RECUPERACION{¿El usuario abre\nel enlace del email?}
+
+    RECIBE_EMAIL_RECUPERACION -- No abre / enlace expirado --> ENLACE_EXPIRADO["Estado: enlace caducado\n— Mensaje: 'Este enlace ha expirado\n(válido durante 1 hora).\nSolicita uno nuevo.'\n— Botón: 'Solicitar nuevo enlace'"]
+    ENLACE_EXPIRADO --> INICIO_RECUPERACION
+
+    RECIBE_EMAIL_RECUPERACION -- Sí --> NUEVA_CONTRASENA["Formulario: Nueva contraseña\n— Campo: nueva contraseña\n— Campo: confirmar nueva contraseña\n— Indicador de fortaleza de contraseña\n— Botón: 'Guardar nueva contraseña'\n[Necesidad: Antonio — etiquetas explícitas,\nconfirmación de qué se está haciendo]"]
+
+    NUEVA_CONTRASENA --> CONTRASENAS_COINCIDEN{¿Las contraseñas\ncoinciden y cumplen\nrequisitos mínimos?}
+
+    CONTRASENAS_COINCIDEN -- No --> ERROR_CONTRASENA["Error inline:\n— 'Las contraseñas no coinciden' (si difieren)\n— 'La contraseña debe tener al menos 8 caracteres'\n(si no cumple requisitos)\n[Heurística Nielsen #9: mensaje específico\nque orienta la corrección]"]
+    ERROR_CONTRASENA --> NUEVA_CONTRASENA
+
+    CONTRASENAS_COINCIDEN -- Sí --> CONTRASENA_ACTUALIZADA["Contraseña actualizada\n— Mensaje de confirmación: 'Tu contraseña\nha sido cambiada correctamente.'\n— Botón: 'Iniciar sesión'"]
+    CONTRASENA_ACTUALIZADA --> FORMULARIO_LOGIN
+
+    %% ─────────────────────────────────────────────
+    %% RAMA B — REGISTRO
+    %% ─────────────────────────────────────────────
+    DECISION_AUTH -- No, quiero crear una cuenta --> FORMULARIO_REGISTRO
+
+    FORMULARIO_REGISTRO["Formulario de registro\n— Campo: nombre o alias (opcional)\n— Campo: correo electrónico\n— Campo: contraseña (con indicador de fortaleza)\n— Campo: confirmar contraseña\n— Casilla: acepto los términos y la política de privacidad\n  (enlace al documento completo)\n— Botón: 'Crear cuenta'\n[Necesidad: Antonio — etiquetas explícitas,\nflujo paso a paso sin abrumarse;\nNecesidad: Marina — registro rápido,\nmínimos campos obligatorios]"]
+
+    FORMULARIO_REGISTRO --> VALIDAR_REGISTRO{¿Datos del formulario\nválidos?}
+
+    %% UNHAPPY PATH B1: campos inválidos
+    VALIDAR_REGISTRO -- No, errores de validación --> ERRORES_REGISTRO["Errores inline en el campo correspondiente:\n— 'Este campo es obligatorio'\n— 'El formato del correo no es válido'\n— 'Las contraseñas no coinciden'\n— 'Debes aceptar los términos para continuar'\n[Heurística Nielsen #9: errores específicos\npor campo, no mensaje genérico global]"]
+    ERRORES_REGISTRO --> FORMULARIO_REGISTRO
+
+    %% UNHAPPY PATH B2: email ya registrado
+    VALIDAR_REGISTRO -- No, email ya en uso --> ERROR_EMAIL_DUPLICADO["Estado: email ya registrado\n— Mensaje inline en el campo de correo:\n'Ya existe una cuenta con este correo.\n¿Quieres iniciar sesión o recuperar\ntu contraseña?'\n— Botones: 'Iniciar sesión' / 'Recuperar contraseña'\n[Necesidad: Marina — no bloquear, ofrecer\ncamino alternativo inmediato;\nheurística Nielsen #5: prevención de errores]"]
+    ERROR_EMAIL_DUPLICADO --> DECISION_EMAIL_DUPLICADO{¿Qué elige\nel usuario?}
+    DECISION_EMAIL_DUPLICADO -- Iniciar sesión --> FORMULARIO_LOGIN
+    DECISION_EMAIL_DUPLICADO -- Recuperar contraseña --> INICIO_RECUPERACION
+    DECISION_EMAIL_DUPLICADO -- Corrige email --> FORMULARIO_REGISTRO
+
+    %% Happy path: datos válidos y email libre
+    VALIDAR_REGISTRO -- Sí --> CUENTA_CREADA_PENDIENTE["Cuenta creada (estado: pendiente de verificación)\n— Sistema envía email de verificación\n— Mensaje en pantalla: 'Revisa tu correo.\nHaz clic en el enlace que te hemos enviado\npara activar tu cuenta.\n(Revisa también la carpeta de spam.)'\n[Necesidad: Antonio — instrucción explícita\ncon alternativa (carpeta spam) anticipada]"]
+
+    CUENTA_CREADA_PENDIENTE --> ABRE_EMAIL_VERIFICACION{¿El usuario hace clic\nen el enlace de\nverificación?}
+
+    ABRE_EMAIL_VERIFICACION -- Enlace expirado o no llega --> REENVIAR_DESDE_REGISTRO["Opción en pantalla de espera:\n'¿No has recibido el correo?'\n— Botón: 'Reenviar enlace de verificación'\n— Enlace: 'Cambiar correo electrónico'"]
+    REENVIAR_DESDE_REGISTRO --> CUENTA_CREADA_PENDIENTE
+
+    ABRE_EMAIL_VERIFICACION -- Sí, hace clic --> CUENTA_VERIFICADA["Cuenta verificada y activada\n— Mensaje de bienvenida: '¡Ya eres parte\nde Vivienda en Crisis! Tu cuenta está activa.'\n— Sesión iniciada automáticamente\n[Necesidad: Marina — mínima fricción\ntras el registro]"]
+
+    CUENTA_VERIFICADA --> REDIRECT_EXITO
+
+    %% ─────────────────────────────────────────────
+    %% SALIDA CONTROLADA (usuario cancela la autenticación)
+    %% ─────────────────────────────────────────────
+    MODAL_AUTH -- Cierra el modal / cancela --> CANCELAR_AUTH["El usuario cancela la autenticación\n— Permanece en la página de origen\n— Acción que requería auth: no completada\n— El modal se cierra sin pérdida de contexto\n[Necesidad: Marina — auth no debe ser\nuna trampa sin salida]"]
+    CANCELAR_AUTH --> END_FLUJO([Fin del flujo: usuario no autenticado\nregresa al contexto original])
+
+    %% ─────────────────────────────────────────────
+    %% ESTILOS POR TIPO DE NODO
+    %% ─────────────────────────────────────────────
+    classDef page        fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
+    classDef decision    fill:#fef9c3,stroke:#ca8a04,color:#451a03
+    classDef error       fill:#fee2e2,stroke:#dc2626,color:#450a0a
+    classDef meta        fill:#f0fdf4,stroke:#16a34a,color:#052e16
+    classDef external    fill:#f3e8ff,stroke:#9333ea,color:#2e1065
+    classDef terminal    fill:#f1f5f9,stroke:#64748b,color:#0f172a
+
+    class MODAL_AUTH,FORMULARIO_LOGIN,FORMULARIO_REGISTRO,INICIO_RECUPERACION,NUEVA_CONTRASENA,CUENTA_CREADA_PENDIENTE,REENVIAR_DESDE_REGISTRO page
+    class SESION_ACTIVA,DECISION_AUTH,VALIDAR_LOGIN,INTENTOS_MAXIMOS,REENVIAR_VERIFICACION,EMAIL_REGISTRADO,RECIBE_EMAIL_RECUPERACION,CONTRASENAS_COINCIDEN,VALIDAR_REGISTRO,DECISION_EMAIL_DUPLICADO,ABRE_EMAIL_VERIFICACION decision
+    class ERROR_CREDENCIALES,BLOQUEO_TEMPORAL,ERROR_NO_VERIFICADO,ENLACE_EXPIRADO,ERROR_CONTRASENA,ERRORES_REGISTRO,ERROR_EMAIL_DUPLICADO,AVISO_EXPIRACION error
+    class LOGIN_EXITOSO,CUENTA_VERIFICADA,CONTRASENA_ACTUALIZADA,MENSAJE_RECUPERACION,ENVIAR_EMAIL_REENV,ESPERAR_VERIFICACION_REENV meta
+    class CANCELAR_AUTH external
+    class START,END_FLUJO,REDIRECT_EXITO terminal

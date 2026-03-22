@@ -1,0 +1,116 @@
+flowchart TD
+
+    %% ============================================================
+    %% FLUJO 6 — Consultar reseñas de agentes
+    %% Plataforma: Vivienda en Crisis · Sitemap v1.2
+    %% Sección: Reportes y reseñas › Consultar reseñas
+    %% Personas: Marina Delgado (principal), Antonio García (restricción de accesibilidad)
+    %% ============================================================
+
+    %% ── PUNTO DE ENTRADA ────────────────────────────────────────
+    INICIO([Usuario accede a la plataforma])
+    INICIO --> NAV_REPORTES
+
+    NAV_REPORTES["Navega a\nReportes y reseñas"]
+    NAV_REPORTES --> NAV_RESENAS
+
+    NAV_RESENAS["Selecciona\nConsultar reseñas"]
+    NAV_RESENAS --> PAGINA_BUSQUEDA
+
+    %% ── PÁGINA DE BÚSQUEDA DE AGENTE ────────────────────────────
+    PAGINA_BUSQUEDA["Página: Consultar reseñas\n(buscador por nombre o zona)"]
+    PAGINA_BUSQUEDA --> INTRODUCE_BUSQUEDA
+
+    INTRODUCE_BUSQUEDA["Introduce término de búsqueda\n(nombre del agente o zona)"]
+    INTRODUCE_BUSQUEDA --> EJECUTA_BUSQUEDA
+
+    EJECUTA_BUSQUEDA{"¿La búsqueda\ndevuelve resultados?"}
+
+    %% ── UNHAPPY PATH A: sin resultados ──────────────────────────
+    EJECUTA_BUSQUEDA -- No --> SIN_RESULTADOS
+    SIN_RESULTADOS["Mensaje: 'No se han encontrado\nagentes para tu búsqueda'\n+ sugerencia de ampliar criterios"]
+    SIN_RESULTADOS --> REFINAR_BUSQUEDA{"¿El usuario\nrefinó la búsqueda?"}
+    REFINAR_BUSQUEDA -- Sí --> INTRODUCE_BUSQUEDA
+    REFINAR_BUSQUEDA -- No --> FIN_ABANDONO([Usuario abandona el flujo])
+
+    %% ── HAPPY PATH: resultados encontrados ──────────────────────
+    EJECUTA_BUSQUEDA -- Sí --> LISTADO_AGENTES
+
+    LISTADO_AGENTES["Listado de agentes encontrados\n(nombre, zona, puntuación media,\nnúmero de reseñas)"]
+    LISTADO_AGENTES --> SELECCIONA_AGENTE
+
+    SELECCIONA_AGENTE["Selecciona un agente\ndel listado"]
+    SELECCIONA_AGENTE --> PERFIL_AGENTE
+
+    %% ── PERFIL DEL AGENTE ───────────────────────────────────────
+    PERFIL_AGENTE["Página de perfil del agente\n(datos básicos + puntuación agregada)"]
+    PERFIL_AGENTE --> TIENE_RESENAS{"¿El agente\ntiene reseñas?"}
+
+    %% ── UNHAPPY PATH B: agente sin reseñas ──────────────────────
+    TIENE_RESENAS -- No --> SIN_RESENAS
+    SIN_RESENAS["Mensaje: 'Este agente aún\nno tiene reseñas'\n+ invitación a escribir la primera"]
+    SIN_RESENAS --> VOLVER_LISTADO{"¿El usuario\nvuelve al listado?"}
+    VOLVER_LISTADO -- Sí --> LISTADO_AGENTES
+    VOLVER_LISTADO -- No --> FIN_ABANDONO
+
+    %% ── LISTADO DE RESEÑAS DEL AGENTE ───────────────────────────
+    TIENE_RESENAS -- Sí --> LISTADO_RESENAS
+
+    LISTADO_RESENAS["Listado de reseñas del agente\n(ordenadas por fecha por defecto,\ncon puntuación y extracto)"]
+    LISTADO_RESENAS --> APLICA_FILTRO{"¿El usuario\naplicó algún filtro?"}
+
+    APLICA_FILTRO -- Sí --> FILTRA_RESENAS
+    FILTRA_RESENAS["Filtra por puntuación\no por periodo de tiempo"]
+    FILTRA_RESENAS --> LISTADO_RESENAS
+
+    APLICA_FILTRO -- No --> SELECCIONA_RESENA
+
+    SELECCIONA_RESENA["Selecciona una reseña\npara leer el detalle"]
+    SELECCIONA_RESENA --> DETALLE_RESENA
+
+    %% ── DETALLE DE RESEÑA ───────────────────────────────────────
+    DETALLE_RESENA["Página de detalle de reseña\n(texto completo, puntuación,\nfecha, tipo de experiencia)"]
+    DETALLE_RESENA --> QUIERE_VALORAR{"¿El usuario quiere\nvalorar la utilidad\nde la reseña?"}
+
+    %% ── RUTA DE LECTURA PURA (sin valorar) ──────────────────────
+    QUIERE_VALORAR -- No --> MAS_RESENAS{"¿Quiere leer\notra reseña?"}
+    MAS_RESENAS -- Sí --> SELECCIONA_RESENA
+    MAS_RESENAS -- No --> VOLVER_PERFIL{"¿Vuelve\nal perfil del agente?"}
+    VOLVER_PERFIL -- Sí --> PERFIL_AGENTE
+    VOLVER_PERFIL -- No --> FIN_LECTURA([Fin del flujo — lectura completada])
+
+    %% ── RUTA DE VALORACIÓN DE UTILIDAD ──────────────────────────
+    QUIERE_VALORAR -- Sí --> ESTA_AUTENTICADO{"¿El usuario\nestá autenticado?"}
+
+    %% Valorar sin sesión: se permite como acción anónima
+    ESTA_AUTENTICADO -- No --> VALORAR_ANONIMO
+    VALORAR_ANONIMO["Valora la utilidad\nsin autenticación\n(¿Fue útil? Sí / No)"]
+    VALORAR_ANONIMO --> VALORACION_REGISTRADA
+
+    %% Valorar con sesión: misma acción, persiste vinculada al usuario
+    ESTA_AUTENTICADO -- Sí --> VALORAR_AUTENTICADO
+    VALORAR_AUTENTICADO["Valora la utilidad\ncon sesión activa\n(¿Fue útil? Sí / No)"]
+    VALORAR_AUTENTICADO --> YA_VALORADA{"¿Ya había valorado\nesta reseña antes?"}
+
+    YA_VALORADA -- Sí --> AVISO_DUPLICADO
+    AVISO_DUPLICADO["Mensaje: 'Ya has valorado\nesta reseña anteriormente'"]
+    AVISO_DUPLICADO --> MAS_RESENAS
+
+    YA_VALORADA -- No --> VALORACION_REGISTRADA
+
+    VALORACION_REGISTRADA["Confirmación: valoración registrada\n(contador de utilidad actualizado)"]
+    VALORACION_REGISTRADA --> MAS_RESENAS
+
+    %% ── ESTILOS POR TIPO DE NODO ─────────────────────────────────
+    classDef inicio    fill:#1a1a2e,stroke:#e0e0e0,color:#ffffff
+    classDef pagina    fill:#16213e,stroke:#0f3460,color:#e0e0e0
+    classDef decision  fill:#0f3460,stroke:#533483,color:#ffffff
+    classDef error     fill:#7b2d00,stroke:#e05c00,color:#ffffff
+    classDef ok        fill:#1b4332,stroke:#40916c,color:#ffffff
+    classDef fin       fill:#1a1a2e,stroke:#e0e0e0,color:#ffffff
+
+    class INICIO,FIN_ABANDONO,FIN_LECTURA inicio
+    class NAV_REPORTES,NAV_RESENAS,PAGINA_BUSQUEDA,INTRODUCE_BUSQUEDA,LISTADO_AGENTES,SELECCIONA_AGENTE,PERFIL_AGENTE,LISTADO_RESENAS,FILTRA_RESENAS,SELECCIONA_RESENA,DETALLE_RESENA,VALORAR_ANONIMO,VALORAR_AUTENTICADO pagina
+    class EJECUTA_BUSQUEDA,REFINAR_BUSQUEDA,TIENE_RESENAS,VOLVER_LISTADO,APLICA_FILTRO,QUIERE_VALORAR,MAS_RESENAS,VOLVER_PERFIL,ESTA_AUTENTICADO,YA_VALORADA decision
+    class SIN_RESULTADOS,SIN_RESENAS,AVISO_DUPLICADO error
+    class VALORACION_REGISTRADA ok

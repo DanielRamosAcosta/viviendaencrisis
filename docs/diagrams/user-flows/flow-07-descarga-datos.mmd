@@ -1,0 +1,51 @@
+flowchart TD
+
+    %% ─── ENTRADA A: desde cualquier visualización ───────────────────────────
+    A1([Entrada A\nVisualizaciones de precios])
+    A1 --> A2[Botón contextual\n'Descargar datos']
+    A2 --> C1
+
+    %% ─── ENTRADA B: desde sección Datos abiertos ────────────────────────────
+    B1([Entrada B\nNavegación principal])
+    B1 --> B2[Datos abiertos]
+    B2 --> B3[Explorador por municipio]
+    B3 --> B4{¿Municipio\nseleccionado?}
+    B4 -- No --> B3
+    B4 -- Sí --> C1
+
+    %% ─── PUNTO DE CONVERGENCIA ──────────────────────────────────────────────
+    C1[Contexto de descarga\nMunicipio preseleccionado o seleccionado]
+
+    %% ─── FILTROS ────────────────────────────────────────────────────────────
+    C1 --> D1[Aplicar filtros\nPeriodo · Tipo de vivienda]
+    D1 --> D2{¿Hay datos para\nlos filtros seleccionados?}
+
+    %% ─── UNHAPPY PATH: sin datos ────────────────────────────────────────────
+    D2 -- No --> E1[Mensaje de aviso\n'No hay datos disponibles\npara esta selección']
+    E1 --> E2{¿El usuario\najusta filtros?}
+    E2 -- Sí --> D1
+    E2 -- No abandona --> Z([Fin del flujo])
+
+    %% ─── HAPPY PATH: selección de formato ───────────────────────────────────
+    D2 -- Sí --> F1[Vista previa de datos\nregistros disponibles · rango temporal]
+    F1 --> F2[Seleccionar formato\nCSV · JSON]
+    F2 --> F3[Descargar CSV / JSON]
+    F3 --> G1{¿El usuario quiere\nconsultar la metodología?}
+
+    %% ─── ACCESO A FUENTES Y METODOLOGÍA ────────────────────────────────────
+    G1 -- Sí --> H1[Fuentes y metodología\ndocumentación de fuentes · criterios de cálculo]
+    H1 --> H2([Fin del flujo])
+    G1 -- No --> H2
+
+    %% ─── ESTILOS ─────────────────────────────────────────────────────────────
+    classDef entrada fill:#e8f4f8,stroke:#2980b9,stroke-width:2px,color:#1a1a1a
+    classDef pantalla fill:#ffffff,stroke:#7f8c8d,stroke-width:1px,color:#1a1a1a
+    classDef decision fill:#fef9e7,stroke:#f39c12,stroke-width:1px,color:#1a1a1a
+    classDef error fill:#fdecea,stroke:#e74c3c,stroke-width:1px,color:#1a1a1a
+    classDef termino fill:#eafaf1,stroke:#27ae60,stroke-width:2px,color:#1a1a1a
+
+    class A1,B1 entrada
+    class A2,B2,B3,C1,D1,F1,F2,F3,H1 pantalla
+    class B4,D2,E2,G1 decision
+    class E1 error
+    class Z,H2 termino

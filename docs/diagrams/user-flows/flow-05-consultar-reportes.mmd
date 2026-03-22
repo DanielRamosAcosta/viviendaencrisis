@@ -1,0 +1,106 @@
+flowchart TD
+
+    %% ─── ENTRADA ───────────────────────────────────────────────────────────────
+
+    START([Usuario accede a la plataforma])
+    START --> HOME
+
+    HOME[/"Inicio — panel de resumen"\]
+    HOME -->|"Navega a Reportes y reseñas\ndesde menú principal"| REPORTES
+
+    REPORTES["Sección: Reportes y reseñas\n(listado inicial de reportes recientes)"]
+
+    %% ─── SELECCIÓN DE VISTA ─────────────────────────────────────────────────────
+
+    REPORTES --> TOGGLE{"¿Qué vista\nelige el usuario?"}
+
+    TOGGLE -->|"Vista lista\n(por defecto)"| LISTA
+    TOGGLE -->|"Toggle: Vista mapa"| MAPA
+
+    %% ─── VISTA LISTA ────────────────────────────────────────────────────────────
+
+    LISTA["Vista lista de reportes\n(tarjetas con: tipo, zona, fecha,\nestado de moderación)"]
+    LISTA --> FILTROS_LISTA
+
+    FILTROS_LISTA{"¿Aplica filtros?\n(zona geográfica,\ntipo de irregularidad)"}
+    FILTROS_LISTA -->|"No aplica filtros"| RESULTADOS_LISTA
+    FILTROS_LISTA -->|"Aplica uno o más filtros"| FILTRANDO_LISTA
+
+    FILTRANDO_LISTA["Sistema filtra el listado\npor los criterios seleccionados"]
+    FILTRANDO_LISTA --> HAY_RESULTADOS_LISTA{"¿Hay reportes\npara esos filtros?"}
+
+    HAY_RESULTADOS_LISTA -->|"Sí"| RESULTADOS_LISTA
+    HAY_RESULTADOS_LISTA -->|"No"| SIN_RESULTADOS_LISTA
+
+    SIN_RESULTADOS_LISTA["Estado vacío:\n'No hay reportes para esta\nzona o tipo de irregularidad'\n+ sugerencia de ampliar filtros"]
+    SIN_RESULTADOS_LISTA --> AMPLIAR_FILTROS{"¿El usuario\nmodifica los filtros?"}
+    AMPLIAR_FILTROS -->|"Sí, ajusta filtros"| FILTRANDO_LISTA
+    AMPLIAR_FILTROS -->|"No, limpia todos los filtros"| LISTA
+    AMPLIAR_FILTROS -->|"Abandona esta vista"| HOME
+
+    RESULTADOS_LISTA["Lista de reportes filtrados\n(tarjetas con: tipo, zona, fecha,\nestado de moderación)"]
+    RESULTADOS_LISTA --> SELECCIONA_REPORTE_LISTA
+
+    SELECCIONA_REPORTE_LISTA{"¿El usuario selecciona\nun reporte de la lista?"}
+    SELECCIONA_REPORTE_LISTA -->|"Sí"| DETALLE
+    SELECCIONA_REPORTE_LISTA -->|"No, cambia a vista mapa"| MAPA
+
+    %% ─── VISTA MAPA ─────────────────────────────────────────────────────────────
+
+    MAPA["Vista mapa de reportes\n(mapa coroplético con marcadores\npor tipo de irregularidad)"]
+    MAPA --> FILTROS_MAPA
+
+    FILTROS_MAPA{"¿Aplica filtros?\n(zona geográfica,\ntipo de irregularidad)"}
+    FILTROS_MAPA -->|"No aplica filtros"| RESULTADOS_MAPA
+    FILTROS_MAPA -->|"Aplica uno o más filtros"| FILTRANDO_MAPA
+
+    FILTRANDO_MAPA["Mapa se actualiza\nmostrando solo marcadores\npara los filtros seleccionados"]
+    FILTRANDO_MAPA --> HAY_RESULTADOS_MAPA{"¿Hay reportes\nen el área visible?"}
+
+    HAY_RESULTADOS_MAPA -->|"Sí"| RESULTADOS_MAPA
+    HAY_RESULTADOS_MAPA -->|"No"| SIN_RESULTADOS_MAPA
+
+    SIN_RESULTADOS_MAPA["Estado vacío en el mapa:\n'No hay reportes para esta\nzona o tipo de irregularidad'\n+ sugerencia de ampliar filtros\no hacer zoom out"]
+    SIN_RESULTADOS_MAPA --> AMPLIAR_FILTROS_MAPA{"¿El usuario\nmodifica los filtros\no hace zoom out?"}
+    AMPLIAR_FILTROS_MAPA -->|"Sí, ajusta filtros o zoom"| FILTRANDO_MAPA
+    AMPLIAR_FILTROS_MAPA -->|"No, limpia todos los filtros"| MAPA
+    AMPLIAR_FILTROS_MAPA -->|"Abandona esta vista"| HOME
+
+    RESULTADOS_MAPA["Mapa con marcadores activos\n(agrupados por zona si hay\nelevada densidad de reportes)"]
+    RESULTADOS_MAPA --> SELECCIONA_REPORTE_MAPA
+
+    SELECCIONA_REPORTE_MAPA{"¿El usuario hace clic\nen un marcador del mapa?"}
+    SELECCIONA_REPORTE_MAPA -->|"Sí, clic en marcador"| POPUP_MAPA
+    SELECCIONA_REPORTE_MAPA -->|"No, cambia a vista lista"| LISTA
+
+    POPUP_MAPA["Popup contextual en el mapa:\nresumen del reporte\n(tipo, dirección, fecha)"]
+    POPUP_MAPA --> ABRE_DETALLE_DESDE_MAPA{"¿El usuario abre\nel detalle completo?"}
+    ABRE_DETALLE_DESDE_MAPA -->|"Sí, clic en 'Ver detalle'"| DETALLE
+    ABRE_DETALLE_DESDE_MAPA -->|"No, cierra popup"| RESULTADOS_MAPA
+
+    %% ─── DETALLE DE UN REPORTE ───────────────────────────────────────────────────
+
+    DETALLE["Página de detalle del reporte\n(tipo de irregularidad, dirección,\ndescripción, fecha, estado\nde moderación, zona)"]
+
+    DETALLE --> ACCIONES_DETALLE{"¿Qué hace\nel usuario?"}
+
+    ACCIONES_DETALLE -->|"Vuelve al listado\n(botón breadcrumb / atrás)"| RESULTADOS_LISTA
+    ACCIONES_DETALLE -->|"Vuelve al mapa\n(botón breadcrumb / atrás)"| RESULTADOS_MAPA
+    ACCIONES_DETALLE -->|"Comparte el enlace\ndel reporte"| COMPARTIR
+    ACCIONES_DETALLE -->|"Navega a otra sección"| HOME
+
+    COMPARTIR["URL del reporte copiada\nal portapapeles\n(o abre diálogo de compartir nativo)"]
+    COMPARTIR --> DETALLE
+
+    %% ─── ESTILOS ─────────────────────────────────────────────────────────────────
+
+    classDef startEnd fill:#1a1a2e,color:#fff,stroke:#1a1a2e,rx:20
+    classDef page fill:#e8f4f8,color:#1a1a2e,stroke:#4a9eca
+    classDef decision fill:#fff9e6,color:#1a1a2e,stroke:#f0b429
+    classDef error fill:#fdecea,color:#1a1a2e,stroke:#e53935
+    classDef action fill:#e8f5e9,color:#1a1a2e,stroke:#43a047
+
+    class START,HOME startEnd
+    class REPORTES,LISTA,MAPA,RESULTADOS_LISTA,RESULTADOS_MAPA,POPUP_MAPA,DETALLE,COMPARTIR,FILTRANDO_LISTA,FILTRANDO_MAPA page
+    class TOGGLE,FILTROS_LISTA,HAY_RESULTADOS_LISTA,SELECCIONA_REPORTE_LISTA,FILTROS_MAPA,HAY_RESULTADOS_MAPA,SELECCIONA_REPORTE_MAPA,ABRE_DETALLE_DESDE_MAPA,ACCIONES_DETALLE,AMPLIAR_FILTROS,AMPLIAR_FILTROS_MAPA decision
+    class SIN_RESULTADOS_LISTA,SIN_RESULTADOS_MAPA error

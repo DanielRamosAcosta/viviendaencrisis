@@ -1,0 +1,127 @@
+---
+title: "Flujo 3 — Reporte de irregularidad (Vivienda en Crisis, sitemap v1.2)"
+---
+flowchart TD
+
+    %% ──────────────────────────────────────────────
+    %% PUNTO DE ENTRADA
+    %% ──────────────────────────────────────────────
+    START([Usuario en la plataforma])
+    NAV[Navega a Reportes y reseñas]
+    LANDING[Página: Reportes y reseñas\nVista general: mapa de reportes\n+ accesos a secciones]
+
+    START --> NAV --> LANDING
+
+    LANDING --> CTA["Pulsa: Reportar una irregularidad"]
+
+    %% ──────────────────────────────────────────────
+    %% DECISIÓN DE AUTENTICACIÓN
+    %% ──────────────────────────────────────────────
+    CTA --> AUTH_CHECK{¿Usuario autenticado?}
+
+    AUTH_CHECK -- No --> AUTH_SUBFLUJO[/Subflujo: Autenticación\nver Flujo 8/]
+    AUTH_SUBFLUJO --> AUTH_RESULT{¿Autenticación exitosa?}
+    AUTH_RESULT -- No --> AUTH_ABORT([Usuario abandona o\ncancela el flujo])
+    AUTH_RESULT -- Sí --> ANON_NOTICE
+
+    AUTH_CHECK -- Sí --> ANON_NOTICE
+
+    %% ──────────────────────────────────────────────
+    %% AVISO DE ANONIMATO — ANTES DEL FORMULARIO
+    %% Requerimiento de Marina Delgado (miedo a represalias)
+    %% ──────────────────────────────────────────────
+    ANON_NOTICE["#9888 Garantías de anonimato\n────────────────────────────\nTu identidad no será visible\npara terceros. El reporte se\npublicará de forma anónima.\nLos datos se tratan conforme\nal RGPD.\n────────────────────────────\nBotón: Entendido, continuar"]
+    ANON_NOTICE --> ANON_ACCEPT{¿Acepta y continúa?}
+    ANON_ACCEPT -- No / cierra --> LANDING
+    ANON_ACCEPT -- Sí --> FORM_PAGE
+
+    %% ──────────────────────────────────────────────
+    %% FORMULARIO DE REPORTE
+    %% Progresividad requerida por Antonio García
+    %% ──────────────────────────────────────────────
+    FORM_PAGE["Página: Reportar una irregularidad\n── Paso 1 de 3: Tipo y ubicación ──\nTipo de irregularidad *\nDirección completa *\nMunicipio / Comunidad autónoma *\n[ Localizar en mapa ]"]
+
+    FORM_PAGE --> DUP_CHECK{¿Ya existe un reporte\npara esta dirección?}
+
+    DUP_CHECK -- Sí --> DUP_WARN["Aviso: Ya hay un reporte\npendiente para esta dirección.\n¿Deseas añadir información\nadicional al existente?"]
+    DUP_WARN --> DUP_CHOICE{Elección del usuario}
+    DUP_CHOICE -- Añadir al existente --> EXISTING_REPORT[Redirige a reporte existente\npara aportar más evidencias]
+    EXISTING_REPORT --> END_DUP([Fin: contribución registrada])
+    DUP_CHOICE -- Continuar con nuevo --> FORM_STEP2
+
+    DUP_CHECK -- No --> FORM_STEP2
+
+    FORM_STEP2["── Paso 2 de 3: Descripción ──\nDescripción de la irregularidad *\n(mínimo 50 caracteres)\nEvidencias: subir imágenes / documentos\n(opcional)"]
+
+    FORM_STEP2 --> FORM_STEP3["── Paso 3 de 3: Confirmación ──\nResumen del reporte\nRecordatorio de garantías de anonimato\n[ Enviar reporte ]"]
+
+    %% ──────────────────────────────────────────────
+    %% VALIDACIÓN DEL FORMULARIO
+    %% ──────────────────────────────────────────────
+    FORM_STEP3 --> VALIDATE{¿Formulario válido?\nCampos obligatorios OK\nDescripción ≥ 50 caracteres}
+
+    VALIDATE -- No: campos vacíos --> ERR_REQUIRED["Error inline:\nSeñalizar campo(s) vacío(s)\nMensaje: Este campo es obligatorio"]
+    ERR_REQUIRED --> FORM_PAGE
+
+    VALIDATE -- No: descripción corta --> ERR_SHORT["Error inline:\nDescripción demasiado corta\nMínimo 50 caracteres\n(indicar caracteres restantes)"]
+    ERR_SHORT --> FORM_STEP2
+
+    VALIDATE -- Sí --> SUBMIT
+
+    %% ──────────────────────────────────────────────
+    %% ENVÍO Y COLA DE MODERACIÓN
+    %% ──────────────────────────────────────────────
+    SUBMIT[Envío del reporte al sistema]
+    SUBMIT --> SUBMIT_OK{¿Envío exitoso?}
+
+    SUBMIT_OK -- Error de red / servidor --> ERR_SUBMIT["Error: No se pudo enviar\nel reporte. Inténtalo\nde nuevo más tarde.\n[ Reintentar ] [ Guardar borrador ]"]
+    ERR_SUBMIT --> FORM_STEP3
+
+    SUBMIT_OK -- Sí --> CONFIRM_PAGE["Confirmación de envío\n────────────────────────────\n'Tu reporte ha sido recibido\ny está pendiente de revisión.\nTe notificaremos cuando\nsea procesado.'\n────────────────────────────\nAcceso directo:\nMi cuenta > Mi perfil > Estado de reporte"]
+
+    CONFIRM_PAGE --> MODERATION_QUEUE[(Cola de moderación\nestado: pendiente)]
+
+    %% ──────────────────────────────────────────────
+    %% PROCESO DE MODERACIÓN (sistema / administrador)
+    %% ──────────────────────────────────────────────
+    MODERATION_QUEUE --> MOD_DECISION{Decisión del moderador}
+
+    MOD_DECISION -- Aprobado --> MOD_APPROVED[Reporte aprobado\ny publicado en el mapa]
+    MOD_DECISION -- Rechazado --> MOD_REJECTED[Reporte rechazado\ncon motivo registrado]
+    MOD_DECISION -- Más información --> MOD_INFO[Moderador solicita\ninformación adicional]
+
+    %% ──────────────────────────────────────────────
+    %% NOTIFICACIONES AL USUARIO
+    %% ──────────────────────────────────────────────
+    MOD_APPROVED --> NOTIF_APPROVED["Notificación al usuario\n(email + aviso en plataforma):\n'Tu reporte ha sido aprobado\ny ya es visible en el mapa.'"]
+    NOTIF_APPROVED --> PROFILE_STATE_OK["Mi cuenta > Mi perfil >\nEstado de reporte: Aprobado\nEnlace al reporte publicado"]
+    PROFILE_STATE_OK --> END_APPROVED([Fin: reporte visible\nen Mapa de reportes])
+
+    MOD_REJECTED --> NOTIF_REJECTED["Notificación al usuario\n(email + aviso en plataforma):\n'Tu reporte no ha podido\npublicarse. Motivo: [texto]'"]
+    NOTIF_REJECTED --> PROFILE_STATE_KO["Mi cuenta > Mi perfil >\nEstado de reporte: Rechazado\nMotivo visible + opción de apelación"]
+    PROFILE_STATE_KO --> APPEAL{¿Usuario apela\no envía nuevo reporte?}
+    APPEAL -- Sí --> FORM_PAGE
+    APPEAL -- No --> END_REJECTED([Fin: reporte rechazado\nsin acción adicional])
+
+    MOD_INFO --> NOTIF_INFO["Notificación al usuario:\n'Se necesita más información\npara procesar tu reporte.\n[Ver detalle]'"]
+    NOTIF_INFO --> PROFILE_STATE_PENDING["Mi cuenta > Mi perfil >\nEstado de reporte: En revisión\nFormulario para añadir información"]
+    PROFILE_STATE_PENDING --> FORM_STEP2
+
+    %% ──────────────────────────────────────────────
+    %% ESTILOS POR TIPO DE NODO
+    %% ──────────────────────────────────────────────
+    classDef startEnd    fill:#1a1a2e,color:#ffffff,stroke:#1a1a2e,rx:20
+    classDef page        fill:#e8f4f8,color:#1a1a2e,stroke:#4a90d9,stroke-width:1.5px
+    classDef decision    fill:#fff8e1,color:#1a1a2e,stroke:#f5a623,stroke-width:1.5px
+    classDef error       fill:#fdecea,color:#8b0000,stroke:#e53935,stroke-width:1.5px
+    classDef system      fill:#f3e5f5,color:#4a148c,stroke:#9c27b0,stroke-width:1.5px
+    classDef notice      fill:#e8f5e9,color:#1b5e20,stroke:#43a047,stroke-width:2px
+    classDef subflujo    fill:#fffde7,color:#1a1a2e,stroke:#fbc02d,stroke-width:2px,stroke-dasharray:6 3
+
+    class START,AUTH_ABORT,END_DUP,END_APPROVED,END_REJECTED startEnd
+    class NAV,LANDING,CTA,FORM_PAGE,FORM_STEP2,FORM_STEP3,SUBMIT,CONFIRM_PAGE,EXISTING_REPORT,PROFILE_STATE_OK,PROFILE_STATE_KO,PROFILE_STATE_PENDING page
+    class AUTH_CHECK,AUTH_RESULT,ANON_ACCEPT,DUP_CHECK,DUP_CHOICE,VALIDATE,SUBMIT_OK,MOD_DECISION,APPEAL decision
+    class ERR_REQUIRED,ERR_SHORT,ERR_SUBMIT error
+    class MODERATION_QUEUE,MOD_APPROVED,MOD_REJECTED,MOD_INFO,NOTIF_APPROVED,NOTIF_REJECTED,NOTIF_INFO system
+    class ANON_NOTICE notice
+    class AUTH_SUBFLUJO subflujo

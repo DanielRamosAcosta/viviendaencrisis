@@ -1,0 +1,123 @@
+flowchart TD
+
+    %% ─── PUNTO DE ENTRADA ───────────────────────────────────────────────────
+    START([Usuario accede a la plataforma])
+    START --> ENTRADA_DECISION{¿Desde dónde entra?}
+
+    ENTRADA_DECISION -->|Home — buscador por zona| HOME[Home: panel resumen\nBuscador por zona]
+    ENTRADA_DECISION -->|Navegación principal| SECCION[Precios y comparativas\nComparar zonas]
+
+    %% ─── SELECCIÓN ZONA A ────────────────────────────────────────────────────
+    HOME --> BUSCA_A[Usuario escribe nombre\nde zona A en el buscador]
+    SECCION --> BUSCA_A2[Usuario escribe nombre\nde zona A]
+
+    BUSCA_A --> RESULTADOS_A{¿Se encontraron\nresultados?}
+    BUSCA_A2 --> RESULTADOS_A
+
+    %% Unhappy path 1 — sin resultados de búsqueda
+    RESULTADOS_A -->|No| ERROR_BUSQUEDA[Mensaje: No se encontró\nninguna zona con ese nombre.\nSugerencia: prueba con municipio\no comunidad autónoma]
+    ERROR_BUSQUEDA --> BUSCA_A
+
+    RESULTADOS_A -->|Sí — lista de coincidencias| SELECCIONA_A[Usuario selecciona zona A\nde la lista de resultados]
+
+    %% ─── VERIFICAR DATOS ZONA A ──────────────────────────────────────────────
+    SELECCIONA_A --> DATOS_A{¿Zona A tiene datos\npara el periodo activo?}
+
+    %% Unhappy path 2 — zona A sin datos
+    DATOS_A -->|No| ERROR_SIN_DATOS_A[Mensaje: No hay datos disponibles\npara esta zona en el periodo\nseleccionado.\nSugerencia: ampliar periodo\no probar otra zona]
+    ERROR_SIN_DATOS_A --> CAMBIAR_PERIODO_A{¿Usuario cambia\nel periodo?}
+    CAMBIAR_PERIODO_A -->|Sí| DATOS_A
+    CAMBIAR_PERIODO_A -->|No — elige otra zona| BUSCA_A
+
+    DATOS_A -->|Sí| ZONA_A_CARGADA[Zona A cargada\nVista previa de precio/m² zona A\nPeriodo: último trimestre disponible]
+
+    %% ─── SELECCIÓN ZONA B ────────────────────────────────────────────────────
+    ZONA_A_CARGADA --> AÑADE_B[Usuario añade zona B:\ncampo de búsqueda secundario]
+
+    AÑADE_B --> BUSCA_B[Usuario escribe nombre\nde zona B]
+    BUSCA_B --> RESULTADOS_B{¿Se encontraron\nresultados?}
+
+    %% Unhappy path 1 repetido para zona B
+    RESULTADOS_B -->|No| ERROR_BUSQUEDA_B[Mensaje: No se encontró\nninguna zona con ese nombre]
+    ERROR_BUSQUEDA_B --> BUSCA_B
+
+    RESULTADOS_B -->|Sí| SELECCIONA_B[Usuario selecciona zona B\nde la lista de resultados]
+
+    %% ─── VERIFICAR DATOS ZONA B ──────────────────────────────────────────────
+    SELECCIONA_B --> DATOS_B{¿Zona B tiene datos\npara el mismo periodo?}
+
+    %% Unhappy path 3 — datos parciales: A tiene datos, B no
+    DATOS_B -->|No| DATOS_PARCIALES[Aviso: datos parciales.\nZona A tiene datos completos.\nZona B no tiene datos para\neste periodo.\nSe muestra comparativa parcial\ncon advertencia visible]
+    DATOS_PARCIALES --> DECISION_PARCIAL{¿Usuario continúa\ncon datos parciales?}
+    DECISION_PARCIAL -->|Sí — acepta advertencia| COMPARATIVA_PARCIAL[Comparativa parcial:\nSolo se muestran métricas\ndisponibles para ambas zonas.\nColumna zona B indica\nperiodos sin datos]
+    DECISION_PARCIAL -->|No — elige otra zona B| BUSCA_B
+
+    DATOS_B -->|Sí| COMPARATIVA_COMPLETA[Precios y comparativas\nComparar zonas:\nComparativa lado a lado — Zona A vs Zona B]
+
+    %% ─── VISTAS DE LA COMPARATIVA ────────────────────────────────────────────
+    COMPARATIVA_COMPLETA --> VISTAS_DISPONIBLES[Vistas disponibles en la comparativa]
+
+    VISTAS_DISPONIBLES --> VISTA_PRECIO_M2[Precio por metro cuadrado\nTabla comparativa A vs B\nPrecio alquiler · compraventa · m²]
+    VISTAS_DISPONIBLES --> VISTA_EVOLUCION[Gráfico de evolución temporal\nSeries históricas superpuestas\nA vs B por trimestre]
+    VISTAS_DISPONIBLES --> VISTA_RANKING[Ranking de zonas\nPosición de A y B\nen el ranking general]
+
+    %% El usuario navega entre vistas libremente
+    VISTA_PRECIO_M2 --> CAMBIO_VISTA{¿Usuario cambia de vista?}
+    VISTA_EVOLUCION --> CAMBIO_VISTA
+    VISTA_RANKING --> CAMBIO_VISTA
+
+    CAMBIO_VISTA -->|Sí| VISTAS_DISPONIBLES
+    CAMBIO_VISTA -->|No — permanece en vista actual| ACCIONES_COMPARATIVA
+
+    %% Caso datos parciales también lleva a vistas (con advertencia)
+    COMPARATIVA_PARCIAL --> VISTAS_DISPONIBLES
+
+    %% ─── ACCIONES SOBRE LA COMPARATIVA ──────────────────────────────────────
+    ACCIONES_COMPARATIVA[Acciones disponibles]
+
+    ACCIONES_COMPARATIVA --> CAMBIAR_ZONA{¿Qué quiere hacer\nel usuario?}
+
+    CAMBIAR_ZONA -->|Cambiar zona A| BUSCA_A
+    CAMBIAR_ZONA -->|Cambiar zona B| BUSCA_B
+    CAMBIAR_ZONA -->|Añadir zona C| BUSCA_C[Usuario escribe zona C\ncampo de búsqueda terciario\nmáx. 4 zonas simultáneas]
+
+    BUSCA_C --> RESULTADOS_C{¿Se encontraron\nresultados para zona C?}
+    RESULTADOS_C -->|No| ERROR_BUSQUEDA_C[Mensaje: No se encontró\nninguna zona con ese nombre]
+    ERROR_BUSQUEDA_C --> BUSCA_C
+    RESULTADOS_C -->|Sí| SELECCIONA_C[Usuario selecciona zona C]
+    SELECCIONA_C --> DATOS_C{¿Zona C tiene\ndatos disponibles?}
+    DATOS_C -->|No| AVISO_C[Aviso: zona C sin datos\npara el periodo activo]
+    DATOS_C -->|Sí| COMPARATIVA_COMPLETA
+
+    CAMBIAR_ZONA -->|Cambiar periodo temporal| CAMBIO_PERIODO[Selector de periodo:\naño · rango de años · trimestre]
+    CAMBIO_PERIODO --> DATOS_A
+
+    CAMBIAR_ZONA -->|Cambiar tipo de dato| CAMBIO_TIPO[Selector: alquiler · compraventa · ambos]
+    CAMBIO_TIPO --> COMPARATIVA_COMPLETA
+
+    CAMBIAR_ZONA -->|Descargar datos de la comparativa| DESCARGA[Descarga CSV / JSON\ncon los datos mostrados\n— sin registro requerido —]
+    DESCARGA --> ACCIONES_COMPARATIVA
+
+    CAMBIAR_ZONA -->|Ir al detalle de una zona| DETALLE_ZONA[Precios y comparativas\nEvolución temporal de precios\nzona seleccionada]
+
+    CAMBIAR_ZONA -->|Terminar — sale de la sección| END([Usuario finaliza la sesión\no navega a otra sección])
+
+    %% ─── METADATOS VISIBLES ──────────────────────────────────────────────────
+    COMPARATIVA_COMPLETA -.->|Metadato siempre visible| META[Fuente de datos · Fecha de\nactualización · Metodología]
+
+    %% ─── ESTILOS ─────────────────────────────────────────────────────────────
+    classDef page        fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
+    classDef decision    fill:#fef9c3,stroke:#ca8a04,color:#422006
+    classDef error       fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+    classDef warning     fill:#ffedd5,stroke:#ea580c,color:#431407
+    classDef action      fill:#dcfce7,stroke:#16a34a,color:#14532d
+    classDef terminal    fill:#f3f4f6,stroke:#6b7280,color:#111827
+    classDef meta        fill:#f5f3ff,stroke:#7c3aed,color:#2e1065,stroke-dasharray:4 4
+
+    class HOME,SECCION,ZONA_A_CARGADA,COMPARATIVA_COMPLETA,COMPARATIVA_PARCIAL,VISTA_PRECIO_M2,VISTA_EVOLUCION,VISTA_RANKING,DETALLE_ZONA page
+    class ENTRADA_DECISION,RESULTADOS_A,DATOS_A,RESULTADOS_B,DATOS_B,CAMBIO_VISTA,CAMBIAR_ZONA,DECISION_PARCIAL,CAMBIAR_PERIODO_A,RESULTADOS_C,DATOS_C decision
+    class ERROR_BUSQUEDA,ERROR_SIN_DATOS_A,ERROR_BUSQUEDA_B,ERROR_BUSQUEDA_C error
+    class DATOS_PARCIALES,AVISO_C warning
+    class BUSCA_A,BUSCA_A2,SELECCIONA_A,AÑADE_B,BUSCA_B,SELECCIONA_B,BUSCA_C,SELECCIONA_C,ACCIONES_COMPARATIVA,VISTAS_DISPONIBLES,CAMBIO_PERIODO,CAMBIO_TIPO,DESCARGA action
+    class START,END terminal
+    class META meta

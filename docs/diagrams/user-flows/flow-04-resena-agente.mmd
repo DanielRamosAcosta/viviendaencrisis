@@ -1,0 +1,88 @@
+flowchart TD
+    START([Usuario accede a la plataforma])
+
+    %% ── Entrada al flujo ──────────────────────────────────────────
+    START --> NAV[Navega a Reportes y reseñas]
+    NAV --> CONSULTAR[Consultar reseñas]
+
+    CONSULTAR --> MODO{¿Qué quiere hacer?}
+    MODO -- Solo leer reseñas --> LEER[Lee reseñas existentes\nde agentes inmobiliarios]
+    LEER --> FIN_LECTURA([Fin — flujo de solo lectura\nver Flujo 6])
+
+    MODO -- Quiere escribir una reseña --> ESCRIBIR_CTA[Pulsa 'Escribir una reseña']
+
+    %% ── Decisión de autenticación ─────────────────────────────────
+    ESCRIBIR_CTA --> AUTH_CHECK{¿Usuario autenticado?}
+
+    AUTH_CHECK -- No --> SUBFLUJO_AUTH[/Subflujo: Autenticación\nver Flujo 8/]
+    SUBFLUJO_AUTH --> AUTH_RESULT{¿Autenticación\nexitosa?}
+    AUTH_RESULT -- No / Cancela --> CANCELADO([Usuario cancela\nFin del flujo])
+    AUTH_RESULT -- Sí --> BUSQUEDA_AGENTE
+
+    AUTH_CHECK -- Sí --> BUSQUEDA_AGENTE
+
+    %% ── Búsqueda o selección del agente ──────────────────────────
+    BUSQUEDA_AGENTE[Reportes y reseñas ›\nEscribir una reseña\nBuscar agente inmobiliario]
+
+    BUSQUEDA_AGENTE --> BUSCAR_INPUT[Introduce nombre o\nNIF del agente]
+    BUSCAR_INPUT --> BUSCAR_RESULT{¿Agente encontrado?}
+
+    BUSCAR_RESULT -- No encontrado --> AGENTE_NO_ENCONTRADO[Mensaje: Agente no encontrado\nSugerencia: revisar nombre o NIF]
+    AGENTE_NO_ENCONTRADO --> REINTENTAR{¿Reintenta búsqueda?}
+    REINTENTAR -- Sí --> BUSCAR_INPUT
+    REINTENTAR -- No --> CANCELADO
+
+    BUSCAR_RESULT -- Sí --> SELECCIONAR_AGENTE[Selecciona el agente\nde la lista de resultados]
+    SELECCIONAR_AGENTE --> VER_PERFIL_AGENTE[Ve el perfil del agente:\nreseñas existentes y\nvaloración media]
+
+    %% ── ¿Ya reseñado? ─────────────────────────────────────────────
+    VER_PERFIL_AGENTE --> YA_RESENADO{¿El usuario ya\nha reseñado a\neste agente?}
+    YA_RESENADO -- Sí --> RESEÑA_DUPLICADA[Mensaje: Ya has escrito\nuna reseña para este agente.\nPuedes editarla desde Mi cuenta]
+    RESEÑA_DUPLICADA --> IR_MI_CUENTA[Ir a Mi cuenta ›\nMis reseñas]
+    IR_MI_CUENTA --> FIN_EDICION([Fin — edición de reseña\nexistente fuera de alcance\nde este flujo])
+
+    YA_RESENADO -- No --> FORMULARIO
+
+    %% ── Formulario de reseña ─────────────────────────────────────
+    FORMULARIO[Formulario Escribir una reseña:\n— Valoración: 1-5 estrellas *\n— Título de la reseña *\n— Comentario texto libre *\n— Tipo de relación con el agente\n— Fecha aproximada de la experiencia]
+
+    FORMULARIO --> ENVIAR[Pulsa Enviar reseña]
+
+    %% ── Validación del formulario ────────────────────────────────
+    ENVIAR --> VALIDACION{¿Formulario válido?}
+
+    VALIDACION -- Campos obligatorios vacíos --> ERROR_CAMPOS[Mensaje de error:\nCompleta los campos\nobligatorios marcados con *]
+    ERROR_CAMPOS --> FORMULARIO
+
+    VALIDACION -- Comentario demasiado corto\nmenos de 20 caracteres --> ERROR_CORTO[Mensaje de error:\nEl comentario debe tener\nal menos 20 caracteres]
+    ERROR_CORTO --> FORMULARIO
+
+    VALIDACION -- Valoración no seleccionada --> ERROR_VALORACION[Mensaje de error:\nSelecciona una valoración\nde 1 a 5 estrellas]
+    ERROR_VALORACION --> FORMULARIO
+
+    VALIDACION -- Formulario correcto --> PUBLICACION
+
+    %% ── Publicación ──────────────────────────────────────────────
+    PUBLICACION[Sistema publica la reseña]
+    PUBLICACION --> CONFIRMACION[Mensaje de confirmación:\nTu reseña ha sido publicada]
+
+    CONFIRMACION --> VISIBLE_AGENTE[Reseña visible en\nperfil del agente dentro de\nReportes y reseñas › Consultar reseñas]
+    CONFIRMACION --> VISIBLE_CUENTA[Reseña accesible en\nMi cuenta › Mi perfil\nsección Mis reseñas]
+
+    VISIBLE_AGENTE --> FIN([Fin del flujo])
+    VISIBLE_CUENTA --> FIN
+
+    %% ── Estilos ──────────────────────────────────────────────────
+    classDef decision fill:#fff3cd,stroke:#856404,color:#000
+    classDef error fill:#f8d7da,stroke:#842029,color:#000
+    classDef action fill:#d1ecf1,stroke:#0c5460,color:#000
+    classDef subflujo fill:#e2d9f3,stroke:#432874,color:#000
+    classDef endpoint fill:#d4edda,stroke:#155724,color:#000
+    classDef screen fill:#cfe2ff,stroke:#084298,color:#000
+
+    class AUTH_CHECK,MODO,BUSCAR_RESULT,REINTENTAR,AUTH_RESULT,VALIDACION,YA_RESENADO decision
+    class ERROR_CAMPOS,ERROR_CORTO,ERROR_VALORACION,AGENTE_NO_ENCONTRADO,RESEÑA_DUPLICADA error
+    class SUBFLUJO_AUTH subflujo
+    class FIN,FIN_LECTURA,CANCELADO,FIN_EDICION endpoint
+    class CONSULTAR,BUSQUEDA_AGENTE,VER_PERFIL_AGENTE,FORMULARIO,PUBLICACION,CONFIRMACION screen
+    class NAV,ESCRIBIR_CTA,BUSCAR_INPUT,SELECCIONAR_AGENTE,ENVIAR,VISIBLE_AGENTE,VISIBLE_CUENTA,LEER,IR_MI_CUENTA action

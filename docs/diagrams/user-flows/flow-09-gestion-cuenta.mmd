@@ -1,0 +1,155 @@
+flowchart TD
+    START([Usuario accede a la plataforma])
+
+    %% ── Decisión de autenticación previa ─────────────────────────
+    START --> AUTH_CHECK{¿Usuario autenticado?}
+
+    AUTH_CHECK -- No --> SUBFLUJO_AUTH[/Subflujo: Autenticación\nver Flujo 8/]
+    SUBFLUJO_AUTH --> AUTH_RESULT{¿Autenticación\nexitosa?}
+    AUTH_RESULT -- No / Cancela --> CANCELADO([Usuario cancela\nFin del flujo])
+    AUTH_RESULT -- Sí --> MI_CUENTA
+
+    AUTH_CHECK -- Sí --> MI_CUENTA
+
+    %% ── Entrada a Mi cuenta ───────────────────────────────────────
+    MI_CUENTA[Mi cuenta\nVista general del espacio personal]
+    MI_CUENTA --> SECCION{¿Qué sección\nquiere gestionar?}
+
+    SECCION -- Mi perfil --> MI_PERFIL
+    SECCION -- Alertas y configuración --> ALERTAS_SECCION
+
+    %% ── Mi perfil: subsecciones ───────────────────────────────────
+    MI_PERFIL[Mi cuenta › Mi perfil\nDatos personales + accesos\na subsecciones]
+
+    MI_PERFIL --> PERFIL_ACCION{¿Qué acción\nrealiza en Mi perfil?}
+
+    PERFIL_ACCION -- Ver estado de reportes --> REPORTES_PROPIOS
+    PERFIL_ACCION -- Gestionar zonas favoritas --> ZONAS_FAV
+    PERFIL_ACCION -- Editar datos personales --> EDITAR_PERFIL
+    PERFIL_ACCION -- Eliminar cuenta --> ELIMINAR_CHECK
+
+    %% ── Subsección: Estado de reporte ────────────────────────────
+    REPORTES_PROPIOS[Mi perfil › Estado de reporte\nLista de reportes propios\ncon estado: Pendiente /\nEn revisión / Aprobado /\nRechazado]
+
+    REPORTES_PROPIOS --> HAY_REPORTES{¿El usuario tiene\nreportes enviados?}
+
+    HAY_REPORTES -- No --> ESTADO_VACIO[Estado vacío:\nAún no has enviado\nningún reporte\nEnlace a Reportar una irregularidad]
+    ESTADO_VACIO --> FIN_REPORTES([Fin — sin reportes])
+
+    HAY_REPORTES -- Sí --> VER_REPORTE[Selecciona un reporte\nde la lista]
+    VER_REPORTE --> DETALLE_REPORTE[Vista de detalle del reporte:\n— Tipo de irregularidad\n— Fecha de envío\n— Estado actual\n— Motivo si fue rechazado]
+
+    DETALLE_REPORTE --> REPORTE_RECHAZADO{¿Estado:\nRechazado?}
+    REPORTE_RECHAZADO -- No --> FIN_DETALLE([Fin — reporte consultado])
+    REPORTE_RECHAZADO -- Sí --> NOTIF_RECHAZO[Motivo de rechazo visible\nSugerencia de corrección\no nuevo reporte]
+    NOTIF_RECHAZO --> FIN_RECHAZO([Fin — usuario informado\ndel rechazo])
+
+    %% ── Subsección: Zonas favoritas ──────────────────────────────
+    ZONAS_FAV[Mi perfil › Zonas favoritas\nLista de zonas guardadas\ncon acceso rápido a su\nevolución de precios]
+
+    ZONAS_FAV --> HAY_ZONAS{¿El usuario tiene\nzonas guardadas?}
+
+    HAY_ZONAS -- No --> ZONAS_VACIO[Estado vacío:\nNo tienes zonas guardadas\nEnlace a Precios y comparativas]
+    ZONAS_VACIO --> FIN_ZONAS_VACIO([Fin — sin zonas])
+
+    HAY_ZONAS -- Sí --> ACCION_ZONA{¿Qué acción\nsobre una zona?}
+
+    ACCION_ZONA -- Ver evolución de precios --> VER_ZONA[Navega a\nPrecios y comparativas ›\nEvolución temporal\nfiltrada por esa zona]
+    VER_ZONA --> FIN_ZONA([Fin — consulta de zona])
+
+    ACCION_ZONA -- Eliminar zona favorita --> CONFIRMAR_ELIMINAR_ZONA{¿Confirma eliminar\nesta zona favorita?}
+    CONFIRMAR_ELIMINAR_ZONA -- Cancela --> ZONAS_FAV
+    CONFIRMAR_ELIMINAR_ZONA -- Confirma --> ZONA_ELIMINADA[Zona eliminada de favoritos\nMensaje de confirmación]
+    ZONA_ELIMINADA --> ZONAS_FAV
+
+    %% ── Editar perfil ────────────────────────────────────────────
+    EDITAR_PERFIL[Formulario de edición:\n— Nombre y apellidos\n— Correo electrónico\n— Contraseña\n— Idioma de la interfaz]
+
+    EDITAR_PERFIL --> GUARDAR_PERFIL[Pulsa Guardar cambios]
+    GUARDAR_PERFIL --> VALIDACION_PERFIL{¿Datos válidos?}
+
+    VALIDACION_PERFIL -- Email con formato incorrecto --> ERROR_EMAIL[Mensaje de error:\nIntroduce un email válido]
+    ERROR_EMAIL --> EDITAR_PERFIL
+
+    VALIDACION_PERFIL -- Contraseña demasiado corta\nmenos de 8 caracteres --> ERROR_PASS[Mensaje de error:\nLa contraseña debe tener\nal menos 8 caracteres]
+    ERROR_PASS --> EDITAR_PERFIL
+
+    VALIDACION_PERFIL -- Correo ya en uso --> ERROR_EMAIL_DUPLICADO[Mensaje de error:\nEse email ya está\nregistrado en la plataforma]
+    ERROR_EMAIL_DUPLICADO --> EDITAR_PERFIL
+
+    VALIDACION_PERFIL -- Datos correctos --> PERFIL_GUARDADO[Cambios guardados\nMensaje de confirmación]
+    PERFIL_GUARDADO --> MI_PERFIL
+
+    %% ── Eliminar cuenta ──────────────────────────────────────────
+    ELIMINAR_CHECK{¿El usuario tiene reportes\nen estado Pendiente o\nEn revisión?}
+
+    ELIMINAR_CHECK -- Sí --> AVISO_REPORTES_ACTIVOS[Aviso: Tienes reportes\nen proceso de moderación.\nSi eliminas tu cuenta,\nestos reportes serán\ncancelados y no se publicarán.\n¿Deseas continuar?]
+
+    AVISO_REPORTES_ACTIVOS --> DECISION_CON_REPORTES{¿Qué decide\nel usuario?}
+    DECISION_CON_REPORTES -- Cancela --> MI_PERFIL
+    DECISION_CON_REPORTES -- Continúa --> CONFIRMAR_ELIMINAR_CUENTA
+
+    ELIMINAR_CHECK -- No --> CONFIRMAR_ELIMINAR_CUENTA
+
+    CONFIRMAR_ELIMINAR_CUENTA[Pantalla de confirmación:\nEsta acción es irreversible.\nSe eliminarán tus datos,\nzonas favoritas y alertas.\nEscribe tu contraseña\npara confirmar]
+
+    CONFIRMAR_ELIMINAR_CUENTA --> PASS_CONFIRM{¿Contraseña\ncorrecta?}
+    PASS_CONFIRM -- Incorrecta --> ERROR_PASS_CONFIRM[Mensaje de error:\nContraseña incorrecta.\nVuelve a intentarlo]
+    ERROR_PASS_CONFIRM --> CONFIRMAR_ELIMINAR_CUENTA
+
+    PASS_CONFIRM -- Correcta --> CUENTA_ELIMINADA[Cuenta eliminada:\n— Datos personales borrados\n— Zonas favoritas eliminadas\n— Alertas eliminadas\n— Reportes en moderación cancelados]
+    CUENTA_ELIMINADA --> REDIRECCION_HOME([Sesión cerrada\nRedirigido al Home\nFin del flujo])
+
+    %% ── Mi cuenta › Alertas y configuración ──────────────────────
+    ALERTAS_SECCION[Mi cuenta › Alertas y configuración\nLista de alertas activas\nde variación de precios por zona]
+
+    ALERTAS_SECCION --> ALERTAS_ACCION{¿Qué acción\nsobre alertas?}
+
+    ALERTAS_ACCION -- Crear nueva alerta --> FORM_ALERTA
+    ALERTAS_ACCION -- Editar alerta existente --> EDITAR_ALERTA
+    ALERTAS_ACCION -- Eliminar alerta --> CONFIRMAR_ELIMINAR_ALERTA
+
+    %% ── Crear alerta ─────────────────────────────────────────────
+    FORM_ALERTA[Formulario Nueva alerta:\n— Zona o municipio *\n— Tipo: alquiler / compraventa\n— Umbral de variación % *\n— Frecuencia: diaria / semanal\n— Canal: email / notificación web]
+
+    FORM_ALERTA --> ENVIAR_ALERTA[Pulsa Guardar alerta]
+    ENVIAR_ALERTA --> VALIDACION_ALERTA{¿Formulario válido?}
+
+    VALIDACION_ALERTA -- Zona no seleccionada --> ERROR_ZONA_ALERTA[Mensaje de error:\nSelecciona una zona\npara la alerta]
+    ERROR_ZONA_ALERTA --> FORM_ALERTA
+
+    VALIDACION_ALERTA -- Umbral no definido --> ERROR_UMBRAL[Mensaje de error:\nDefine el umbral de variación\npara recibir la alerta]
+    ERROR_UMBRAL --> FORM_ALERTA
+
+    VALIDACION_ALERTA -- Alerta ya existe\npara esta zona y tipo --> ERROR_ALERTA_DUPLICADA[Mensaje de error:\nYa tienes una alerta activa\npara esta zona y tipo de precio]
+    ERROR_ALERTA_DUPLICADA --> ALERTAS_SECCION
+
+    VALIDACION_ALERTA -- Datos correctos --> ALERTA_CREADA[Alerta creada\nMensaje de confirmación:\nRecibirás una notificación\ncuando el precio varíe\nel umbral definido]
+    ALERTA_CREADA --> ALERTAS_SECCION
+
+    %% ── Editar alerta ────────────────────────────────────────────
+    EDITAR_ALERTA[Formulario de edición\ncon campos precargados\nde la alerta seleccionada]
+    EDITAR_ALERTA --> ENVIAR_ALERTA
+
+    %% ── Eliminar alerta ──────────────────────────────────────────
+    CONFIRMAR_ELIMINAR_ALERTA{¿Confirma eliminar\nesta alerta?}
+    CONFIRMAR_ELIMINAR_ALERTA -- Cancela --> ALERTAS_SECCION
+    CONFIRMAR_ELIMINAR_ALERTA -- Confirma --> ALERTA_ELIMINADA[Alerta eliminada\nMensaje de confirmación]
+    ALERTA_ELIMINADA --> ALERTAS_SECCION
+
+    %% ── Estilos ───────────────────────────────────────────────────
+    classDef decision fill:#fff3cd,stroke:#856404,color:#000
+    classDef error fill:#f8d7da,stroke:#842029,color:#000
+    classDef action fill:#d1ecf1,stroke:#0c5460,color:#000
+    classDef subflujo fill:#e2d9f3,stroke:#432874,color:#000
+    classDef endpoint fill:#d4edda,stroke:#155724,color:#000
+    classDef screen fill:#cfe2ff,stroke:#084298,color:#000
+    classDef warning fill:#fff3e0,stroke:#e65100,color:#000
+
+    class AUTH_CHECK,SECCION,PERFIL_ACCION,HAY_REPORTES,REPORTE_RECHAZADO,HAY_ZONAS,ACCION_ZONA,CONFIRMAR_ELIMINAR_ZONA,ELIMINAR_CHECK,DECISION_CON_REPORTES,PASS_CONFIRM,ALERTAS_ACCION,VALIDACION_PERFIL,VALIDACION_ALERTA,CONFIRMAR_ELIMINAR_ALERTA,AUTH_RESULT decision
+    class ERROR_EMAIL,ERROR_PASS,ERROR_EMAIL_DUPLICADO,ERROR_PASS_CONFIRM,ERROR_ZONA_ALERTA,ERROR_UMBRAL,ERROR_ALERTA_DUPLICADA error
+    class AVISO_REPORTES_ACTIVOS warning
+    class SUBFLUJO_AUTH subflujo
+    class CANCELADO,FIN_REPORTES,FIN_DETALLE,FIN_RECHAZO,FIN_ZONAS_VACIO,FIN_ZONA,REDIRECCION_HOME endpoint
+    class MI_CUENTA,MI_PERFIL,REPORTES_PROPIOS,DETALLE_REPORTE,ZONAS_FAV,EDITAR_PERFIL,CONFIRMAR_ELIMINAR_CUENTA,ALERTAS_SECCION,FORM_ALERTA,EDITAR_ALERTA screen
+    class VER_REPORTE,ESTADO_VACIO,NOTIF_RECHAZO,ZONAS_VACIO,VER_ZONA,ZONA_ELIMINADA,GUARDAR_PERFIL,PERFIL_GUARDADO,CUENTA_ELIMINADA,ENVIAR_ALERTA,ALERTA_CREADA,ALERTA_ELIMINADA action

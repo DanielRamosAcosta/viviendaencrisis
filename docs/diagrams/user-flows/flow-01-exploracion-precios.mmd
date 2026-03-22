@@ -1,0 +1,136 @@
+---
+title: "Flujo 1 — Exploración de precios (Vivienda en Crisis)"
+---
+flowchart TD
+
+    %% ─────────────────────────────────────────────
+    %% PUNTO DE ENTRADA
+    %% ─────────────────────────────────────────────
+    START([Inicio: usuario llega a la plataforma])
+    START --> HOME
+
+    HOME["🏠 Home — Panel de resumen\n(indicadores nacionales, acceso sin registro)\n[T26: fecha de última actualización visible]"]
+    HOME --> BUSCADOR
+
+    %% ─────────────────────────────────────────────
+    %% BÚSQUEDA DE ZONA
+    %% ─────────────────────────────────────────────
+    BUSCADOR["Introduce zona en el buscador\n(municipio / comunidad autónoma)"]
+    BUSCADOR --> ZONA_EXISTE{¿Zona reconocida\npor el sistema?}
+
+    %% UNHAPPY PATH 1: zona no encontrada
+    ZONA_EXISTE -- No --> ERROR_ZONA["Estado: zona no encontrada\n— Mensaje orientativo: 'No encontramos ese municipio.\nPrueba con otro nombre o selecciona\nuna comunidad autónoma.'"]
+    ERROR_ZONA --> SUGERENCIAS["Muestra sugerencias de zonas\nsimilares o selector de comunidad autónoma"]
+    SUGERENCIAS --> BUSCADOR
+
+    ZONA_EXISTE -- Sí --> BUSCAR_DATOS{¿Existen datos\npara esa zona?}
+
+    %% UNHAPPY PATH 2: zona existe pero sin datos en ningún periodo
+    BUSCAR_DATOS -- No hay datos --> ERROR_SIN_DATOS["Estado: zona sin datos disponibles\n— Aviso: 'Esta zona aún no tiene datos\nregistrados en la plataforma.'\n[T26: fecha de última actualización]"]
+    ERROR_SIN_DATOS --> ENLACE_FUENTE_1["Enlace a fuente original\n(MIVAU / INE)\n[Necesidad: Elena Marín]"]
+    ENLACE_FUENTE_1 --> HOME
+
+    %% ─────────────────────────────────────────────
+    %% VISTA PRINCIPAL: EVOLUCIÓN TEMPORAL
+    %% ─────────────────────────────────────────────
+    BUSCAR_DATOS -- Hay datos --> EVOLUCION_TEMPORAL
+
+    EVOLUCION_TEMPORAL["📈 Precios y comparativas ›\nEvolución temporal de precios\n— Gráfico de líneas / barras\n— Periodo: último año por defecto\n[T26: fecha de última actualización]\n[T23: filtros disponibles]"]
+
+    EVOLUCION_TEMPORAL --> DATOS_PARCIALES{¿Datos completos\npara el periodo\nseleccionado?}
+
+    %% UNHAPPY PATH 3: datos parciales
+    DATOS_PARCIALES -- Parciales --> AVISO_PARCIAL["Aviso inline (no bloqueante):\n'Algunos trimestres no tienen datos.\nLos periodos incompletos se muestran\ncon indicador visual.'"]
+    AVISO_PARCIAL --> VER_GRAFICO
+
+    DATOS_PARCIALES -- Completos --> VER_GRAFICO
+
+    VER_GRAFICO["Visualización del gráfico\n— Evolución de alquiler y/o compraventa\n— Texto explicativo breve bajo el título\n[Necesidad: Antonio García — progresividad]"]
+
+    %% ─────────────────────────────────────────────
+    %% METADATO Y FUENTE (visible en todo momento)
+    %% ─────────────────────────────────────────────
+    VER_GRAFICO --> META_FUENTE["[Componente persistente en la vista]\n— Fecha de última actualización (T26)\n— Enlace 'Ver fuente original' → MIVAU / INE\n[Necesidad: Elena Marín — verificabilidad]"]
+
+    %% ─────────────────────────────────────────────
+    %% BIFURCACIONES DESDE LA VISTA PRINCIPAL
+    %% ─────────────────────────────────────────────
+    META_FUENTE --> DECISION_ACCION{¿Qué hace\nel usuario?}
+
+    %% ─────────────────────────────────────────────
+    %% RAMA A: TOGGLE MAPA
+    %% ─────────────────────────────────────────────
+    DECISION_ACCION -- Activa toggle mapa --> VISTA_MAPA
+
+    VISTA_MAPA["🗺️ Precios y comparativas ›\nVista mapa de precios\n— Mapa coroplético por zona\n— Mismos filtros activos\n[Integrado como vista alternativa,\nno como sección separada — decisión IA v1.2]"]
+
+    VISTA_MAPA --> INTERACTUAR_MAPA{¿Interacción\nen el mapa?}
+    INTERACTUAR_MAPA -- Clic en zona distinta --> BUSCADOR
+    INTERACTUAR_MAPA -- Toggle a gráfico --> VER_GRAFICO
+    INTERACTUAR_MAPA -- Sin interacción --> DECISION_ACCION
+
+    %% ─────────────────────────────────────────────
+    %% RAMA B: CAMBIAR FILTROS
+    %% ─────────────────────────────────────────────
+    DECISION_ACCION -- Cambia filtros --> PANEL_FILTROS
+
+    PANEL_FILTROS["⚙️ Panel de filtros (T23)\n— Tipo de vivienda: alquiler / compraventa / ambos\n— Periodo temporal: trimestre, año, rango personalizado\n— Superficie: todos / por m²\n[Filtros transversales en Precios y Datos abiertos]"]
+
+    PANEL_FILTROS --> APLICAR_FILTROS["Aplica filtros"]
+    APLICAR_FILTROS --> BUSCAR_DATOS_FILTRADOS{¿Hay datos para\nlos filtros aplicados?}
+
+    BUSCAR_DATOS_FILTRADOS -- No hay datos --> ERROR_FILTROS["Estado: sin datos para los filtros seleccionados\n— Mensaje: 'No hay datos disponibles\npara esta combinación de filtros.\nPrueba con un periodo más amplio.'"]
+    ERROR_FILTROS --> PANEL_FILTROS
+
+    BUSCAR_DATOS_FILTRADOS -- Hay datos --> DATOS_PARCIALES
+
+    %% ─────────────────────────────────────────────
+    %% RAMA C: INDICADORES DE ASEQUIBILIDAD
+    %% ─────────────────────────────────────────────
+    DECISION_ACCION -- Accede a indicadores --> INDICADORES
+
+    INDICADORES["📊 Precios y comparativas ›\nIndicadores de asequibilidad\n— Relación precio-salario (T5)\n— Índice de esfuerzo económico:\n  porcentaje de renta destinado a vivienda (T10)\n— Texto explicativo del cálculo\n[Necesidad: Antonio García — comprensibilidad]\n[Necesidad: Pablo Navarro — análisis precio/m²]"]
+
+    INDICADORES --> DECISION_DESDE_INDICADORES{¿Qué hace\nel usuario?}
+    DECISION_DESDE_INDICADORES -- Vuelve a evolución temporal --> VER_GRAFICO
+    DECISION_DESDE_INDICADORES -- Activa variante oficial vs portales --> COMPARAR_OFICIAL
+
+    %% ─────────────────────────────────────────────
+    %% RAMA D: VARIANTE — COMPARAR OFICIAL VS PORTALES (T27)
+    %% ─────────────────────────────────────────────
+    DECISION_ACCION -- Accede a comparativa --> COMPARAR_OFICIAL
+
+    COMPARAR_OFICIAL["🔍 Precios y comparativas ›\nComparar oficial vs portales (T27)\n— Datos oficiales: MIVAU / INE\n— Datos de sondeo: Idealista / Fotocasa\n— Visualización lado a lado o superpuesta\n[Necesidad: Elena Marín — fuentes verificables]\n[Necesidad: Alejandro Ruiz — trazabilidad]"]
+
+    COMPARAR_OFICIAL --> AVISO_PORTALES["Aviso metodológico:\n'Los datos de portales son un sondeo\ncomplementario. Consulta la metodología\npara conocer sus limitaciones.'\n— Enlace a Datos abiertos › Fuentes y metodología"]
+
+    AVISO_PORTALES --> VER_COMPARATIVA["Visualización comparativa\n— Series paralelas por periodo\n[T26: fecha de última actualización por cada fuente]"]
+
+    VER_COMPARATIVA --> DECISION_DESDE_COMPARATIVA{¿Qué hace\nel usuario?}
+    DECISION_DESDE_COMPARATIVA -- Descarga datos --> DESCARGA["→ Flujo 7: Descarga de datos abiertos\n(entrada contextual desde visualización)"]
+    DECISION_DESDE_COMPARATIVA -- Vuelve a evolución temporal --> VER_GRAFICO
+    DECISION_DESDE_COMPARATIVA -- Nueva búsqueda --> BUSCADOR
+
+    %% ─────────────────────────────────────────────
+    %% RAMA E: ACCIONES DIRECTAS DESDE VISTA PRINCIPAL
+    %% ─────────────────────────────────────────────
+    DECISION_ACCION -- Descarga datos --> DESCARGA
+    DECISION_ACCION -- Nueva búsqueda de zona --> BUSCADOR
+    DECISION_ACCION -- Sale de la sección --> END_FLUJO([Fin del flujo])
+
+    %% ─────────────────────────────────────────────
+    %% ESTILOS POR TIPO DE NODO
+    %% ─────────────────────────────────────────────
+    classDef page        fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
+    classDef decision    fill:#fef9c3,stroke:#ca8a04,color:#451a03
+    classDef error       fill:#fee2e2,stroke:#dc2626,color:#450a0a
+    classDef meta        fill:#f0fdf4,stroke:#16a34a,color:#052e16
+    classDef external    fill:#f3e8ff,stroke:#9333ea,color:#2e1065
+    classDef terminal    fill:#f1f5f9,stroke:#64748b,color:#0f172a
+
+    class HOME,EVOLUCION_TEMPORAL,VISTA_MAPA,INDICADORES,COMPARAR_OFICIAL,VER_GRAFICO,VER_COMPARATIVA,PANEL_FILTROS,SUGERENCIAS page
+    class ZONA_EXISTE,BUSCAR_DATOS,DATOS_PARCIALES,DECISION_ACCION,INTERACTUAR_MAPA,BUSCAR_DATOS_FILTRADOS,DECISION_DESDE_INDICADORES,DECISION_DESDE_COMPARATIVA decision
+    class ERROR_ZONA,ERROR_SIN_DATOS,ERROR_FILTROS,AVISO_PARCIAL,AVISO_PORTALES error
+    class META_FUENTE,ENLACE_FUENTE_1 meta
+    class DESCARGA,DESCARGA external
+    class START,END_FLUJO terminal
