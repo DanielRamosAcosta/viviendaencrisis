@@ -1,16 +1,16 @@
 ---
 id: VC-0051
 title: Diagrama de Flujo de usuario
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 15:13'
+updated_date: '2026-03-22 14:21'
 labels:
   - ux/ui
 milestone: m-1
 dependencies: []
 priority: high
-ordinal: 2906.25
+ordinal: 1000
 ---
 
 ## Description
