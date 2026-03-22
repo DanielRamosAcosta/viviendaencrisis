@@ -1,9 +1,10 @@
 ---
 id: VC-0059
 title: Inicializar monorepo pnpm workspaces + Turborepo
-status: In Progress
+status: In Review
 assignee: []
 created_date: '2026-03-22 19:25'
+updated_date: '2026-03-22 19:29'
 labels:
   - refined
 dependencies: []
@@ -23,9 +24,9 @@ Configurar el monorepo con pnpm workspaces y Turborepo. Incluye:
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 pnpm-workspace.yaml configurado con apps/* y packages/*
-- [ ] #2 turbo.json configurado con pipelines básicos
-- [ ] #3 packages/shared con modelo User.ts exportado
-- [ ] #4 apps/wireframe funciona como SPA Vite con wired-elements
-- [ ] #5 pnpm install funciona sin errores desde la raíz
+- [x] #1 pnpm-workspace.yaml configurado con apps/* y packages/*
+- [x] #2 turbo.json configurado con pipelines básicos
+- [x] #3 packages/shared con modelo User.ts exportado
+- [x] #4 apps/wireframe funciona como SPA Vite con wired-elements
+- [x] #5 pnpm install funciona sin errores desde la raíz
 <!-- AC:END -->
