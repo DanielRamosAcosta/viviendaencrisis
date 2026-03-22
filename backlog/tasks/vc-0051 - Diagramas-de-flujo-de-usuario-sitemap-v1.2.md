@@ -4,7 +4,7 @@ title: Diagramas de flujo de usuario (sitemap v1.2)
 status: In Progress
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-22 14:25'
+updated_date: '2026-03-22 14:28'
 labels:
   - ux/ui
   - refined
@@ -82,3 +82,11 @@ Se distinguen dos niveles de flujos:
 5. Verificar que los flujos cubren las necesidades de las 5 personas usuarias
 6. Revisión final de estados de error y casos excepcionales
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+**Indicación de la profesora (reformulada para este proyecto):**
+
+Este diagrama os ayudará a aseguraros de que el usuario puede realizar las acciones necesarias en cada pantalla y no se quedará bloqueado en ninguna. Os puede ayudar ir imaginando los clics que realiza el usuario desde que llega a la plataforma hasta que, por ejemplo, consulta la evolución del alquiler en su zona, compara dos municipios, o envía un reporte de irregularidad. En el diagrama es importante contemplar todas las acciones que pueden ser negativas o reportar errores y qué elecciones debe tomar el usuario. Por ejemplo: ¿una búsqueda de zona siempre devuelve resultados? ¿Qué pasa si no hay datos para ese municipio? ¿Qué ocurre si el usuario intenta reportar una irregularidad sin estar autenticado? ¿Cómo le informamos de que su reporte ha sido rechazado en la moderación?
+<!-- SECTION:NOTES:END -->
