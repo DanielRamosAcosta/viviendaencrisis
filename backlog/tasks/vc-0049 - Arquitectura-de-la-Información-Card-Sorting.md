@@ -1,10 +1,10 @@
 ---
 id: VC-0049
 title: Arquitectura de la Información (Card Sorting)
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-22 13:04'
+updated_date: '2026-03-22 13:06'
 labels:
   - ux/ui
   - refined
@@ -12,7 +12,7 @@ milestone: m-1
 dependencies:
   - VC-0048
 priority: high
-ordinal: 2812.5
+ordinal: 78.125
 ---
 
 ## Description

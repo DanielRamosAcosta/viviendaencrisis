@@ -4,7 +4,7 @@ title: Creación de User Personas
 status: Done
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 11:46'
+updated_date: '2026-03-22 13:06'
 labels:
   - ux/ui
   - refined
@@ -15,7 +15,7 @@ references:
   - >-
     https://www.figma.com/board/BUhYGpA1sI4Vpju7EKBSpF/Mapa-de-Empat%C3%ADa--Copia-?node-id=2001-534
 priority: high
-ordinal: 1406.25
+ordinal: 39000
 ---
 
 ## Description
