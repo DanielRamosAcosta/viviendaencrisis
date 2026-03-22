@@ -3,3 +3,72 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.email {
+  opacity: 0.7;
+}
+
+.profileActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.listCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.listHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.badgePending {
+  background: #f5cd79;
+  color: #333;
+}
+
+.badgeReview {
+  background: #778beb;
+  color: #fff;
+}
+
+.badgeApproved {
+  background: #78e08f;
+  color: #333;
+}
+
+.badgeRejected {
+  background: #e55039;
+  color: #fff;
+}
+
+.date {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}

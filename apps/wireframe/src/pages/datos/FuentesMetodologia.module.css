@@ -3,3 +3,51 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+
+.subtitle {
+  opacity: 0.7;
+}
+
+.sourceGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sourceGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sourceGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sourceCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.sourceMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.updated {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
