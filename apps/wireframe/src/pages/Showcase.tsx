@@ -73,7 +73,7 @@ export function Showcase() {
   return (
     <div className={styles.container}>
       <Typography as="h1">Component Library Demo</Typography>
-      <Typography as="p" style={{ opacity: 0.7 }}>
+      <Typography as="p" className={styles.subtitle}>
         All available wired-elements and rough-viz chart wrappers
       </Typography>
 
@@ -143,7 +143,7 @@ export function Showcase() {
             <wired-item value="Barcelona">Barcelona</wired-item>
             <wired-item value="Valencia">Valencia</wired-item>
           </WiredCombo>
-          <WiredListbox selected="Alquiler" style={{ height: 120 }}>
+          <WiredListbox selected="Alquiler" className={styles.listbox}>
             <wired-item value="Alquiler">Alquiler</wired-item>
             <wired-item value="Compra">Compra</wired-item>
             <wired-item value="Compartido">Compartido</wired-item>
@@ -235,7 +235,7 @@ export function Showcase() {
           <WiredImage
             src={urlOfImageOfSize(600, 400)}
             elevation={2}
-            style={{ width: 300, height: 150 }}
+            className={styles.wiredImage}
           />
           <WiredLink href="https://github.com" target="_blank" elevation={2}>
             WiredLink to GitHub
@@ -247,9 +247,9 @@ export function Showcase() {
       {/*              ROUGH-VIZ CHARTS              */}
       {/* ═══════════════════════════════════════════ */}
 
-      <WiredDivider elevation={3} style={{ margin: "2rem 0" }} />
+      <WiredDivider elevation={3} className={styles.dividerSpacing} />
       <Typography as="h1">Rough-Viz Charts</Typography>
-      <Typography as="p" style={{ opacity: 0.7 }}>
+      <Typography as="p" className={styles.subtitle}>
         Hand-drawn style data visualizations
       </Typography>
 
@@ -267,7 +267,7 @@ export function Showcase() {
           highlight="coral"
           roughness={2}
           strokeWidth={1}
-          style={{ width: "100%", height: 350 }}
+          className={styles.chart}
         />
       </WiredCard>
 
@@ -284,7 +284,7 @@ export function Showcase() {
           color="orange"
           highlight="lightyellow"
           roughness={2}
-          style={{ width: "100%", height: 350 }}
+          className={styles.chart}
         />
       </WiredCard>
 
@@ -300,7 +300,7 @@ export function Showcase() {
           title="Distribución por tipo de tenencia"
           colors={["#f78fb3", "#3dc1d3", "#f5cd79", "#778beb", "#e77f67"]}
           roughness={2}
-          style={{ width: "100%", height: 350 }}
+          className={styles.chart}
         />
       </WiredCard>
 
@@ -320,7 +320,7 @@ export function Showcase() {
           roughness={3}
           circle
           circleRadius={8}
-          style={{ width: "100%", height: 350 }}
+          className={styles.chart}
         />
       </WiredCard>
 
@@ -336,7 +336,7 @@ export function Showcase() {
           title="Esfuerzo en vivienda (% de ingresos)"
           colors={["#78e08f", "#f5cd79", "#f78fb3", "#e55039"]}
           roughness={1}
-          style={{ width: "100%", height: 350 }}
+          className={styles.chart}
         />
       </WiredCard>
 
@@ -356,7 +356,7 @@ export function Showcase() {
           roughness={2}
           radius={12}
           interactive={false}
-          style={{ width: "100%", height: 350 }}
+          className={styles.chart}
         />
       </WiredCard>
 
@@ -375,7 +375,7 @@ export function Showcase() {
           labels="city"
           roughness={2}
           padding={0.3}
-          style={{ width: "100%", height: 350 }}
+          className={styles.chart}
         />
       </WiredCard>
 

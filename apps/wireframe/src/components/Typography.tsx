@@ -1,4 +1,5 @@
 import type { ElementType, ComponentPropsWithoutRef } from "react";
+import typographyStyles from "./Typography.module.css";
 
 type TypographyProps<T extends ElementType = "span"> = {
   as?: T;
@@ -6,13 +7,13 @@ type TypographyProps<T extends ElementType = "span"> = {
 
 export function Typography<T extends ElementType = "span">({
   as,
-  style,
+  className,
   ...props
 }: TypographyProps<T>) {
   const Component = as || "span";
   return (
     <Component
-      style={{ fontFamily: "Gloria Hallelujah, cursive", ...style }}
+      className={[typographyStyles.typography, className].filter(Boolean).join(" ")}
       {...props}
     />
   );

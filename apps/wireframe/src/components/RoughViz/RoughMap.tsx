@@ -2,14 +2,14 @@ import { useRef, useEffect, useId, useMemo } from "react";
 import { geoPath, geoMercator, type GeoProjection } from "d3-geo";
 import rough from "roughjs";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
-import type { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
+import mapStyles from "./RoughMap.module.css";
 
 interface RoughMapProps {
   data: FeatureCollection;
   width?: number;
   height?: number;
   className?: string;
-  style?: CSSProperties;
   projection?: () => GeoProjection;
   fitSize?: boolean;
   fill?: string | ((feature: Feature) => string);
@@ -29,7 +29,6 @@ export function RoughMap({
   width = 600,
   height = 400,
   className,
-  style,
   projection: createProjection,
   fitSize = true,
   fill = "rgba(0,0,0,0.08)",
@@ -115,8 +114,7 @@ export function RoughMap({
       viewBox={`0 0 ${width} ${height}`}
       width={width}
       height={height}
-      className={className}
-      style={{ maxWidth: "100%", height: "auto", ...style }}
+      className={[mapStyles.svg, className].filter(Boolean).join(" ")}
     >
       <g ref={gRef} />
       {children}

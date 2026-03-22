@@ -44,6 +44,21 @@ Las páginas van en `src/pages/`. Cada página es un componente exportado con no
 
 ## Convenciones
 
+### Estilos
+
+**Solo CSS Modules. Inline styles están prohibidos.**
+
+- Todo estilo debe ir en un fichero `.module.css` junto al componente/página
+- Nunca usar `style={{ ... }}` en JSX — usar `className={styles.nombreClase}`
+- Los componentes base (WiredElements, RoughViz) aceptan `className` para recibir estilos del consumidor
+- Si un componente necesita estilos condicionales, usar clases CSS con lógica en `className`
+
+**Layout responsive mobile-first:**
+
+- Priorizar flexbox y CSS Grid para layout — evitar tamaños hardcoded (px) cuando sea posible; usar unidades relativas (%, rem, fr, min/max/clamp)
+- Diseño mobile-first: los estilos base son para móvil, luego se amplían con media queries
+- Breakpoints: `@media (min-width: 768px)` (tablet), `@media (min-width: 1024px)` (desktop)
+
 ### Imágenes
 
 Toda imagen debe usar el helper `urlOfImageOfSize`:
@@ -51,7 +66,7 @@ Toda imagen debe usar el helper `urlOfImageOfSize`:
 ```tsx
 import { urlOfImageOfSize } from "../utils/placeholder";
 
-<WiredImage src={urlOfImageOfSize(600, 400)} style={{ width: 300, height: 150 }} />
+<WiredImage src={urlOfImageOfSize(600, 400)} className={styles.wiredImage} />
 ```
 
 Nunca hardcodear URLs de imagen. Siempre usar este helper que apunta a placeholdit.com.
@@ -109,7 +124,7 @@ UI components con estilo sketchy. Son wrappers React de web components.
 <WiredCombo selected="value" onSelected={fn}>
   <wired-item value="a">Option A</wired-item>
 </WiredCombo>
-<WiredListbox selected="value" style={{ height: 120 }}>
+<WiredListbox selected="value" className={styles.listbox}>
   <wired-item value="a">Option A</wired-item>
 </WiredListbox>
 
@@ -135,35 +150,35 @@ UI components con estilo sketchy. Son wrappers React de web components.
 
 ### RoughViz Charts (from `../components/RoughViz`)
 
-Charts hand-drawn. Requieren `style={{ width: "100%", height: 350 }}` para dimensionarse.
+Charts hand-drawn. Requieren una clase CSS con `width` y `height` para dimensionarse (e.g. `.chart { width: 100%; height: 350px; }`).
 
 ```tsx
 // Bar / BarH
 <RoughBar
   data={{ labels: ["A", "B"], values: [10, 20] }}
   title="Title" color="skyblue" roughness={2}
-  style={{ width: "100%", height: 350 }}
+  className={styles.chart}
 />
 
 // Donut / Pie
 <RoughDonut
   data={{ labels: ["A", "B"], values: [60, 40] }}
   colors={["#f78fb3", "#3dc1d3"]}
-  style={{ width: "100%", height: 350 }}
+  className={styles.chart}
 />
 
 // Line
 <RoughLine
   data={{ x: ["2020", "2021", "2022"], y: [100, 200, 150] }}
   xLabel="Year" yLabel="Value" colors={["#f78fb3"]}
-  style={{ width: "100%", height: 350 }}
+  className={styles.chart}
 />
 
 // Scatter
 <RoughScatter
   data={{ x: [1, 2, 3], y: [10, 20, 15] }}
   interactive={false}
-  style={{ width: "100%", height: 350 }}
+  className={styles.chart}
 />
 
 // StackedBar (array of objects, first key = label)
@@ -173,7 +188,7 @@ Charts hand-drawn. Requieren `style={{ width: "100%", height: 350 }}` para dimen
     { city: "BCN", Rent: 38, Own: 40, Other: 22 },
   ]}
   labels="city"
-  style={{ width: "100%", height: 350 }}
+  className={styles.chart}
 />
 ```
 
@@ -203,7 +218,7 @@ Props: `data` (FeatureCollection), `width`, `height`, `projection` (factory fn),
 
 ## Gotchas
 
-- Los charts de rough-viz necesitan `style={{ width, height }}` explícito — sin dimensiones no renderizan
+- Los charts de rough-viz necesitan una clase CSS con `width` y `height` — sin dimensiones no renderizan
 - `WiredCombo`/`WiredListbox` usan `<wired-item>` y `WiredTabs` usa `<wired-tab>` como hijos directos (JSX types declarados en el index)
 - `wired-calendar` no está en el barrel export de wired-elements — se importa aparte via `wired-elements/lib/wired-calendar.js`
 - roughjs está pineado a 4.3.1 para wired-elements (override en root `package.json`) porque 4.4+ renombró `fillPolygon` → `fillPolygons`
