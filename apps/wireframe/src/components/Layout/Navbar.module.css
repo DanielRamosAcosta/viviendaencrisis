@@ -1,0 +1,83 @@
+.navbar {
+  border-bottom: 2px solid #333;
+  padding: 0.5rem 1rem;
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoText {
+  font-size: 1.2rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.hamburger {
+  display: block;
+}
+
+.navLinks {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  padding-top: 0.75rem;
+}
+
+.navLinksOpen {
+  display: flex;
+}
+
+.navLink {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.navLink:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.navLinkActive {
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+
+.authSection {
+  padding-top: 0.5rem;
+  border-top: 1px solid #ddd;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .navLinks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    padding-top: 0;
+    gap: 0.25rem;
+  }
+
+  .authSection {
+    padding-top: 0;
+    border-top: none;
+    margin-left: 0.5rem;
+  }
+}
