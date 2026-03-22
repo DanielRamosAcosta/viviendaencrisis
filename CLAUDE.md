@@ -27,6 +27,7 @@ Plataforma web que funciona como observatorio público de vivienda. Permite visu
 - `docs/memory` — Memoria del proyecto, escrita en Typst
 - `docs/classroom/` — Enunciados y tareas del aula virtual (contexto académico)
 - `docs/reserach/` — Investigaciones profundas (Deep Search) realizadas con IA relevantes para el contexto del proyecto
+- `apps/wireframe/` — SPA de prototipado rápido con estilo hand-drawn (tiene su propio `CLAUDE.md`)
 
 ### Stack técnico
 
