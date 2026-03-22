@@ -147,6 +147,14 @@ declare module "react" {
         },
         HTMLElement
       >;
+      "wired-item": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement> & { value?: string; name?: string },
+        HTMLElement
+      >;
+      "wired-tab": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement> & { name?: string },
+        HTMLElement
+      >;
     }
   }
 }
