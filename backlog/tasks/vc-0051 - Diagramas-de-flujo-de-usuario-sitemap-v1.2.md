@@ -4,7 +4,7 @@ title: Diagramas de flujo de usuario (sitemap v1.2)
 status: In Review
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-22 14:39'
+updated_date: '2026-03-22 14:40'
 labels:
   - ux/ui
   - refined
@@ -14,6 +14,7 @@ references:
   - >-
     docs/memory/content/02_materiales_y_metodos/06_arquitectura_de_la_informacion.typ
   - docs/memory/content/02_materiales_y_metodos/05_personas_usuarias.typ
+  - docs/diagrams/user-flows/flow-03-reporte-irregularidad.mmd
 documentation:
   - docs/diagrams/user-flows/flow-01-exploracion-precios.mmd
 priority: high
@@ -126,6 +127,8 @@ Este diagrama os ayudará a aseguraros de que el usuario puede realizar las acci
 Flujo 4 (Reseña de agente inmobiliario) generado en docs/diagrams/user-flows/flow-04-resena-agente.mmd
 
 Flujo 5 (Consultar reportes y mapa de reportes) generado en docs/diagrams/user-flows/flow-05-consultar-reportes.mmd. Cubre: dos vistas (lista y mapa como toggle integrado coherente con sitemap v1.2), filtros por zona/tipo en ambas vistas, popup contextual en mapa, detalle de reporte, unhappy paths de sin resultados con opciones de recuperación, y acción de compartir enlace.
+
+Flujo 3 (Reporte de irregularidad) completado. Diagrama Mermaid generado en docs/diagrams/user-flows/flow-03-reporte-irregularidad.mmd. Cubre: punto de entrada desde Reportes y reseñas, decisión de autenticación con referencia al Flujo 8, aviso de anonimato prominente antes del formulario (requerimiento de Marina Delgado), formulario progresivo en 3 pasos (Antonio García), detección de reporte duplicado, validación inline (campos vacíos y descripción corta), cola de moderación con estados pendiente/aprobado/rechazado/más información, notificaciones al usuario, visibilidad del estado en Mi cuenta > Mi perfil > Estado de reporte, y opción de apelación tras rechazo.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
