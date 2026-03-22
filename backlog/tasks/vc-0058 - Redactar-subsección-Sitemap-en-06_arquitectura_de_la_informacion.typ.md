@@ -1,10 +1,10 @@
 ---
 id: VC-0058
 title: Redactar subsección Sitemap en 06_arquitectura_de_la_informacion.typ
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-03-22 13:01'
-updated_date: '2026-03-22 13:03'
+updated_date: '2026-03-22 13:06'
 labels:
   - refined
   - memoria
@@ -13,6 +13,7 @@ dependencies: []
 references:
   - >-
     docs/memory/content/02_materiales_y_metodos/06_arquitectura_de_la_informacion.typ
+ordinal: 39.0625
 ---
 
 ## Description
