@@ -155,4 +155,23 @@ Generado el diagrama de flujo en `docs/diagrams/user-flows/flow-01-exploracion-p
 4. Filtros sin resultados → mensaje orientativo + retry al panel de filtros
 
 **Personas cubiertas:** Marina (sin registro), Pablo (filtros, precio/m²), Antonio (textos explicativos, progresividad), Elena (fuentes verificables, enlace a origen).
+
+**Flujo 6 — Consultar reseñas de agentes** (`docs/diagrams/user-flows/flow-06-consultar-resenas.mmd`)
+
+Diagrama Mermaid flowchart TD generado con los siguientes nodos y decisiones:
+
+**Happy path:** Inicio → Reportes y reseñas → Consultar reseñas → búsqueda por nombre o zona → listado de agentes → perfil del agente → listado de reseñas (con filtro opcional por puntuación/periodo) → detalle de reseña → valorar utilidad (¿Fue útil? Sí/No) → confirmación.
+
+**Unhappy paths cubiertos:**
+- Búsqueda sin resultados: mensaje + opción de refinar o abandonar
+- Agente sin reseñas: mensaje + invitación a escribir la primera + vuelta al listado
+- Valoración duplicada (usuario autenticado que ya valoró esa reseña): aviso informativo
+
+**Decisión de diseño sobre autenticación para valorar:** Se modelaron dos ramas — anónima (sin auth, acción permitida) y autenticada (persiste vinculada al usuario, con detección de valoración duplicada). Esta bifurcación refleja que la consulta y valoración de utilidad son funcionalidades de solo lectura y participación ligera que no deben requerir registro obligatorio (principio de acceso sin barreras validado en el card sorting y en las necesidades de Marina y Antonio).
+
+**Personas cubiertas:**
+- Marina Delgado: flujo directo desde navegación hasta lectura de reseñas de una inmobiliaria concreta
+- Antonio García: cada nodo tiene etiqueta descriptiva sin tecnicismos; progresividad clara sin saltos abruptos
+
+**Nomenclatura:** consistente con sitemap v1.2 — sección 'Reportes y reseñas › Consultar reseñas'
 <!-- SECTION:FINAL_SUMMARY:END -->
