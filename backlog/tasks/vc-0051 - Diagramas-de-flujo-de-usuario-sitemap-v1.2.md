@@ -16,6 +16,7 @@ references:
   - docs/memory/content/02_materiales_y_metodos/05_personas_usuarias.typ
   - docs/diagrams/user-flows/flow-03-reporte-irregularidad.mmd
   - docs/diagrams/user-flows/flow-02-comparativa-zonas.mmd
+  - docs/diagrams/user-flows/flow-07-descarga-datos.mmd
 documentation:
   - docs/diagrams/user-flows/flow-01-exploracion-precios.mmd
 priority: high
@@ -90,7 +91,7 @@ Se distinguen dos niveles de flujos:
 - [ ] #2 Los 3 flujos secundarios (descarga de datos, autenticación, gestión de cuenta) están diagramados en FigJam
 - [ ] #3 El flujo de exploración de precios parte del Home (buscador por zona), incluye toggle mapa, indicadores de asequibilidad y variante de oficial vs portales
 - [x] #4 Los flujos de consulta de reportes y de reseñas modelan el recorrido de solo lectura (explorar, filtrar, ver detalle)
-- [ ] #5 El flujo de descarga de datos refleja la entrada dual: desde visualización y desde la sección Datos abiertos
+- [x] #5 El flujo de descarga de datos refleja la entrada dual: desde visualización y desde la sección Datos abiertos
 - [ ] #6 El flujo de autenticación se referencia como subflujo en los diagramas de reporte, reseña y gestión de cuenta
 - [ ] #7 Los flujos de reporte y reseña incluyen el punto de decisión de autenticación (usuario logueado vs no logueado)
 - [ ] #8 El flujo de reporte incluye los estados de moderación y notificación de estado al usuario
@@ -177,4 +178,6 @@ Diagrama Mermaid flowchart TD generado con los siguientes nodos y decisiones:
 - Antonio García: cada nodo tiene etiqueta descriptiva sin tecnicismos; progresividad clara sin saltos abruptos
 
 **Nomenclatura:** consistente con sitemap v1.2 — sección 'Reportes y reseñas › Consultar reseñas'
+
+Flujo 7 (Descarga de datos abiertos) completado. Diagrama en docs/diagrams/user-flows/flow-07-descarga-datos.mmd. Entrada dual (Entrada A: botón contextual desde visualizaciones; Entrada B: Datos abiertos > Explorador por municipio) convergiendo en nodo de filtros. Unhappy path de sin datos con ciclo de reajuste de filtros y salida limpia. Acceso lateral a Fuentes y metodología al final del flujo. Sin autenticación requerida en ningún paso.
 <!-- SECTION:FINAL_SUMMARY:END -->
