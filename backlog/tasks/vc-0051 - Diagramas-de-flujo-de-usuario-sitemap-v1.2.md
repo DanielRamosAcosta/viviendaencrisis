@@ -87,7 +87,7 @@ Se distinguen dos niveles de flujos:
 - [ ] #1 Los 6 flujos principales (exploración de precios, comparativa, reporte de irregularidad, reseña de agente, consultar reportes/mapa, consultar reseñas) están diagramados en FigJam con estados, decisiones y bifurcaciones
 - [ ] #2 Los 3 flujos secundarios (descarga de datos, autenticación, gestión de cuenta) están diagramados en FigJam
 - [ ] #3 El flujo de exploración de precios parte del Home (buscador por zona), incluye toggle mapa, indicadores de asequibilidad y variante de oficial vs portales
-- [ ] #4 Los flujos de consulta de reportes y de reseñas modelan el recorrido de solo lectura (explorar, filtrar, ver detalle)
+- [x] #4 Los flujos de consulta de reportes y de reseñas modelan el recorrido de solo lectura (explorar, filtrar, ver detalle)
 - [ ] #5 El flujo de descarga de datos refleja la entrada dual: desde visualización y desde la sección Datos abiertos
 - [ ] #6 El flujo de autenticación se referencia como subflujo en los diagramas de reporte, reseña y gestión de cuenta
 - [ ] #7 Los flujos de reporte y reseña incluyen el punto de decisión de autenticación (usuario logueado vs no logueado)
@@ -124,6 +124,8 @@ Se distinguen dos niveles de flujos:
 Este diagrama os ayudará a aseguraros de que el usuario puede realizar las acciones necesarias en cada pantalla y no se quedará bloqueado en ninguna. Os puede ayudar ir imaginando los clics que realiza el usuario desde que llega a la plataforma hasta que, por ejemplo, consulta la evolución del alquiler en su zona, compara dos municipios, o envía un reporte de irregularidad. En el diagrama es importante contemplar todas las acciones que pueden ser negativas o reportar errores y qué elecciones debe tomar el usuario. Por ejemplo: ¿una búsqueda de zona siempre devuelve resultados? ¿Qué pasa si no hay datos para ese municipio? ¿Qué ocurre si el usuario intenta reportar una irregularidad sin estar autenticado? ¿Cómo le informamos de que su reporte ha sido rechazado en la moderación?
 
 Flujo 4 (Reseña de agente inmobiliario) generado en docs/diagrams/user-flows/flow-04-resena-agente.mmd
+
+Flujo 5 (Consultar reportes y mapa de reportes) generado en docs/diagrams/user-flows/flow-05-consultar-reportes.mmd. Cubre: dos vistas (lista y mapa como toggle integrado coherente con sitemap v1.2), filtros por zona/tipo en ambas vistas, popup contextual en mapa, detalle de reporte, unhappy paths de sin resultados con opciones de recuperación, y acción de compartir enlace.
 <!-- SECTION:NOTES:END -->
 
 ## Final Summary
