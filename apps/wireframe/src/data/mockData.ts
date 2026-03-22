@@ -31,12 +31,12 @@ export const affordabilityByCity = {
 };
 
 export const officialVsPortals = [
-  { period: "2022-Q1", Oficial: 920, Idealista: 1050, Fotocasa: 1020 },
-  { period: "2022-Q3", Oficial: 960, Idealista: 1100, Fotocasa: 1060 },
-  { period: "2023-Q1", Oficial: 1050, Idealista: 1200, Fotocasa: 1150 },
-  { period: "2023-Q3", Oficial: 1100, Idealista: 1280, Fotocasa: 1220 },
-  { period: "2024-Q1", Oficial: 1180, Idealista: 1350, Fotocasa: 1300 },
-  { period: "2024-Q3", Oficial: 1220, Idealista: 1420, Fotocasa: 1360 },
+  { city: "Madrid", Oficial: 1100, Portales: 1350 },
+  { city: "Barcelona", Oficial: 1050, Portales: 1280 },
+  { city: "Valencia", Oficial: 680, Portales: 820 },
+  { city: "Sevilla", Oficial: 570, Portales: 690 },
+  { city: "Bilbao", Oficial: 820, Portales: 950 },
+  { city: "Málaga", Oficial: 850, Portales: 1010 },
 ];
 
 export const tenureDistribution = [
@@ -47,14 +47,14 @@ export const tenureDistribution = [
 ];
 
 export const rankingZonas = [
-  { zone: "Barcelona", priceM2: 18.5, avgRent: 1180, trend: "+8.2%" },
-  { zone: "Madrid", priceM2: 17.2, avgRent: 1250, trend: "+7.5%" },
-  { zone: "Palma de Mallorca", priceM2: 15.8, avgRent: 1050, trend: "+12.1%" },
-  { zone: "Bilbao", priceM2: 13.2, avgRent: 890, trend: "+5.3%" },
-  { zone: "Málaga", priceM2: 12.5, avgRent: 920, trend: "+10.8%" },
-  { zone: "Valencia", priceM2: 10.3, avgRent: 750, trend: "+6.7%" },
-  { zone: "Sevilla", priceM2: 8.9, avgRent: 620, trend: "+4.2%" },
-  { zone: "Zaragoza", priceM2: 7.8, avgRent: 580, trend: "+3.1%" },
+  { name: "Barcelona", priceM2: 18.5, avgRent: 1180, trend: "+8.2%" },
+  { name: "Madrid", priceM2: 17.2, avgRent: 1250, trend: "+7.5%" },
+  { name: "Palma de Mallorca", priceM2: 15.8, avgRent: 1050, trend: "+12.1%" },
+  { name: "Bilbao", priceM2: 13.2, avgRent: 890, trend: "+5.3%" },
+  { name: "Málaga", priceM2: 12.5, avgRent: 920, trend: "+10.8%" },
+  { name: "Valencia", priceM2: 10.3, avgRent: 750, trend: "+6.7%" },
+  { name: "Sevilla", priceM2: 8.9, avgRent: 620, trend: "+4.2%" },
+  { name: "Zaragoza", priceM2: 7.8, avgRent: 580, trend: "+3.1%" },
 ];
 
 export const zones = [
@@ -151,6 +151,14 @@ export const userFavoriteZones = [
 export const userAlerts = [
   { id: "al-001", zone: "Madrid Centro", type: "alquiler" as const, threshold: 5, frequency: "semanal" as const, active: true },
   { id: "al-002", zone: "Barcelona Eixample", type: "compraventa" as const, threshold: 10, frequency: "mensual" as const, active: false },
+];
+
+/* ─── RECENT REPORTS (for Home page) ─── */
+
+export const recentReports = [
+  { type: "Precio abusivo", zone: "Madrid Centro", date: "2025-01-15", description: "Piso de 2 habitaciones a 1.800 EUR/mes en zona donde el indice marca 900 EUR." },
+  { type: "Fianza irregular", zone: "Barcelona Eixample", date: "2025-01-10", description: "Propietario exige 4 meses de fianza cuando el maximo legal es 2." },
+  { type: "Discriminacion", zone: "Bilbao Abando", date: "2025-01-05", description: "Rechazo de candidatura como inquilino por nacionalidad extranjera." },
 ];
 
 /* ─── INFORMACIÓN Y AYUDA ─── */
