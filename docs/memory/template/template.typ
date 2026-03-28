@@ -155,11 +155,11 @@
         rect(width: 100%, stroke: (top: 2pt + aqua), [
           #lower(format-date(date))
         ]),
-        rect(width: 100%, stroke: (top: 2pt + aqua), [
+        rect(width: 100%, stroke: (top: 2pt + aqua), align(right, [
           #text(font: "Arial", weight: "bold", fill: marine, [
             pág. #counter(page).display()
           ])
-        ]),
+        ])),
       )
     ]
   )
