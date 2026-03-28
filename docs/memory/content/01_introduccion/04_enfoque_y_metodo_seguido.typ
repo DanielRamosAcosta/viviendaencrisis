@@ -79,3 +79,15 @@ Para la capa de presentación se ha elegido Next.js, el principal marco de traba
 Para el backend y la API se ha elegido Hono, una biblioteca ligera de enrutamiento para entornos JavaScript y TypeScript con soporte nativo para despliegues sin servidor (_serverless_). Esta característica es especialmente pertinente en relación con los compromisos de sostenibilidad ambiental establecidos en la @sec:impacto_sostenibilidad, dado que la arquitectura _serverless_ reduce el consumo energético al escalar la computación estrictamente en función de la demanda real, evitando la sobreaprovisión de recursos @akour_serverless_2025. Hono es además compatible con múltiples entornos de ejecución (Node.js, Bun, Cloudflare Workers, Docker), lo que proporciona flexibilidad en las opciones de despliegue. Frente a alternativas como PHP, el entorno Node.js sobre el que opera Hono ofrece ventajas significativas en rendimiento: en pruebas de referencia, una petición API simple se resuelve en Node.js aproximadamente tres veces más rápido que en PHP 7.4 @patel_nodejs_php_2024.
 
 Para la base de datos se ha elegido MongoDB Atlas, cuyo modelo de documentos orientado a JSON es especialmente adecuado para datos heterogéneos que requieren normalización previa a su almacenamiento ---como los procedentes de las distintas fuentes oficiales identificadas, con estructuras y granularidades distintas---. MongoDB Atlas ofrece, además, alto rendimiento en operaciones de lectura, lo que es relevante para una plataforma cuyo patrón de uso principal es la consulta y visualización de datos por parte de un número potencialmente elevado de usuarios concurrentes.
+
+La @fig:tech-stack presenta una vista de conjunto de las tecnologías empleadas y sus interacciones, mientras que la @fig:infrastructure muestra la infraestructura de despliegue adoptada.
+
+#figure(
+  image("/images/tech-stack.png", width: 85%),
+  caption: [Diagrama del conjunto tecnológico de la plataforma: capas de presentación, servidor, datos y fuentes externas.],
+) <fig:tech-stack>
+
+#figure(
+  image("/images/infrastructure.png", width: 90%),
+  caption: [Diagrama de infraestructura de despliegue: integración continua, hospedaje y persistencia.],
+) <fig:infrastructure>

@@ -1,0 +1,38 @@
+graph TD
+    subgraph client["Frontend"]
+        nextjs["Next.js<br/>(React + TypeScript)"]
+        viz["D3.js · Recharts · Nivo"]
+        leaflet["Leaflet"]
+        viz -->|datos| nextjs
+        leaflet -->|mapas| nextjs
+    end
+
+    subgraph backend["Backend"]
+        hono["Hono<br/>(Node.js + TypeScript)"]
+    end
+
+    subgraph data["Base de datos"]
+        mongo[("MongoDB Atlas")]
+    end
+
+    subgraph sources["Fuentes de datos externas"]
+        mivau["MIVAU / SERPAVI"]
+        ine["INE"]
+        catastro["Catastro"]
+    end
+
+    nextjs -->|HTTP / REST| hono
+    hono -->|consultas| mongo
+    mivau -->|ingesta| hono
+    ine -->|ingesta| hono
+    catastro -->|ingesta| hono
+
+    classDef frontend fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
+    classDef back fill:#fef3c7,stroke:#d97706,color:#451a03
+    classDef database fill:#d1fae5,stroke:#059669,color:#052e16
+    classDef external fill:#f3e8ff,stroke:#9333ea,color:#2e1065
+
+    class nextjs,viz,leaflet frontend
+    class hono back
+    class mongo database
+    class mivau,ine,catastro external

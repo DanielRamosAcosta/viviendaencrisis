@@ -1,0 +1,26 @@
+graph LR
+    subgraph ci["CI/CD"]
+        gha["GitHub Actions"]
+    end
+
+    subgraph hosting["Hosting"]
+        vercel["Vercel<br/>(frontend)"]
+        deno["Deno Deploy<br/>(API)"]
+    end
+
+    subgraph persistence["Persistencia"]
+        mongo[("MongoDB Atlas<br/>(cloud)")]
+    end
+
+    gha -->|despliegue frontend| vercel
+    gha -->|despliegue API| deno
+    vercel -->|HTTP / REST| deno
+    deno -->|conexión| mongo
+
+    classDef cicd fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
+    classDef host fill:#f1f5f9,stroke:#64748b,color:#0f172a
+    classDef database fill:#d1fae5,stroke:#059669,color:#052e16
+
+    class gha cicd
+    class vercel,deno host
+    class mongo database
