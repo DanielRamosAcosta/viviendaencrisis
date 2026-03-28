@@ -27,31 +27,35 @@ El desarrollo del proyecto se estructura en cinco fases alineadas con las Prueba
         *Entregables:* Memoria parcial (plan de trabajo y estado del arte).
       ],
 
-      [*P2* --- Foundations],
+      [*P2* --- Diseño],
       [07/03 -- 29/03],
       [70],
       [
         #list(
           [Investigación de fuentes de datos oficiales],
           [Diseño de la arquitectura del sistema],
-          [DCU: prototipado de baja y alta fidelidad],
-          [Estructura del proyecto y scaffolding],
-          [Proceso ETL (_Extract, Transform, Load_)],
-          [Sistema de autenticación],
-          [Primeras visualizaciones],
+          [DCU: investigación con usuarios y encuesta],
+          [Benchmarking de plataformas existentes],
+          [Definición de personas usuarias],
+          [Arquitectura de la información y diagramas de flujo],
+          [Prototipado de baja y alta fidelidad (móvil y escritorio)],
+          [Propuesta gráfica y guía de estilo],
         )
-        *Entregables:* Prototipos validados, arquitectura documentada, primer incremento funcional desplegado.
+        *Entregables:* Prototipos validados, arquitectura documentada, memoria parcial con diseño completo.
       ],
 
-      [*P3* --- Beta pública],
+      [*P3* --- Desarrollo e integración],
       [04/04 -- 26/04],
       [72],
       [
         #list(
+          [Scaffolding del monorepo y CI/CD],
+          [Proceso ETL (_Extract, Transform, Load_)],
+          [Sistema de autenticación (JWT + roles)],
+          [Dashboard: evolución de precios y comparativas],
           [Mapas coropléticos interactivos],
-          [Comparativas entre zonas geográficas],
           [Sistema de reportes ciudadanos],
-          [Panel de administración],
+          [Despliegue público de la beta],
         )
         *Entregables:* Versión beta pública con funcionalidades principales operativas.
       ],
@@ -168,7 +172,7 @@ La @tabla:recursos-necesarios resume los recursos técnicos y herramientas previ
 
 === Priorización y dependencias
 
-La priorización de tareas sigue un criterio de producto mínimo viable (MVP): se implementan primero las funcionalidades que constituyen el núcleo de valor de la plataforma y que desbloquean el desarrollo de las restantes. En concreto, el proceso ETL de datos oficiales y el sistema de autenticación son dependencias bloqueantes que se abordan en P2, ya que sin datos normalizados no es posible construir visualizaciones, y sin autenticación no es posible implementar los reportes ciudadanos. Las visualizaciones temporales y los mapas coropléticos se priorizan sobre el sistema de reportes para validar la integración de datos antes de añadir funcionalidades de participación ciudadana. Las características secundarias ---panel de administración avanzado, moderación de reportes, indicadores derivados--- se planifican para P3 y P4, de modo que puedan descartarse o reducirse sin comprometer el núcleo funcional. En caso de desviación temporal, la jerarquía de descarte es: funcionalidades de moderación avanzada, indicadores estadísticos secundarios y, solo en último extremo, alguna de las visualizaciones complementarias. El desglose completo de tareas y sus dependencias puede consultarse en el @anexo:gantt-detallado.
+La priorización de tareas sigue un criterio de producto mínimo viable (MVP): se implementan primero las funcionalidades que constituyen el núcleo de valor de la plataforma y que desbloquean el desarrollo de las restantes. En concreto, el proceso ETL de datos oficiales y el sistema de autenticación son dependencias bloqueantes que se abordan al inicio de P3, ya que sin datos normalizados no es posible construir visualizaciones, y sin autenticación no es posible implementar los reportes ciudadanos. Las visualizaciones temporales y los mapas coropléticos se priorizan sobre el sistema de reportes para validar la integración de datos antes de añadir funcionalidades de participación ciudadana. Las características secundarias ---panel de administración avanzado, moderación de reportes, indicadores derivados--- se planifican para P4, de modo que puedan descartarse o reducirse sin comprometer el núcleo funcional. En caso de desviación temporal, la jerarquía de descarte es: funcionalidades de moderación avanzada, indicadores estadísticos secundarios y, solo en último extremo, alguna de las visualizaciones complementarias. El desglose completo de tareas y sus dependencias puede consultarse en el @anexo:gantt-detallado.
 
 === Análisis de riesgos y planes de contingencia
 

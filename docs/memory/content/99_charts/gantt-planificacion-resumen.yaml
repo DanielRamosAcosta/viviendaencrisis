@@ -5,13 +5,13 @@ tasks:
     id: p1
     start: 2026-02-02
     end: 2026-03-01
-  - name: "P2 — Foundations & First Dev"
+  - name: "P2 — Diseño"
     id: p2
     start: 2026-03-07
     end: 2026-03-29
     dependencies:
       - id: p1
-  - name: "P3 — Beta Pública"
+  - name: "P3 — Desarrollo e Integración"
     id: p3
     start: 2026-04-04
     end: 2026-04-26

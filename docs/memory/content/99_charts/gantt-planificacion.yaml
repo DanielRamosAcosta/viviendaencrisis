@@ -15,94 +15,121 @@ tasks:
         id: p1-entrega
         start: 2026-02-25
         end: 2026-03-01
-  - name: "P2 — Foundations"
+  - name: "P2 — Diseño"
     subtasks:
-      - name: "Scaffolding monorepo"
-        id: p2-scaffold
+      - name: "Investigación fuentes de datos"
+        id: p2-datos
         start: 2026-03-07
-        end: 2026-03-09
-      - name: "Diseño BD (schemas MongoDB)"
-        id: p2-schemas
-        start: 2026-03-08
-        end: 2026-03-09
-      - name: "CI/CD básico (GitHub Actions)"
-        id: p2-cicd
-        start: 2026-03-09
         end: 2026-03-10
-        dependencies:
-          - id: p2-scaffold
-      - name: "Autenticación (JWT + roles)"
-        id: p2-auth
-        start: 2026-03-10
-        end: 2026-03-15
-        dependencies:
-          - id: p2-scaffold
-          - id: p2-schemas
-      - name: "Pipeline ETL (datos abiertos)"
-        id: p2-etl
-        start: 2026-03-10
+      - name: "Benchmarking plataformas"
+        id: p2-bench
+        start: 2026-03-07
+        end: 2026-03-10
+      - name: "Encuesta y estudio público objetivo"
+        id: p2-encuesta
+        start: 2026-03-08
+        end: 2026-03-14
+      - name: "Personas usuarias"
+        id: p2-personas
+        start: 2026-03-14
         end: 2026-03-16
         dependencies:
-          - id: p2-scaffold
-      - name: "Landing page"
-        id: p2-landing
+          - id: p2-encuesta
+      - name: "Arquitectura de la información"
+        id: p2-ai
         start: 2026-03-15
-        end: 2026-03-17
+        end: 2026-03-18
         dependencies:
-          - id: p2-scaffold
-      - name: "Dashboard: estructura + evolución precios"
-        id: p2-dashboard
-        start: 2026-03-16
-        end: 2026-03-22
+          - id: p2-personas
+      - name: "Diagramas de flujo"
+        id: p2-flujos
+        start: 2026-03-18
+        end: 2026-03-20
         dependencies:
-          - id: p2-scaffold
-          - id: p2-etl
+          - id: p2-ai
+      - name: "Wireframes (móvil y escritorio)"
+        id: p2-wireframes
+        start: 2026-03-19
+        end: 2026-03-24
+        dependencies:
+          - id: p2-ai
+      - name: "Propuesta gráfica y guía de estilo"
+        id: p2-grafica
+        start: 2026-03-22
+        end: 2026-03-26
+        dependencies:
+          - id: p2-wireframes
+      - name: "Diseño de la arquitectura del sistema"
+        id: p2-arquitectura
+        start: 2026-03-12
+        end: 2026-03-16
       - name: "Memoria P2"
         id: p2-memoria
         start: 2026-03-15
         end: 2026-03-29
-  - name: "P3 — Beta Pública"
+  - name: "P3 — Desarrollo e Integración"
     subtasks:
-      - name: "Dashboard: comparativas entre zonas"
-        id: p3-comparativas
+      - name: "Scaffolding monorepo"
+        id: p3-scaffold
         start: 2026-04-04
-        end: 2026-04-07
+        end: 2026-04-06
+      - name: "CI/CD básico (GitHub Actions)"
+        id: p3-cicd
+        start: 2026-04-05
+        end: 2026-04-06
         dependencies:
-          - id: p2-dashboard
+          - id: p3-scaffold
+      - name: "Diseño BD (schemas MongoDB)"
+        id: p3-schemas
+        start: 2026-04-05
+        end: 2026-04-06
+      - name: "Pipeline ETL (datos abiertos)"
+        id: p3-etl
+        start: 2026-04-06
+        end: 2026-04-10
+        dependencies:
+          - id: p3-scaffold
+      - name: "Autenticación (JWT + roles)"
+        id: p3-auth
+        start: 2026-04-06
+        end: 2026-04-10
+        dependencies:
+          - id: p3-scaffold
+          - id: p3-schemas
+      - name: "Dashboard: evolución precios + comparativas"
+        id: p3-dashboard
+        start: 2026-04-10
+        end: 2026-04-15
+        dependencies:
+          - id: p3-etl
       - name: "Dashboard: mapas coropléticos"
         id: p3-mapas
-        start: 2026-04-05
-        end: 2026-04-13
+        start: 2026-04-12
+        end: 2026-04-17
         dependencies:
-          - id: p2-dashboard
-      - name: "Dashboard: indicadores socioeconómicos"
-        id: p3-indicadores
-        start: 2026-04-08
-        end: 2026-04-11
-        dependencies:
-          - id: p2-dashboard
-      - name: "Reportes Airbnb: formulario"
+          - id: p3-etl
+      - name: "Reportes ciudadanos: formulario"
         id: p3-reportes-form
-        start: 2026-04-07
-        end: 2026-04-13
-        dependencies:
-          - id: p2-auth
-      - name: "Reportes Airbnb: listado público + mapa"
-        id: p3-reportes-list
         start: 2026-04-13
         end: 2026-04-17
         dependencies:
-          - id: p3-reportes-form
-      - name: "Despliegue público (Docker/Vercel)"
-        id: p3-deploy
+          - id: p3-auth
+      - name: "Reportes ciudadanos: listado público + mapa"
+        id: p3-reportes-list
         start: 2026-04-17
         end: 2026-04-20
         dependencies:
-          - id: p2-dashboard
+          - id: p3-reportes-form
+      - name: "Despliegue público (Scaleway)"
+        id: p3-deploy
+        start: 2026-04-19
+        end: 2026-04-21
+        dependencies:
+          - id: p3-dashboard
       - name: "Testing y QA de la beta"
         id: p3-qa
-        start: 2026-04-20
-        end: 2026-04-22
+        start: 2026-04-21
+        end: 2026-04-23
         dependencies:
           - id: p3-deploy
       - name: "Video demo (5 min)"
@@ -128,7 +155,7 @@ tasks:
         start: 2026-05-04
         end: 2026-05-11
         dependencies:
-          - id: p2-auth
+          - id: p3-auth
           - id: p3-deploy
       - name: "Reviews inmobiliarias: ranking público"
         id: p4-ranking
@@ -141,7 +168,7 @@ tasks:
         start: 2026-05-07
         end: 2026-05-11
         dependencies:
-          - id: p2-auth
+          - id: p3-auth
       - name: "Accesibilidad WCAG 2.1 AA"
         id: p4-a11y
         start: 2026-05-14
