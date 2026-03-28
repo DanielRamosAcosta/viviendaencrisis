@@ -1,9 +1,10 @@
 ---
 id: VC-0061
 title: Corregir tiempos verbales en capítulos 3+ y anexos de la memoria
-status: In Progress
+status: In Review
 assignee: []
 created_date: '2026-03-28 12:51'
+updated_date: '2026-03-28 12:53'
 labels: []
 dependencies: []
 ---
