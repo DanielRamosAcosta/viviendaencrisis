@@ -1,8 +1,92 @@
 == Planificación del Trabajo <sec:planificacion>
 
-El desarrollo del proyecto se estructura en cinco fases alineadas con las Pruebas de Evaluación Continua (PEC) del máster. La primera fase (P1, del 2 de febrero al 1 de marzo de 2026) comprende la elaboración del plan de trabajo: definición de objetivos, análisis del estado del arte, elección del conjunto tecnológico, planificación temporal y estimación de esfuerzo. La segunda fase (P2, del 7 al 29 de marzo) abarca la investigación de fuentes de datos, el diseño de la arquitectura, el proceso de diseño centrado en el usuario (DCU) ---incluyendo prototipado de baja y alta fidelidad--- y el primer ciclo de desarrollo funcional: estructura del proyecto, proceso ETL (_Extract, Transform, Load_), autenticación y primeras visualizaciones. La tercera fase (P3, del 4 al 26 de abril) se centra en la implementación del grueso de funcionalidades: mapas coropléticos, comparativas entre zonas, sistema de reportes ciudadanos y panel de administración. La cuarta fase (P4, del 2 al 31 de mayo) contempla la versión final de la plataforma, la realización de pruebas con usuarios reales, la evaluación de accesibilidad y la redacción completa de la memoria. La quinta fase (Defensa Virtual, del 6 al 14 de junio) se dedica a la preparación y grabación de la defensa virtual del trabajo.
+El desarrollo del proyecto se estructura en cinco fases alineadas con las Pruebas de Evaluación Continua (PEC) del máster. La @tabla:fases-planificacion detalla el alcance, los hitos y los entregables de cada fase, y la @fig:gantt-planificacion ofrece la vista temporal del calendario.
 
-Cada fase culmina en un hito formal de entrega cuya fecha queda reflejada en la @fig:gantt-planificacion. Los entregables de la P1 son la memoria parcial con el plan de trabajo y el estado del arte; los de la P2, los prototipos validados, la arquitectura documentada y el primer incremento funcional desplegado; los de la P3, la versión beta pública con las funcionalidades principales operativas; los de la P4, la versión final de la plataforma, el informe de pruebas con usuarios y la memoria completa; y el de la Defensa Virtual, el vídeo de defensa y la presentación de soporte.
+#figure(
+  block(
+    width: 100%,
+    inset: 1em,
+    table(
+      columns: (0.55fr, 0.9fr, 0.4fr, 2.5fr),
+      align: (left, center, center, left),
+      stroke: 0.5pt + luma(180),
+      fill: (x, y) => if y == 0 { rgb("#2c3e50").lighten(80%) } else if calc.odd(y) { luma(245) } else { white },
+      table.header(
+        [*Fase*], [*Periodo*], [*Horas*], [*Hitos y entregables*],
+      ),
+      [*P1* --- Plan de trabajo],
+      [02/02 -- 01/03],
+      [32],
+      [
+        #list(
+          [Definición de objetivos y alcance],
+          [Análisis del estado del arte],
+          [Elección del conjunto tecnológico],
+          [Planificación temporal y estimación de esfuerzo],
+        )
+        *Entregables:* Memoria parcial (plan de trabajo y estado del arte).
+      ],
+
+      [*P2* --- Foundations],
+      [07/03 -- 29/03],
+      [70],
+      [
+        #list(
+          [Investigación de fuentes de datos oficiales],
+          [Diseño de la arquitectura del sistema],
+          [DCU: prototipado de baja y alta fidelidad],
+          [Estructura del proyecto y scaffolding],
+          [Proceso ETL (_Extract, Transform, Load_)],
+          [Sistema de autenticación],
+          [Primeras visualizaciones],
+        )
+        *Entregables:* Prototipos validados, arquitectura documentada, primer incremento funcional desplegado.
+      ],
+
+      [*P3* --- Beta pública],
+      [04/04 -- 26/04],
+      [72],
+      [
+        #list(
+          [Mapas coropléticos interactivos],
+          [Comparativas entre zonas geográficas],
+          [Sistema de reportes ciudadanos],
+          [Panel de administración],
+        )
+        *Entregables:* Versión beta pública con funcionalidades principales operativas.
+      ],
+
+      [*P4* --- Versión final],
+      [02/05 -- 31/05],
+      [90],
+      [
+        #list(
+          [Versión final de la plataforma],
+          [Pruebas con usuarios reales],
+          [Evaluación de accesibilidad (WCAG 2.1 AA)],
+          [Redacción completa de la memoria],
+        )
+        *Entregables:* Plataforma final, informe de pruebas, memoria completa.
+      ],
+
+      [*DV* --- Defensa virtual],
+      [06/06 -- 14/06],
+      [36],
+      [
+        #list(
+          [Preparación de la presentación],
+          [Grabación de la defensa virtual],
+        )
+        *Entregables:* Vídeo de defensa y presentación de soporte.
+      ],
+
+      table.cell(colspan: 2, align: right, [*Total*]),
+      [*300*],
+      [],
+    ),
+  ),
+  caption: [Fases del proyecto: alcance, hitos y entregables por periodo.],
+) <tabla:fases-planificacion>
 
 #include "../99_charts/gantt-planificacion-resumen.typ"
 
@@ -81,56 +165,6 @@ La @tabla:recursos-necesarios resume los recursos técnicos y herramientas previ
   ),
   caption: [Recursos técnicos y herramientas previstos para el desarrollo del proyecto.],
 ) <tabla:recursos-necesarios>
-
-=== Estimación del esfuerzo
-
-La carga de trabajo total estimada es de aproximadamente 208 horas, distribuidas de forma no uniforme entre las cinco fases en función de su complejidad y volumen de entregables. La @tabla:estimacion-esfuerzo detalla la distribución temporal y los entregables principales de cada fase.
-
-#figure(
-  block(
-    width: 100%,
-    inset: 1em,
-    table(
-      columns: (0.6fr, 1.2fr, 0.5fr, 2fr),
-      align: (center, left, center, left),
-      stroke: 0.5pt + luma(180),
-      fill: (x, y) => if y == 0 { rgb("#2c3e50").lighten(80%) } else if calc.odd(y) { luma(245) } else { white },
-      table.header(
-        [*Fase*], [*Periodo*], [*Horas*], [*Entregables principales*],
-      ),
-      [P1],
-      [02/02 -- 01/03],
-      [32],
-      [Plan de trabajo, estado del arte, memoria parcial.],
-
-      [P2],
-      [07/03 -- 29/03],
-      [70],
-      [Prototipos DCU, arquitectura, ETL, autenticación, primeras visualizaciones.],
-
-      [P3],
-      [04/04 -- 26/04],
-      [72],
-      [Mapas coropléticos, comparativas, reportes ciudadanos, panel de administración.],
-
-      [P4],
-      [02/05 -- 31/05],
-      [90],
-      [Versión final, pruebas con usuarios, evaluación de accesibilidad, memoria completa.],
-
-      [P5],
-      [06/06 -- 14/06],
-      [36],
-      [Vídeo de defensa virtual y presentación de soporte.],
-
-      table.cell(align: right, [*Total*]),
-      [],
-      [*300*],
-      [],
-    ),
-  ),
-  caption: [Estimación de esfuerzo por fase del proyecto.],
-) <tabla:estimacion-esfuerzo>
 
 === Priorización y dependencias
 
