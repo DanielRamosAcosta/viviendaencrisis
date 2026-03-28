@@ -39,7 +39,7 @@ La @tabla:recursos-necesarios resume los recursos técnicos y herramientas previ
       [Biblioteca de enrutamiento para la API REST.],
 
       [Backend],
-      [MongoDB Atlas],
+      [MongoDB (Scaleway)],
       [Base de datos documental para almacenamiento de datos y reportes.],
 
       [Backend],
@@ -55,8 +55,8 @@ La @tabla:recursos-necesarios resume los recursos técnicos y herramientas previ
       [Integración continua: linting, pruebas y despliegue automático.],
 
       [Infraestructura],
-      [Vercel],
-      [Despliegue del frontend con soporte nativo para Next.js.],
+      [Scaleway],
+      [Hospedaje _serverless_ del frontend y la API con energía 100% renovable.],
 
       [Datos],
       [MIVAU / SERPAVI],

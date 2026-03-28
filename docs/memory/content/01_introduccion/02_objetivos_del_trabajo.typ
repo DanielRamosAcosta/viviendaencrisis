@@ -2,7 +2,7 @@
 
 El propósito central de este trabajo consiste en diseñar y desarrollar una plataforma web de datos abiertos que facilite la transparencia del mercado de la vivienda en España, poniendo a disposición de la ciudadanía herramientas de visualización y participación que reduzcan la asimetría informativa documentada en las secciones precedentes. Este objetivo general se articula a su vez en un conjunto de objetivos específicos que delimitan el alcance funcional, técnico y de despliegue del proyecto, y que servirán como criterio de evaluación en las conclusiones finales del trabajo.
 
-Para su implementación, la plataforma se apoya en un conjunto de tecnologías web de código abierto ampliamente adoptadas en el sector profesional. La capa de presentación se desarrolla con Next.js sobre React y TypeScript, mientras que la lógica de servidor se implementa mediante Hono sobre Node.js y los datos se persisten en MongoDB. La visualización de datos se construye con las bibliotecas D3.js, Recharts, Nivo y Leaflet, y el despliegue se automatiza a través de Docker, GitHub Actions y Vercel.
+Para su implementación, la plataforma se apoya en un conjunto de tecnologías web de código abierto ampliamente adoptadas en el sector profesional. La capa de presentación se desarrolla con Next.js sobre React y TypeScript, mientras que la lógica de servidor se implementa mediante Hono sobre Node.js y los datos se persisten en MongoDB. La visualización de datos se construye con las bibliotecas D3.js, Recharts, Nivo y Leaflet, y el despliegue se automatiza a través de Docker, GitHub Actions y Scaleway.
 
 === Objetivo general
 
