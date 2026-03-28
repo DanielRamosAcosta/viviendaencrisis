@@ -20,8 +20,7 @@ Diseñar y desarrollar una plataforma web de datos abiertos, accesible públicam
 
 + *Desarrollar un sistema de reportes ciudadanos con moderación.* Implementar un módulo que permita a las personas usuarias registradas documentar y comunicar situaciones de abuso o irregularidad en el mercado inmobiliario, con un flujo de moderación gestionado por el perfil administrador de la plataforma.
 
-+ *Garantizar la accesibilidad web de la plataforma conforme a los estándares WCAG 2.1.* El proyecto asume el compromiso de implementar las pautas de accesibilidad al contenido web en su nivel AA, de forma que la plataforma resulte usable por personas con diversidad funcional. El cumplimiento de este requisito será verificado en las fases de entrega correspondientes a las PEC 3 y PEC 4.
-
++ *Garantizar la accesibilidad web de la plataforma conforme a los estándares WCAG 2.1.* El proyecto asume el compromiso de implementar las pautas de accesibilidad al contenido web en su nivel AA, de forma que la plataforma resulte usable por personas con diversidad funcional.
 + *Desplegar la aplicación en un servidor público accesible en Internet.* El proyecto asume el compromiso de poner en producción la plataforma desarrollada en una infraestructura pública accesible mediante URL pública, de modo que tanto el tribunal evaluador como la ciudadanía en general puedan acceder a la aplicación y verificar su funcionamiento. Este despliegue constituye un requisito evaluable del proyecto.
 
 + *Garantizar la calidad técnica y la seguridad de la aplicación.* Implementar prácticas de desarrollo seguro —gestión de autenticación, control de acceso por roles, validación de entradas y protección frente a vulnerabilidades comunes— y verificar la corrección del código mediante revisión de buenas prácticas en HTML, CSS y las capas de lógica de negocio.
