@@ -2,6 +2,7 @@
 
 El desarrollo del proyecto se estructura en cinco fases alineadas con las Pruebas de Evaluación Continua (PEC) del máster. La @tabla:fases-planificacion detalla el alcance, los hitos y los entregables de cada fase, y la @fig:gantt-planificacion ofrece la vista temporal del calendario.
 
+#show figure: set block(breakable: true)
 #figure(
   table(
     columns: (0.55fr, 0.9fr, 0.4fr, 2.5fr),
