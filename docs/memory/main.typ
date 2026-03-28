@@ -27,6 +27,8 @@
   target: figure.where(kind: image),
 )
 
+#pagebreak()
+
 #outline(
   title: [Índice de tablas],
   target: figure.where(kind: table),
