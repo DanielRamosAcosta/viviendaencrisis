@@ -1,9 +1,10 @@
 ---
 id: VC-0060
 title: Añadir párrafo introductorio de stack tecnológico en sección 1.2 Objetivos
-status: In Progress
+status: In Review
 assignee: []
 created_date: '2026-03-28 12:46'
+updated_date: '2026-03-28 12:47'
 labels:
   - unrefined
 dependencies: []
