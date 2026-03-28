@@ -127,6 +127,6 @@ El proceso de transformación normaliza fuentes heterogéneas a un formato homog
 === Despliegue
 
 - Contenerización de todos los servicios con Docker.
-- Despliegue en servidor público (VPS o Vercel para el frontend).
+- Despliegue en Scaleway (Serverless Containers para frontend, Serverless Functions para API).
 - Dominio propio con HTTPS.
 - Pipeline de CI/CD con GitHub Actions.
