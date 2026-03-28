@@ -36,6 +36,7 @@
 
 
   set text(region: "es", lang:  "es", font: "Arial", fill: marine, size: 11pt)
+  show figure.caption: it => pad(x: 1.5cm, text(size: 9pt, it))
   set heading(numbering: "1.1.1")
 
   let day = datetime(
