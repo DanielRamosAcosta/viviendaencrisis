@@ -4,6 +4,7 @@ import type { AxisChartProps, LineData } from "./types";
 
 interface RoughLineProps extends AxisChartProps {
   data: LineData;
+  x?: string[] | number[];
   colors?: string[];
   legend?: boolean;
   legendPosition?: "left" | "right";

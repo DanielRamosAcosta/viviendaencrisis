@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { WiredCard, WiredButton, WiredTabs, WiredSearch, WiredDivider } from "../../components/WiredElements";
-import { RoughBar } from "../../components/RoughViz";
+import { RoughStackedBar } from "../../components/RoughViz";
 import { Typography } from "../../components/Typography";
 import { cityPrices } from "../../data/mockData";
 import styles from "./CompararZonas.module.css";
+
+const comparisonData = cityPrices.labels.slice(0, 4).map((label, i) => ({
+  city: label,
+  "Zona A": cityPrices.values[i],
+  "Zona B": Math.round(cityPrices.values[i] * 0.94),
+}));
 
 export function CompararZonas() {
   const [activeView, setActiveView] = useState("preciom2");
@@ -44,34 +50,15 @@ export function CompararZonas() {
         </WiredTabs>
         <WiredDivider />
 
-        <div className={styles.chartsRow}>
-          <div className={styles.chartCol}>
-            <Typography as="h4">Zona A: Madrid</Typography>
-            <RoughBar
-              data={{
-                labels: cityPrices.labels.slice(0, 4),
-                values: cityPrices.values.slice(0, 4),
-              }}
-              title="Precio medio (EUR/mes)"
-              color="#f78fb3"
-              roughness={2}
-              className={styles.chart}
-            />
-          </div>
-          <div className={styles.chartCol}>
-            <Typography as="h4">Zona B: Barcelona</Typography>
-            <RoughBar
-              data={{
-                labels: cityPrices.labels.slice(0, 4),
-                values: cityPrices.values.map((v) => Math.round(v * 0.94)),
-              }}
-              title="Precio medio (EUR/mes)"
-              color="#3dc1d3"
-              roughness={2}
-              className={styles.chart}
-            />
-          </div>
-        </div>
+        <RoughStackedBar
+          data={comparisonData}
+          labels="city"
+          title="Precio medio alquiler (EUR/mes)"
+          roughness={2}
+          padding={0.3}
+          interactive={false}
+          className={styles.chart}
+        />
       </WiredCard>
 
       <Typography as="p" className={styles.source}>

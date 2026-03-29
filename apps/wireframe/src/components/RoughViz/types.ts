@@ -43,7 +43,7 @@ export interface BarData {
 }
 
 export interface LineData {
-  x: string[] | number[];
+  x?: string[] | number[];
   y: number[] | number[][];
 }
 

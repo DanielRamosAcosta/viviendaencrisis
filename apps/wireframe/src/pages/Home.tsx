@@ -78,7 +78,8 @@ export function Home() {
         <Typography as="h2">Evolucion del alquiler medio en Espana</Typography>
         <WiredDivider />
         <RoughLine
-          data={{ x: priceEvolution.x, y: priceEvolution.y }}
+          data={{ y: priceEvolution.y }}
+          x={priceEvolution.x}
           title=""
           xLabel="Ano"
           yLabel="EUR/mes"

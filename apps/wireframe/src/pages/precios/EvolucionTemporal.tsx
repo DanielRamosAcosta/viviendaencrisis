@@ -69,7 +69,8 @@ export function EvolucionTemporal() {
 
         {activeTab === "grafico" && (
           <RoughLine
-            data={chartData}
+            data={{ y: chartData.y }}
+            x={chartData.x}
             title={chartTitle}
             xLabel="Trimestre"
             yLabel="EUR"

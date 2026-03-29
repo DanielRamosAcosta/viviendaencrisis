@@ -223,3 +223,5 @@ Props: `data` (FeatureCollection), `width`, `height`, `projection` (factory fn),
 - `wired-calendar` no está en el barrel export de wired-elements — se importa aparte via `wired-elements/lib/wired-calendar.js`
 - roughjs está pineado a 4.3.1 para wired-elements (override en root `package.json`) porque 4.4+ renombró `fillPolygon` → `fillPolygons`
 - `RoughScatter` con datos objeto: usar `interactive={false}` para evitar error con `highlightLabel`
+- **NO usar dos instancias del mismo tipo de chart rough-viz en la misma página** — causa crash del browser. Para comparar datos lado a lado, usar `RoughStackedBar` u otro tipo de chart que combine ambos datasets en una sola instancia
+- `RoughLine` con strings en eje X: pasar `x={[...]}` como prop separada y `data={{ y: [...] }}` sin incluir `x` en data — rough-viz trata todas las keys de `data` como series Y
