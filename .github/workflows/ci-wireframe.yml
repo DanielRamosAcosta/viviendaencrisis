@@ -12,6 +12,7 @@ on:
       - ".prettierrc"
       - ".prettierignore"
       - "turbo.json"
+      - ".github/workflows/ci-wireframe.yml"
   pull_request:
     paths:
       - "apps/wireframe/**"
@@ -22,6 +23,7 @@ on:
       - ".prettierrc"
       - ".prettierignore"
       - "turbo.json"
+      - ".github/workflows/ci-wireframe.yml"
 
 concurrency:
   group: pages
