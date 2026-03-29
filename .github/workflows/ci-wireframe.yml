@@ -56,14 +56,18 @@ jobs:
 
       - name: Build
         run: pnpm --filter @viviendaencrisis/wireframe build
-        env:
-          VITE_BASE: /viviendaencrisis/
 
       - name: Install Playwright browsers
         run: pnpm --filter @viviendaencrisis/wireframe exec playwright install --with-deps chromium
 
       - name: Run E2E tests
         run: pnpm --filter @viviendaencrisis/wireframe test:e2e
+
+      - name: Rebuild for GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: pnpm --filter @viviendaencrisis/wireframe build
+        env:
+          VITE_BASE: /viviendaencrisis/
 
       - name: Copy 404.html for SPA routing
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
