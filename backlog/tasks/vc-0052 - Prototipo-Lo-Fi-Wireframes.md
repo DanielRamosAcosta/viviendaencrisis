@@ -1,10 +1,10 @@
 ---
 id: VC-0052
 title: Prototipo Lo-Fi (Wireframes)
-status: In Progress
+status: In Review
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-29 17:43'
+updated_date: '2026-03-29 17:44'
 labels:
   - ux/ui
 milestone: m-1
