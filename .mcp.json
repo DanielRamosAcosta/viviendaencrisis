@@ -2,24 +2,22 @@
   "mcpServers": {
     "paper_search": {
       "command": "uvx",
-      "args": [
-        "--from",
-        "paper-search-mcp",
-        "python",
-        "-m",
-        "paper_search_mcp.server"
-      ],
+      "args": ["--from", "paper-search-mcp", "python", "-m", "paper_search_mcp.server"],
       "env": {
         "SEMANTIC_SCHOLAR_API_KEY": "${SEMANTIC_SCHOLAR_API_KEY}"
+      }
+    },
+    "context7": {
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
       }
     },
     "backlog": {
       "type": "stdio",
       "command": "backlog",
-      "args": [
-        "mcp",
-        "start"
-      ],
+      "args": ["mcp", "start"],
       "env": {}
     }
   }
