@@ -47,7 +47,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Check formatting
-        run: pnpm format:check
+        run: pnpm prettier --check "apps/wireframe/**/*.{ts,tsx,css,json}"
 
       - name: Type check
         run: pnpm --filter @viviendaencrisis/wireframe check-types
