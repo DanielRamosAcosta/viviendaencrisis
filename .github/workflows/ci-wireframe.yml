@@ -60,7 +60,7 @@ jobs:
           VITE_BASE: /viviendaencrisis/
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
+        run: pnpm --filter @viviendaencrisis/wireframe exec playwright install --with-deps chromium
 
       - name: Run E2E tests
         run: pnpm --filter @viviendaencrisis/wireframe test:e2e
