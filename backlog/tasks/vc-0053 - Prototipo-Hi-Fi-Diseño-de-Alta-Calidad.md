@@ -1,10 +1,10 @@
 ---
 id: VC-0053
 title: Prototipo Hi-Fi (Diseño de Alta Calidad)
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-04 19:22'
-updated_date: '2026-03-15 15:13'
+updated_date: '2026-03-29 21:19'
 labels:
   - ux/ui
 milestone: m-1
