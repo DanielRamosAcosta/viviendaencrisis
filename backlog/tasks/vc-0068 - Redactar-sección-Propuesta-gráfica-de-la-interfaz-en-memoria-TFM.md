@@ -1,9 +1,10 @@
 ---
 id: VC-0068
 title: Redactar sección "Propuesta gráfica de la interfaz" en memoria TFM
-status: In Progress
+status: In Review
 assignee: []
 created_date: '2026-03-29 21:50'
+updated_date: '2026-03-29 21:51'
 labels:
   - unrefined
 dependencies: []
