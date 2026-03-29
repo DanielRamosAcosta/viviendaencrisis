@@ -1,9 +1,10 @@
 ---
 id: VC-0067
 title: 'Design System: text styles y frame de tipografía en Figma'
-status: In Progress
+status: In Review
 assignee: []
 created_date: '2026-03-29 19:54'
+updated_date: '2026-03-29 20:00'
 labels:
   - refined
 milestone: P3 — Diseño
@@ -33,10 +34,10 @@ Crear los 14 text styles del Design System en Figma (heading, body, label, data)
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 14 text styles creados y visibles en el panel Text Styles de Figma
-- [ ] #2 Styles agrupados correctamente: heading/, body/, label/, data/
+- [x] #1 14 text styles creados y visibles en el panel Text Styles de Figma
+- [x] #2 Styles agrupados correctamente: heading/, body/, label/, data/
 - [ ] #3 heading/display actualizado manualmente a Konstruktor por el usuario
-- [ ] #4 Frame typography-palette en Design System con muestras de todos los estilos
-- [ ] #5 Colores del frame vinculados a variables de Figma (no hex hardcoded)
-- [ ] #6 Screenshot de validación compartido y aprobado
+- [x] #4 Frame typography-palette en Design System con muestras de todos los estilos
+- [x] #5 Colores del frame vinculados a variables de Figma (no hex hardcoded)
+- [x] #6 Screenshot de validación compartido y aprobado
 <!-- AC:END -->
