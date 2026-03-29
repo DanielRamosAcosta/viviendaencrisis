@@ -3,10 +3,10 @@ id: VC-0021
 title: >-
   Memoria P2: arquitectura, diagramas, wireframes, usabilidad, mercado,
   viabilidad
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-15 15:12'
+updated_date: '2026-03-29 21:53'
 labels:
   - docs
 milestone: m-1
