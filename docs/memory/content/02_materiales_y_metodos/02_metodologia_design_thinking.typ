@@ -12,7 +12,7 @@ En la práctica contemporánea del diseño UX, estos tres espacios se descompone
 
 + *Idear.* Traducción de las necesidades identificadas en estructuras y flujos concretos. Incluye la definición de la arquitectura de la información (@sec:arquitectura-informacion) y los diagramas de flujo de las interacciones principales (@sec:diagrama-flujo).
 
-+ *Prototipar.* Construcción de artefactos de diseño de fidelidad creciente para dar forma tangible a las ideas. Esta fase abarca los wireframes en versión móvil (@sec:wireframes-movil) y desktop (@sec:wireframes-desktop), la propuesta gráfica y sistema de diseño (@sec:propuesta-grafica) y el flujo interactivo que integra todos los elementos anteriores (@sec:flujo-interactivo).
++ *Prototipar.* Construcción de artefactos de diseño de fidelidad creciente para dar forma tangible a las ideas. Esta fase abarca los wireframes de baja fidelidad (@sec:wireframes), la propuesta gráfica y sistema de diseño (@sec:propuesta-grafica) y el flujo interactivo que integra todos los elementos anteriores (@sec:flujo-interactivo).
 
 + *Testear.* Validación de los prototipos con usuarios reales para identificar problemas y oportunidades de mejora. Se concreta en la prueba de usabilidad (@sec:prueba-usabilidad) realizada sobre el flujo interactivo.
 

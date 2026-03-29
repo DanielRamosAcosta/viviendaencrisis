@@ -16,8 +16,6 @@
 
 #include "08_wireframes_movil.typ"
 
-#include "09_wireframes_desktop.typ"
-
 #include "10_propuesta_grafica.typ"
 
 #include "11_flujo_interactivo.typ"
