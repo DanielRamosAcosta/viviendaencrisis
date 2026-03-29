@@ -4,7 +4,7 @@ title: 'Design System: variables de color y frame de paleta en Figma'
 status: In Review
 assignee: []
 created_date: '2026-03-29 18:28'
-updated_date: '2026-03-29 18:41'
+updated_date: '2026-03-29 18:50'
 labels:
   - unrefined
   - design
@@ -24,5 +24,5 @@ Crear las variables de color (primitivas + tokens semánticos) en el fichero Mai
 ## Final Summary
 
 <!-- SECTION:FINAL_SUMMARY:BEGIN -->
-Variables de color en dos colecciones (Primitivos + Colores/tokens). Componentes `swatch/primitivo` (id: 23:3) y `swatch/token` (id: 24:3) creados con TEXT properties y border 1px para distinguir colores claros del fondo. Frame `color-palette` reconstruido con instancias reales de los componentes: 6 primitivos + 8 tokens semánticos en grid 4×2.
+Variables de color (Primitivos + Colores semánticos) + Variables de dimensiones (Dimensiones: 9 spacing, 1 radius, 4 border). Componentes swatch/primitivo y swatch/token. Frames de exposición: color-palette y dimensions-palette en 🎨 Design System.
 <!-- SECTION:FINAL_SUMMARY:END -->
