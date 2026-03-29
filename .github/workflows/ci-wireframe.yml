@@ -1,0 +1,93 @@
+name: CI Wireframe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/wireframe/**"
+      - "packages/shared/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".prettierrc"
+      - ".prettierignore"
+      - "turbo.json"
+  pull_request:
+    paths:
+      - "apps/wireframe/**"
+      - "packages/shared/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".prettierrc"
+      - ".prettierignore"
+      - "turbo.json"
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check formatting
+        run: pnpm format:check
+
+      - name: Type check
+        run: pnpm --filter @viviendaencrisis/wireframe check-types
+
+      - name: Build
+        run: pnpm --filter @viviendaencrisis/wireframe build
+        env:
+          VITE_BASE: /viviendaencrisis/
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run E2E tests
+        run: pnpm --filter @viviendaencrisis/wireframe test:e2e
+
+      - name: Copy 404.html for SPA routing
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: cp apps/wireframe/dist/index.html apps/wireframe/dist/404.html
+
+      - name: Setup Pages
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/wireframe/dist
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: ci
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

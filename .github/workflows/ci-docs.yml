@@ -1,0 +1,29 @@
+name: Build Memory PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/memory/**"
+  pull_request:
+    paths:
+      - "docs/memory/**"
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Compile PDF
+        run: typst compile docs/memory/main.typ
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: memory-pdf
+          path: docs/memory/main.pdf

@@ -27,6 +27,7 @@ Plataforma web que funciona como observatorio público de vivienda. Permite visu
 - `docs/memory` — Memoria del proyecto, escrita en Typst
 - `docs/classroom/` — Enunciados y tareas del aula virtual (contexto académico)
 - `docs/reserach/` — Investigaciones profundas (Deep Search) realizadas con IA relevantes para el contexto del proyecto
+- `docs/diagrams/` — Diagramas Mermaid (`.mmd`), exportados a PNG con `mmdc` (instalado globalmente)
 - `apps/wireframe/` — SPA de prototipado rápido con estilo hand-drawn (tiene su propio `CLAUDE.md`)
 
 ### Stack técnico
@@ -35,7 +36,7 @@ Plataforma web que funciona como observatorio público de vivienda. Permite visu
 - **Backend/API**: Hono (Node.js)
 - **Base de datos**: MongoDB
 - **Visualización**: D3.js / Recharts / Nivo + Leaflet / Mapbox
-- **Despliegue**: Docker, GitHub Actions, Vercel (frontend)
+- **Despliegue**: Scaleway (contenedores + MongoDB gestionado), GitHub Actions (CI/CD)
 
 ### Fuentes de datos
 
