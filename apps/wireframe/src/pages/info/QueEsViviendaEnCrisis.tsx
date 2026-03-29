@@ -43,16 +43,14 @@ export function QueEsViviendaEnCrisis() {
         <Typography as="h1">Que es Vivienda en Crisis</Typography>
         <WiredDivider />
         <Typography as="p">
-          Vivienda en Crisis es una plataforma web de datos abiertos cuya mision
-          es aportar transparencia al mercado de la vivienda en Espana. A traves
-          de visualizaciones interactivas, comparativas por zona y un sistema de
-          reportes ciudadanos, buscamos facilitar el acceso a informacion
-          verificada sobre precios de alquiler y compraventa.
+          Vivienda en Crisis es una plataforma web de datos abiertos cuya mision es aportar
+          transparencia al mercado de la vivienda en Espana. A traves de visualizaciones
+          interactivas, comparativas por zona y un sistema de reportes ciudadanos, buscamos
+          facilitar el acceso a informacion verificada sobre precios de alquiler y compraventa.
         </Typography>
         <Typography as="p">
-          Nuestro objetivo es empoderar a ciudadanos, investigadores y
-          responsables publicos con herramientas que permitan entender la
-          situacion real del mercado de la vivienda.
+          Nuestro objetivo es empoderar a ciudadanos, investigadores y responsables publicos con
+          herramientas que permitan entender la situacion real del mercado de la vivienda.
         </Typography>
       </WiredCard>
 
@@ -71,26 +69,26 @@ export function QueEsViviendaEnCrisis() {
       <Typography as="h2">Fuentes de datos</Typography>
       <WiredCard elevation={1} className={styles.section}>
         <Typography as="p">
-          Toda la informacion publicada en Vivienda en Crisis proviene de
-          fuentes oficiales y de acceso publico:
+          Toda la informacion publicada en Vivienda en Crisis proviene de fuentes oficiales y de
+          acceso publico:
         </Typography>
         <ul className={styles.sourceList}>
           <li>
             <Typography as="span">
-              <strong>MIVAU</strong> — Ministerio de Vivienda y Agenda Urbana:
-              indices de precios trimestrales de alquiler y compraventa.
+              <strong>MIVAU</strong> — Ministerio de Vivienda y Agenda Urbana: indices de precios
+              trimestrales de alquiler y compraventa.
             </Typography>
           </li>
           <li>
             <Typography as="span">
-              <strong>INE</strong> — Instituto Nacional de Estadistica: censo de
-              vivienda, indicadores demograficos y economicos.
+              <strong>INE</strong> — Instituto Nacional de Estadistica: censo de vivienda,
+              indicadores demograficos y economicos.
             </Typography>
           </li>
           <li>
             <Typography as="span">
-              <strong>Catastro</strong> — Datos abiertos de uso del suelo,
-              superficie y caracteristicas de los inmuebles.
+              <strong>Catastro</strong> — Datos abiertos de uso del suelo, superficie y
+              caracteristicas de los inmuebles.
             </Typography>
           </li>
         </ul>
@@ -100,12 +98,10 @@ export function QueEsViviendaEnCrisis() {
       <Typography as="h2">Contacto</Typography>
       <WiredCard elevation={1} className={styles.section}>
         <Typography as="p">
-          Vivienda en Crisis es un proyecto academico desarrollado como Trabajo
-          Final de Master en la Universitat Oberta de Catalunya (UOC).
+          Vivienda en Crisis es un proyecto academico desarrollado como Trabajo Final de Master en
+          la Universitat Oberta de Catalunya (UOC).
         </Typography>
-        <Typography as="p">
-          Para consultas, sugerencias o colaboraciones:
-        </Typography>
+        <Typography as="p">Para consultas, sugerencias o colaboraciones:</Typography>
         <div className={styles.contactInfo}>
           <Typography as="p">
             Correo:{" "}

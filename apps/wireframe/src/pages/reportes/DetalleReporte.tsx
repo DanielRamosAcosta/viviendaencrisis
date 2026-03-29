@@ -51,32 +51,37 @@ export function DetalleReporte() {
       <WiredCard elevation={2} className={styles.detailCard}>
         <div className={styles.headerRow}>
           <Typography as="h2">{report.type}</Typography>
-          <Typography
-            as="span"
-            className={styles[statusClasses[report.status]]}
-          >
+          <Typography as="span" className={styles[statusClasses[report.status]]}>
             {statusLabels[report.status]}
           </Typography>
         </div>
         <WiredDivider />
 
         <div className={styles.field}>
-          <Typography as="span" className={styles.label}>Direccion</Typography>
+          <Typography as="span" className={styles.label}>
+            Direccion
+          </Typography>
           <Typography as="p">{report.address}</Typography>
         </div>
 
         <div className={styles.field}>
-          <Typography as="span" className={styles.label}>Zona</Typography>
+          <Typography as="span" className={styles.label}>
+            Zona
+          </Typography>
           <Typography as="p">{report.zone}</Typography>
         </div>
 
         <div className={styles.field}>
-          <Typography as="span" className={styles.label}>Fecha</Typography>
+          <Typography as="span" className={styles.label}>
+            Fecha
+          </Typography>
           <Typography as="p">{report.date}</Typography>
         </div>
 
         <div className={styles.field}>
-          <Typography as="span" className={styles.label}>Descripcion</Typography>
+          <Typography as="span" className={styles.label}>
+            Descripcion
+          </Typography>
           <Typography as="p">{report.description}</Typography>
         </div>
 

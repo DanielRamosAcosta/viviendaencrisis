@@ -50,18 +50,28 @@ export function RankingZonas() {
         {rankingZonas.map((zona, i) => (
           <WiredCard key={zona.name} elevation={2} className={styles.zoneCard}>
             <div className={styles.zoneHeader}>
-              <Typography as="h3" className={styles.zoneRank}>#{i + 1}</Typography>
+              <Typography as="h3" className={styles.zoneRank}>
+                #{i + 1}
+              </Typography>
               <Typography as="h3">{zona.name}</Typography>
             </div>
             <WiredDivider />
             <div className={styles.zoneDetails}>
               <div className={styles.zoneStat}>
-                <Typography as="span" className={styles.zoneStatLabel}>Precio/m2</Typography>
-                <Typography as="span" className={styles.zoneStatValue}>{zona.priceM2} EUR</Typography>
+                <Typography as="span" className={styles.zoneStatLabel}>
+                  Precio/m2
+                </Typography>
+                <Typography as="span" className={styles.zoneStatValue}>
+                  {zona.priceM2} EUR
+                </Typography>
               </div>
               <div className={styles.zoneStat}>
-                <Typography as="span" className={styles.zoneStatLabel}>Tendencia</Typography>
-                <Typography as="span" className={styles.zoneStatValue}>{zona.trend}</Typography>
+                <Typography as="span" className={styles.zoneStatLabel}>
+                  Tendencia
+                </Typography>
+                <Typography as="span" className={styles.zoneStatValue}>
+                  {zona.trend}
+                </Typography>
               </div>
             </div>
           </WiredCard>

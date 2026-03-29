@@ -13,9 +13,8 @@ export function RecuperarPassword() {
         <WiredCard elevation={2} className={styles.formCard}>
           <Typography as="h2">Enlace enviado</Typography>
           <Typography as="p">
-            Si la direccion de correo proporcionada esta asociada a una cuenta,
-            recibiras un enlace para restablecer tu contrasena. Revisa tu
-            bandeja de entrada.
+            Si la direccion de correo proporcionada esta asociada a una cuenta, recibiras un enlace
+            para restablecer tu contrasena. Revisa tu bandeja de entrada.
           </Typography>
           <Link to="/login">
             <WiredButton>Volver a Iniciar Sesion</WiredButton>
@@ -31,8 +30,7 @@ export function RecuperarPassword() {
 
       <WiredCard elevation={2} className={styles.formCard}>
         <Typography as="p">
-          Introduce tu correo electronico y te enviaremos un enlace para
-          restablecer tu contrasena.
+          Introduce tu correo electronico y te enviaremos un enlace para restablecer tu contrasena.
         </Typography>
 
         <div className={styles.field}>
@@ -40,9 +38,7 @@ export function RecuperarPassword() {
           <WiredInput placeholder="tu@email.com" />
         </div>
 
-        <WiredButton onClick={() => setSubmitted(true)}>
-          Enviar enlace
-        </WiredButton>
+        <WiredButton onClick={() => setSubmitted(true)}>Enviar enlace</WiredButton>
 
         <Link to="/login" className={styles.link}>
           <Typography as="span">Volver a Iniciar Sesion</Typography>

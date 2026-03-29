@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { Typography } from "../../components/Typography";
-import {
-  WiredCard,
-  WiredSearch,
-  WiredCombo,
-  WiredDivider,
-} from "../../components/WiredElements";
+import { WiredCard, WiredSearch, WiredCombo, WiredDivider } from "../../components/WiredElements";
 import { RoughBar } from "../../components/RoughViz";
 import { municipalData } from "../../data/mockData";
 import styles from "./ExploradorMunicipio.module.css";
@@ -20,9 +15,7 @@ export function ExploradorMunicipio() {
 
   const chartData = {
     labels: filtered.map((m) => m.municipality),
-    values: filtered.map((m) =>
-      dataView === "rent" ? m.avgRent : m.avgBuy,
-    ),
+    values: filtered.map((m) => (dataView === "rent" ? m.avgRent : m.avgBuy)),
   };
 
   return (
@@ -33,14 +26,8 @@ export function ExploradorMunicipio() {
       </Typography>
 
       <div className={styles.controls}>
-        <WiredSearch
-          placeholder="Buscar municipio..."
-          onChange={(v) => setSearch(v)}
-        />
-        <WiredCombo
-          selected={dataView}
-          onSelected={(v) => setDataView(v as "rent" | "buy")}
-        >
+        <WiredSearch placeholder="Buscar municipio..." onChange={(v) => setSearch(v)} />
+        <WiredCombo selected={dataView} onSelected={(v) => setDataView(v as "rent" | "buy")}>
           <wired-item value="rent">Alquiler</wired-item>
           <wired-item value="buy">Compraventa</wired-item>
         </WiredCombo>
@@ -110,11 +97,7 @@ export function ExploradorMunicipio() {
         {filtered.length > 0 && (
           <RoughBar
             data={chartData}
-            title={
-              dataView === "rent"
-                ? "Alquiler medio (EUR/mes)"
-                : "Compraventa (EUR/m2)"
-            }
+            title={dataView === "rent" ? "Alquiler medio (EUR/mes)" : "Compraventa (EUR/m2)"}
             color={dataView === "rent" ? "skyblue" : "#f78fb3"}
             roughness={2}
             className={styles.chart}

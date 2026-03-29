@@ -7,8 +7,8 @@ export function ReportesIndex() {
     <div className={styles.container}>
       <Typography as="h1">Reportes y Resenas</Typography>
       <Typography as="p" className={styles.subtitle}>
-        Denuncia irregularidades en el mercado de la vivienda y consulta resenas
-        de agentes inmobiliarios.
+        Denuncia irregularidades en el mercado de la vivienda y consulta resenas de agentes
+        inmobiliarios.
       </Typography>
 
       <div className={styles.grid}>

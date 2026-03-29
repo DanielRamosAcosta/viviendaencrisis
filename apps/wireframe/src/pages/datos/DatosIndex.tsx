@@ -7,9 +7,8 @@ export function DatosIndex() {
     <div className={styles.container}>
       <Typography as="h1">Datos Abiertos</Typography>
       <Typography as="p" className={styles.subtitle}>
-        Accede a los datos oficiales de vivienda en Espana. Explora por
-        municipio, descarga datasets y consulta las fuentes y la metodologia
-        utilizada.
+        Accede a los datos oficiales de vivienda en Espana. Explora por municipio, descarga datasets
+        y consulta las fuentes y la metodologia utilizada.
       </Typography>
 
       <div className={styles.grid}>

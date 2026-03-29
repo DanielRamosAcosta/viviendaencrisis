@@ -3,7 +3,13 @@ import { feature } from "topojson-client";
 import type { Topology } from "topojson-specification";
 import type { FeatureCollection } from "geojson";
 import spainTopo from "es-atlas/es/autonomous_regions.json";
-import { WiredCard, WiredTabs, WiredCombo, WiredSearch, WiredDivider } from "../../components/WiredElements";
+import {
+  WiredCard,
+  WiredTabs,
+  WiredCombo,
+  WiredSearch,
+  WiredDivider,
+} from "../../components/WiredElements";
 import { RoughLine, RoughMap } from "../../components/RoughViz";
 import { Typography } from "../../components/Typography";
 import { priceEvolution, priceEvolutionBuy, ccaaColors } from "../../data/mockData";
@@ -20,9 +26,10 @@ export function EvolucionTemporal() {
   }, []);
 
   const chartData = tipoFilter === "compraventa" ? priceEvolutionBuy : priceEvolution;
-  const chartTitle = tipoFilter === "compraventa"
-    ? "Evolucion del precio de compraventa (EUR/m2)"
-    : "Evolucion del precio de alquiler (EUR/mes)";
+  const chartTitle =
+    tipoFilter === "compraventa"
+      ? "Evolucion del precio de compraventa (EUR/m2)"
+      : "Evolucion del precio de alquiler (EUR/mes)";
 
   return (
     <div className={styles.container}>

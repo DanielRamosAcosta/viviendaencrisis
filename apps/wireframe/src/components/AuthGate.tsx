@@ -17,15 +17,12 @@ export function AuthGate({ children }: AuthGateProps) {
       <div className={styles.container}>
         <WiredCard elevation={2} className={styles.card}>
           <Typography as="h2">Acceso restringido</Typography>
-          <Typography as="p">
-            Necesitas iniciar sesion para acceder a esta seccion.
-          </Typography>
+          <Typography as="p">Necesitas iniciar sesion para acceder a esta seccion.</Typography>
           <Link to="/login">
             <WiredButton>Iniciar sesion</WiredButton>
           </Link>
           <Typography as="p" className={styles.registerHint}>
-            ¿No tienes cuenta?{" "}
-            <Link to="/registro">Crear cuenta</Link>
+            ¿No tienes cuenta? <Link to="/registro">Crear cuenta</Link>
           </Typography>
         </WiredCard>
       </div>

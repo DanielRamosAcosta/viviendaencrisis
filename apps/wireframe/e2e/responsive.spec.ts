@@ -27,9 +27,7 @@ test.describe("Responsive design", () => {
           await expect(heading).toBeVisible({ timeout: 10_000 });
 
           // Check no horizontal overflow — body should not be wider than viewport
-          const bodyWidth = await page.evaluate(
-            () => document.body.scrollWidth,
-          );
+          const bodyWidth = await page.evaluate(() => document.body.scrollWidth);
           expect(bodyWidth).toBeLessThanOrEqual(vp.width + 20); // small tolerance
         });
       }

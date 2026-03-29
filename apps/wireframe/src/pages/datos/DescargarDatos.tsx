@@ -43,18 +43,12 @@ export function DescargarDatos() {
         <div className={styles.filters}>
           <div className={styles.filterGroup}>
             <Typography as="span">Municipio</Typography>
-            <WiredSearch
-              placeholder="Buscar municipio..."
-              onChange={(v) => setSearch(v)}
-            />
+            <WiredSearch placeholder="Buscar municipio..." onChange={(v) => setSearch(v)} />
           </div>
 
           <div className={styles.filterGroup}>
             <Typography as="span">Periodo</Typography>
-            <WiredCombo
-              selected={period}
-              onSelected={(v) => setPeriod(v)}
-            >
+            <WiredCombo selected={period} onSelected={(v) => setPeriod(v)}>
               <wired-item value="2024">2024</wired-item>
               <wired-item value="2023">2023</wired-item>
               <wired-item value="2022">2022</wired-item>
@@ -65,10 +59,7 @@ export function DescargarDatos() {
 
           <div className={styles.filterGroup}>
             <Typography as="span">Tipo de datos</Typography>
-            <WiredCombo
-              selected={dataType}
-              onSelected={(v) => setDataType(v)}
-            >
+            <WiredCombo selected={dataType} onSelected={(v) => setDataType(v)}>
               <wired-item value="alquiler">Alquiler</wired-item>
               <wired-item value="compraventa">Compraventa</wired-item>
               <wired-item value="ambos">Ambos</wired-item>
@@ -77,10 +68,7 @@ export function DescargarDatos() {
 
           <div className={styles.filterGroup}>
             <Typography as="span">Formato</Typography>
-            <WiredCombo
-              selected={format}
-              onSelected={(v) => setFormat(v)}
-            >
+            <WiredCombo selected={format} onSelected={(v) => setFormat(v)}>
               <wired-item value="csv">CSV</wired-item>
               <wired-item value="json">JSON</wired-item>
             </WiredCombo>
@@ -92,14 +80,12 @@ export function DescargarDatos() {
       <WiredCard elevation={2} className={styles.section}>
         <Typography as="h2">Vista previa</Typography>
         <WiredDivider />
-        <Typography as="p">
-          {recordCount} registros disponibles para la seleccion actual
-        </Typography>
+        <Typography as="p">{recordCount} registros disponibles para la seleccion actual</Typography>
         {matched.slice(0, 3).map((m) => (
           <WiredCard key={m.municipality} className={styles.previewRow}>
             <Typography as="span">
-              {m.municipality} — Alquiler: {m.avgRent} EUR/mes |
-              Compraventa: {m.avgBuy} EUR/m2 | Periodo: {period}
+              {m.municipality} — Alquiler: {m.avgRent} EUR/mes | Compraventa: {m.avgBuy} EUR/m2 |
+              Periodo: {period}
             </Typography>
           </WiredCard>
         ))}
@@ -112,9 +98,7 @@ export function DescargarDatos() {
 
       {/* Download */}
       <div className={styles.actions}>
-        <WiredButton onClick={handleDownload}>
-          Descargar {format.toUpperCase()}
-        </WiredButton>
+        <WiredButton onClick={handleDownload}>Descargar {format.toUpperCase()}</WiredButton>
         {downloaded && (
           <Typography as="span" className={styles.confirmation}>
             Descarga iniciada correctamente
@@ -123,9 +107,8 @@ export function DescargarDatos() {
       </div>
 
       <Typography as="p" className={styles.methodologyLink}>
-        Consulta las{" "}
-        <Link to="/datos/metodologia">fuentes y metodologia</Link> para
-        mas informacion sobre los datos.
+        Consulta las <Link to="/datos/metodologia">fuentes y metodologia</Link> para mas informacion
+        sobre los datos.
       </Typography>
     </div>
   );

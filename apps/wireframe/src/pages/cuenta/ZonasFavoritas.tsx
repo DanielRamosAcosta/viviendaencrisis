@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { Typography } from "../../components/Typography";
-import {
-  WiredCard,
-  WiredButton,
-  WiredSearch,
-  WiredDivider,
-} from "../../components/WiredElements";
+import { WiredCard, WiredButton, WiredSearch, WiredDivider } from "../../components/WiredElements";
 import { AuthGate } from "../../components/AuthGate";
 import { userFavoriteZones } from "../../data/mockData";
 import styles from "./ZonasFavoritas.module.css";
@@ -19,9 +14,7 @@ function ZonasFavoritasContent() {
   const visibleFavorites = favorites.filter((f) => f.visible);
 
   const handleRemove = (zone: string) => {
-    setFavorites((prev) =>
-      prev.map((f) => (f.zone === zone ? { ...f, visible: false } : f)),
-    );
+    setFavorites((prev) => prev.map((f) => (f.zone === zone ? { ...f, visible: false } : f)));
   };
 
   return (
@@ -41,9 +34,7 @@ function ZonasFavoritasContent() {
       {/* Favorites list */}
       {visibleFavorites.length === 0 ? (
         <WiredCard elevation={2} className={styles.emptyState}>
-          <Typography as="p">
-            No tienes zonas favoritas todavia.
-          </Typography>
+          <Typography as="p">No tienes zonas favoritas todavia.</Typography>
           <Link to="/precios">
             <WiredButton>Explorar precios</WiredButton>
           </Link>
@@ -62,9 +53,7 @@ function ZonasFavoritasContent() {
                 <Link to="/precios/evolucion">
                   <WiredButton>Ver precios</WiredButton>
                 </Link>
-                <WiredButton onClick={() => handleRemove(fav.zone)}>
-                  Eliminar
-                </WiredButton>
+                <WiredButton onClick={() => handleRemove(fav.zone)}>Eliminar</WiredButton>
               </div>
             </WiredCard>
           ))}

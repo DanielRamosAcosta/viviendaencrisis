@@ -17,5 +17,7 @@ export function WiredFab({ className, style, disabled, onClick }: WiredFabProps)
     return () => el.removeEventListener("click", onClick);
   }, [onClick]);
 
-  return <wired-fab ref={ref} className={className} style={style} disabled={disabled || undefined} />;
+  return (
+    <wired-fab ref={ref} className={className} style={style} disabled={disabled || undefined} />
+  );
 }

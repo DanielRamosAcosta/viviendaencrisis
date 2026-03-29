@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { Typography } from "../../components/Typography";
-import {
-  WiredCard,
-  WiredTabs,
-  WiredButton,
-} from "../../components/WiredElements";
+import { WiredCard, WiredTabs, WiredButton } from "../../components/WiredElements";
 import { AuthGate } from "../../components/AuthGate";
 import { useAuth } from "../../context/AuthContext";
 import { StarRating } from "../../components/StarRating";
@@ -37,7 +33,9 @@ function ProfileContent() {
       {/* Profile header */}
       <WiredCard elevation={2} className={styles.section}>
         <Typography as="h2">{user?.name}</Typography>
-        <Typography as="p" className={styles.email}>{user?.email}</Typography>
+        <Typography as="p" className={styles.email}>
+          {user?.email}
+        </Typography>
         <div className={styles.profileActions}>
           <Link to="/cuenta/alertas">
             <WiredButton>Configurar alertas</WiredButton>
@@ -46,10 +44,7 @@ function ProfileContent() {
       </WiredCard>
 
       {/* Tabs */}
-      <WiredTabs
-        selected={activeTab}
-        onSelected={(v) => setActiveTab(v)}
-      >
+      <WiredTabs selected={activeTab} onSelected={(v) => setActiveTab(v)}>
         <wired-tab name="reportes">Mis reportes</wired-tab>
         <wired-tab name="resenas">Mis resenas</wired-tab>
         <wired-tab name="favoritas">Mis favoritas</wired-tab>
@@ -62,15 +57,16 @@ function ProfileContent() {
             <WiredCard key={r.id} elevation={1} className={styles.listCard}>
               <div className={styles.listHeader}>
                 <Typography as="h3">{r.type}</Typography>
-                <Typography
-                  as="span"
-                  className={`${styles.badge} ${statusClasses[r.status]}`}
-                >
+                <Typography as="span" className={`${styles.badge} ${statusClasses[r.status]}`}>
                   {statusLabels[r.status]}
                 </Typography>
               </div>
-              <Typography as="p">{r.zone} — {r.address}</Typography>
-              <Typography as="span" className={styles.date}>{r.date}</Typography>
+              <Typography as="p">
+                {r.zone} — {r.address}
+              </Typography>
+              <Typography as="span" className={styles.date}>
+                {r.date}
+              </Typography>
               <Link to={`/cuenta/reporte/${r.id}`}>
                 <WiredButton>Ver estado</WiredButton>
               </Link>
@@ -87,7 +83,9 @@ function ProfileContent() {
               <Typography as="h3">{rv.title}</Typography>
               <StarRating value={rv.rating} readOnly />
               <Typography as="p">{rv.comment}</Typography>
-              <Typography as="span" className={styles.date}>{rv.date}</Typography>
+              <Typography as="span" className={styles.date}>
+                {rv.date}
+              </Typography>
             </WiredCard>
           ))}
         </div>

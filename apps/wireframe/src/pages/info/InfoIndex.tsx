@@ -8,8 +8,8 @@ export function InfoIndex() {
     <div className={styles.container}>
       <Typography as="h1">Informacion y Ayuda</Typography>
       <Typography as="p" className={styles.subtitle}>
-        Todo lo que necesitas saber sobre la plataforma, tus derechos como
-        inquilino y el vocabulario del mercado de la vivienda.
+        Todo lo que necesitas saber sobre la plataforma, tus derechos como inquilino y el
+        vocabulario del mercado de la vivienda.
       </Typography>
 
       <WiredDivider />

@@ -10,7 +10,14 @@ interface WiredButtonProps {
   onClick?: () => void;
 }
 
-export function WiredButton({ children, className, style, elevation, disabled, onClick }: WiredButtonProps) {
+export function WiredButton({
+  children,
+  className,
+  style,
+  elevation,
+  disabled,
+  onClick,
+}: WiredButtonProps) {
   const ref = useWiredRef<HTMLElement>({ elevation: elevation ?? 1 });
 
   useEffect(() => {

@@ -9,7 +9,14 @@ interface WiredSearchProps {
   onChange?: (value: string) => void;
 }
 
-export function WiredSearch({ className, style, placeholder, value, disabled, onChange }: WiredSearchProps) {
+export function WiredSearch({
+  className,
+  style,
+  placeholder,
+  value,
+  disabled,
+  onChange,
+}: WiredSearchProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {

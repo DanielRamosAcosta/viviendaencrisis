@@ -11,24 +11,18 @@ export function PreguntasFrecuentes() {
     <div className={styles.container}>
       <Typography as="h1">Preguntas frecuentes</Typography>
       <Typography as="p" className={styles.subtitle}>
-        Respuestas a las dudas mas habituales sobre la plataforma, los datos y
-        los reportes ciudadanos.
+        Respuestas a las dudas mas habituales sobre la plataforma, los datos y los reportes
+        ciudadanos.
       </Typography>
 
       <WiredDivider />
 
       <div className={styles.list}>
         {faqItems.map((item, index) => (
-          <WiredCard
-            key={index}
-            elevation={openIndex === index ? 2 : 1}
-            className={styles.faqCard}
-          >
+          <WiredCard key={index} elevation={openIndex === index ? 2 : 1} className={styles.faqCard}>
             <div
               className={styles.question}
-              onClick={() =>
-                setOpenIndex(openIndex === index ? null : index)
-              }
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {

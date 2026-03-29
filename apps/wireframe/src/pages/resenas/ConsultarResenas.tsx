@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { Typography } from "../../components/Typography";
-import {
-  WiredCard,
-  WiredSearch,
-  WiredDivider,
-} from "../../components/WiredElements";
+import { WiredCard, WiredSearch, WiredDivider } from "../../components/WiredElements";
 import { StarRating } from "../../components/StarRating";
 import { agents, reviews } from "../../data/mockData";
 import styles from "./ConsultarResenas.module.css";
@@ -18,13 +14,11 @@ export function ConsultarResenas() {
     ? agents.filter(
         (a) =>
           a.name.toLowerCase().includes(search.toLowerCase()) ||
-          a.zone.toLowerCase().includes(search.toLowerCase())
+          a.zone.toLowerCase().includes(search.toLowerCase()),
       )
     : agents;
 
-  const agentReviews = selectedAgentId
-    ? reviews.filter((r) => r.agentId === selectedAgentId)
-    : [];
+  const agentReviews = selectedAgentId ? reviews.filter((r) => r.agentId === selectedAgentId) : [];
 
   const selectedAgent = agents.find((a) => a.id === selectedAgentId);
 
@@ -57,9 +51,7 @@ export function ConsultarResenas() {
               </Typography>
               <div className={styles.ratingRow}>
                 <StarRating value={Math.round(agent.rating)} readOnly />
-                <Typography as="span">
-                  {agent.rating.toFixed(1)}
-                </Typography>
+                <Typography as="span">{agent.rating.toFixed(1)}</Typography>
               </div>
               <Typography as="span" className={styles.reviewCount}>
                 {agent.reviewCount} resenas
@@ -72,21 +64,13 @@ export function ConsultarResenas() {
       {selectedAgent && (
         <>
           <WiredDivider />
-          <Typography as="h2">
-            Resenas de {selectedAgent.name}
-          </Typography>
+          <Typography as="h2">Resenas de {selectedAgent.name}</Typography>
           {agentReviews.length === 0 ? (
-            <Typography as="p">
-              No hay resenas disponibles para este agente.
-            </Typography>
+            <Typography as="p">No hay resenas disponibles para este agente.</Typography>
           ) : (
             <div className={styles.reviewList}>
               {agentReviews.map((review) => (
-                <Link
-                  key={review.id}
-                  to={`/resenas/${review.id}`}
-                  className={styles.reviewLink}
-                >
+                <Link key={review.id} to={`/resenas/${review.id}`} className={styles.reviewLink}>
                   <WiredCard elevation={2} className={styles.reviewCard}>
                     <div className={styles.reviewHeader}>
                       <StarRating value={review.rating} readOnly />
@@ -101,12 +85,8 @@ export function ConsultarResenas() {
                         : review.comment}
                     </Typography>
                     <div className={styles.voteRow}>
-                      <Typography as="span">
-                        Util: {review.helpful}
-                      </Typography>
-                      <Typography as="span">
-                        No util: {review.notHelpful}
-                      </Typography>
+                      <Typography as="span">Util: {review.helpful}</Typography>
+                      <Typography as="span">No util: {review.notHelpful}</Typography>
                     </div>
                   </WiredCard>
                 </Link>

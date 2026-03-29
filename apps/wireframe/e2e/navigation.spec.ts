@@ -8,7 +8,11 @@ const routes: { path: string; label: string; skip?: string }[] = [
   { path: "/recuperar", label: "Recuperar password" },
   { path: "/precios", label: "Precios index" },
   { path: "/precios/evolucion", label: "Evolucion temporal" },
-  { path: "/precios/comparar", label: "Comparar zonas", skip: "rough-viz charts crash headless Chromium" },
+  {
+    path: "/precios/comparar",
+    label: "Comparar zonas",
+    skip: "rough-viz charts crash headless Chromium",
+  },
   { path: "/precios/metro-cuadrado", label: "Precio metro cuadrado" },
   { path: "/precios/asequibilidad", label: "Asequibilidad" },
   { path: "/precios/oficial-vs-portales", label: "Oficial vs portales" },
@@ -40,9 +44,7 @@ const routes: { path: string; label: string; skip?: string }[] = [
 test.describe("Route accessibility", () => {
   for (const route of routes) {
     const testFn = route.skip ? test.skip : test;
-    testFn(`${route.label} (${route.path}) renders without errors`, async ({
-      page,
-    }) => {
+    testFn(`${route.label} (${route.path}) renders without errors`, async ({ page }) => {
       const consoleErrors: string[] = [];
       page.on("console", (msg) => {
         if (msg.type() === "error") {

@@ -11,7 +11,13 @@ interface WiredLinkProps {
 
 export function WiredLink({ children, className, style, elevation, href, target }: WiredLinkProps) {
   return (
-    <wired-link className={className} style={style} elevation={elevation} href={href} target={target}>
+    <wired-link
+      className={className}
+      style={style}
+      elevation={elevation}
+      href={href}
+      target={target}
+    >
       {children}
     </wired-link>
   );

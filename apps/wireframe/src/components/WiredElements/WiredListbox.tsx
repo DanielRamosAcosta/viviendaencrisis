@@ -8,7 +8,13 @@ interface WiredListboxProps {
   onSelected?: (value: string) => void;
 }
 
-export function WiredListbox({ children, className, style, selected, onSelected }: WiredListboxProps) {
+export function WiredListbox({
+  children,
+  className,
+  style,
+  selected,
+  onSelected,
+}: WiredListboxProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {

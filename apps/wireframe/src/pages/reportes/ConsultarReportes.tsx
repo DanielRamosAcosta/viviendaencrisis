@@ -5,12 +5,7 @@ import type { Topology } from "topojson-specification";
 import type { FeatureCollection } from "geojson";
 import spainTopo from "es-atlas/es/autonomous_regions.json";
 import { Typography } from "../../components/Typography";
-import {
-  WiredCard,
-  WiredCombo,
-  WiredTabs,
-  WiredDivider,
-} from "../../components/WiredElements";
+import { WiredCard, WiredCombo, WiredTabs, WiredDivider } from "../../components/WiredElements";
 import { RoughMap } from "../../components/RoughViz";
 import { reports, irregularityTypes, zones, ccaaColors } from "../../data/mockData";
 import styles from "./ConsultarReportes.module.css";
@@ -55,10 +50,7 @@ export function ConsultarReportes() {
       <div className={styles.filters}>
         <div className={styles.filterItem}>
           <Typography as="span">Zona:</Typography>
-          <WiredCombo
-            selected={filterZone}
-            onSelected={(val: string) => setFilterZone(val)}
-          >
+          <WiredCombo selected={filterZone} onSelected={(val: string) => setFilterZone(val)}>
             <wired-item value="Todos">Todas las zonas</wired-item>
             {zones.map((z) => (
               <wired-item key={z} value={z}>
@@ -69,10 +61,7 @@ export function ConsultarReportes() {
         </div>
         <div className={styles.filterItem}>
           <Typography as="span">Tipo:</Typography>
-          <WiredCombo
-            selected={filterType}
-            onSelected={(val: string) => setFilterType(val)}
-          >
+          <WiredCombo selected={filterType} onSelected={(val: string) => setFilterType(val)}>
             <wired-item value="Todos">Todos los tipos</wired-item>
             {irregularityTypes.map((t) => (
               <wired-item key={t} value={t}>
@@ -83,10 +72,7 @@ export function ConsultarReportes() {
         </div>
       </div>
 
-      <WiredTabs
-        selected={tab}
-        onSelected={(val: string) => setTab(val)}
-      >
+      <WiredTabs selected={tab} onSelected={(val: string) => setTab(val)}>
         <wired-tab name="lista">Lista</wired-tab>
         <wired-tab name="mapa">Mapa</wired-tab>
       </WiredTabs>
@@ -94,17 +80,16 @@ export function ConsultarReportes() {
       {tab === "lista" && (
         <div className={styles.reportList}>
           {filtered.length === 0 && (
-            <Typography as="p">No se encontraron reportes con los filtros seleccionados.</Typography>
+            <Typography as="p">
+              No se encontraron reportes con los filtros seleccionados.
+            </Typography>
           )}
           {filtered.map((r) => (
             <Link key={r.id} to={`/reportes/${r.id}`} className={styles.reportLink}>
               <WiredCard elevation={2} className={styles.reportCard}>
                 <div className={styles.reportHeader}>
                   <Typography as="h3">{r.type}</Typography>
-                  <Typography
-                    as="span"
-                    className={styles[statusClasses[r.status]]}
-                  >
+                  <Typography as="span" className={styles[statusClasses[r.status]]}>
                     {statusLabels[r.status]}
                   </Typography>
                 </div>
@@ -126,8 +111,7 @@ export function ConsultarReportes() {
             width={700}
             height={500}
             fill={(f) => {
-              const name = (f.properties as Record<string, unknown>)
-                ?.name as string;
+              const name = (f.properties as Record<string, unknown>)?.name as string;
               return ccaaColors[name] ?? "rgba(0,0,0,0.08)";
             }}
             stroke="#333"

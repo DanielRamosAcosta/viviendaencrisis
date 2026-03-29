@@ -38,8 +38,8 @@ function ReportForm() {
         <WiredCard elevation={2} className={styles.section}>
           <Typography as="h2">Reporte enviado correctamente</Typography>
           <Typography as="p">
-            Tu reporte ha sido registrado y sera revisado por un moderador.
-            Puedes consultar el estado de tu reporte en cualquier momento.
+            Tu reporte ha sido registrado y sera revisado por un moderador. Puedes consultar el
+            estado de tu reporte en cualquier momento.
           </Typography>
           <Link to="/cuenta/estado-reporte">
             <WiredButton>Mi cuenta &gt; Estado de reporte</WiredButton>
@@ -57,23 +57,16 @@ function ReportForm() {
         <WiredCard elevation={2} className={styles.anonymityNotice}>
           <Typography as="h3">Aviso de anonimato</Typography>
           <Typography as="p">
-            Tu identidad nunca sera visible para terceros. Los reportes se
-            publican de forma anonima y los datos se tratan conforme al RGPD.
-            Tu informacion personal solo sera accesible por los administradores
-            de la plataforma para fines de moderacion.
+            Tu identidad nunca sera visible para terceros. Los reportes se publican de forma anonima
+            y los datos se tratan conforme al RGPD. Tu informacion personal solo sera accesible por
+            los administradores de la plataforma para fines de moderacion.
           </Typography>
-          <WiredButton onClick={() => setStep(1)}>
-            Entendido, continuar
-          </WiredButton>
+          <WiredButton onClick={() => setStep(1)}>Entendido, continuar</WiredButton>
         </WiredCard>
       )}
 
       {step >= 1 && (
-        <WiredProgress
-          value={step === 1 ? 33 : step === 2 ? 66 : 100}
-          max={100}
-          percentage
-        />
+        <WiredProgress value={step === 1 ? 33 : step === 2 ? 66 : 100} max={100} percentage />
       )}
 
       {step === 1 && (
@@ -81,10 +74,7 @@ function ReportForm() {
           <Typography as="h2">Paso 1: Ubicacion</Typography>
           <div className={styles.field}>
             <Typography as="span">Tipo de irregularidad</Typography>
-            <WiredCombo
-              selected={type}
-              onSelected={(val: string) => setType(val)}
-            >
+            <WiredCombo selected={type} onSelected={(val: string) => setType(val)}>
               {irregularityTypes.map((t) => (
                 <wired-item key={t} value={t}>
                   {t}
@@ -102,10 +92,7 @@ function ReportForm() {
           </div>
           <div className={styles.field}>
             <Typography as="span">Zona</Typography>
-            <WiredSearch
-              placeholder="Buscar zona..."
-              onChange={(val: string) => setZone(val)}
-            />
+            <WiredSearch placeholder="Buscar zona..." onChange={(val: string) => setZone(val)} />
             {zone && (
               <Typography as="span" className={styles.selectedZone}>
                 Zona seleccionada: {zone}
@@ -154,34 +141,40 @@ function ReportForm() {
           <Typography as="h2">Paso 3: Confirmacion</Typography>
           <WiredCard className={styles.summary}>
             <Typography as="p">
-              <Typography as="span" className={styles.label}>Tipo:</Typography>{" "}
+              <Typography as="span" className={styles.label}>
+                Tipo:
+              </Typography>{" "}
               {type || "No especificado"}
             </Typography>
             <Typography as="p">
-              <Typography as="span" className={styles.label}>Direccion:</Typography>{" "}
+              <Typography as="span" className={styles.label}>
+                Direccion:
+              </Typography>{" "}
               {address || "No especificada"}
             </Typography>
             <Typography as="p">
-              <Typography as="span" className={styles.label}>Zona:</Typography>{" "}
+              <Typography as="span" className={styles.label}>
+                Zona:
+              </Typography>{" "}
               {zone || "No especificada"}
             </Typography>
             <Typography as="p">
-              <Typography as="span" className={styles.label}>Descripcion:</Typography>{" "}
+              <Typography as="span" className={styles.label}>
+                Descripcion:
+              </Typography>{" "}
               {description || "No proporcionada"}
             </Typography>
           </WiredCard>
           <div className={styles.confirmRow}>
             <WiredCheckbox checked={confirmed} onChange={setConfirmed} />
             <Typography as="span">
-              Confirmo que la informacion proporcionada es veraz y comprendo que
-              los reportes falsos pueden ser eliminados.
+              Confirmo que la informacion proporcionada es veraz y comprendo que los reportes falsos
+              pueden ser eliminados.
             </Typography>
           </div>
           <div className={styles.actions}>
             <WiredButton onClick={() => setStep(2)}>Atras</WiredButton>
-            <WiredButton onClick={() => setSubmitted(true)}>
-              Enviar reporte
-            </WiredButton>
+            <WiredButton onClick={() => setSubmitted(true)}>Enviar reporte</WiredButton>
           </div>
         </WiredCard>
       )}

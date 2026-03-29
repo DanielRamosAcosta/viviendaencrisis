@@ -50,12 +50,7 @@ function EstadoReporteContent() {
   }
 
   const steps = ["Enviado", "En revision", "Aprobado/Rechazado"];
-  const currentStep =
-    report.status === "pending"
-      ? 0
-      : report.status === "in_review"
-        ? 1
-        : 2;
+  const currentStep = report.status === "pending" ? 0 : report.status === "in_review" ? 1 : 2;
 
   return (
     <div className={styles.container}>
@@ -65,19 +60,13 @@ function EstadoReporteContent() {
       <WiredCard elevation={2} className={styles.section}>
         <Typography as="h2">Progreso de moderacion</Typography>
         <WiredDivider />
-        <WiredProgress
-          value={statusProgress[report.status]}
-          max={100}
-          percentage
-        />
+        <WiredProgress value={statusProgress[report.status]} max={100} percentage />
         <div className={styles.timeline}>
           {steps.map((step, i) => (
             <div
               key={step}
               className={`${styles.timelineStep} ${
-                i <= currentStep
-                  ? statusClasses[report.status]
-                  : styles.stepInactive
+                i <= currentStep ? statusClasses[report.status] : styles.stepInactive
               }`}
             >
               <div className={styles.stepDot} />
@@ -133,9 +122,8 @@ function EstadoReporteContent() {
         <WiredCard elevation={2} className={styles.rejectedCard}>
           <Typography as="h3">Reporte rechazado</Typography>
           <Typography as="p">
-            El reporte no cumple con los criterios de la plataforma o no se ha
-            podido verificar la informacion proporcionada. Puedes enviar un
-            nuevo reporte con informacion mas detallada.
+            El reporte no cumple con los criterios de la plataforma o no se ha podido verificar la
+            informacion proporcionada. Puedes enviar un nuevo reporte con informacion mas detallada.
           </Typography>
           <Link to="/reportes/nuevo">
             <WiredButton>Enviar nuevo reporte</WiredButton>

@@ -10,10 +10,7 @@ export function Glosario() {
   const filtered = glossaryTerms
     .filter((item) => {
       const q = query.toLowerCase();
-      return (
-        item.term.toLowerCase().includes(q) ||
-        item.definition.toLowerCase().includes(q)
-      );
+      return item.term.toLowerCase().includes(q) || item.definition.toLowerCase().includes(q);
     })
     .sort((a, b) => a.term.localeCompare(b.term, "es"));
 
@@ -21,15 +18,10 @@ export function Glosario() {
     <div className={styles.container}>
       <Typography as="h1">Glosario</Typography>
       <Typography as="p" className={styles.subtitle}>
-        Definiciones de los terminos mas utilizados en el mercado de la vivienda
-        y en la plataforma.
+        Definiciones de los terminos mas utilizados en el mercado de la vivienda y en la plataforma.
       </Typography>
 
-      <WiredSearch
-        placeholder="Buscar termino..."
-        value={query}
-        onChange={setQuery}
-      />
+      <WiredSearch placeholder="Buscar termino..." value={query} onChange={setQuery} />
 
       <WiredDivider />
 

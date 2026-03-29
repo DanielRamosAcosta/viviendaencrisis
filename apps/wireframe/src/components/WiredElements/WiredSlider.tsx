@@ -20,5 +20,7 @@ export function WiredSlider({ className, style, value, min, max, onChange }: Wir
     return () => el.removeEventListener("change", handler);
   }, [onChange]);
 
-  return <wired-slider ref={ref} className={className} style={style} value={value} min={min} max={max} />;
+  return (
+    <wired-slider ref={ref} className={className} style={style} value={value} min={min} max={max} />
+  );
 }

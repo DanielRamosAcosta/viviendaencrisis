@@ -10,7 +10,15 @@ interface WiredRadioProps {
   onChange?: (checked: boolean) => void;
 }
 
-export function WiredRadio({ className, style, checked, disabled, name, text, onChange }: WiredRadioProps) {
+export function WiredRadio({
+  className,
+  style,
+  checked,
+  disabled,
+  name,
+  text,
+  onChange,
+}: WiredRadioProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {

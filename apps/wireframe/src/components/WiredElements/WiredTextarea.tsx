@@ -10,7 +10,15 @@ interface WiredTextareaProps {
   onChange?: (value: string) => void;
 }
 
-export function WiredTextarea({ className, style, placeholder, value, rows, disabled, onChange }: WiredTextareaProps) {
+export function WiredTextarea({
+  className,
+  style,
+  placeholder,
+  value,
+  rows,
+  disabled,
+  onChange,
+}: WiredTextareaProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {

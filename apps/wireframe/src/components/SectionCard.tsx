@@ -13,8 +13,12 @@ export function SectionCard({ title, description, to }: SectionCardProps) {
   return (
     <Link to={to} className={styles.link}>
       <WiredCard elevation={2} className={styles.card}>
-        <Typography as="h3" className={styles.title}>{title}</Typography>
-        <Typography as="p" className={styles.description}>{description}</Typography>
+        <Typography as="h3" className={styles.title}>
+          {title}
+        </Typography>
+        <Typography as="p" className={styles.description}>
+          {description}
+        </Typography>
       </WiredCard>
     </Link>
   );

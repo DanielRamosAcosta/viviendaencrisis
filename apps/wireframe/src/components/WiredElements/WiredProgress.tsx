@@ -10,7 +10,14 @@ interface WiredProgressProps {
   percentage?: boolean;
 }
 
-export function WiredProgress({ className, style, value, min, max, percentage }: WiredProgressProps) {
+export function WiredProgress({
+  className,
+  style,
+  value,
+  min,
+  max,
+  percentage,
+}: WiredProgressProps) {
   const ref = useWiredRef<HTMLElement>({ value, min, max, percentage });
   return <wired-progress ref={ref} className={className} style={style} />;
 }

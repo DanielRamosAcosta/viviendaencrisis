@@ -18,9 +18,7 @@ export function MapaReportes() {
   }, []);
 
   const filteredReports =
-    filterType === "Todos"
-      ? reports
-      : reports.filter((r) => r.type === filterType);
+    filterType === "Todos" ? reports : reports.filter((r) => r.type === filterType);
 
   return (
     <div className={styles.container}>
@@ -31,10 +29,7 @@ export function MapaReportes() {
 
       <div className={styles.filterRow}>
         <Typography as="span">Filtrar por tipo:</Typography>
-        <WiredCombo
-          selected={filterType}
-          onSelected={(val: string) => setFilterType(val)}
-        >
+        <WiredCombo selected={filterType} onSelected={(val: string) => setFilterType(val)}>
           <wired-item value="Todos">Todos</wired-item>
           {irregularityTypes.map((t) => (
             <wired-item key={t} value={t}>
@@ -50,8 +45,7 @@ export function MapaReportes() {
           width={700}
           height={500}
           fill={(f) => {
-            const name = (f.properties as Record<string, unknown>)
-              ?.name as string;
+            const name = (f.properties as Record<string, unknown>)?.name as string;
             return ccaaColors[name] ?? "rgba(0,0,0,0.08)";
           }}
           stroke="#333"
@@ -65,9 +59,7 @@ export function MapaReportes() {
 
       <WiredCard elevation={2} className={styles.summaryCard}>
         <Typography as="h3">Resumen</Typography>
-        <Typography as="p">
-          Total de reportes mostrados: {filteredReports.length}
-        </Typography>
+        <Typography as="p">Total de reportes mostrados: {filteredReports.length}</Typography>
         <div className={styles.statGrid}>
           {irregularityTypes.map((t) => {
             const count = filteredReports.filter((r) => r.type === t).length;

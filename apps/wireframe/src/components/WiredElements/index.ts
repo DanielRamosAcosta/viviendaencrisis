@@ -81,7 +81,11 @@ declare module "react" {
         HTMLElement
       >;
       "wired-link": React.DetailedHTMLProps<
-        React.HTMLAttributes<HTMLElement> & { href?: string; target?: string; elevation?: number | string },
+        React.HTMLAttributes<HTMLElement> & {
+          href?: string;
+          target?: string;
+          elevation?: number | string;
+        },
         HTMLElement
       >;
       "wired-listbox": React.DetailedHTMLProps<

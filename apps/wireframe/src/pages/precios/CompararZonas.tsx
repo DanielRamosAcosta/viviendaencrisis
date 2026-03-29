@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { WiredCard, WiredButton, WiredTabs, WiredSearch, WiredDivider } from "../../components/WiredElements";
+import {
+  WiredCard,
+  WiredButton,
+  WiredTabs,
+  WiredSearch,
+  WiredDivider,
+} from "../../components/WiredElements";
 import { RoughStackedBar } from "../../components/RoughViz";
 import { Typography } from "../../components/Typography";
 import { cityPrices } from "../../data/mockData";

@@ -24,17 +24,15 @@ export function NotFound() {
           Pagina no encontrada
         </Typography>
         <Typography as="p" className={styles.message}>
-          La pagina que buscas no existe o ha sido movida. Comprueba la URL o
-          utiliza el buscador para encontrar lo que necesitas.
+          La pagina que buscas no existe o ha sido movida. Comprueba la URL o utiliza el buscador
+          para encontrar lo que necesitas.
         </Typography>
 
         <WiredSearch placeholder="Busca lo que necesitas..." className={styles.search} />
 
         <WiredDivider />
 
-        <WiredButton onClick={() => navigate("/")}>
-          Volver al inicio
-        </WiredButton>
+        <WiredButton onClick={() => navigate("/")}>Volver al inicio</WiredButton>
 
         <WiredDivider />
 

@@ -51,8 +51,7 @@ export function Home() {
           Vivienda en Crisis
         </Typography>
         <Typography as="p" className={styles.heroSubtitle}>
-          Datos abiertos para la transparencia del mercado de la vivienda en
-          Espana
+          Datos abiertos para la transparencia del mercado de la vivienda en Espana
         </Typography>
         <WiredSearch placeholder="Busca tu municipio..." className={styles.heroSearch} />
       </section>
@@ -133,13 +132,10 @@ export function Home() {
       <WiredCard elevation={2} className={styles.footerCta}>
         <Typography as="h2">Conoces una irregularidad?</Typography>
         <Typography as="p">
-          Si has detectado un precio abusivo, una clausula ilegal o unas
-          condiciones de vivienda deficientes, puedes reportarlo de forma
-          anonima.
+          Si has detectado un precio abusivo, una clausula ilegal o unas condiciones de vivienda
+          deficientes, puedes reportarlo de forma anonima.
         </Typography>
-        <WiredButton onClick={() => navigate("/reportes/nuevo")}>
-          Enviar un reporte
-        </WiredButton>
+        <WiredButton onClick={() => navigate("/reportes/nuevo")}>Enviar un reporte</WiredButton>
       </WiredCard>
     </div>
   );

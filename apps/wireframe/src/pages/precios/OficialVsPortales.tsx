@@ -12,18 +12,17 @@ export function OficialVsPortales() {
     <div className={styles.container}>
       <Typography as="h1">Datos Oficiales vs Portales</Typography>
       <Typography as="p" className={styles.subtitle}>
-        Comparacion entre los precios de fuentes oficiales (MIVAU/INE) y los anunciados en
-        portales inmobiliarios (Idealista, Fotocasa).
+        Comparacion entre los precios de fuentes oficiales (MIVAU/INE) y los anunciados en portales
+        inmobiliarios (Idealista, Fotocasa).
       </Typography>
 
       <WiredCard elevation={2} className={styles.warningCard}>
         <Typography as="h3">Nota metodologica</Typography>
         <WiredDivider />
         <Typography as="p">
-          Los datos de portales inmobiliarios reflejan precios de oferta (asking prices), no
-          precios de transaccion real. Las fuentes oficiales utilizan datos de contratos
-          registrados y transacciones efectivas. La comparacion es orientativa y debe
-          interpretarse con cautela.
+          Los datos de portales inmobiliarios reflejan precios de oferta (asking prices), no precios
+          de transaccion real. Las fuentes oficiales utilizan datos de contratos registrados y
+          transacciones efectivas. La comparacion es orientativa y debe interpretarse con cautela.
         </Typography>
       </WiredCard>
 

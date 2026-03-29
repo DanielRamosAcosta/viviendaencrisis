@@ -10,7 +10,15 @@ interface WiredInputProps {
   onChange?: (value: string) => void;
 }
 
-export function WiredInput({ className, style, placeholder, value, type, disabled, onChange }: WiredInputProps) {
+export function WiredInput({
+  className,
+  style,
+  placeholder,
+  value,
+  type,
+  disabled,
+  onChange,
+}: WiredInputProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {

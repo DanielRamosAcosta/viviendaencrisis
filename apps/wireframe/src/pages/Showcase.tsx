@@ -108,22 +108,14 @@ export function Showcase() {
         <WiredDivider />
         <div className={styles.col}>
           <div className={styles.row}>
-            <WiredCheckbox
-              checked={checkboxChecked}
-              onChange={setCheckboxChecked}
-            />
+            <WiredCheckbox checked={checkboxChecked} onChange={setCheckboxChecked} />
             <Typography as="span">
               Checkbox ({checkboxChecked ? "checked" : "unchecked"})
             </Typography>
           </div>
           <div className={styles.row}>
-            <WiredToggle
-              checked={toggleChecked}
-              onChange={setToggleChecked}
-            />
-            <Typography as="span">
-              Toggle ({toggleChecked ? "on" : "off"})
-            </Typography>
+            <WiredToggle checked={toggleChecked} onChange={setToggleChecked} />
+            <Typography as="span">Toggle ({toggleChecked ? "on" : "off"})</Typography>
           </div>
           <div className={styles.row}>
             <WiredRadio name="demo" text="Option A" />
@@ -158,12 +150,7 @@ export function Showcase() {
         <div className={styles.col}>
           <div className={styles.row}>
             <Typography as="span">Slider: {sliderValue}</Typography>
-            <WiredSlider
-              value={sliderValue}
-              min={0}
-              max={100}
-              onChange={setSliderValue}
-            />
+            <WiredSlider value={sliderValue} min={0} max={100} onChange={setSliderValue} />
           </div>
           <div className={styles.row}>
             <Typography as="span">Progress: {progressValue}%</Typography>

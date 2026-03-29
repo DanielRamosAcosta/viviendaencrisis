@@ -32,7 +32,7 @@ function ResenaForm() {
     ? agents.filter(
         (a) =>
           a.name.toLowerCase().includes(search.toLowerCase()) ||
-          a.zone.toLowerCase().includes(search.toLowerCase())
+          a.zone.toLowerCase().includes(search.toLowerCase()),
       )
     : [];
 
@@ -44,8 +44,8 @@ function ResenaForm() {
         <WiredCard elevation={2} className={styles.section}>
           <Typography as="h2">Resena enviada</Typography>
           <Typography as="p">
-            Tu resena ha sido registrada correctamente. Gracias por compartir tu
-            experiencia con la comunidad.
+            Tu resena ha sido registrada correctamente. Gracias por compartir tu experiencia con la
+            comunidad.
           </Typography>
         </WiredCard>
       </div>
@@ -113,9 +113,7 @@ function ResenaForm() {
           />
         </div>
 
-        <WiredButton onClick={() => setSubmitted(true)}>
-          Enviar resena
-        </WiredButton>
+        <WiredButton onClick={() => setSubmitted(true)}>Enviar resena</WiredButton>
       </WiredCard>
     </div>
   );

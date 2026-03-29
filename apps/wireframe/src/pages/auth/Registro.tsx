@@ -1,12 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { Typography } from "../../components/Typography";
-import {
-  WiredCard,
-  WiredButton,
-  WiredInput,
-  WiredCheckbox,
-} from "../../components/WiredElements";
+import { WiredCard, WiredButton, WiredInput, WiredCheckbox } from "../../components/WiredElements";
 import styles from "./Registro.module.css";
 
 export function Registro() {
@@ -19,9 +14,8 @@ export function Registro() {
         <WiredCard elevation={2} className={styles.formCard}>
           <Typography as="h2">Cuenta creada</Typography>
           <Typography as="p">
-            Hemos enviado un correo de verificacion a tu direccion de email.
-            Por favor, revisa tu bandeja de entrada y sigue las instrucciones
-            para activar tu cuenta.
+            Hemos enviado un correo de verificacion a tu direccion de email. Por favor, revisa tu
+            bandeja de entrada y sigue las instrucciones para activar tu cuenta.
           </Typography>
           <Link to="/login">
             <WiredButton>Ir a Iniciar Sesion</WiredButton>
@@ -58,14 +52,10 @@ export function Registro() {
 
         <div className={styles.checkboxRow}>
           <WiredCheckbox checked={accepted} onChange={setAccepted} />
-          <Typography as="span">
-            Acepto los terminos y condiciones de uso
-          </Typography>
+          <Typography as="span">Acepto los terminos y condiciones de uso</Typography>
         </div>
 
-        <WiredButton onClick={() => setSubmitted(true)}>
-          Crear cuenta
-        </WiredButton>
+        <WiredButton onClick={() => setSubmitted(true)}>Crear cuenta</WiredButton>
 
         <div className={styles.links}>
           <Link to="/login" className={styles.link}>

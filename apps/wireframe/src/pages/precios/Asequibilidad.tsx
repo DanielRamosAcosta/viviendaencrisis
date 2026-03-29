@@ -22,8 +22,12 @@ export function Asequibilidad() {
       <div className={styles.statsGrid}>
         {statCards.map((stat) => (
           <WiredCard key={stat.label} elevation={2} className={styles.statCard}>
-            <Typography as="h2" className={styles.statValue}>{stat.value}</Typography>
-            <Typography as="p" className={styles.statLabel}>{stat.label}</Typography>
+            <Typography as="h2" className={styles.statValue}>
+              {stat.value}
+            </Typography>
+            <Typography as="p" className={styles.statLabel}>
+              {stat.label}
+            </Typography>
           </WiredCard>
         ))}
       </div>
@@ -60,11 +64,11 @@ export function Asequibilidad() {
         <Typography as="h3">Como se calcula</Typography>
         <WiredDivider />
         <Typography as="p">
-          El indicador de esfuerzo mide el porcentaje de la renta bruta del hogar que se destina
-          al pago de la vivienda (alquiler o hipoteca). Se considera que un hogar tiene
-          sobreesfuerzo cuando destina mas del 30% de sus ingresos a vivienda. Los datos se
-          obtienen cruzando fuentes del INE (Encuesta de Condiciones de Vida) y del Ministerio
-          de Vivienda (indices de precios).
+          El indicador de esfuerzo mide el porcentaje de la renta bruta del hogar que se destina al
+          pago de la vivienda (alquiler o hipoteca). Se considera que un hogar tiene sobreesfuerzo
+          cuando destina mas del 30% de sus ingresos a vivienda. Los datos se obtienen cruzando
+          fuentes del INE (Encuesta de Condiciones de Vida) y del Ministerio de Vivienda (indices de
+          precios).
         </Typography>
       </WiredCard>
 

@@ -8,7 +8,13 @@ interface WiredCheckboxProps {
   onChange?: (checked: boolean) => void;
 }
 
-export function WiredCheckbox({ className, style, checked, disabled, onChange }: WiredCheckboxProps) {
+export function WiredCheckbox({
+  className,
+  style,
+  checked,
+  disabled,
+  onChange,
+}: WiredCheckboxProps) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {

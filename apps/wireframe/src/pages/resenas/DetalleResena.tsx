@@ -63,9 +63,7 @@ export function DetalleResena() {
 
         <div className={styles.voteRow}>
           <Typography as="span">Te resulto util esta resena?</Typography>
-          <WiredButton onClick={() => setHelpful((h) => h + 1)}>
-            Util ({helpful})
-          </WiredButton>
+          <WiredButton onClick={() => setHelpful((h) => h + 1)}>Util ({helpful})</WiredButton>
           <WiredButton onClick={() => setNotHelpful((n) => n + 1)}>
             No util ({notHelpful})
           </WiredButton>

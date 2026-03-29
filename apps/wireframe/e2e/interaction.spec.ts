@@ -15,9 +15,9 @@ test.describe("Interactive elements", () => {
 
   test("FAQ accordion expands on click", async ({ page }) => {
     await page.goto("/info/faq");
-    await expect(
-      page.locator("h1", { hasText: "Preguntas frecuentes" }),
-    ).toBeVisible({ timeout: 10_000 });
+    await expect(page.locator("h1", { hasText: "Preguntas frecuentes" })).toBeVisible({
+      timeout: 10_000,
+    });
 
     // All FAQ items start collapsed
     const firstQuestion = page.locator('[role="button"]').first();
@@ -37,9 +37,7 @@ test.describe("Interactive elements", () => {
 
   test("Glossary search filters results", async ({ page }) => {
     await page.goto("/info/glosario");
-    await expect(
-      page.locator("h1", { hasText: "Glosario" }),
-    ).toBeVisible({ timeout: 10_000 });
+    await expect(page.locator("h1", { hasText: "Glosario" })).toBeVisible({ timeout: 10_000 });
 
     // Count initial term cards
     const initialCount = await page.locator("wired-card h3").count();
@@ -62,9 +60,9 @@ test.describe("Interactive elements", () => {
 
   test("Evolucion temporal tabs switch content", async ({ page }) => {
     await page.goto("/precios/evolucion");
-    await expect(
-      page.locator("h1", { hasText: "Evolucion Temporal" }),
-    ).toBeVisible({ timeout: 10_000 });
+    await expect(page.locator("h1", { hasText: "Evolucion Temporal" })).toBeVisible({
+      timeout: 10_000,
+    });
 
     // Verify the chart is showing by default (grafico tab)
     // rough-viz renders inside a div — the chart container should exist
@@ -98,53 +96,39 @@ test.describe("Interactive elements", () => {
     });
 
     await page.locator("nav").locator("a[href='/login']").click();
-    await expect(
-      page.getByRole("main").locator("h1", { hasText: "Iniciar Sesion" }),
-    ).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByRole("main").locator("h1", { hasText: "Iniciar Sesion" })).toBeVisible({
+      timeout: 10_000,
+    });
 
-    await page
-      .locator("wired-card wired-button", { hasText: "Iniciar sesion" })
-      .click();
+    await page.locator("wired-card wired-button", { hasText: "Iniciar sesion" }).click();
 
     // Back on home after navigate(-1)
-    await expect(
-      page.getByRole("main").locator("h1").first(),
-    ).toBeVisible({ timeout: 10_000 });
+    await expect(page.getByRole("main").locator("h1").first()).toBeVisible({ timeout: 10_000 });
 
     // Navigate to report form via the "Enviar un reporte" CTA button
-    await page
-      .locator("wired-button", { hasText: "Enviar un reporte" })
-      .click();
+    await page.locator("wired-button", { hasText: "Enviar un reporte" }).click();
 
-    await expect(
-      page.locator("h1", { hasText: "Reportar una Irregularidad" }),
-    ).toBeVisible({ timeout: 10_000 });
+    await expect(page.locator("h1", { hasText: "Reportar una Irregularidad" })).toBeVisible({
+      timeout: 10_000,
+    });
 
     // Step 0: anonymity notice
-    await expect(
-      page.locator("h3", { hasText: "Aviso de anonimato" }),
-    ).toBeVisible();
+    await expect(page.locator("h3", { hasText: "Aviso de anonimato" })).toBeVisible();
 
     // Click "Entendido, continuar"
-    await page
-      .locator("wired-button", { hasText: "Entendido, continuar" })
-      .click();
+    await page.locator("wired-button", { hasText: "Entendido, continuar" }).click();
 
     // Step 1: Ubicacion
     await expect(page.locator("h2", { hasText: "Paso 1" })).toBeVisible();
 
     // Click "Siguiente" to go to step 2
-    await page
-      .locator("wired-button", { hasText: "Siguiente" })
-      .click();
+    await page.locator("wired-button", { hasText: "Siguiente" }).click();
 
     // Step 2: Descripcion
     await expect(page.locator("h2", { hasText: "Paso 2" })).toBeVisible();
 
     // Click "Siguiente" to go to step 3
-    await page
-      .locator("wired-button", { hasText: "Siguiente" })
-      .click();
+    await page.locator("wired-button", { hasText: "Siguiente" }).click();
 
     // Step 3: Confirmacion
     await expect(page.locator("h2", { hasText: "Paso 3" })).toBeVisible();
