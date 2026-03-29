@@ -60,8 +60,14 @@ jobs:
       - name: Install Playwright browsers
         run: pnpm --filter @viviendaencrisis/wireframe exec playwright install --with-deps chromium
 
+      - name: Start preview server
+        run: pnpm --filter @viviendaencrisis/wireframe preview --port 5174 &
+
+      - name: Wait for server
+        run: npx wait-on http://localhost:5174 --timeout 30000
+
       - name: Run E2E tests
-        run: pnpm --filter @viviendaencrisis/wireframe test:e2e
+        run: pnpm --filter @viviendaencrisis/wireframe exec playwright test
 
       - name: Rebuild for GitHub Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
