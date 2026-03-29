@@ -75,10 +75,6 @@ jobs:
         env:
           VITE_BASE: /viviendaencrisis/
 
-      - name: Copy 404.html for SPA routing
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: cp apps/wireframe/dist/index.html apps/wireframe/dist/404.html
-
       - name: Setup Pages
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: actions/configure-pages@v5

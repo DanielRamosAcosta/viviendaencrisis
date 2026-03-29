@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { HashRouter, Routes, Route } from "react-router";
 import { AuthProvider } from "./context/AuthContext";
 import { PageLayout } from "./components/Layout";
 
@@ -55,7 +55,7 @@ import { Glosario } from "./pages/info/Glosario";
 export function App() {
   return (
     <AuthProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <HashRouter>
         <PageLayout>
           <Routes>
             {/* Home */}
@@ -111,7 +111,7 @@ export function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </PageLayout>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   );
 }
