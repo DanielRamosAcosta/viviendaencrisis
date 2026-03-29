@@ -1,9 +1,10 @@
 ---
 id: VC-0071
 title: 'docs(memoria): crear anexo de recursos de terceros (licencias y origen)'
-status: To Do
+status: In Progress
 assignee: []
 created_date: '2026-03-29 21:53'
+updated_date: '2026-03-29 21:54'
 labels: []
 dependencies: []
 priority: medium
