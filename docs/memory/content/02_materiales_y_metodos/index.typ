@@ -14,7 +14,7 @@
 
 #include "07_diagrama_de_flujo.typ"
 
-#include "08_wireframes_movil.typ"
+#include "08_wireframes.typ"
 
 #include "10_propuesta_grafica.typ"
 
