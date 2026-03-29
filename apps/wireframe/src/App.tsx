@@ -55,7 +55,7 @@ import { Glosario } from "./pages/info/Glosario";
 export function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <PageLayout>
           <Routes>
             {/* Home */}
