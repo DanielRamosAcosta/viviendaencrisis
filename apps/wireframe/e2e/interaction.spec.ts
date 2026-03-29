@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Interactive elements", () => {
   test("Home page has a search element", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/#/");
     await expect(page.locator("h1, h2").first()).toBeVisible({
       timeout: 10_000,
     });
@@ -14,7 +14,7 @@ test.describe("Interactive elements", () => {
   });
 
   test("FAQ accordion expands on click", async ({ page }) => {
-    await page.goto("/info/faq");
+    await page.goto("/#/info/faq");
     await expect(page.locator("h1", { hasText: "Preguntas frecuentes" })).toBeVisible({
       timeout: 10_000,
     });
@@ -36,7 +36,7 @@ test.describe("Interactive elements", () => {
   });
 
   test("Glossary search filters results", async ({ page }) => {
-    await page.goto("/info/glosario");
+    await page.goto("/#/info/glosario");
     await expect(page.locator("h1", { hasText: "Glosario" })).toBeVisible({ timeout: 10_000 });
 
     // Count initial term cards
@@ -59,7 +59,7 @@ test.describe("Interactive elements", () => {
   });
 
   test("Evolucion temporal tabs switch content", async ({ page }) => {
-    await page.goto("/precios/evolucion");
+    await page.goto("/#/precios/evolucion");
     await expect(page.locator("h1", { hasText: "Evolucion Temporal" })).toBeVisible({
       timeout: 10_000,
     });
@@ -90,12 +90,12 @@ test.describe("Interactive elements", () => {
 
   test("Report form step progression (authenticated)", async ({ page }) => {
     // Login first via SPA navigation
-    await page.goto("/");
+    await page.goto("/#/");
     await expect(page.locator("h1, h2").first()).toBeVisible({
       timeout: 10_000,
     });
 
-    await page.locator("nav").locator("a[href='/login']").click();
+    await page.locator("nav").locator("a[href='#/login']").click();
     await expect(page.getByRole("main").locator("h1", { hasText: "Iniciar Sesion" })).toBeVisible({
       timeout: 10_000,
     });
@@ -135,7 +135,7 @@ test.describe("Interactive elements", () => {
   });
 
   test("404 page shows for nonexistent route", async ({ page }) => {
-    await page.goto("/nonexistent");
+    await page.goto("/#/nonexistent");
 
     const heading = page.locator("h1", { hasText: "404" });
     await expect(heading).toBeVisible({ timeout: 10_000 });

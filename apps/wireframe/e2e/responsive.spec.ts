@@ -7,10 +7,10 @@ const viewports = [
 ] as const;
 
 const pages = [
-  { path: "/", label: "Home" },
-  { path: "/precios/evolucion", label: "Evolucion temporal" },
-  { path: "/reportes/consultar", label: "Consultar reportes" },
-  { path: "/cuenta", label: "Mi cuenta" },
+  { path: "/#/", label: "Home" },
+  { path: "/#/precios/evolucion", label: "Evolucion temporal" },
+  { path: "/#/reportes/consultar", label: "Consultar reportes" },
+  { path: "/#/cuenta", label: "Mi cuenta" },
 ];
 
 test.describe("Responsive design", () => {
@@ -34,7 +34,7 @@ test.describe("Responsive design", () => {
 
       if (vp.name === "mobile") {
         test("hamburger button is visible on mobile", async ({ page }) => {
-          await page.goto("/");
+          await page.goto("/#/");
           await expect(page.locator("h1, h2").first()).toBeVisible({
             timeout: 10_000,
           });
@@ -47,13 +47,13 @@ test.describe("Responsive design", () => {
 
       if (vp.name === "desktop") {
         test("nav links are visible on desktop", async ({ page }) => {
-          await page.goto("/");
+          await page.goto("/#/");
           await expect(page.locator("h1, h2").first()).toBeVisible({
             timeout: 10_000,
           });
 
           // Nav links should be visible (not hidden behind hamburger)
-          const preciosLink = page.locator('nav a[href="/precios"]');
+          const preciosLink = page.locator('nav a[href="#/precios"]');
           await expect(preciosLink).toBeVisible();
         });
       }
