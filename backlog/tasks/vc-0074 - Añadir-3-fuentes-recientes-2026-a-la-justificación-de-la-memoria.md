@@ -33,11 +33,26 @@ Cada cifra debe verificarse contra la fuente original con el agente source-verif
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Las 3 fuentes están citadas en la sección de justificación/contexto de la memoria con sus cifras clave
-- [ ] #2 Cada cifra citada ha sido verificada contra la fuente original (source-verifier) y marcada como verificada
-- [ ] #3 Las entradas BibTeX de las 3 fuentes están añadidas a references.bib con metadatos correctos
-- [ ] #4 La redacción integra las fuentes en la narrativa existente sin duplicar datos ya citados, manteniendo el estilo académico de la memoria
+- [x] #1 Las 3 fuentes están citadas en la sección de justificación/contexto de la memoria con sus cifras clave
+- [x] #2 Cada cifra citada ha sido verificada contra la fuente original (source-verifier) y marcada como verificada
+- [x] #3 Las entradas BibTeX de las 3 fuentes están añadidas a references.bib con metadatos correctos
+- [x] #4 La redacción integra las fuentes en la narrativa existente sin duplicar datos ya citados, manteniendo el estilo académico de la memoria
 <!-- AC:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+3 fuentes verificadas con source-verifier contra la fuente original e integradas con tfm-memory-writer.
+
+Archivos modificados:
+- docs/memory/refs/references.bib: +5 entradas (bde_informe_anual_2025, oecd_affordability_gap_2026, mivau_serpavi, rd_1312_2024, resolucion_serpavi_2026), con verified=true, adaptadas al estilo Hayagriva.
+- docs/memory/content/01_introduccion/01_contexto_y_justificacion_del_trabajo.typ: 4 puntos de integración (precios compra BdE +9,7%; vivienda social OCDE ~1% vs 7%; déficit 750.000 actualizado sustituyendo los 600.000 del doc. 2432; nuevo párrafo SERPAVI/RD 1312/2024 sobre transparencia).
+
+Correcciones aplicadas durante la verificación: "alquiler en máximos históricos" no se atribuye al BdE (es de Idealista); RD 1312/2024 solo obliga a corta duración (vivienda habitual voluntaria); resolución del índice es de 16 abr. 2026 (no 8 abr.); SERPAVI edición 2026 = 2.556.578 contratos (no 2,3M).
+
+typst compile docs/memory/main.typ termina sin errores ni advertencias.</implementationNotes>
+</invoke>
+<!-- SECTION:NOTES:END -->
 
 ## Final Summary
 
