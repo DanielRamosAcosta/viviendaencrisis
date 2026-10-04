@@ -1,9 +1,7 @@
 # Apuntes para la evaluación
 
-## Checklist del tutor
+Este Trabajo Final de Máster parte de una versión ya iniciada previamente, que se ha retomado y re-elaborado para este semestre. Respecto a aquella primera versión, se han actualizado las **fechas de entrega** (P1–P4 y defensa), la **planificación y el roadmap** (tabla de fases y diagrama de Gantt) y el **alcance funcional** del proyecto.
 
-Debido a los plazos ajustados de esta entrega, no ha sido posible validar la checklist directamente con Jordi antes de la fecha límite. No obstante, he revisado los 9 puntos uno a uno y me he asegurado de que el proyecto contempla y cumple (o tiene un plan claro para cumplir) cada uno de ellos. La checklist validada se encuentra en `docs/checklist_es.md`.
+La **checklist ya fue verificada y validada en la entrega anterior**, por lo que se mantiene vigente; puede consultarse en `docs/checklist_es.md`.
 
-## Alcance funcional
-
-Soy consciente de que el volumen de funcionalidades planteado es ambicioso y existe el riesgo de querer abarcar demasiado. Quedo abierto a recibir feedback sobre qué funcionalidades priorizar o reducir para garantizar una entrega de calidad dentro de los plazos establecidos.
+Además, se ha **actualizado la memoria con la última bibliografía disponible**.
