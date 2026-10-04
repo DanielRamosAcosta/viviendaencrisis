@@ -1,10 +1,10 @@
 ---
 id: VC-0074
 title: Añadir 3 fuentes recientes (2026) a la justificación de la memoria
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-10-04 16:43'
-updated_date: '2026-10-04 16:56'
+updated_date: '2026-10-04 17:14'
 labels:
   - refined
   - docs
