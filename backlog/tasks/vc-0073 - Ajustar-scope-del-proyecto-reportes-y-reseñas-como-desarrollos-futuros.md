@@ -4,7 +4,7 @@ title: 'Ajustar scope del proyecto: reportes y reseñas como desarrollos futuros
 status: In Review
 assignee: []
 created_date: '2026-10-04 16:17'
-updated_date: '2026-10-04 16:21'
+updated_date: '2026-10-04 16:22'
 labels:
   - refined
 dependencies: []
@@ -32,15 +32,25 @@ Cambios:
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Documento de funcionalidades separa Núcleo vs Desarrollos futuros, con reportes y reseñas en futuros
-- [ ] #2 Objetivo general y específicos de 1.2 no presentan reportes/reseñas como núcleo
-- [ ] #3 Planificación 1.5 y Gantt del curso solo incluyen el núcleo; jerarquía de descarte actualizada
-- [ ] #4 Líneas de trabajo futuro (4.2) documentan reportes y reseñas
-- [ ] #5 Memoria compila sin errores tras los cambios
+- [x] #1 Documento de funcionalidades separa Núcleo vs Desarrollos futuros, con reportes y reseñas en futuros
+- [x] #2 Objetivo general y específicos de 1.2 no presentan reportes/reseñas como núcleo
+- [x] #3 Planificación 1.5 y Gantt del curso solo incluyen el núcleo; jerarquía de descarte actualizada
+- [x] #4 Líneas de trabajo futuro (4.2) documentan reportes y reseñas
+- [x] #5 Memoria compila sin errores tras los cambios
 <!-- AC:END -->
 
 ## Final Summary
 
 <!-- SECTION:FINAL_SUMMARY:BEGIN -->
-Se han editado tres ficheros de la memoria para alinear el alcance del proyecto con el feedback del consultor (P1): reportes ciudadanos y reseñas quedan fuera del núcleo comprometido y se documentan como desarrollos futuros.\n\n**02_objetivos_del_trabajo.typ**: El objetivo general se reenfocó para incluir explícitamente la gestión de usuarios/administración como parte del núcleo, y se añadió una cláusula de carácter opcional para la participación ciudadana. Se añadió un objetivo específico de núcleo nuevo (gestión de usuarios y administración con JWT + roles + panel admin). El objetivo de reportes ciudadanos se reubicó en un nuevo bloque «Objetivos opcionales (supeditados a la disponibilidad de tiempo)» junto con las reseñas inmobiliarias.\n\n**05_planificacion_del_trabajo.typ**: Tabla de fases: P3 elimina «Sistema de reportes ciudadanos» y ajusta el entregable; P4 añade «Panel de administración y gestión de usuarios», «Revisión de seguridad (OWASP Top 10)» y «Pulido de UI/UX». Sección «Priorización y dependencias» reescrita para definir el MVP comprometido (precios + usuarios + administración) y declarar reportes/reseñas fuera del alcance del curso. Jerarquía de descarte actualizada: reportes > reseñas > indicadores derivados > visualizaciones complementarias. Tabla de riesgos: última fila actualizada con la misma jerarquía.\n\n**02_lineas_de_trabajo_futuro.typ**: Placeholder reemplazado con cinco líneas de trabajo futuro: sistema de reportes ciudadanos (con nota sobre su coste y la decisión de posposición), sistema de reseñas inmobiliarias, indicadores estadísticos derivados, ampliación de fuentes de datos, e internacionalización lingüística.
+Scope realineado con el feedback del consultor (núcleo = precios + usuarios + administración; reportes y reseñas a desarrollos futuros). Cambios en main (sin commitear):
+
+- docs/features/content.typ: reestructurado en "Núcleo funcional (MVP)" vs "Desarrollos futuros (opcionales)"; reportes marcado como el de mayor coste; corregidas incoherencias de rol usuario registrado, acceso a datos y métricas del panel admin.
+- Memoria 1.2 (02_objetivos): objetivo general reenfocado (usuarios+admin en el núcleo, participación ciudadana opcional); nuevo objetivo específico de núcleo para gestión de usuarios/admin; nuevo bloque "Objetivos opcionales" con reportes (mayor coste) y reseñas.
+- Memoria 1.5 (05_planificacion): tabla de fases P3/P4 sin reportes/reseñas; priorización reescrita (MVP comprometido); jerarquía de descarte reportes > reseñas > indicadores > visualizaciones; riesgo de alcance actualizado.
+- Memoria 4.2 (02_lineas_de_trabajo_futuro): documentadas 5 líneas futuras (reportes con moderación, reseñas, indicadores, ampliación de datos, i18n).
+- Gantt (gantt-planificacion.yaml): eliminadas 5 subtareas de reportes/reseñas del calendario del curso.
+- CLAUDE.md: funcionalidades en núcleo vs desarrollos futuros.
+- Backlog: VC-0025/0026/0031/0032/0033 etiquetadas opcional/futuro (LOW), sin borrar.
+
+La memoria y el documento de funcionalidades compilan sin errores.
 <!-- SECTION:FINAL_SUMMARY:END -->
