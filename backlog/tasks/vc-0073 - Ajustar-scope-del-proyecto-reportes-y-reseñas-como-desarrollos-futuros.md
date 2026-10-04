@@ -1,10 +1,10 @@
 ---
 id: VC-0073
 title: 'Ajustar scope del proyecto: reportes y reseñas como desarrollos futuros'
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-10-04 16:17'
-updated_date: '2026-10-04 16:22'
+updated_date: '2026-10-04 17:14'
 labels:
   - refined
 dependencies: []
