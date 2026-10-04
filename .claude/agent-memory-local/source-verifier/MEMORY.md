@@ -133,6 +133,29 @@
 3. **Mazorra "10,000 residentes en cinco años"**: A January 2026 news article confirms this figure for Lavapiés but as a finding from a neighborhood association report, not necessarily from Mazorra's 2023 article specifically. The 12% and 25% VUT figures ARE from Mazorra.
 4. **Cocola-Gant/Barcelona 56% / 8.8%**: Article exists and is about VUT financialisation in Barcelona, but specific figures (56%, 8.8%) could not be confirmed from accessible sources (SAGE paywall).
 
+## Banco de España Informe Anual 2025 (VC-MEMORY-006)
+
+- **Full PDF URL (VERIFIED)**: https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/PublicacionesAnuales/InformesAnuales/25/InfAnual_2025_En.pdf (8.5 MB, 282 pages, English)
+- **Spanish page URL**: https://www.bde.es/wbe/es/publicaciones/analisis-economico-investigacion/publicaciones-anuales/informe-anual/informe-anual-2025/
+- **English page URL**: https://www.bde.es/wbe/en/publicaciones/informes-memorias-anuales/informe-anual/informe-anual-2025.html
+- **Publication date**: 18 June 2026 (PDF creation date confirmed)
+- **Chapter on housing**: Chapter 2 "Housing market challenges: affordability problems and supply-side constraints"
+
+### Verified claims and exact text from Chapter 2:
+
+1. **Precios reales compra 2025 = 9,7%**: VERIFIED. Exact quote: "Real purchase prices rose by an average of 9.7% in 2025, compared with increases of 5.5% in 2024 and 0.4% in 2023." (English PDF, Chapter 2)
+   - Nominal growth: 12.7% ("the largest annual rise since 2007") — stated in Chapter 1 summary
+   - New homes: +8.4%; second-hand homes: +10.0% in 2025
+
+2. **Alquiler en máximos históricos**: NOT STATED AS SUCH in the report. The BdE uses language like "rents have risen substantially since 2019" and "real year-on-year growth reaching 4.6% in 2024" for new contracts. The Informe does NOT use the phrase "máximos históricos" for rental prices. It notes rents in leading portals show "real growth of 5% in 2025" (asking price indicators). Entry premium 2024: 16.5% above existing stock (vs 9.5% avg 2020-23). DO NOT cite BdE for "máximos históricos" in alquiler without qualification.
+
+3. **Inelasticidad como causa principal**: VERIFIED. Exact quote: "increasing housing supply, the inelasticity of which is the main reason behind housing affordability problems." (Chapter 2, Section 6). Also: "The analysis highlights that the rigidity of housing supply in Spain is a structural issue". Long-run elasticity estimated at 0.45.
+
+4. **Déficit 750.000 viviendas**: VERIFIED. Exact quote: "the cumulative housing shortfall widened to around 750,000 units between 2021 and 2025" (Chapter 2). Also: "52.5% of the accumulated gap (750,000 homes) concentrated in just six [provinces/areas]." Spain's shortfall = 3.7% of resident households in 2025.
+
+### Access method:
+BdE PDFs do NOT render via WebFetch (binary compression). Use `curl -L -o /tmp/bde.pdf <URL>` then `pdftotext /tmp/bde.pdf -` after installing poppler (`brew install poppler`). WebFetch gives binary content only.
+
 ## Search Strategy Notes
 
 - Wiley paywall blocks direct access
@@ -142,6 +165,6 @@
 - Spanish institutional reports: Defensor del Pueblo PDFs often have extraction issues; verify via news coverage instead
 - Servimedia and HOGAR SÍ provide reliable secondary coverage of Defensor del Pueblo reports
 - UN document A/HRC/47/43 is thematic (general global analysis), not country-specific; always verify the scope before citing
-- BDE annual report chapter PDFs render as binary in WebFetch — verify via secondary news coverage or FEDEA/BDE press notes
+- BDE annual report chapter PDFs render as binary in WebFetch — use curl + pdftotext (poppler) after download (see VC-MEMORY-006 above)
 - FEDEA document PDFs at documentos.fedea.net also render as binary — use search snippets for content verification
 - SAGE journals (Urban Studies, European Urban Studies) block WebFetch with 403; use Google Scholar or semantic scholar for metadata
