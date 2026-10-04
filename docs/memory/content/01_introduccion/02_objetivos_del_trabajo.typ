@@ -6,7 +6,7 @@ Para su implementación, la plataforma se apoya en un conjunto de tecnologías w
 
 === Objetivo general
 
-Diseñar y desarrollar una plataforma web de datos abiertos, accesible públicamente, que permita visualizar la evolución del mercado de la vivienda en España —precios de alquiler y compraventa, comparativas territoriales y contraste con indicadores salariales—, e incorpore un sistema de participación ciudadana para la documentación de irregularidades en el sector inmobiliario.
+Diseñar y desarrollar una plataforma web de datos abiertos, accesible públicamente, que permita visualizar la evolución del mercado de la vivienda en España —precios de alquiler y compraventa, comparativas territoriales y contraste con indicadores salariales— y disponga de un sistema completo de gestión de usuarios y administración de la plataforma. Con carácter opcional y supeditado a la disponibilidad de tiempo, se contempla incorporar funcionalidades de participación ciudadana para la documentación de irregularidades en el sector inmobiliario, cuyo desarrollo queda recogido como línea de trabajo futuro.
 
 === Objetivos específicos
 
@@ -18,9 +18,17 @@ Diseñar y desarrollar una plataforma web de datos abiertos, accesible públicam
 
 + *Implementar mapas coropléticos de cobertura territorial.* Desarrollar una capa cartográfica interactiva que represente los datos de vivienda a escala de comunidad autónoma y municipio, permitiendo la exploración geográfica de la distribución de precios y su evolución en el tiempo.
 
-+ *Desarrollar un sistema de reportes ciudadanos con moderación.* Implementar un módulo que permita a las personas usuarias registradas documentar y comunicar situaciones de abuso o irregularidad en el mercado inmobiliario, con un flujo de moderación gestionado por el perfil administrador de la plataforma.
++ *Implementar la gestión de usuarios y la administración de la plataforma.* Desarrollar el sistema de autenticación con soporte para dos roles diferenciados —usuario registrado y administrador—, incluyendo el registro, inicio de sesión, recuperación de contraseña y el panel de administración para la gestión de cuentas y el control operativo de la plataforma.
 
 + *Garantizar la accesibilidad web de la plataforma conforme a los estándares WCAG 2.1.* El proyecto asume el compromiso de implementar las pautas de accesibilidad al contenido web en su nivel AA, de forma que la plataforma resulte usable por personas con diversidad funcional.
 + *Desplegar la aplicación en un servidor público accesible en Internet.* El proyecto asume el compromiso de poner en producción la plataforma desarrollada en una infraestructura pública accesible mediante URL pública, de modo que tanto el tribunal evaluador como la ciudadanía en general puedan acceder a la aplicación y verificar su funcionamiento. Este despliegue constituye un requisito evaluable del proyecto.
 
 + *Garantizar la calidad técnica y la seguridad de la aplicación.* Implementar prácticas de desarrollo seguro —gestión de autenticación, control de acceso por roles, validación de entradas y protección frente a vulnerabilidades comunes— y verificar la corrección del código mediante revisión de buenas prácticas en HTML, CSS y las capas de lógica de negocio.
+
+=== Objetivos opcionales (supeditados a la disponibilidad de tiempo)
+
+Los siguientes objetivos quedan fuera del alcance comprometido del curso. Se abordarán únicamente si la ejecución del núcleo funcional concluye con margen suficiente antes de las fechas de entrega. En caso contrario, quedan documentados como líneas de trabajo futuro en la sección 4.2 de este trabajo.
+
++ *Desarrollar un sistema de reportes ciudadanos con moderación.* Implementar un módulo que permita a las personas usuarias registradas documentar y comunicar situaciones de abuso o irregularidad en el mercado inmobiliario, con un flujo de moderación gestionado por el perfil administrador de la plataforma. Este objetivo constituye el de mayor coste estimado de implementación y es, por tanto, el principal candidato a posponer.
+
++ *Incorporar un sistema de reseñas inmobiliarias con valoraciones.* Desarrollar un módulo que permita a las personas usuarias registradas publicar reseñas sobre inmuebles o zonas geográficas, con un mecanismo de agregación de valoraciones y un proceso de moderación básico. Este objetivo comparte infraestructura con el módulo de reportes ciudadanos y depende funcionalmente del sistema de autenticación.

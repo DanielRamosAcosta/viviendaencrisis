@@ -52,10 +52,9 @@ El desarrollo del proyecto se estructura en cinco fases alineadas con las Prueba
           [Sistema de autenticación (JWT + roles)],
           [Dashboard: evolución de precios y comparativas],
           [Mapas coropléticos interactivos],
-          [Sistema de reportes ciudadanos],
           [Despliegue público de la beta],
         )
-        *Entregables:* Versión beta pública con funcionalidades principales operativas.
+        *Entregables:* Versión beta pública con el núcleo funcional operativo (visualización de precios, mapas, autenticación).
       ],
 
       [*P4* --- Versión final],
@@ -63,9 +62,11 @@ El desarrollo del proyecto se estructura en cinco fases alineadas con las Prueba
       [90],
       [
         #list(
-          [Versión final de la plataforma],
+          [Panel de administración y gestión de usuarios],
           [Pruebas con usuarios reales],
           [Evaluación de accesibilidad (WCAG 2.1 AA)],
+          [Revisión de seguridad (OWASP Top 10)],
+          [Pulido de UI/UX y correcciones derivadas de las pruebas],
           [Redacción completa de la memoria],
         )
         *Entregables:* Plataforma final, informe de pruebas, memoria completa.
@@ -169,7 +170,11 @@ La @tabla:recursos-necesarios resume los recursos técnicos y herramientas previ
 
 === Priorización y dependencias
 
-La priorización de tareas sigue un criterio de producto mínimo viable (MVP): se implementan primero las funcionalidades que constituyen el núcleo de valor de la plataforma y que desbloquean el desarrollo de las restantes. En concreto, el proceso ETL de datos oficiales y el sistema de autenticación son dependencias bloqueantes que se abordan al inicio de P3, ya que sin datos normalizados no es posible construir visualizaciones, y sin autenticación no es posible implementar los reportes ciudadanos. Las visualizaciones temporales y los mapas coropléticos se priorizan sobre el sistema de reportes para validar la integración de datos antes de añadir funcionalidades de participación ciudadana. Las características secundarias ---panel de administración avanzado, moderación de reportes, indicadores derivados--- se planifican para P4, de modo que puedan descartarse o reducirse sin comprometer el núcleo funcional. En caso de desviación temporal, la jerarquía de descarte es: funcionalidades de moderación avanzada, indicadores estadísticos secundarios y, solo en último extremo, alguna de las visualizaciones complementarias. El desglose completo de tareas y sus dependencias puede consultarse en el @anexo:gantt-detallado.
+La priorización de tareas sigue un criterio de producto mínimo viable (MVP). El MVP comprometido para este curso comprende tres bloques funcionales: la visualización interactiva de la evolución de precios de la vivienda, la gestión de usuarios con autenticación y roles, y el panel de administración de la plataforma. Estos tres bloques constituyen el alcance no negociable del proyecto y deben estar completamente operativos antes de la entrega de P4.
+
+En cuanto a las dependencias técnicas, el proceso ETL de datos oficiales y el sistema de autenticación son dependencias bloqueantes que se abordan al inicio de P3: sin datos normalizados no es posible construir visualizaciones, y sin autenticación no es posible ofrecer funcionalidades diferenciadas por rol. Las visualizaciones temporales y los mapas coropléticos se desarrollan una vez establecida la canalización de datos, y el panel de administración se completa en P4 junto con la revisión de accesibilidad y seguridad.
+
+El sistema de reportes ciudadanos y el sistema de reseñas inmobiliarias quedan expresamente fuera del alcance comprometido del curso. Ambas funcionalidades se documentan como líneas de trabajo futuro (sección 4.2) y solo se abordarán si la ejecución del núcleo concluye con margen suficiente. En caso de desviación temporal, la jerarquía de descarte es: reportes ciudadanos > reseñas inmobiliarias > indicadores estadísticos derivados > visualizaciones complementarias. El desglose completo de tareas y sus dependencias puede consultarse en el @anexo:gantt-detallado.
 
 === Análisis de riesgos y planes de contingencia
 
@@ -210,7 +215,7 @@ La @tabla:riesgos identifica los principales riesgos del proyecto junto con su p
       [Alcance excesivo que impida completar el MVP dentro del calendario.],
       [Media],
       [Alto],
-      [Aplicar priorización estricta MVP-first; descartar funcionalidades secundarias antes de comprometer las entregas: moderación avanzada > indicadores derivados > núcleo funcional.],
+      [Aplicar priorización estricta MVP-first. El núcleo comprometido (precios + usuarios + administración) no se descarta bajo ninguna circunstancia. Jerarquía de descarte de funcionalidades fuera del núcleo: reportes ciudadanos > reseñas inmobiliarias > indicadores estadísticos derivados > visualizaciones complementarias.],
     ),
   ),
   caption: [Principales riesgos del proyecto y planes de contingencia asociados.],

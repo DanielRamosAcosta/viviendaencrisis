@@ -108,18 +108,6 @@ tasks:
         end: 2026-11-22
         dependencies:
           - id: p3-etl
-      - name: "Reportes ciudadanos: formulario"
-        id: p3-reportes-form
-        start: 2026-11-16
-        end: 2026-11-22
-        dependencies:
-          - id: p3-auth
-      - name: "Reportes ciudadanos: listado público + mapa"
-        id: p3-reportes-list
-        start: 2026-11-22
-        end: 2026-11-26
-        dependencies:
-          - id: p3-reportes-form
       - name: "Despliegue público (Scaleway)"
         id: p3-deploy
         start: 2026-11-25
@@ -144,25 +132,6 @@ tasks:
         end: 2026-12-05
   - name: "P4 — Versión Final"
     subtasks:
-      - name: "Reportes Airbnb: moderación admin"
-        id: p4-moderacion
-        start: 2026-12-06
-        end: 2026-12-10
-        dependencies:
-          - id: p3-reportes-list
-      - name: "Reviews inmobiliarias: CRUD reseñas"
-        id: p4-reviews
-        start: 2026-12-08
-        end: 2026-12-15
-        dependencies:
-          - id: p3-auth
-          - id: p3-deploy
-      - name: "Reviews inmobiliarias: ranking público"
-        id: p4-ranking
-        start: 2026-12-15
-        end: 2026-12-18
-        dependencies:
-          - id: p4-reviews
       - name: "Panel admin general"
         id: p4-admin
         start: 2026-12-11

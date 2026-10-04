@@ -8,16 +8,21 @@ TFM (Trabajo Final de Máster) del Máster Universitario en Desarrollo de Sitios
 
 ### Descripción
 
-Plataforma web que funciona como observatorio público de vivienda. Permite visualizar datos abiertos sobre precios de alquiler y compraventa, comparativas por zona, y mapas coropléticos. Incluye un sistema de reportes ciudadanos para denunciar abusos inmobiliarios.
+Plataforma web que funciona como observatorio público de vivienda. Permite visualizar datos abiertos sobre precios de alquiler y compraventa, comparativas por zona, y mapas coropléticos. Contempla, como desarrollos futuros opcionales, un sistema de reportes ciudadanos para denunciar abusos inmobiliarios y un sistema de reseñas inmobiliarias.
 
-## Funcionalidades core
+## Funcionalidades core (núcleo / MVP)
 
 - Visualización de evolución temporal de precios (líneas/barras)
 - Comparativas entre zonas y precio por m²
 - Mapas coropléticos por comunidad autónoma y municipio
-- Sistema de reportes ciudadanos con moderación
 - Autenticación con dos roles: usuario registrado y administrador
+- Panel de administración y gestión de usuarios
 - Datos y visualizaciones accesibles sin registro
+
+## Desarrollos futuros (opcionales, según disponibilidad de tiempo)
+
+- Sistema de reportes ciudadanos con moderación (principal candidato a posponer por su mayor coste)
+- Sistema de reseñas inmobiliarias (rankings de agencias)
 
 ## Contexto técnico
 

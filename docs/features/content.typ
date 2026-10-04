@@ -2,6 +2,12 @@
 
 Este documento recoge las funcionalidades que la plataforma _Vivienda en Crisis_ deberá satisfacer, organizadas por módulo funcional. Sirve como referencia de alcance para el desarrollo y la planificación del proyecto.
 
+Las funcionalidades se agrupan en dos bloques según su prioridad: un *núcleo imprescindible (MVP)*, que constituye el compromiso de desarrollo del proyecto, y un conjunto de *desarrollos futuros opcionales*, que se abordarán únicamente si el tiempo disponible lo permite. El núcleo se centra en la visualización de datos del mercado de la vivienda, la autenticación y gestión de usuarios y la administración de la aplicación; los sistemas de participación ciudadana (reportes y reseñas) quedan supeditados a la disponibilidad de tiempo.
+
+= Núcleo funcional (imprescindible / MVP)
+
+Conjunto de funcionalidades que constituyen el compromiso de desarrollo del proyecto y que deben estar presentes en la versión mínima viable de la plataforma.
+
 == Visualización de datos del mercado de la vivienda
 
 === Evolución temporal de precios
@@ -29,7 +35,79 @@ Este documento recoge las funcionalidades que la plataforma _Vivienda en Crisis_
 - Índice de esfuerzo económico para el acceso a la vivienda.
 - Cruce de datos demográficos (INE) con precios inmobiliarios.
 
+== Autenticación y gestión de roles
+
+- Registro de usuarios y login mediante autenticación JWT con refresh tokens.
+- Dos roles diferenciados:
+  - *Usuario registrado*: dispone de cuenta propia y gestión de perfil en el núcleo de la plataforma. Las capacidades de participación ciudadana (crear reportes y escribir reseñas) quedan supeditadas a los desarrollos futuros opcionales.
+  - *Administrador*: accede a la gestión de usuarios y al panel de administración (y, en su caso, a la moderación de los módulos de participación ciudadana que se desarrollen).
+- Middleware de autorización en el backend que protege los endpoints según rol.
+
+== Panel de administración
+
+- Gestión de usuarios: listado, cambio de rol y desactivación de cuentas.
+- Dashboard con métricas clave de la plataforma (p.ej. usuarios activos).
+- Herramientas generales de gestión de contenido de la plataforma.
+- Acceso restringido al rol de administrador.
+
+== Interfaz pública
+
+=== Landing page
+
+- Sección _hero_ con el mensaje principal del observatorio y llamada a la acción.
+- Presentación de la propuesta de valor y los módulos disponibles.
+- Navegación principal hacia el dashboard y el resto de módulos funcionales.
+- Diseño responsive adaptado a móvil, tablet y escritorio.
+
+=== Acceso abierto a datos
+
+- Todas las visualizaciones y datos del dashboard son accesibles sin registro.
+- Solo requieren autenticación las funcionalidades de participación ciudadana (reportes y reseñas), que forman parte de los desarrollos futuros opcionales y, por tanto, podrían no estar disponibles en la versión del núcleo.
+
+== Integración de datos abiertos
+
+Pipeline ETL (Extract, Transform, Load) para la ingestión automatizada de datos oficiales:
+
+- *Ministerio de Vivienda y Agenda Urbana*: índices de precios de alquiler y compraventa trimestrales.
+- *INE (Instituto Nacional de Estadística)*: censo de vivienda e indicadores demográficos.
+- *Catastro*: datos abiertos de uso y superficie de inmuebles.
+
+El proceso de transformación normaliza fuentes heterogéneas a un formato homogéneo, y el pipeline es reproducible y auditable.
+
+== Requisitos no funcionales
+
+=== Diseño responsive
+
+- Adaptación completa a móvil, tablet y escritorio.
+- Estados de carga, estados vacíos y transiciones fluidas en todas las vistas.
+
+=== Accesibilidad
+
+- Cumplimiento de las directrices WCAG 2.1 nivel AA.
+- Navegación por teclado, contraste de color suficiente, textos alternativos en imágenes y roles ARIA correctos.
+
+=== Seguridad
+
+- Aplicación de las medidas del OWASP Top 10.
+- Rate limiting en la API, sanitización de entradas y Content Security Policy (CSP).
+- Validación de tipo y tamaño en archivos subidos por usuarios.
+
+=== Despliegue
+
+- Contenerización de todos los servicios con Docker.
+- Despliegue en Scaleway (Serverless Containers para frontend, Serverless Functions para API).
+- Dominio propio con HTTPS.
+- Pipeline de CI/CD con GitHub Actions.
+
+= Desarrollos futuros (opcionales, según disponibilidad de tiempo)
+
+Funcionalidades que enriquecen la plataforma pero que no forman parte del compromiso de desarrollo del núcleo. Se abordarán únicamente si el tiempo disponible lo permite, siguiendo una jerarquía de descarte en la que el sistema de reportes ciudadanos es el primer candidato a posponer.
+
 == Sistema de reportes ciudadanos
+
+#block(breakable: false)[
+  *Nota de alcance.* Este es el módulo de mayor coste de desarrollo de la plataforma y el principal candidato a posponer. Su implementación queda condicionada a la disponibilidad de tiempo una vez completado el núcleo funcional.
+]
 
 === Formulario de denuncia
 
@@ -66,67 +144,4 @@ Este documento recoge las funcionalidades que la plataforma _Vivienda en Crisis_
 - Secciones _Hall of Fame_ (mejores valoradas) y _Hall of Shame_ (peores valoradas).
 - Página de detalle por agencia con todas sus reseñas y estadísticas.
 - Filtrado por zona geográfica.
-
-== Autenticación y gestión de roles
-
-- Registro de usuarios y login mediante autenticación JWT con refresh tokens.
-- Dos roles diferenciados:
-  - *Usuario registrado*: puede crear reportes y escribir reseñas.
-  - *Administrador*: accede a moderación, gestión de usuarios y panel de administración.
-- Middleware de autorización en el backend que protege los endpoints según rol.
-
-== Panel de administración
-
-- Gestión de usuarios: listado, cambio de rol y desactivación de cuentas.
-- Dashboard con métricas clave: reportes pendientes, reseñas recientes, usuarios activos.
-- Herramientas generales de gestión de contenido de la plataforma.
-- Acceso restringido al rol de administrador.
-
-== Interfaz pública
-
-=== Landing page
-
-- Sección _hero_ con el mensaje principal del observatorio y llamada a la acción.
-- Presentación de la propuesta de valor y los módulos disponibles.
-- Navegación principal hacia el dashboard y el resto de módulos funcionales.
-- Diseño responsive adaptado a móvil, tablet y escritorio.
-
-=== Acceso abierto a datos
-
-- Todas las visualizaciones y datos del dashboard son accesibles sin registro.
-- Solo las funcionalidades de participación ciudadana (reportes y reseñas) requieren autenticación.
-
-== Integración de datos abiertos
-
-Pipeline ETL (Extract, Transform, Load) para la ingestión automatizada de datos oficiales:
-
-- *Ministerio de Vivienda y Agenda Urbana*: índices de precios de alquiler y compraventa trimestrales.
-- *INE (Instituto Nacional de Estadística)*: censo de vivienda e indicadores demográficos.
-- *Catastro*: datos abiertos de uso y superficie de inmuebles.
-
-El proceso de transformación normaliza fuentes heterogéneas a un formato homogéneo, y el pipeline es reproducible y auditable.
-
-== Requisitos no funcionales
-
-=== Diseño responsive
-
-- Adaptación completa a móvil, tablet y escritorio.
-- Estados de carga, estados vacíos y transiciones fluidas en todas las vistas.
-
-=== Accesibilidad
-
-- Cumplimiento de las directrices WCAG 2.1 nivel AA.
-- Navegación por teclado, contraste de color suficiente, textos alternativos en imágenes y roles ARIA correctos.
-
-=== Seguridad
-
-- Aplicación de las medidas del OWASP Top 10.
-- Rate limiting en la API, sanitización de entradas y Content Security Policy (CSP).
-- Validación de tipo y tamaño en archivos subidos por usuarios.
-
-=== Despliegue
-
-- Contenerización de todos los servicios con Docker.
-- Despliegue en Scaleway (Serverless Containers para frontend, Serverless Functions para API).
-- Dominio propio con HTTPS.
-- Pipeline de CI/CD con GitHub Actions.
+</content>
