@@ -17,7 +17,7 @@
   [*Nombre del autor:*], table.cell(fill: value-fill)[Daniel Ramos Acosta],
   [*Nombre del consultor/a:*], table.cell(fill: value-fill)[Jordi Ustrell Garrigos],
   [*Nombre del PRA:*], table.cell(fill: value-fill)[César Pablo Córcoles Briongos],
-  [*Fecha de entrega (mm/aaaa):*], table.cell(fill: value-fill)[06/2026],
+  [*Fecha de entrega (mm/aaaa):*], table.cell(fill: value-fill)[01/2027],
   [*Titulación o programa:*], table.cell(fill: value-fill)[Máster Universitario en Desarrollo de Sitios y Aplicaciones Web],
   [*Área del Trabajo Final:*], table.cell(fill: value-fill)[Desarrollo de aplicaciones web],
   [*Idioma del trabajo:*], table.cell(fill: value-fill)[Castellano],

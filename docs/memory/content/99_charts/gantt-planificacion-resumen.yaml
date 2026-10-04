@@ -1,48 +1,48 @@
-start: 2026-02-02
-end: 2026-06-19
+start: 2026-09-23
+end: 2027-01-22
 tasks:
   - name: "P1 — Plan de Trabajo"
     id: p1
-    start: 2026-02-02
-    end: 2026-03-01
+    start: 2026-09-23
+    end: 2026-10-04
   - name: "P2 — Diseño"
     id: p2
-    start: 2026-03-07
-    end: 2026-03-29
+    start: 2026-10-05
+    end: 2026-11-02
     dependencies:
       - id: p1
   - name: "P3 — Desarrollo e Integración"
     id: p3
-    start: 2026-04-04
-    end: 2026-04-26
+    start: 2026-11-03
+    end: 2026-12-05
     dependencies:
       - id: p2
   - name: "P4 — Versión Final"
     id: p4
-    start: 2026-05-02
-    end: 2026-05-31
+    start: 2026-12-06
+    end: 2027-01-05
     dependencies:
       - id: p3
   - name: "DV — Defensa Virtual"
     id: dv
-    start: 2026-06-06
-    end: 2026-06-14
+    start: 2027-01-06
+    end: 2027-01-22
     dependencies:
       - id: p4
 
 milestones:
   - name: "Entrega P1"
-    date: 2026-03-01
+    date: 2026-10-04
     show-date: true
   - name: "Entrega P2"
-    date: 2026-03-29
+    date: 2026-11-02
     show-date: true
   - name: "Entrega P3"
-    date: 2026-04-26
+    date: 2026-12-05
     show-date: true
   - name: "Entrega P4"
-    date: 2026-05-31
+    date: 2027-01-05
     show-date: true
   - name: "Defensa"
-    date: 2026-06-14
+    date: 2027-01-22
     show-date: true

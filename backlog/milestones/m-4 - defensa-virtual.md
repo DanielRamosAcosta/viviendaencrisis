@@ -5,4 +5,4 @@ title: "Defensa Virtual"
 
 ## Description
 
-Fecha límite: 19 de junio de 2026 23:59
+Fecha límite: 22 de enero de 2027 23:59

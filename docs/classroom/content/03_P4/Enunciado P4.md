@@ -1,7 +1,7 @@
 # Enunciado P4
 
-* **Inicio**: 30/03/2026
-* **Entrega**: 26/04/2026
+* **Inicio**: 06/12/2026
+* **Entrega**: 05/01/2027
 * **Dedicación**: 70h
 
 **Presentación**

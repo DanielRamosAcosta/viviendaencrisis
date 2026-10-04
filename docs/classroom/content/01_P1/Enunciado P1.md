@@ -1,7 +1,7 @@
 # Enunciado P1
 
 * **Inicio**: 18/02/2026
-* **Entrega**: 01/03/2026
+* **Entrega**: 04/10/2026
 * **Dedicación**: 28h
 
 **Presentación**

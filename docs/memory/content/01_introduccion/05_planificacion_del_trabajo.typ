@@ -13,7 +13,7 @@ El desarrollo del proyecto se estructura en cinco fases alineadas con las Prueba
       [*Fase*], [*Periodo*], [*Horas*], [*Hitos y entregables*],
     ),
       [*P1* --- Plan de trabajo],
-      [02/02 -- 01/03],
+      [23/09 -- 04/10],
       [32],
       [
         #list(
@@ -26,7 +26,7 @@ El desarrollo del proyecto se estructura en cinco fases alineadas con las Prueba
       ],
 
       [*P2* --- Diseño],
-      [07/03 -- 29/03],
+      [05/10 -- 02/11],
       [70],
       [
         #list(
@@ -43,7 +43,7 @@ El desarrollo del proyecto se estructura en cinco fases alineadas con las Prueba
       ],
 
       [*P3* --- Desarrollo e integración],
-      [04/04 -- 26/04],
+      [03/11 -- 05/12],
       [72],
       [
         #list(
@@ -59,7 +59,7 @@ El desarrollo del proyecto se estructura en cinco fases alineadas con las Prueba
       ],
 
       [*P4* --- Versión final],
-      [02/05 -- 31/05],
+      [06/12 -- 05/01],
       [90],
       [
         #list(
@@ -72,7 +72,7 @@ El desarrollo del proyecto se estructura en cinco fases alineadas con las Prueba
       ],
 
       [*DV* --- Defensa virtual],
-      [06/06 -- 14/06],
+      [06/01 -- 22/01],
       [36],
       [
         #list(

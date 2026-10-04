@@ -1,7 +1,7 @@
 # Enunciado defensa virtual
 
-* **Inicio**: 08/06/2026
-* **Entrega**: 19/06/2026
+* **Inicio**: 06/01/2027
+* **Entrega**: 22/01/2027
 * **Dedicación**: 40h
 
 Encaramos la recta final y toca preparar la defensa del trabajo.
