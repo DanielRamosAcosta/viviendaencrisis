@@ -4,7 +4,7 @@
     subject: "Trabajo Final de Máster",
     title: "Vivienda en Crisis",
     subtitle: "Diseño y desarrollo de una plataforma web de datos abiertos para la transparencia del mercado de la vivienda en España",
-    date: datetime(year: 2026, month: 6, day: 15),
+    date: datetime(year: 2027, month: 1, day: 22),
     author: "Daniel Ramos Acosta",
     program: "Máster Universitario en Desarrollo de Sitios y Aplicaciones Web",
     area: "Desarrollo de aplicaciones web",
