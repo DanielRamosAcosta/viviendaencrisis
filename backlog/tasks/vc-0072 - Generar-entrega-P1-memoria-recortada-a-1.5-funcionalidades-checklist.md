@@ -1,9 +1,10 @@
 ---
 id: VC-0072
 title: Generar entrega P1 (memoria recortada a 1.5 + funcionalidades + checklist)
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-10-04 16:00'
+updated_date: '2026-10-04 17:14'
 labels:
   - refined
 milestone: m-0
