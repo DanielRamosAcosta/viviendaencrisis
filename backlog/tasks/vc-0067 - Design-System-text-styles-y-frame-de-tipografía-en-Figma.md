@@ -4,10 +4,10 @@ title: 'Design System: text styles y frame de tipografía en Figma'
 status: In Review
 assignee: []
 created_date: '2026-03-29 19:54'
-updated_date: '2026-03-29 20:00'
+updated_date: '2026-11-01 15:33'
 labels:
   - refined
-milestone: P3 — Diseño
+milestone: m-1
 dependencies: []
 references:
   - 'https://www.figma.com/design/FF1VIGSYXIDur4aakOhBNm/Main-Design'
