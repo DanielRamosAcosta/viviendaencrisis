@@ -1,15 +1,23 @@
 ---
 id: VC-0077
 title: Crear diagramas Mermaid de casos de uso y modelo de datos (PNG para memoria)
-status: In Progress
+status: In Review
 assignee: []
 created_date: '2026-11-01 14:53'
+updated_date: '2026-11-01 14:55'
 labels:
   - docs
   - refined
   - diagrams
 milestone: m-1
 dependencies: []
+modified_files:
+  - docs/diagrams/use-cases/use-cases.mmd
+  - docs/diagrams/use-cases/use-cases.png
+  - docs/diagrams/architecture/data-model.mmd
+  - docs/diagrams/architecture/data-model.png
+  - docs/memory/images/use-cases.png
+  - docs/memory/images/data-model.png
 ordinal: 45000
 ---
 
@@ -27,3 +35,15 @@ Crear dos diagramas Mermaid nuevos y exportarlos a PNG para la memoria del TFM (
 
 No editar ficheros .typ ni .bib.
 <!-- SECTION:DESCRIPTION:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Creados dos diagramas Mermaid y exportados a PNG (1568px, mmdc v12 via npx, -b white -s 2).
+
+use-cases.mmd: flowchart LR con 3 actores (Visitante anónimo, Usuario registrado, Administrador). Subgraphs MVP (público / cuenta / administración) y Ampliación futura opcional (reportes + reseñas, estilo discontinuo). Generalización admin->registrado («herencia») e inclusiones «include» de login (CU07) en casos que requieren auth.
+
+data-model.mmd: erDiagram con 5 colecciones MongoDB. Núcleo: users (role user/admin, email UK), geodata (GeoJSON, índice GEO 2dsphere, jerarquía), price_series. Opcional: reports, reviews (marcadas en comentarios %%). Atributos con PK/FK/UK/IDX/GEO y relaciones con cardinalidad.
+
+PNG copiados a docs/memory/images/ como use-cases.png y data-model.png. Verificados: PNG válidos, no corruptos, >190KB cada uno.
+<!-- SECTION:FINAL_SUMMARY:END -->
