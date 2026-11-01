@@ -3,9 +3,10 @@ id: VC-0076
 title: >-
   Redactar capítulos técnicos de diseño (13, 16, 17, 18, 19) — Materiales y
   métodos
-status: In Progress
+status: In Review
 assignee: []
 created_date: '2026-11-01 14:52'
+updated_date: '2026-11-01 14:58'
 labels:
   - unrefined
   - memoria
@@ -31,9 +32,18 @@ Redactar los cinco capítulos técnicos del bloque "Materiales y métodos" de la
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Los cinco ficheros .typ están redactados en prosa académica en español, sin placeholders // TODO
+- [x] #1 Los cinco ficheros .typ están redactados en prosa académica en español, sin placeholders // TODO
 - [ ] #2 Compilación `typst compile docs/memory/main.typ` sin errores
-- [ ] #3 Todas las citas usan claves existentes del .bib o están marcadas como pendientes en el informe final
-- [ ] #4 Los labels <sec:...> existentes en los placeholders se preservan
+- [x] #3 Todas las citas usan claves existentes del .bib o están marcadas como pendientes en el informe final
+- [x] #4 Los labels <sec:...> existentes en los placeholders se preservan
 - [ ] #5 La figura infrastructure.png está referenciada correctamente con <fig:infrastructure>
 <!-- AC:END -->
+
+## Comments
+
+<!-- COMMENTS:BEGIN -->
+created: 2026-11-01 14:58
+---
+Los cinco ficheros están redactados. Errores de compilación preexistentes detectados en cap. 14 (`<fig:tech-stack>` duplicado, `<sec:modelo-datos>` inexistente) — están fuera del ámbito de esta tarea. Los cinco ficheros encargados no introducen nuevos errores. Citas nuevas necesarias documentadas en el informe final al usuario.
+---
+<!-- COMMENTS:END -->
