@@ -4,10 +4,10 @@ title: 'Pipeline de datos abiertos (ETL: Ministerio Vivienda, INE, Catastro)'
 status: To Do
 assignee: []
 created_date: '2026-03-01 17:55'
-updated_date: '2026-03-15 15:12'
+updated_date: '2026-11-01 14:51'
 labels:
   - data
-milestone: m-1
+milestone: m-2
 dependencies: []
 priority: low
 ordinal: 8000
