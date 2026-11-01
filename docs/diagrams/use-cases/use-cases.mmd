@@ -1,0 +1,134 @@
+---
+title: "Diagrama de casos de uso (Vivienda en Crisis)"
+---
+%% Diagrama UML de casos de uso.
+%% Mermaid no tiene un tipo nativo "use case": se representa con un flowchart LR
+%% donde los actores son nodos y los casos de uso son nodos estadio ([texto]).
+%% Convenciones:
+%%   - Línea continua actor --- caso  : asociación actor/caso de uso
+%%   - Flecha discontinua -.->|<<include>>| CU_LOGIN : relación de inclusión (requiere login)
+%%   - Flecha discontinua Admin -.->|«herencia»| Registrado : el administrador hereda los
+%%     casos del usuario registrado (generalización de actor)
+flowchart LR
+
+    %% ─────────────────────────────────────────────
+    %% ACTORES
+    %% ─────────────────────────────────────────────
+    ANON(["fa:fa-user Visitante anónimo"])
+    REG(["fa:fa-user-check Usuario registrado"])
+    ADMIN(["fa:fa-user-shield Administrador"])
+
+    %% Generalización de actor: el administrador es un usuario registrado
+    %% con privilegios adicionales (hereda todos sus casos de uso).
+    ADMIN -. «herencia» .-> REG
+
+    %% ─────────────────────────────────────────────
+    %% MVP / NÚCLEO — Acceso público (sin registro)
+    %% ─────────────────────────────────────────────
+    subgraph PUBLICO["MVP · Núcleo — Acceso público (sin registro)"]
+        direction LR
+        CU01(["CU01 · Visualizar evolución de precios"])
+        CU02(["CU02 · Comparar zonas"])
+        CU03(["CU03 · Consultar precio por m²"])
+        CU04(["CU04 · Explorar mapas coropléticos"])
+        CU05(["CU05 · Descargar datos abiertos"])
+    end
+
+    %% ─────────────────────────────────────────────
+    %% MVP / NÚCLEO — Cuenta y sesión
+    %% ─────────────────────────────────────────────
+    subgraph CUENTA["MVP · Núcleo — Cuenta y sesión"]
+        direction LR
+        CU06(["CU06 · Registrarse"])
+        CU07(["CU07 · Iniciar / cerrar sesión (JWT)"])
+        CU08(["CU08 · Gestionar cuenta propia"])
+    end
+
+    %% ─────────────────────────────────────────────
+    %% MVP / NÚCLEO — Administración
+    %% ─────────────────────────────────────────────
+    subgraph ADMINISTRACION["MVP · Núcleo — Administración"]
+        direction LR
+        CU09(["CU09 · Acceder al panel de administración"])
+        CU10(["CU10 · Gestionar usuarios y roles"])
+    end
+
+    %% ─────────────────────────────────────────────
+    %% AMPLIACIÓN FUTURA (OPCIONAL) — fuera del MVP
+    %% ─────────────────────────────────────────────
+    subgraph FUTURO["Ampliación futura (opcional) — fuera del MVP"]
+        direction LR
+        subgraph FUT_REPORTES["Reportes ciudadanos"]
+            direction LR
+            CU11(["CU11 · Crear reporte de irregularidad"])
+            CU12(["CU12 · Consultar reportes"])
+            CU13(["CU13 · Moderar reportes"])
+        end
+        subgraph FUT_RESENAS["Reseñas inmobiliarias"]
+            direction LR
+            CU14(["CU14 · Escribir reseña de agencia"])
+            CU15(["CU15 · Consultar reseñas y rankings"])
+            CU16(["CU16 · Moderar reseñas"])
+        end
+    end
+
+    %% ─────────────────────────────────────────────
+    %% ASOCIACIONES — Visitante anónimo (acceso público + registro/login)
+    %% ─────────────────────────────────────────────
+    ANON --- CU01
+    ANON --- CU02
+    ANON --- CU03
+    ANON --- CU04
+    ANON --- CU05
+    ANON --- CU06
+    ANON --- CU07
+    %% El anónimo también puede consultar (solo lectura) contenidos opcionales
+    ANON --- CU12
+    ANON --- CU15
+
+    %% ─────────────────────────────────────────────
+    %% ASOCIACIONES — Usuario registrado
+    %% (hereda todo lo público del anónimo; se muestran sus casos propios)
+    %% ─────────────────────────────────────────────
+    REG --- CU08
+    REG --- CU11
+    REG --- CU14
+
+    %% ─────────────────────────────────────────────
+    %% ASOCIACIONES — Administrador (casos propios; el resto por herencia)
+    %% ─────────────────────────────────────────────
+    ADMIN --- CU09
+    ADMIN --- CU10
+    ADMIN --- CU13
+    ADMIN --- CU16
+
+    %% ─────────────────────────────────────────────
+    %% INCLUSIONES — casos que requieren autenticación (<<include>> CU07)
+    %% ─────────────────────────────────────────────
+    CU08 -.->|«include»| CU07
+    CU09 -.->|«include»| CU07
+    CU10 -.->|«include»| CU07
+    CU11 -.->|«include»| CU07
+    CU13 -.->|«include»| CU07
+    CU14 -.->|«include»| CU07
+    CU16 -.->|«include»| CU07
+
+    %% ─────────────────────────────────────────────
+    %% ESTILOS
+    %% ─────────────────────────────────────────────
+    classDef actor    fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f,font-weight:bold
+    classDef core     fill:#d1fae5,stroke:#059669,color:#052e16
+    classDef account  fill:#fef9c3,stroke:#ca8a04,color:#451a03
+    classDef adminuc  fill:#fee2e2,stroke:#dc2626,color:#450a0a
+    classDef optional fill:#f3e8ff,stroke:#9333ea,color:#2e1065,stroke-dasharray:4 3
+
+    class ANON,REG,ADMIN actor
+    class CU01,CU02,CU03,CU04,CU05 core
+    class CU06,CU07,CU08 account
+    class CU09,CU10 adminuc
+    class CU11,CU12,CU13,CU14,CU15,CU16 optional
+
+    style FUTURO fill:#faf5ff,stroke:#9333ea,stroke-dasharray:6 4,color:#2e1065
+    style PUBLICO fill:#f0fdf4,stroke:#16a34a,color:#052e16
+    style CUENTA fill:#fefce8,stroke:#ca8a04,color:#451a03
+    style ADMINISTRACION fill:#fef2f2,stroke:#dc2626,color:#450a0a

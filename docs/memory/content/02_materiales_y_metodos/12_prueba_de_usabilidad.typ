@@ -2,16 +2,41 @@
 
 === Añadir interactividad al prototipo
 
-// TODO
+La transición del prototipo estático al prototipo interactivo no constituye un paso accesorio en el proceso de diseño, sino una condición necesaria para poder evaluar los flujos de usuario de forma significativa. Una colección de pantallas diseñadas de forma aislada permite verificar si cada estado de la interfaz es comprensible en sí mismo, pero no permite observar qué ocurre cuando un usuario real intenta completar una tarea que atraviesa varias pantallas en secuencia: qué etiqueta de menú elige en primer lugar, en qué punto duda o regresa, si la pantalla a la que llega corresponde a lo que esperaba encontrar. Estas hesitaciones, errores de navegación y comportamientos espontáneos son precisamente los indicadores de usabilidad más valiosos, y solo son observables en un prototipo navegable.
+
+La construcción del prototipo interactivo, descrita en detalle en @sec:wireframes y @sec:flujo-interactivo, produjo una aplicación web de página única con más de treinta pantallas enlazadas mediante rutas navegables. Cada ruta reproduce el estado de interfaz correspondiente a una pantalla del sitemap v1.2 (@sec:arquitectura-informacion), con interacciones básicas funcionales: navegación entre secciones, apertura y cierre de modales, cambio de pestañas y filtros, y visualizaciones con datos simulados. Esta fidelidad interactiva —no visual ni de datos, sino navegacional— es suficiente para evaluar si la arquitectura de la información resulta comprensible y si los flujos de tarea principales pueden completarse sin asistencia externa.
 
 === Definición del test de usabilidad
 
-// TODO
+El test de usabilidad se diseñó con el objetivo de verificar que los flujos de navegación de la plataforma son comprensibles para perfiles de usuario heterogéneos, y que los usuarios pueden completar las tareas clave sin necesidad de orientación previa. La definición del protocolo de test siguió las recomendaciones metodológicas habituales para tests moderados de usabilidad con protocolo _think-aloud_: sesiones individuales de aproximadamente treinta minutos en las que cada participante verbaliza en voz alta sus pensamientos mientras interactúa con el prototipo, mientras el moderador observa sin intervenir salvo para formular preguntas de aclaración neutras.
+
+Se definieron tres perfiles de participantes, derivados directamente de las personas usuarias elaboradas en @sec:personas-usuarias, con el fin de garantizar que el test cubra el espectro de competencias digitales y motivaciones de uso que caracterizan al público objetivo de la plataforma:
+
+- *Perfil 1 — Ciudadana afectada (Marina Delgado):* persona de entre 25 y 40 años que vive en régimen de alquiler, con competencia digital media-alta y motivación directa para consultar datos sobre precios de vivienda en su zona. Corresponde al arquetipo principal identificado en el estudio del público objetivo (@sec:publico-objetivo).
+
+- *Perfil 2 — Profesional del sector o activista de datos (Alejandro Ruiz / Elena Marín):* persona con experiencia en el uso de datos públicos en contextos profesionales —periodismo de datos, investigación, administración pública u organizaciones de la sociedad civil—, con competencia digital alta y expectativas de rigor metodológico sobre las fuentes.
+
+- *Perfil 3 — Usuario con baja competencia digital (Antonio García):* persona de mayor edad, con uso ocasional de internet y sin experiencia previa con plataformas de datos abiertos. Este perfil actúa como restricción de accesibilidad en el proceso de diseño, tal como se documenta en @sec:personas-usuarias: cualquier funcionalidad que no resulte comprensible para este perfil sin formación previa requiere una revisión en su forma de presentación.
+
+El guion de tareas del test se articuló en torno a cuatro tareas representativas de los flujos de uso principales de la plataforma:
+
+- *T1:* "Encuentra el precio medio del alquiler en tu municipio."
+- *T2:* "Compara la evolución del precio entre dos comunidades autónomas a lo largo del tiempo."
+- *T3:* "Envía un reporte sobre una irregularidad en tu zona." — Esta tarea corresponde a la funcionalidad de reportes ciudadanos, que constituye un desarrollo futuro opcional y no forma parte del alcance del MVP. Se incluye en el guion para evaluar la comprensibilidad del flujo de envío del prototipo y la visibilidad de la sección en la navegación principal.
+- *T4:* "Navega el mapa interactivo y localiza tu zona geográfica."
+
+Como cuestionario post-test se prevé emplear la _System Usability Scale_ (SUS) @brooke_sus_1996, un instrumento estándar de diez ítems en escala Likert de cinco puntos que produce una puntuación global de usabilidad percibida en un rango de 0 a 100. Las métricas previstas para cada tarea son la tasa de éxito, el tiempo de completación, el número de errores cometidos y el número de recuperaciones espontáneas sin asistencia del moderador. El umbral de aceptabilidad para la puntuación SUS agregada se fija en 68 puntos, que es el valor que la literatura metodológica establece como límite entre sistemas con usabilidad por debajo de la media y sistemas aceptables @brooke_sus_1996.
 
 === Ejecución del test de usabilidad
 
-// TODO
+El test de usabilidad formal diseñado en la sección anterior no se ejecutó durante la fase correspondiente a la entrega P2 de este trabajo. El protocolo con think-aloud, el reclutamiento de participantes según los tres perfiles definidos y la recogida sistemática de métricas de tarea quedan pendientes de realización en la fase P3, una vez la plataforma funcional esté operativa. El prototipo interactivo construido en `apps/wireframe/` constituye una aproximación navegacional adecuada para una primera validación, pero el test formal requerirá la versión beta de la plataforma real, de modo que las tareas se ejecuten sobre el sistema que los usuarios finales emplearán y no sobre una simulación de baja fidelidad.
+
+Lo que sí se llevó a cabo durante la fase de prototipado fue una validación informal con dos usuarios reales, descrita ya en @sec:wireframes. Ambos participantes navegaron libremente por el prototipo interactivo sin recibir instrucciones previas ni seguir un guion estructurado, y sin que el proceso fuera grabado ni se recogieran métricas sistemáticas. Esta sesión no constituye un test de usabilidad en sentido metodológico: no hubo protocolo think-aloud, no se reclutó a los participantes según los perfiles definidos y no se midieron tasas de éxito por tarea. Se trata, en cambio, de una exploración exploratoria que permitió detectar problemas evidentes de navegación antes de cerrar el diseño del prototipo.
 
 === Conclusiones del test
 
-// TODO
+Los hallazgos de la validación informal, aunque de alcance limitado, aportaron observaciones relevantes para el refinamiento de la arquitectura de la información y de los flujos de usuario del prototipo. En ambas sesiones, los participantes fueron capaces de identificar las secciones principales de la plataforma desde la página de inicio sin necesidad de orientación previa, y completaron los recorridos más habituales —consulta de precios por zona, exploración del mapa coroplético y descarga de datos— sin bloquearse en ningún punto. La organización de los contenidos en cinco secciones de primer nivel fue percibida como comprensible, lo que es coherente con los resultados del card sorting que fundamentó la arquitectura de la información (@sec:arquitectura-informacion).
+
+Se identificaron también oportunidades de mejora menores. Las etiquetas de algunos elementos de menú resultaron ambiguas para uno de los participantes, que no asoció de forma inmediata la sección _Datos abiertos_ con la posibilidad de descargar ficheros en formato CSV o JSON. Esta observación es consistente con el hallazgo del card sorting que señalaba el riesgo de invisibilidad de esta categoría para perfiles con menor familiaridad con el concepto de datos exportables, y refuerza la decisión de diseño adoptada en @sec:arquitectura-informacion de complementar la sección propia con puntos de entrada secundarios desde cada visualización.
+
+Quedan pendientes de verificación en el test formal de la fase P3 los aspectos que la validación informal no puede cubrir por su naturaleza no estructurada. En particular, será necesario determinar si los tres perfiles de participantes definidos en la sección anterior completan con éxito las cuatro tareas del guion, si la tarea T3 —el envío de un reporte de irregularidad— resulta accesible para el perfil de baja competencia digital sin instrucciones previas, y si la puntuación SUS agregada supera el umbral de aceptabilidad de 68 puntos. Los resultados del test formal permitirán identificar las modificaciones de diseño necesarias antes de la puesta en producción de la plataforma.

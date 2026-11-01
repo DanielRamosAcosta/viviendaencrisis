@@ -1,5 +1,41 @@
-== Accesibilidad técnica
+== Accesibilidad técnica <sec:accesibilidad>
 
-// TODO: Implementación de etiquetas ARIA, atributos alt en imágenes,
-// semántica HTML5, navegación por teclado, landmarks, roles, y
-// gestión del foco en componentes interactivos.
+=== Objetivo y estándar de referencia
+
+El diseño de la plataforma asume como objetivo de accesibilidad el nivel AA de las Pautas de Accesibilidad para el Contenido Web versión 2.1 (WCAG 2.1) @wcag_21_2018, publicadas por el World Wide Web Consortium. Este nivel constituye el umbral exigido por la legislación española para los sitios web de las administraciones públicas —Real Decreto 1112/2018— y representa el estándar de facto reconocido internacionalmente para aplicaciones web con audiencia general. El nivel AA incluye los cuatro principios fundamentales de accesibilidad —perceptibilidad, operabilidad, comprensibilidad y robustez— y los criterios de éxito asociados que van más allá del nivel A básico, como la navegación coherente, la gestión del foco en componentes dinámicos y los requisitos de contraste cromático.
+
+La relevancia de cumplir con este estándar no es únicamente normativa. La plataforma Vivienda en Crisis se dirige a perfiles de usuario heterogéneos (@sec:publico-objetivo), entre los que se encuentra el perfil de Antonio García —persona usuaria secundaria de competencia digital baja y mayor edad (@sec:personas-usuarias)—, cuya inclusión efectiva depende de que la interfaz sea operable sin habilidades técnicas avanzadas, con tamaños de texto legibles y sin dependencias de gesticulación compleja o de interacción exclusivamente mediante ratón. La auditoría de conformidad, que verificará el grado efectivo de cumplimiento alcanzado, se realizará en la fase de evaluación final (P4); en esta sección se describen las decisiones de diseño previstas para alcanzar dicho estándar.
+
+=== Semántica HTML5 y estructura de documento
+
+La base de la accesibilidad técnica es el uso correcto del HTML semántico. En lugar de construir la interfaz exclusivamente con elementos `<div>` y `<span>` genéricos, se emplea el conjunto de elementos de sección de HTML5 —`<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>`, `<article>`, `<section>`— para delimitar las regiones estructurales del documento. Esta práctica tiene un doble beneficio: facilita la navegación mediante tecnologías de apoyo como los lectores de pantalla, que pueden presentar al usuario un mapa de regiones antes de procesar el contenido; y mejora el posicionamiento en buscadores al proporcionar señales semánticas explícitas sobre la jerarquía del contenido.
+
+La jerarquía de encabezados sigue el orden lógico de niveles `<h1>` a `<h6>` sin saltos. Cada página tiene un único encabezado de nivel 1 que identifica el propósito principal de la vista; los encabezados de niveles inferiores subdividen el contenido de forma progresiva. Los componentes de visualización de datos —gráficos, tablas, mapas— van precedidos de un encabezado descriptivo que contextualiza la información representada, de modo que un usuario que no pueda percibir el gráfico disponga igualmente del enunciado que lo describe.
+
+=== Atributos ARIA y roles semánticos
+
+Los atributos ARIA (_Accessible Rich Internet Applications_) se emplean para enriquecer la semántica de los componentes interactivos que no tienen equivalente directo en HTML nativo. Su uso sigue el principio establecido en la especificación: no se añaden atributos ARIA cuando el elemento HTML nativo ya proporciona la semántica equivalente. La regla práctica es "ARIA no nativo cuando el nativo no alcanza".
+
+Los casos de uso previstos incluyen los siguientes patrones. Los paneles de filtros colapsables se marcan con `aria-expanded` para comunicar su estado a las tecnologías de apoyo. Los componentes de gráfico basados en `<svg>` incluyen un `role="img"` y un atributo `aria-label` con una descripción textual de la tendencia representada. Las notificaciones de carga asíncrona —por ejemplo, la actualización de un mapa coropléfico al cambiar el filtro de año— se anuncian mediante una región `aria-live="polite"` que informa al lector de pantalla cuando el contenido ha cambiado sin requerir un cambio de foco. Los mensajes de error en formularios se asocian al campo correspondiente mediante `aria-describedby`. Los elementos decorativos que no aportan información se ocultan a las tecnologías de apoyo con `aria-hidden="true"`.
+
+=== Navegación por teclado y gestión del foco
+
+La navegación por teclado completa es un requisito del criterio de éxito 2.1.1 (Teclado) de WCAG 2.1 @wcag_21_2018. Toda la funcionalidad de la plataforma debe ser operable sin ratón, utilizando únicamente el teclado. Para ello, se garantiza que todos los elementos interactivos —enlaces, botones, campos de formulario, controles de gráfico, controles del mapa— son alcanzables y activables mediante tabulación y teclas estándar.
+
+La gestión del foco en componentes modales y paneles emergentes sigue el patrón recomendado por el _ARIA Authoring Practices Guide_: al abrirse un diálogo modal, el foco se desplaza programáticamente al primer elemento interactivo del diálogo; mientras el modal permanece abierto, el foco queda confinado dentro de él (trampa de foco deliberada); al cerrarse, el foco regresa al elemento que desencadenó la apertura. Este comportamiento, implementado mediante el hook `useFocusTrap` o componentes equivalentes de la biblioteca de componentes elegida, evita que los usuarios de teclado queden desorientados tras interactuar con elementos superpuestos.
+
+El indicador visual de foco se preserva en todo momento y no se elimina mediante CSS (`outline: none` sin alternativa). Se define un estilo de foco personalizado coherente con la identidad visual de la plataforma (@sec:propuesta-grafica) que sea visible sobre todos los fondos utilizados, cumpliendo el criterio de contraste mínimo de 3:1 establecido en WCAG 2.1 nivel AA.
+
+=== Contraste cromático y tipografía
+
+El contraste cromático de todos los pares texto-fondo se verifica contra el umbral mínimo establecido por WCAG 2.1 @wcag_21_2018: relación de contraste de al menos 4,5:1 para texto normal y de al menos 3:1 para texto grande (18 puntos o 14 puntos en negrita). Estos umbrales se aplican también a los elementos de interfaz no textuales —iconos, bordes de campos de formulario, indicadores de estado— para los que el nivel AA exige al menos 3:1.
+
+La paleta cromática definida en la propuesta gráfica (@sec:propuesta-grafica) se ha diseñado con estos umbrales como restricción desde el inicio, lo que evita la necesidad de ajustes posteriores. Las combinaciones de color empleadas en los gráficos de datos —tanto para las series de líneas como para las escalas coroplécticas de los mapas— se seleccionan siguiendo las recomendaciones de Brewer para cartografía accesible, con especial atención a la distinción en condiciones de daltonismo de tipo deuteranopía, la variante más frecuente entre la población.
+
+El tamaño base del texto se define en unidades relativas (`rem`) en lugar de valores absolutos en píxeles, de modo que respete la preferencia de tamaño de fuente configurada por el usuario en el navegador. Los tamaños mínimos previstos son de 1 rem (equivalente a 16 px en configuración estándar) para el cuerpo de texto y de 0,875 rem para anotaciones secundarias. El interlineado no desciende de 1,5 para el texto de lectura continua.
+
+=== Textos alternativos y accesibilidad de las visualizaciones
+
+Las imágenes informativas incluyen un atributo `alt` que describe su contenido de forma concisa y sin referenciar el medio ("imagen de" o "gráfico que muestra" son fórmulas innecesarias en el texto alternativo). Las imágenes decorativas se marcan con `alt=""` para que los lectores de pantalla las ignoren. Los logotipos e iconos con significado funcional disponen de un texto alternativo que describe su función, no su apariencia.
+
+Las visualizaciones de datos presentan un desafío específico de accesibilidad, ya que los gráficos interactivos generados con D3.js o Recharts son elementos `<svg>` o `<canvas>` que, por defecto, no son accesibles. La estrategia prevista combina dos enfoques complementarios: en primer lugar, cada gráfico va acompañado de una tabla de datos resumen accesible mediante un elemento `<details>` colapsable, que presenta los mismos datos en formato tabular navegable por teclado; en segundo lugar, los gráficos de líneas y barras incluyen anotaciones textuales de las tendencias más relevantes, accesibles mediante `aria-label` en el contenedor del gráfico. Esta combinación garantiza que la información representada sea accesible tanto en modo visual como en modo texto, sin renunciar a la riqueza de la visualización interactiva.

@@ -1,0 +1,78 @@
+---
+title: "Modelo de datos — MongoDB (Vivienda en Crisis)"
+---
+%% Diagrama entidad-relación de las colecciones de MongoDB (Scaleway Managed DB).
+%% Leyenda de tipos de atributo (columna 3):
+%%   PK  = clave primaria (_id de MongoDB)
+%%   FK  = referencia a otra colección (patrón de referencias, no embebido)
+%%   IDX = campo con índice relevante
+%%   UK  = índice único
+%%   GEO = índice geoespacial 2dsphere
+%% NOTA: 'users', 'geodata' y 'price_series' forman el MVP / núcleo.
+%%       'reports' y 'reviews' son AMPLIACIÓN FUTURA (OPCIONAL), fuera del MVP.
+erDiagram
+
+    %% ───────── MVP / NÚCLEO ─────────
+    users {
+        ObjectId _id PK "identificador"
+        string email UK "correo (índice único)"
+        string passwordHash "bcrypt / argon2"
+        string role "enum: user | admin (IDX)"
+        string displayName "alias público (opcional)"
+        boolean emailVerified "cuenta verificada"
+        datetime createdAt "alta"
+        datetime updatedAt "última modificación"
+    }
+
+    geodata {
+        ObjectId _id PK "identificador"
+        string code UK "código oficial (INE/Catastro)"
+        string level "enum: ccaa | provincia | municipio (IDX)"
+        string name "nombre de la zona"
+        string parentCode FK "código zona superior (jerarquía)"
+        object geometry "GeoJSON Polygon/MultiPolygon (GEO 2dsphere)"
+        object properties "metadatos (población, superficie)"
+    }
+
+    price_series {
+        ObjectId _id PK "identificador"
+        string geoCode FK "ref. geodata.code (IDX)"
+        string indicator "enum: alquiler | compraventa"
+        string unit "eur_mes | eur_m2"
+        int year "año (IDX)"
+        int period "trimestre 1-4"
+        double value "valor del índice/precio"
+        string source "MIVAU | INE | Catastro"
+    }
+
+    %% ───────── AMPLIACIÓN FUTURA (OPCIONAL) ─────────
+    reports {
+        ObjectId _id PK "identificador"
+        ObjectId authorId FK "ref. users._id"
+        string geoCode FK "ref. geodata.code (IDX)"
+        string category "tipo de irregularidad"
+        string description "texto de la denuncia"
+        object location "GeoJSON Point (GEO 2dsphere)"
+        string status "enum: pending | approved | rejected (IDX)"
+        datetime createdAt "fecha de envío"
+    }
+
+    reviews {
+        ObjectId _id PK "identificador"
+        ObjectId authorId FK "ref. users._id"
+        string agencyName "inmobiliaria reseñada (IDX)"
+        int rating "valoración 1-5"
+        string comment "texto de la reseña"
+        string status "enum: pending | approved | rejected (IDX)"
+        datetime createdAt "fecha de envío"
+    }
+
+    %% ───────── RELACIONES (cardinalidad) ─────────
+    %% Núcleo
+    geodata ||--o{ price_series : "tiene series de precios"
+    geodata ||--o{ geodata      : "contiene (jerarquía ccaa>provincia>municipio)"
+
+    %% Ampliación futura (opcional)
+    users    ||--o{ reports  : "redacta (opcional)"
+    geodata  ||--o{ reports  : "se ubica en (opcional)"
+    users    ||--o{ reviews  : "redacta (opcional)"

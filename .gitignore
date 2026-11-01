@@ -4,3 +4,6 @@ docs/memory/*.pdf
 .DS_Store
 .playwright-mcp
 .turbo
+
+# Paquete de entrega generado (no versionar)
+delivery/

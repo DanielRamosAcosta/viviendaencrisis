@@ -1,5 +1,35 @@
 == Metodología de desarrollo: Extreme Programming <sec:metodologia_desarrollo>
 
-// TODO: Metodología ágil adoptada, herramientas de gestión del proyecto,
-// flujo de trabajo (branching, CI/CD, revisiones), y organización del
-// desarrollo en sprints/iteraciones.
+=== Principios de la metodología adoptada
+
+La gestión visual del trabajo mediante Kanban, descrita en la sección anterior, define cómo se organiza y prioriza el trabajo pendiente. Sin embargo, la organización de las tareas no agota la cuestión metodológica: es necesario precisar también cómo se ejecuta ese trabajo a nivel de ingeniería de software. Para ello, se adoptan un conjunto de prácticas derivadas de Extreme Programming (XP) @beck_xp_1999, una metodología ágil que pone el énfasis en la calidad técnica, la retroalimentación continua y el trabajo en iteraciones cortas. XP no se aplica en su totalidad —algunas de sus prácticas, como la programación en parejas o el cliente permanente, carecen de sentido en un proyecto unipersonal—, sino que se seleccionan aquellas que aportan valor directo en este contexto: iteraciones de duración fija, integración continua, refactorización sistemática, cobertura de tests como condición de entrega y simplicidad como criterio de diseño.
+
+La combinación de Kanban y XP responde a una lógica complementaria. Kanban aporta el marco de flujo y visibilidad; XP aporta las prácticas de ingeniería que garantizan que el código producido en cada tarea es robusto, comprobable y fácil de mantener. Esta combinación es frecuente en proyectos ágiles modernos: el primero gestiona el flujo de valor, el segundo asegura la calidad técnica del incremento @hammarberg_kanban_2014[p.~49].
+
+=== Organización en iteraciones
+
+El desarrollo se organiza en iteraciones de duración variable, alineadas con las entregas parciales del TFM (P1, P2, P3, P4). Dentro de cada entrega, el trabajo se divide en ciclos internos de dos a cuatro días, al término de los cuales se verifica que el incremento producido compila, supera los tests automatizados y cumple los criterios de aceptación definidos en la tarea correspondiente del backlog. Este ciclo corto de retroalimentación permite detectar desviaciones técnicas antes de que se acumulen y dificulten la integración.
+
+Cada iteración comienza con la selección de las tareas a abordar desde el tablero Kanban. La priorización sigue el criterio de valor decreciente: se abordan primero las tareas de mayor impacto funcional o mayor riesgo técnico, dejando para el final las que representan mejoras incrementales sobre funcionalidad ya estable. Al cierre de cada iteración se realiza una revisión informal: se contrasta el estado de los criterios de aceptación de cada tarea, se registran las decisiones técnicas relevantes en el fichero de la propia tarea y se actualiza el estado en el tablero. No se realizan ceremonias formales de retrospectiva, dado el carácter unipersonal del proyecto, pero sí se mantiene un registro de notas de implementación en cada tarea que cumple una función equivalente.
+
+=== Flujo de trabajo con Git y Conventional Commits
+
+El control de versiones se gestiona con Git, siguiendo la especificación _Conventional Commits_ @conventional_commits_2020 para los mensajes de confirmación. Esta convención establece un formato estructurado: `tipo(ámbito): descripción`, donde el tipo indica la naturaleza del cambio —`feat` para nuevas funcionalidades, `fix` para correcciones de errores, `refactor` para reestructuraciones internas, `test` para cambios en la cobertura de tests, `chore` para tareas de mantenimiento y `docs` para documentación—. El ámbito delimita el módulo o capa afectada: `frontend`, `api`, `db`, `ci`, `memory`, entre otros. El mensaje se redacta en inglés y no supera los 96 caracteres.
+
+La adopción de esta convención tiene tres consecuencias prácticas. En primer lugar, el historial de Git se convierte en una fuente de documentación estructurada que refleja con precisión la evolución del proyecto. En segundo lugar, facilita la generación automatizada de changelogs y notas de versión. En tercer lugar, obliga a descomponer los cambios en unidades atómicas con un propósito único y claro, lo que reduce la probabilidad de confirmar cambios heterogéneos que dificultan la revisión y la recuperación ante errores.
+
+La estrategia de ramas sigue un modelo simplificado adaptado a un proyecto unipersonal. La rama principal (`main`) refleja en todo momento el estado estable y compilable del proyecto. El trabajo en curso se realiza en ramas de característica con nombre descriptivo (`feat/mapa-coroplético`, `fix/autenticación-jwt`, etc.) que se integran en `main` mediante _pull requests_ una vez superados los checks de CI. No se mantiene una rama de desarrollo separada, dado que la pipeline de CI cumple la función de validación previa a la integración.
+
+=== Pipeline de integración continua con GitHub Actions
+
+La integración continua se instrumenta mediante GitHub Actions, la plataforma de automatización nativa de GitHub. Cada _push_ a cualquier rama y cada _pull request_ hacia `main` desencadena la ejecución del _pipeline_, que realiza las siguientes comprobaciones de forma secuencial:
+
+En primer lugar, se ejecuta la verificación de tipos de TypeScript (`tsc --noEmit`) sobre los paquetes del monorepo. Esta comprobación detecta errores de tipado que no serían visibles en tiempo de ejecución en entornos de desarrollo, garantizando la coherencia de las interfaces entre el frontend (Next.js) y el backend (Hono). En segundo lugar, se ejecuta el linter (ESLint) sobre la base de código, aplicando las reglas configuradas para cada paquete. En tercer lugar, se ejecutan los tests unitarios y de integración con Vitest. En cuarto lugar, sobre la rama `main`, se ejecutan los tests _end-to-end_ con Playwright. Finalmente, si todos los pasos anteriores se completan satisfactoriamente, se lanza el proceso de construcción de artefactos y despliegue, descrito en detalle en la @sec:despliegue.
+
+Este flujo garantiza que ningún cambio que rompa los tipos, las reglas de estilo, los tests existentes o el proceso de construcción pueda integrarse en la rama principal. La visibilidad del estado de la pipeline en cada _pull request_ actúa como mecanismo de control de calidad sistemático, equivalente funcional de la revisión de código en proyectos de equipo.
+
+=== Integración con herramientas de asistencia por IA
+
+El desarrollo incorpora de forma sistemática el uso de agentes de inteligencia artificial como herramienta de asistencia. Esta integración no altera los principios metodológicos descritos anteriormente —el código producido sigue siendo sometido a los mismos checks de CI, la misma cobertura de tests y la misma revisión de criterios de aceptación—, sino que actúa como acelerador dentro del flujo de trabajo existente.
+
+El agente principal empleado es Claude Code (Anthropic), que opera directamente sobre el repositorio mediante la interfaz de línea de comandos y el protocolo MCP para la gestión del backlog (descrito en la sección anterior). La interacción se estructura en torno a tareas concretas definidas en el backlog: el agente recibe el contexto de la tarea —descripción, criterios de aceptación, notas de implementación y ficheros relevantes— y produce incrementos de código que se revisan antes de confirmar. La responsabilidad de la revisión y la decisión final sobre cada cambio recae siempre en el desarrollador; el agente actúa en todo momento como herramienta, no como sustituto del juicio técnico humano.

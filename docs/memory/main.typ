@@ -44,9 +44,11 @@
 
 #pagebreak()
 
-#include "content/03_resultados/index.typ"
-
-#pagebreak()
+// El capítulo de Resultados se redactará en P3-P4, cuando exista producto desarrollado.
+// Excluido de la entrega de P2 (fase de diseño).
+// #include "content/03_resultados/index.typ"
+//
+// #pagebreak()
 
 #include "content/04_conclusiones/index.typ"
 

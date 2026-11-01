@@ -1,5 +1,37 @@
-== Estrategia de testing
+== Estrategia de testing <sec:testing>
 
-// TODO: Pirámide de tests adoptada. Tests unitarios (componentes, utilidades),
-// tests de integración (API, base de datos), y tests end-to-end (flujos
-// de usuario). Herramientas elegidas y cobertura objetivo.
+=== La pirámide de tests como marco conceptual
+
+La estrategia de testing adoptada se articula en torno al modelo de la pirámide de tests, formulado originalmente por Mike Cohn y popularizado en el contexto de la ingeniería de software moderna. Este modelo organiza los tipos de tests en tres niveles que difieren en granularidad, velocidad de ejecución y coste de mantenimiento. En la base se sitúan los tests unitarios, los más numerosos, rápidos y baratos; en el nivel intermedio, los tests de integración, que verifican la interacción entre componentes o capas del sistema; en el vértice, los tests _end-to-end_ (E2E), los menos numerosos, más lentos y más costosos de mantener, pero los que ofrecen mayor confianza sobre el comportamiento completo del sistema desde la perspectiva del usuario.
+
+La adopción explícita de este modelo responde a una necesidad práctica en el contexto de este proyecto: evitar la distribución inversa de la pirámide —conocida informalmente como _cono de hielo_— en la que la mayor parte de la cobertura recae sobre los tests E2E, lo que resulta en suites de tests lentas, frágiles y difíciles de depurar. La distribución objetivo para la plataforma es aproximadamente 70 % de tests unitarios, 20 % de tests de integración y 10 % de tests E2E, proporción que equilibra la velocidad de retroalimentación durante el desarrollo con la confianza en el comportamiento del sistema como conjunto.
+
+=== Tests unitarios
+
+Los tests unitarios verifican el comportamiento de unidades de código aisladas: funciones de utilidad, lógica de transformación de datos, hooks de React, validadores de esquemas y componentes de interfaz con dependencias simuladas (_mock_). La herramienta elegida es Vitest @vitest_docs, un ejecutor de tests diseñado para proyectos basados en Vite que ofrece una API compatible con Jest y una velocidad de ejecución significativamente superior gracias al uso de módulos ES nativos. Vitest se integra sin configuración adicional con el ecosistema de TypeScript, lo que permite verificar los tipos en los propios tests.
+
+Los casos de uso prioritarios para los tests unitarios incluyen las funciones de normalización y agregación de los datos de precios (conversión de unidades, interpolación de series con valores ausentes, cálculo de variaciones interanuales), los validadores de los esquemas de entrada en la API (Hono), las funciones de formato de visualización (escalas de color para mapas, formateo de ejes en gráficos) y los componentes de React que encapsulan lógica compleja (formulario de filtros, componente de comparativa de zonas). Los componentes puramente presentacionales con escasa lógica interna se cubren con un snapshot test que detecta cambios no intencionados en el marcado generado.
+
+El objetivo de cobertura de líneas para el código de la capa de lógica de negocio (transformaciones de datos, validadores, utilidades) es del 80 %. No se establece un objetivo global de cobertura que incluya código de infraestructura o configuración, ya que estos ficheros tienen escaso valor de testear de forma aislada y podrían inflar artificialmente las métricas.
+
+=== Tests de integración
+
+Los tests de integración verifican el comportamiento de los endpoints de la API (Hono) en combinación con la base de datos (MongoDB). A diferencia de los tests unitarios, estos tests no simulan la capa de persistencia, sino que utilizan una instancia real de MongoDB levantada en el entorno de CI mediante el servicio de contenedores de GitHub Actions. Esta decisión responde a la experiencia documentada de que los tests de API que simulan la base de datos pueden enmascarar errores reales de consulta, indexación o validación de esquemas que solo se manifiestan en la interacción con el motor real.
+
+Cada test de integración de la API sigue el patrón _arrange-act-assert_: prepara el estado inicial de la base de datos insertando los documentos necesarios, ejecuta la petición HTTP al endpoint bajo prueba y verifica el código de respuesta, los encabezados y el cuerpo devuelto. Al finalizar, se limpia el estado de la base de datos para garantizar el aislamiento entre tests. Este patrón evita las dependencias entre tests y permite ejecutarlos en cualquier orden sin efectos secundarios.
+
+Los escenarios de integración prioritarios incluyen el ciclo completo de autenticación (registro, inicio de sesión, renovación de token, revocación), la consulta de precios con filtros combinados (zona geográfica, rango temporal, tipo de vivienda), la paginación de resultados, la validación de entradas con datos malformados y el comportamiento de los middlewares de autorización ante peticiones sin token o con token expirado.
+
+=== Tests _end-to-end_ con Playwright
+
+Los tests _end-to-end_ verifican los flujos de usuario completos en un navegador real, simulando la interacción humana con la interfaz. La herramienta elegida es Playwright @playwright_docs, un marco de automatización de navegadores desarrollado por Microsoft que soporta Chromium, Firefox y WebKit desde una única API. La elección de Playwright sobre alternativas como Cypress se fundamenta en su soporte nativo para múltiples navegadores, su velocidad de ejecución en entornos de CI (sin dependencia de un servidor separado), su soporte de primera clase para TypeScript y su API de depuración (modo trace) que permite diagnosticar fallos de forma eficiente.
+
+El prototipo de alta fidelidad desarrollado en `apps/wireframe/` ya utiliza Playwright como herramienta de tests E2E, con una configuración base que levanta el servidor de desarrollo de Vite antes de ejecutar los tests y reutiliza el servidor si ya está corriendo. Esta configuración sirve como referencia para la configuración del proyecto principal, donde los tests E2E se ejecutarán contra el entorno de _staging_ en lugar de contra un servidor de desarrollo local, garantizando que se verifican los artefactos compilados y no el código fuente sin procesar.
+
+Los flujos de usuario cubiertos por los tests E2E son los de mayor criticidad funcional: la visualización de la evolución temporal de precios con cambio de filtros, la navegación por el mapa coropléfico con selección de comunidad autónoma, el registro e inicio de sesión de usuario, y el acceso al panel de administración. Las funcionalidades de ampliación futura —sistema de reportes ciudadanos y reseñas inmobiliarias— no forman parte de la cobertura E2E del MVP y se incorporarán en iteraciones posteriores si se desarrollan.
+
+=== Integración de los tests en la pipeline de CI
+
+La estrategia de testing se integra plenamente en la pipeline de integración continua descrita en @sec:metodologia_desarrollo. Los tests unitarios y de integración se ejecutan en cada _push_ y en cada _pull request_; los tests E2E, por su mayor coste de ejecución, se reservan para los _pull requests_ hacia la rama principal y para los despliegues al entorno de _staging_.
+
+El umbral de cobertura mínimo para los tests unitarios se configura en Vitest como condición de fallo de la pipeline: si la cobertura de la capa de lógica de negocio desciende por debajo del 80 %, el paso de CI falla y bloquea la integración. Este mecanismo garantiza que la adición de nuevo código sin tests correspondientes no pueda incorporarse inadvertidamente a la rama principal. Los informes de cobertura se publican como artefactos de la pipeline para facilitar su revisión.

@@ -1,6 +1,36 @@
-== Benchmarking <sec:benchmarking>
+== Análisis de mercado: plataformas y fuentes de datos existentes <sec:benchmarking>
+
+El análisis de mercado constituye uno de los entregables principales de la fase de diseño (P2) y cumple una doble función en el proceso de Design Thinking: por un lado, actúa como parte de la fase de _Empatizar_, al examinar cómo otras plataformas responden a las necesidades del público objetivo identificado; por otro, fundamenta las decisiones de diseño y diferenciación al delimitar con precisión el espacio que "Vivienda en Crisis" aspira a ocupar. El análisis se estructura en dos grandes bloques: primero, un inventario de las fuentes de datos disponibles sobre el mercado de la vivienda en España, con sus características de cobertura, periodicidad y accesibilidad; segundo, un estudio comparativo de las plataformas existentes que tratan estos datos desde perspectivas comercial, institucional, periodística o activista.
 
 El benchmarking, en el marco del proceso de Design Thinking, forma parte de la fase de _Empatizar_: antes de proponer cualquier solución, se realiza un análisis comparativo de las plataformas existentes con el objetivo de comprender el panorama actual, identificar patrones de diseño consolidados y detectar carencias que justifiquen el desarrollo de una nueva herramienta. Como señala #cite(<brown_change_2019>, form: "prose"), la búsqueda de _insights_ constituye una fuente esencial del pensamiento de diseño, y rara vez surge de datos cuantitativos que miden lo que ya conocemos, sino de observar las experiencias reales de las personas y los productos que ya utilizan @brown_change_2019[p.~49]. En este caso, el análisis se ha centrado en plataformas que, desde perspectivas distintas ---comercial, institucional, periodística y activista---, tratan datos sobre el mercado de la vivienda en España o en contextos internacionales comparables.
+
+=== Mapa de fuentes de datos sobre vivienda en España
+
+La información disponible sobre el mercado de la vivienda en España no carece de volumen, sino de accesibilidad, integración y sistematicidad. Los datos existen, pero se encuentran dispersos entre fuentes heterogéneas con periodicidades, metodologías y granularidades incompatibles. La @tabla:fuentes-vivienda recoge las cinco fuentes principales analizadas, caracterizadas por su cobertura geográfica, periodicidad de actualización, granularidad espacial y nivel de accesibilidad.
+
+#figure(
+  block(
+    width: 100%,
+    inset: 1em,
+    table(
+      columns: (1.2fr, 1fr, 1fr, 1fr, 1fr),
+      align: (left, center, center, center, center),
+      stroke: 0.5pt + luma(180),
+      fill: (x, y) => if y == 0 { rgb("#2c3e50").lighten(80%) } else if calc.odd(y) { luma(245) } else { white },
+      table.header(
+        [*Fuente*], [*Cobertura*], [*Periodicidad*], [*Granularidad*], [*Acceso*],
+      ),
+      [MIVAU/SERPAVI @mivau_serpavi], [Nacional], [Trimestral], [Provincial / municipal], [Público abierto],
+      [INE (censo, transacciones)], [Nacional], [Anual / trimestral], [Municipal / sección censal], [Público abierto],
+      [Catastro], [Nacional], [Continua], [Parcela], [Público parcial#super[1]],
+      [Idealista], [Zonas urbanas], [Mensual], [Sección censal], [API de pago],
+      [Fotocasa], [Zonas urbanas], [Mensual], [Distrito / barrio], [Restringido],
+    ),
+  ),
+  caption: [Comparativa de las principales fuentes de datos de vivienda en España: cobertura geográfica, periodicidad de actualización, granularidad espacial y nivel de accesibilidad. #super[1]El Catastro permite consultas individuales pero limita la descarga masiva.],
+) <tabla:fuentes-vivienda>
+
+Las fuentes de carácter público y abierto —MIVAU/SERPAVI, INE y Catastro— constituyen el núcleo de la estrategia de datos del proyecto por su fiabilidad estadística y sus condiciones de reutilización. El SERPAVI, cuya edición 2026 incorpora 2.556.578 contratos de arrendamiento explotados a partir de fuentes tributarias, ofrece además un visor cartográfico con descarga libre en cinco niveles territoriales @mivau_serpavi. Las fuentes privadas —Idealista y Fotocasa— publican únicamente precios de _oferta_ y no de transacción efectiva, con el sesgo al alza que ello introduce @banco_espana_doc_2432; su API no está disponible de forma abierta, lo que limita su integración directa en la plataforma. Esta fragmentación entre fuentes de calidad estadística contrastada pero de acceso complejo, y fuentes de mayor granularidad y actualización pero de acceso restringido, define el problema que "Vivienda en Crisis" aborda desde su concepción.
 
 === Plataformas analizadas
 

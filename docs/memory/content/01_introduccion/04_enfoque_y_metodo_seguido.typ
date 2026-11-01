@@ -26,7 +26,7 @@ El _BC Housing Data Visualization Project_, desarrollado en R, se descartó igua
 
       [San Francisco Housing Data Hub (DataSF)],
       [Jekyll],
-      [Abandonado (~6 años); acoplado a APIs Socrata/CKAN de San Francisco; sin autenticación, roles ni sistema de reportes.],
+      [Abandonado (~6 años); acoplado a APIs Socrata/CKAN de San Francisco; sin autenticación ni roles de usuario.],
 
       [BC Housing Data Visualization Project],
       [R],
@@ -44,11 +44,11 @@ El _BC Housing Data Visualization Project_, desarrollado en R, se descartó igua
   caption: [Proyectos de código abierto evaluados como alternativas al desarrollo propio y motivos de descarte.],
 ) <tabla:alternativas-descartadas>
 
-El análisis evidencia un patrón común a todos los casos: ninguno integra simultáneamente visualización interactiva de datos, mapas coropléticos, sistema de reportes ciudadanos y autenticación con roles. La combinación de stack tecnológico incompatible, abandono o archivado del repositorio, alcance funcional insuficiente y dependencia de fuentes de datos no españolas hace inviable la adaptación. No obstante, el análisis también permite identificar una oportunidad de reutilización parcial: la capa de ingesta y normalización de datos oficiales puede apoyarse en bibliotecas y herramientas de código abierto especializadas para el procesamiento de fuentes públicas (parsers de ficheros del INE, adaptadores de la API del Catastro, etc.), sin necesidad de desarrollarlas desde cero. Esta posibilidad permanece abierta para su evaluación durante la fase de implementación.
+El análisis evidencia un patrón común a todos los casos: ninguno integra simultáneamente visualización interactiva de datos de vivienda para el contexto español, mapas coropléticos y autenticación con roles sobre fuentes oficiales nacionales (MIVAU, INE, Catastro). La combinación de conjunto tecnológico incompatible, abandono o archivado del repositorio, alcance funcional insuficiente y dependencia de fuentes de datos no españolas hace inviable la adaptación. No obstante, el análisis también permite identificar una oportunidad de reutilización parcial: la capa de ingesta y normalización de datos oficiales puede apoyarse en bibliotecas de código abierto especializadas para el procesamiento de fuentes públicas, sin necesidad de desarrollarlas desde cero. Esta posibilidad permanece abierta para su evaluación durante la fase de implementación.
 
 === Estrategia elegida: desarrollo propio con enfoque divulgativo
 
-La ausencia de una solución existente que combine la integración de fuentes oficiales españolas, el enfoque divulgativo orientado a la ciudadanía general, la accesibilidad web y la participación ciudadana determina la elección de una estrategia de desarrollo original. Esta decisión no es únicamente instrumental ---responde a la inexistencia de alternativas viables---, sino que constituye la contribución propia del TFM: el diseño y la implementación de extremo a extremo de una plataforma que no existe en el ámbito público español.
+La ausencia de una solución existente que integre fuentes de datos oficiales españolas (MIVAU/SERPAVI, INE, Catastro), ofrezca visualizaciones interactivas de precios con granularidad territorial y esté orientada a la ciudadanía general determina la elección de una estrategia de desarrollo original. Esta decisión no es únicamente instrumental ---responde a la inexistencia de alternativas viables---, sino que constituye la contribución propia del TFM: el diseño y la implementación de extremo a extremo de una plataforma que no existe en el ámbito público español.
 
 El rasgo diferencial más relevante del enfoque adoptado es la prioridad otorgada al diseño divulgativo de las visualizaciones. A diferencia de las herramientas orientadas a investigadores ---donde se asume un perfil de usuario con formación estadística y familiaridad con indicadores económicos---, "Vivienda en Crisis" se dirige a una ciudadanía heterogénea en nivel educativo y experiencia técnica. Ello implica decisiones de diseño específicas: lenguaje no técnico en los títulos y descripciones de los gráficos, visualizaciones autoexplicativas con información contextual integrada, navegación guiada que facilite la interpretación de los datos sin conocimientos previos, y una interfaz que aproxime la información al usuario en lugar de requerir que el usuario se adapte a la herramienta. Este enfoque es coherente con los principios del diseño centrado en el usuario desarrollados en la @sec:objetivos y con los compromisos de accesibilidad establecidos en la misma sección.
 
@@ -72,20 +72,4 @@ Esta investigación preliminar, cuyo resultado se documenta en el @cap:materiale
 
 === Conjunto tecnológico
 
-La elección del conjunto tecnológico responde a criterios de adecuación funcional, madurez del ecosistema y coherencia con los compromisos de sostenibilidad establecidos en la @sec:impacto_sostenibilidad. El detalle de las decisiones de arquitectura se desarrolla en la @sec:arquitectura. La @fig:tech-stack presenta una vista de conjunto de las tecnologías empleadas y sus interacciones, mientras que la @fig:infrastructure muestra la infraestructura de despliegue adoptada.
-
-#figure(
-  image("/images/tech-stack.png", width: 85%),
-  caption: [Diagrama del conjunto tecnológico de la plataforma: capas de presentación, servidor, datos y fuentes externas.],
-) <fig:tech-stack>
-
-#figure(
-  image("/images/infrastructure.png", width: 90%),
-  caption: [Diagrama de infraestructura de despliegue: integración continua, hospedaje y persistencia.],
-) <fig:infrastructure>
-
-Para la capa de presentación se ha elegido Next.js, el principal marco de trabajo (_framework_) del ecosistema React ---que es, a su vez, la biblioteca de interfaz de usuario con mayor adopción en el mercado---. Esta combinación garantiza la disponibilidad de recursos de aprendizaje, bibliotecas de componentes y soporte comunitario durante el desarrollo. Su modelo de renderizado híbrido ---que combina generación estática, renderizado en servidor y renderizado en cliente--- permite optimizar el rendimiento y la accesibilidad de cada tipo de página en función de sus requisitos específicos.
-
-Para el backend y la API se ha elegido Hono, una biblioteca ligera de enrutamiento para entornos JavaScript y TypeScript con soporte nativo para despliegues sin servidor (_serverless_). Esta característica es especialmente pertinente en relación con los compromisos de sostenibilidad ambiental establecidos en la @sec:impacto_sostenibilidad, dado que la arquitectura _serverless_ reduce el consumo energético al escalar la computación estrictamente en función de la demanda real, evitando la sobreaprovisión de recursos @akour_serverless_2025. Hono es además compatible con múltiples entornos de ejecución (Node.js, Bun, Cloudflare Workers, Docker), lo que proporciona flexibilidad en las opciones de despliegue. Frente a alternativas como PHP, el entorno Node.js sobre el que opera Hono ofrece ventajas significativas en rendimiento: en pruebas de referencia, una petición API simple se resuelve en Node.js aproximadamente tres veces más rápido que en PHP 7.4 @patel_nodejs_php_2024.
-
-Para la base de datos se ha elegido MongoDB sobre la infraestructura gestionada de Scaleway (_Scaleway Managed Database_), cuyo modelo de documentos orientado a JSON es especialmente adecuado para datos heterogéneos que requieren normalización previa a su almacenamiento ---como los procedentes de las distintas fuentes oficiales identificadas, con estructuras y granularidades distintas---. MongoDB ofrece, además, alto rendimiento en operaciones de lectura, lo que es relevante para una plataforma cuyo patrón de uso principal es la consulta y visualización de datos por parte de un número potencialmente elevado de usuarios concurrentes. La elección de Scaleway como proveedor de infraestructura es coherente con los compromisos de sostenibilidad ambiental establecidos en la @sec:impacto_sostenibilidad.
+El conjunto tecnológico está formado por Next.js en la capa de presentación, Hono como biblioteca de enrutamiento para el backend y la API, MongoDB como sistema de persistencia y Scaleway como proveedor de infraestructura. La elección de Hono es coherente con los compromisos de sostenibilidad ambiental de la @sec:impacto_sostenibilidad, dado que su soporte nativo para arquitecturas _serverless_ reduce el consumo energético al escalar la computación estrictamente en función de la demanda real @akour_serverless_2025. El análisis detallado de cada decisión de arquitectura ---criterios de selección, alternativas evaluadas y justificación técnica--- se desarrolla en la @sec:arquitectura.

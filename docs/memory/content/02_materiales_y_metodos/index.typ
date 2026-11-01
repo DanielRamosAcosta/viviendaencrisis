@@ -16,6 +16,8 @@
 
 #include "08_wireframes.typ"
 
+#include "09_casos_de_uso.typ"
+
 #include "10_propuesta_grafica.typ"
 
 #include "11_flujo_interactivo.typ"
@@ -35,3 +37,5 @@
 #include "18_seguridad_y_autenticacion.typ"
 
 #include "19_despliegue_e_infraestructura.typ"
+
+#include "20_viabilidad.typ"
