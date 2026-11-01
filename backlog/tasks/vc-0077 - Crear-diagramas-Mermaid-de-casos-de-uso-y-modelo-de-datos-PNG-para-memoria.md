@@ -1,10 +1,10 @@
 ---
 id: VC-0077
 title: Crear diagramas Mermaid de casos de uso y modelo de datos (PNG para memoria)
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-11-01 14:53'
-updated_date: '2026-11-01 14:55'
+updated_date: '2026-11-01 15:32'
 labels:
   - docs
   - refined
@@ -39,11 +39,5 @@ No editar ficheros .typ ni .bib.
 ## Final Summary
 
 <!-- SECTION:FINAL_SUMMARY:BEGIN -->
-Creados dos diagramas Mermaid y exportados a PNG (1568px, mmdc v12 via npx, -b white -s 2).
-
-use-cases.mmd: flowchart LR con 3 actores (Visitante anónimo, Usuario registrado, Administrador). Subgraphs MVP (público / cuenta / administración) y Ampliación futura opcional (reportes + reseñas, estilo discontinuo). Generalización admin->registrado («herencia») e inclusiones «include» de login (CU07) en casos que requieren auth.
-
-data-model.mmd: erDiagram con 5 colecciones MongoDB. Núcleo: users (role user/admin, email UK), geodata (GeoJSON, índice GEO 2dsphere, jerarquía), price_series. Opcional: reports, reviews (marcadas en comentarios %%). Atributos con PK/FK/UK/IDX/GEO y relaciones con cardinalidad.
-
-PNG copiados a docs/memory/images/ como use-cases.png y data-model.png. Verificados: PNG válidos, no corruptos, >190KB cada uno.
+Creados dos diagramas Mermaid y exportados a PNG: use-cases.mmd (actores + casos de uso MVP y opcionales) y data-model.mmd (ER de colecciones MongoDB). PNG copiados a docs/memory/images/ y referenciados por los capítulos 09 y 15. Parte de VC-0021.
 <!-- SECTION:FINAL_SUMMARY:END -->
