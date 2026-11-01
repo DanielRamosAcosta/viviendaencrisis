@@ -3,10 +3,10 @@ id: VC-0075
 title: >-
   Redactar secciones 11 (flujo interactivo) y 12 (prueba de usabilidad) de la
   memoria
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-11-01 14:52'
-updated_date: '2026-11-01 14:57'
+updated_date: '2026-11-01 15:32'
 labels:
   - refined
   - memoria
@@ -35,5 +35,5 @@ Describe el prototipo interactivo SPA (apps/wireframe) con +30 pantallas navegab
 ## Final Summary
 
 <!-- SECTION:FINAL_SUMMARY:BEGIN -->
-Se redactaron los dos ficheros Typst objetivo. `11_flujo_interactivo.typ` describe el prototipo interactivo como SPA navegable con el stack tecnológico confirmado (React 19 + Vite, react-router v7, wired-elements, rough-viz, d3-geo), su propósito de validación, la elección del estilo hand-drawn y el alcance completo de las pantallas cubiertas. `12_prueba_de_usabilidad.typ` cubre las cuatro subsecciones: la justificación de la interactividad para el test, el diseño completo del protocolo (3 perfiles de participantes derivados de las personas usuarias, guion de 4 tareas, métricas SUS previstas), la ejecución real (solo validación informal con 2 usuarios, con honestidad sobre lo que no se ejecutó), y las conclusiones de dicha validación con lo pendiente para P3. No se introdujeron errores de compilación nuevos — los errores existentes son preexistentes en otros ficheros del capítulo.
+Redactados los capítulos 11 (flujo interactivo) y 12 (prueba de usabilidad) de Materiales y métodos. El cap. 12 documenta el diseño del test (perfiles + tareas de VC-0054, think-aloud, SUS) y la validación informal real con 2 usuarios, difiriendo la ejecución formal a P3 sin inventar métricas. Integrado en la memoria; compila sin errores. Parte de VC-0021.
 <!-- SECTION:FINAL_SUMMARY:END -->
