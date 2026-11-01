@@ -3,10 +3,10 @@ id: VC-0076
 title: >-
   Redactar capítulos técnicos de diseño (13, 16, 17, 18, 19) — Materiales y
   métodos
-status: In Review
+status: Done
 assignee: []
 created_date: '2026-11-01 14:52'
-updated_date: '2026-11-01 14:58'
+updated_date: '2026-11-01 15:32'
 labels:
   - unrefined
   - memoria
@@ -47,3 +47,9 @@ created: 2026-11-01 14:58
 Los cinco ficheros están redactados. Errores de compilación preexistentes detectados en cap. 14 (`<fig:tech-stack>` duplicado, `<sec:modelo-datos>` inexistente) — están fuera del ámbito de esta tarea. Los cinco ficheros encargados no introducen nuevos errores. Citas nuevas necesarias documentadas en el informe final al usuario.
 ---
 <!-- COMMENTS:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Redactados a nivel de diseño los capítulos técnicos 13 (XP), 16 (accesibilidad), 17 (testing), 18 (seguridad/auth) y 19 (despliegue). Decisiones previstas coherentes con el stack (Next.js/Hono/MongoDB/Scaleway), sin implementación (eso es P3). Integrado en la memoria; compila sin errores. Parte de VC-0021.
+<!-- SECTION:FINAL_SUMMARY:END -->
